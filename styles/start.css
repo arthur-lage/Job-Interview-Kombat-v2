@@ -750,8 +750,8 @@ header {
     flex-direction: column;
     gap: 1.5rem;
     width: 500px;
-    margin-top: 4rem;
-    z-index: 4;
+    margin-top: 0rem;
+    z-index: 0;
 }
 
 .menu-options .option {
@@ -880,13 +880,35 @@ footer span {
     background-position: center;
 }
 
+.trainingMode {
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    background: url('../assets/images/options/background.png') center center no-repeat;
+    background-size: contain;
+    min-height: 60px;
+    width: 450px;
+    max-width: 100%;
+    padding: 0.5rem 0;
+    z-index: 1;
+    border-radius: 0.7rem;
+    color: #d0e8ff;
+    text-shadow: 2px 2px 1px #b14dd0;
+    text-align: center;
+    display: flex;
+    font-size: 2.5rem;
+    margin: 0 auto 1rem auto;
+    justify-content: center;
+}
+
+
 .rules {
     display: flex;
     gap: 2rem;
     flex-direction: column;
 }
 
-.rules:not(.active), .credits:not(.active), .options:not(.active) {
+ .trainingMode:not(.active), .rules:not(.active), .credits:not(.active), .options:not(.active) {
     opacity: 0;
     display: none;
 }
