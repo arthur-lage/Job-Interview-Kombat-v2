@@ -194,21 +194,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-const menuTrainingModeDialog = document.querySelector(".trainingMode")
 const menuRulesDialog = document.querySelector(".rules")
 const menuOptionsDialog = document.querySelector(".options")
 const menuCreditsDialog = document.querySelector(".credits")
 
-const menuTrainingModeButton = document.querySelector("#menu-training-mode")
 const menuRulesButton = document.querySelector("#menu-rules")
 const menuOptionsButton = document.querySelector("#menu-options")
 const menuCreditsButton = document.querySelector("#menu-credits")
-
-menuTrainingModeButton.addEventListener("click", () =>{
-    resetMenus()
-    menuTrainingModeDialog.classList.add("active")
-    dialogOverlay.classList.add("active")
-})
 
 menuRulesButton.addEventListener("click", () => {
     resetMenus()

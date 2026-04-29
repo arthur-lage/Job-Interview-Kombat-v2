@@ -1,0 +1,6 @@
+.training-mode-background{
+    background-image: url(../trainingMode/assets/images/background.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
