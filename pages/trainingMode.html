@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel = "stylesheet" href="../styles/trainingMode.css">
-    <link rel = "stylesheet" href="../styles/start.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/trainingMode.css">
+    <link rel="stylesheet" href="../styles/start.css">
+    <link rel="stylesheet" href="../styles/fonts.css">
 </head>
-<body class = "training-mode-background">
-    <h1 class = "title">Training Mode</h1>
+
+<body>
+    <div class="training-mode-background">
+        <!-- <h1 class="title">Training Mode</h1> -->
+    </div>
+
+    <div class="quiz-container">
+        <div class="hp-container"></div>
+
+        <div class="quiz-title">
+            <p>Quiz - <span id="quiz-name">Soft Skills</span></p>
+        </div>
+
+        <div class="question-number">
+            <p>Question <span id="question-number">1</span></p>
+        </div>
+
+        <div class="question-text"></div>
+
+        <div class="options-container"></div>
+
+        <div class="quiz-footer">
+            <span id="current-question">1</span>
+            /
+            <span id="total-questions">10</span>
+        </div>
+    </div>
+
+    <script src="../scripts/trainingMode.js"></script>
 </body>
+
 </html>
