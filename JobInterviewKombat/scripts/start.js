@@ -226,7 +226,6 @@ dialogClose.addEventListener("click", () => {
 })
 
 const resetMenus = () => {
-    menuTrainingModeDialog.classList.remove("active")
     menuRulesDialog.classList.remove("active")
     menuCreditsDialog.classList.remove("active")
     menuOptionsDialog.classList.remove("active")

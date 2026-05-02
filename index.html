@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Interview Kombat - Home</title>
 
-    <script type="module" defer src="lib/howler.min.js"></script>
-    <script defer type="module" src="scripts/global.js"></script>
-    <script defer type="module" src="scripts/start.js"></script>
-    <script defer type="module" src="scripts/loading.js"></script>
-    <script defer type="module" src="scripts/options.js"></script>
-    <script defer type="module" src="scripts/jobSelection.js"></script>
-    <script type="module" src="scripts/exitOverlay.js"></script>
-    <script type="module" src="scripts/victoryOverlay.js"></script>
+    <script type="module" defer src="JobInterviewKombat/lib/howler.min.js"></script>
+    <script defer type="module" src="JobInterviewKombat/scripts/global.js"></script>
+    <script defer type="module" src="JobInterviewKombat/scripts/start.js"></script>
+    <script defer type="module" src="JobInterviewKombat/scripts/loading.js"></script>
+    <script defer type="module" src="JobInterviewKombat/scripts/options.js"></script>
+    <script defer type="module" src="JobInterviewKombat/scripts/jobSelection.js"></script>
+    <script type="module" src="JobInterviewKombat/scripts/exitOverlay.js"></script>
+    <script type="module" src="JobInterviewKombat/scripts/victoryOverlay.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
     <!-- Favicon (paths relativos, compatíveis com GitHub Pages no subpath do projeto) -->
-    <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" href="JobInterviewKombat/assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="JobInterviewKombat/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="JobInterviewKombat/assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="JobInterviewKombat/assets/favicon/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/fonts.css">
-    <link rel="stylesheet" href="styles/start.css">
-    <link rel="stylesheet" href="styles/exit.css">
-    <link rel="stylesheet" href="styles/victory.css">
+    <link rel="stylesheet" href="JobInterviewKombat/styles/global.css">
+    <link rel="stylesheet" href="JobInterviewKombat/styles/fonts.css">
+    <link rel="stylesheet" href="JobInterviewKombat/styles/start.css">
+    <link rel="stylesheet" href="JobInterviewKombat/styles/exit.css">
+    <link rel="stylesheet" href="JobInterviewKombat/styles/victory.css">
 
 </head>
 
@@ -35,7 +35,7 @@
             <div class="loading-clouds"></div>
         </div>
         <div class="loading-content">
-            <img class="loading-logo" src="assets/images/icon.png" alt="Logo Mortal Kombat" />
+            <img class="loading-logo" src="JobInterviewKombat/assets/images/icon.png" alt="Logo Mortal Kombat" />
             <h1 class="loading-title">JOB INTERVIEW KOMBAT</h1>
             <div class="loading-bar-container">
                 <span class="loading-text">LOADING...</span>
@@ -66,7 +66,8 @@
         <span class="loading-footer">@CEFET-MG</span>
     </div>
     <header>
-        <img class="logo" src="assets/images/logo.png" alt="Logo Pixelada do CEFET-MG no estilo do jogo">
+        <img class="logo" src="JobInterviewKombat/assets/images/logo.png"
+            alt="Logo Pixelada do CEFET-MG no estilo do jogo">
         <h1 class="title">JOB INTERVIEW<br>KOMBAT</h1>
     </header>
 
@@ -76,7 +77,7 @@
             <div class="quadradinhos-2"></div>
 
             <button class="dialog-close">
-                <img src="assets/images/arrow-back.png" alt="Fechar menu">
+                <img src="JobInterviewKombat/assets/images/arrow-back.png" alt="Fechar menu">
             </button>
 
             <div class="rules">
@@ -84,8 +85,8 @@
 
                 <section class="rules-game">
                     <span class="dialog-section-title">
-                        <img style="height:4rem;vertical-align:middle;" src="assets/images/rules/controle.png"
-                            alt="Controle de video game">
+                        <img style="height:4rem;vertical-align:middle;"
+                            src="JobInterviewKombat/assets/images/rules/controle.png" alt="Controle de video game">
                         GAME</span>
                     <div class="game-specs">
                         <p>2 JUDGES</p>
@@ -96,11 +97,12 @@
 
                 <section class="rules-rounds">
                     <span class="dialog-section-title">
-                        <img style="height:4rem;vertical-align:middle;" src="assets/images/rules/lua.png"
-                            alt="Lua">ROUNDS</span>
+                        <img style="height:4rem;vertical-align:middle;"
+                            src="JobInterviewKombat/assets/images/rules/lua.png" alt="Lua">ROUNDS</span>
                     <div class="rounds-specs">
                         <p>EACH ROUND IS A BATTLE 1 VS 1</p>
-                        <p>PLAYERS HAVE 1 MINUTE TO THINK AND 1 MINUTE TO ANSWER - THE TIMERS AND THE NUMBER OF ROUNDS CAN BE CHANGED ON THE OPTIONS MENU</p>
+                        <p>PLAYERS HAVE 1 MINUTE TO THINK AND 1 MINUTE TO ANSWER - THE TIMERS AND THE NUMBER OF ROUNDS
+                            CAN BE CHANGED ON THE OPTIONS MENU</p>
                         <p>JUDGES WILL SCORE ON CRITERIA AS CLARITY, RELEVANCE, CONFIDENCE AND <span
                                 class="highlight">ORIGINALITY</span></p>
                     </div>
@@ -108,8 +110,8 @@
 
                 <section class="rules-tournament">
                     <span class="dialog-section-title">
-                        <img style="height: 5rem;vertical-align:middle;" src="assets/images/rules/trofeu.png"
-                            alt="Trofeu">TOURNAMENT</span>
+                        <img style="height: 5rem;vertical-align:middle;"
+                            src="JobInterviewKombat/assets/images/rules/trofeu.png" alt="Trofeu">TOURNAMENT</span>
                     <p class="tournament-specs">THE TEAM WITH MOST BATTLE WINS AT THE END IS THE WINNER!</p>
                 </section>
             </div>
@@ -118,7 +120,7 @@
             <div class="options">
                 <section class="options-music">
                     <span class="dialog-section-title">
-                        <img src="assets/images/options/emoji.png" alt="Music Icon"
+                        <img src="JobInterviewKombat/assets/images/options/emoji.png" alt="Music Icon"
                             style="height:2rem;vertical-align:middle;width: 7.5rem;">
                         SOUND
                     </span>
@@ -140,22 +142,26 @@
 
                 <section class="options-rounds">
                     <span class="dialog-section-title">
-                        <img src="assets/images/options/keyboard.png" alt="Keyboard Icon"
+                        <img src="JobInterviewKombat/assets/images/options/keyboard.png" alt="Keyboard Icon"
                             style="height:4rem;vertical-align:middle;width: 7.5rem;">
                         ROUNDS
                     </span>
-                <div class="options-rounds-controls">
-                    <label>TIME TO THINK <input id="timeToThink" type="number" min="1" max="10" value="2"> MINUTES</label>
-                    <label>TIME TO JUDGE <input id="timeToJudge" type="number" min="1" max="10" value="2"> MINUTES</label>
-                    <label>ROUND DURATION <input id="roundDuration" type="number" min="1" max="10" value="2"> MINUTES</label>
-                    <label>NUMBER OF ROUNDS <input id="roundsCount" type="number" min="1" max="20" value="9"></label>
-                </div>
+                    <div class="options-rounds-controls">
+                        <label>TIME TO THINK <input id="timeToThink" type="number" min="1" max="10" value="2">
+                            MINUTES</label>
+                        <label>TIME TO JUDGE <input id="timeToJudge" type="number" min="1" max="10" value="2">
+                            MINUTES</label>
+                        <label>ROUND DURATION <input id="roundDuration" type="number" min="1" max="10" value="2">
+                            MINUTES</label>
+                        <label>NUMBER OF ROUNDS <input id="roundsCount" type="number" min="1" max="20"
+                                value="9"></label>
+                    </div>
 
                 </section>
 
                 <section class="options-fullscreen">
                     <span class="dialog-section-title">
-                        <img src="assets/images/options/monitor.png" alt="Fullscreen Icon"
+                        <img src="JobInterviewKombat/assets/images/options/monitor.png" alt="Fullscreen Icon"
                             style="height:4rem;vertical-align:middle;width: 7.5rem; ">
                         FULLSCREEN
                     </span>
@@ -179,7 +185,7 @@
             <div class="credits">
                 <section class="credits-devs">
                     <span class="dialog-section-title">
-                        <img src="assets/images/credits/pato.png" alt="Devs Icon"
+                        <img src="JobInterviewKombat/assets/images/credits/pato.png" alt="Devs Icon"
                             style="height:2rem;vertical-align:middle;width: 7.5rem;">
                         DEVS
                     </span>
@@ -206,10 +212,10 @@
                         </div>
                     </div>
                 </section>
-            
+
                 <section class="credits-advisor">
                     <span class="dialog-section-title">
-                        <img src="assets/images/credits/coracao.png" alt="Advisor Icon"
+                        <img src="JobInterviewKombat/assets/images/credits/coracao.png" alt="Advisor Icon"
                             style="height:2rem;vertical-align:middle;width: 7.5rem;">
                         ADVISOR
                     </span>
@@ -217,10 +223,10 @@
                         MARIA ISABEL RIOS DE CARVALHO VIANA
                     </div>
                 </section>
-            
+
                 <section class="credits-special-thanks">
                     <span class="dialog-section-title">
-                        <img src="assets/images/credits/emoji2.png" alt="Thanks Icon"
+                        <img src="JobInterviewKombat/assets/images/credits/emoji2.png" alt="Thanks Icon"
                             style="height:2rem;vertical-align:middle;width: 7.5rem;">
                         SPECIAL THANKS
                     </span>
@@ -237,34 +243,35 @@
     <div class="clouds"></div>
 
     <div class="tutorial">
-        <a href="pages/tutorial.html">
-            <img src="assets/images/tutorial.png" alt="Tutorial">
+        <a href="JobInterviewKombat/pages/tutorial.html">
+            <img src="JobInterviewKombat/assets/images/tutorial.png" alt="Tutorial">
         </a>
     </div>
 
     <div class="menu-options">
         <button class="option" id="menu-play">
-            <img src="assets/images/star-hover.png" alt="Icone de estrela" class="star-hover">
+            <img src="JobInterviewKombat/assets/images/star-hover.png" alt="Icone de estrela" class="star-hover">
             <span>PLAY</span>
         </button>
-        
-        <a href = "pages/trainingMode.html" class="option" id="menu-training-mode">
-            <img src="assets/images/star-hover.png" alt="Icone de estrela" class="star-hover">
+
+        <!-- MUDAR AQUI -->
+        <a href="trainingMode/pages/quiz.html" class="option" id="menu-training-mode">
+            <img src="JobInterviewKombat/assets/images/star-hover.png" alt="Icone de estrela" class="star-hover">
             <span> TRAINING MODE</span>
         </a>
 
         <button class="option" id="menu-rules">
-            <img src="assets/images/star-hover.png" alt="Icone de estrela" class="star-hover">
+            <img src="JobInterviewKombat/assets/images/star-hover.png" alt="Icone de estrela" class="star-hover">
             <span>RULES</span>
         </button>
 
         <button class="option" id="menu-options">
-            <img src="assets/images/star-hover.png" alt="Icone de estrela" class="star-hover">
+            <img src="JobInterviewKombat/assets/images/star-hover.png" alt="Icone de estrela" class="star-hover">
             <span>OPTIONS</span>
         </button>
 
         <button class="option" id="menu-credits">
-            <img src="assets/images/star-hover.png" alt="Icone de estrela" class="star-hover">
+            <img src="JobInterviewKombat/assets/images/star-hover.png" alt="Icone de estrela" class="star-hover">
             <span>CREDITS</span>
         </button>
     </div>
@@ -279,7 +286,7 @@
             <div class="choose-job-bg-paus"></div>
         </div>
         <button class="dialog-close choose-job-back">
-            <img src="assets/images/arrow-back.png" alt="Voltar ao menu">
+            <img src="JobInterviewKombat/assets/images/arrow-back.png" alt="Voltar ao menu">
         </button>
         <div class="choose-job-content">
             <h2 class="choose-job-title">CHOOSE YOUR JOB</h2>
@@ -287,36 +294,42 @@
                 <!-- Grid 2x3, ícone central na célula do meio da primeira linha -->
                 <!-- Grid: 2 linhas, 5 colunas na primeira, 3 colunas centralizadas na segunda -->
                 <div class="choose-job-grid-custom">
-                  <div class="choose-job-row choose-job-row-top">
-                    <div class="choose-job-card"></div>
-                    <div class="choose-job-card">
-                      <img src="assets/images/jobs/dev-icon.png" alt="Dev Job" class="choose-job-img">
-                      <span class="choose-job-name">DEV</span>
+                    <div class="choose-job-row choose-job-row-top">
+                        <div class="choose-job-card"></div>
+                        <div class="choose-job-card">
+                            <img src="JobInterviewKombat/assets/images/jobs/dev-icon.png" alt="Dev Job"
+                                class="choose-job-img">
+                            <span class="choose-job-name">DEV</span>
+                        </div>
+                        <div class="choose-job-card">
+                            <img src="JobInterviewKombat/assets/images/jobs/job-icon.png" alt="Designer Job"
+                                class="choose-job-img">
+                            <span class="choose-job-name">GENERAL</span>
+                        </div>
+                        <div class="choose-job-card">
+                            <img src="JobInterviewKombat/assets/images/jobs/designer-icon.png" alt="Designer Job"
+                                class="choose-job-img">
+                            <span class="choose-job-name">DESIGNER</span>
+                        </div>
+                        <div class="choose-job-card"></div>
                     </div>
-                    <div class="choose-job-card">
-                      <img src="assets/images/jobs/job-icon.png" alt="Designer Job" class="choose-job-img">
-                      <span class="choose-job-name">GENERAL</span>
+                    <div class="choose-job-row choose-job-row-bottom">
+                        <div class="choose-job-card">
+                            <img src="JobInterviewKombat/assets/images/jobs/pm-icon.png" alt="PM Job"
+                                class="choose-job-img">
+                            <span class="choose-job-name">PM</span>
+                        </div>
+                        <div class="choose-job-card">
+                            <img src="JobInterviewKombat/assets/images/jobs/qa-icon.png" alt="QA Job"
+                                class="choose-job-img">
+                            <span class="choose-job-name">QA</span>
+                        </div>
+                        <div class="choose-job-card">
+                            <img src="JobInterviewKombat/assets/images/jobs/data-icon.png" alt="Data Job"
+                                class="choose-job-img">
+                            <span class="choose-job-name">DATA</span>
+                        </div>
                     </div>
-                    <div class="choose-job-card">
-                      <img src="assets/images/jobs/designer-icon.png" alt="Designer Job" class="choose-job-img">
-                      <span class="choose-job-name">DESIGNER</span>
-                    </div>
-                    <div class="choose-job-card"></div>
-                  </div>
-                  <div class="choose-job-row choose-job-row-bottom">
-                    <div class="choose-job-card">
-                      <img src="assets/images/jobs/pm-icon.png" alt="PM Job" class="choose-job-img">
-                      <span class="choose-job-name">PM</span>
-                    </div>
-                    <div class="choose-job-card">
-                      <img src="assets/images/jobs/qa-icon.png" alt="QA Job" class="choose-job-img">
-                      <span class="choose-job-name">QA</span>
-                    </div>
-                    <div class="choose-job-card">
-                      <img src="assets/images/jobs/data-icon.png" alt="Data Job" class="choose-job-img">
-                      <span class="choose-job-name">DATA</span>
-                    </div>
-                  </div>
                 </div>
             </div>
         </div>
@@ -333,16 +346,17 @@
                     DIFICULTY: <span class="job-modal-hearts">❤️ ❤️ ❤️</span>
                 </div>
                 <div class="job-modal-back-container">
-                <button class="job-modal-back" aria-label="Go Back" >
-                    <img src="assets/images/arrow-back.png" alt="Seta" class="arrow-icon" />
-                    <img src="assets/images/jobs/go-back.png" alt="Go Back" class="btn-icon" />
-                </button>
+                    <button class="job-modal-back" aria-label="Go Back">
+                        <img src="JobInterviewKombat/assets/images/arrow-back.png" alt="Seta" class="arrow-icon" />
+                        <img src="JobInterviewKombat/assets/images/jobs/go-back.png" alt="Go Back" class="btn-icon" />
+                    </button>
                 </div>
                 <div class="job-modal-play-container">
-                <button class="job-modal-play" aria-label="Play">
-                    <img src="assets/images/jobs/play.png" alt="Play" class="btn-icon" />
-                    <img src="assets/images/jobs/seta.png" alt="Seta" class="arrow-icon play-arrow" />
-                </button>
+                    <button class="job-modal-play" aria-label="Play">
+                        <img src="JobInterviewKombat/assets/images/jobs/play.png" alt="Play" class="btn-icon" />
+                        <img src="JobInterviewKombat/assets/images/jobs/seta.png" alt="Seta"
+                            class="arrow-icon play-arrow" />
+                    </button>
                 </div>
             </div>
         </div>
@@ -350,4 +364,5 @@
     <footer>
         <span>@CEFET-MG</span>
     </footer>
+
 </html>

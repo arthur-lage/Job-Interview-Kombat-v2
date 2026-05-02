@@ -547,7 +547,7 @@ class Game {
     this.visualTimer.reset();
     this.visualTimer.start();
 
-    await this.delay(global.options.think * 1000);
+    await this.delay(global.tutorial.think * 1000);
     // Se veio de um skip, aguarda a animação de saída terminar
     if (this.skipTransitionMS && this.skipTransitionMS > 0) {
       await new Promise(res => setTimeout(res, this.skipTransitionMS));
@@ -762,7 +762,7 @@ class Game {
           setTimeout(() => {
             howToJudge2.classList.add("active")
           }, 12000);
-          
+
           setTimeout(() => {
             team2Speak.classList.remove("active")
             team2Tip.classList.add("active")
@@ -849,7 +849,7 @@ class Game {
       let onEndClick = null;
       if (endTurnBtn) {
         endTurnBtn.disabled = true;
-        
+
         setTimeout(() => {
           endTurnBtn.disabled = false;
         }, 24000);
@@ -873,7 +873,7 @@ class Game {
     });
 
 
-    
+
   }
   constructor(job) {
     this.job = job;
@@ -1158,41 +1158,41 @@ export class MusicManager {
     this.currentLoop.start(0);
   }
 
-playGameMusic() {
-  this.synth = new Tone.PolySynth(Tone.Synth, {
-    oscillator: { type: "square" },
-    envelope: { attack: 0.001, decay: 0.2, sustain: 0.3, release: 0.8 }
-  }).toDestination();
+  playGameMusic() {
+    this.synth = new Tone.PolySynth(Tone.Synth, {
+      oscillator: { type: "square" },
+      envelope: { attack: 0.001, decay: 0.2, sustain: 0.3, release: 0.8 }
+    }).toDestination();
 
-  // Adiciona um pouco de reverb para espacialidade
-  this.reverb = new Tone.Reverb(1.5).toDestination();
-  this.synth.connect(this.reverb);
+    // Adiciona um pouco de reverb para espacialidade
+    this.reverb = new Tone.Reverb(1.5).toDestination();
+    this.synth.connect(this.reverb);
 
-  const scale = ["C4", "D4", "E4", "G4", "A4", "C5"];
-  let patternIndex = 0;
-  
-  // Padrão melódico mais estruturado
-  const melodicPattern = [
-    [0, 2, 4],       // C, E, G - acorde C maior
-    [1, 3, 5],       // D, G, A - padrão ascendente
-    [2, 4, 3],       // E, A, G - movimento interessante
-    [0, 4, 2]        // C, A, E - variação
-  ];
+    const scale = ["C4", "D4", "E4", "G4", "A4", "C5"];
+    let patternIndex = 0;
 
-  this.currentLoop = new Tone.Loop((time) => {
-    const pattern = melodicPattern[patternIndex % melodicPattern.length];
-    
-    // Toca acordes em vez de notas simples
-    pattern.forEach((noteIndex, i) => {
-      const note = scale[noteIndex];
-      // Notas mais curtas para ritmo animado
-      this.synth.triggerAttackRelease(note, i === 0 ? "4n" : "8n", time + i * 0.1);
-    });
-    patternIndex++;
-  }, "2n"); // Loop a cada 2 tempos
+    // Padrão melódico mais estruturado
+    const melodicPattern = [
+      [0, 2, 4],       // C, E, G - acorde C maior
+      [1, 3, 5],       // D, G, A - padrão ascendente
+      [2, 4, 3],       // E, A, G - movimento interessante
+      [0, 4, 2]        // C, A, E - variação
+    ];
 
-  this.currentLoop.start(0);
-}
+    this.currentLoop = new Tone.Loop((time) => {
+      const pattern = melodicPattern[patternIndex % melodicPattern.length];
+
+      // Toca acordes em vez de notas simples
+      pattern.forEach((noteIndex, i) => {
+        const note = scale[noteIndex];
+        // Notas mais curtas para ritmo animado
+        this.synth.triggerAttackRelease(note, i === 0 ? "4n" : "8n", time + i * 0.1);
+      });
+      patternIndex++;
+    }, "2n"); // Loop a cada 2 tempos
+
+    this.currentLoop.start(0);
+  }
   stop() {
     if (this.currentLoop) { try { this.currentLoop.stop(); } catch (_) { } this.currentLoop = null; }
     // Libera e garante silêncio
