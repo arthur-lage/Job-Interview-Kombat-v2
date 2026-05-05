@@ -28,20 +28,48 @@ function createSession(bank, { softSkills = 5, hardSkills = 0 } = {}) {
 
 const game = {
     hp: 3,
-    session: null // preenchido após o fetch
+    session: null, // preenchido após o fetch
+    score: 0
 };
 
 // ---------------------------------------------------------------------------
 // FUNÇÕES DE UI
 // ---------------------------------------------------------------------------
 
+function showAnswerModal(questionData) {
+    const modalOverlay = document.querySelector(".answer-overlay");
+    const explanation = document.querySelector("#answer-explanation");
+    const correct = document.querySelector("#answer-correct");
+    const nextBtn = document.querySelector(".answer-next-btn");
+
+    explanation.innerText = questionData.explanation;
+    correct.innerText = questionData.options[questionData.correctOption];
+
+    modalOverlay.classList.add('active');
+    nextBtn.addEventListener("click", () => {
+        modalOverlay.classList.remove('active');
+        nextQuestion();
+    });
+}
+
+
+function nextQuestion() {
+    game.session.currentIndex++;
+    loadQuestion()
+}
+
 function validateAnswer(e, letter) {
     const correct = game.session.questions[game.session.currentIndex].correctOption;
     if (letter === correct) {
         e.target.classList.add("correct");
+        game.score++;
     } else {
         e.target.classList.add("wrong");
+        game.hp--;
+        drawHP();
     }
+
+    showAnswerModal(game.session.questions[game.session.currentIndex]);
 }
 
 function loadQuestion() {
