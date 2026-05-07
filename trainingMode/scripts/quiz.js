@@ -9,7 +9,7 @@ function toSentenceCase(str) {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
-function createSession(bank, { softSkills = 5, hardSkills = 0 } = {}) {
+function createSession(bank, { softSkills = 5, hardSkills = 2 } = {}) {
     const selected = [
         ...pickRandom(bank.softSkills, softSkills),
         ...pickRandom(bank.hardSkills, hardSkills)
@@ -27,7 +27,7 @@ function createSession(bank, { softSkills = 5, hardSkills = 0 } = {}) {
 // ---------------------------------------------------------------------------
 
 const game = {
-    hp: 3,
+    hp: null, // calculado após createSession
     session: null, // preenchido após o fetch
     score: 0
 };
@@ -49,7 +49,7 @@ function showAnswerModal(questionData) {
     nextBtn.addEventListener("click", () => {
         modalOverlay.classList.remove('active');
         nextQuestion();
-    });
+    }, { once: true });
 }
 
 
@@ -76,7 +76,13 @@ function loadQuestion() {
     const { questions, currentIndex } = game.session;
     const question = questions[currentIndex];
 
-    if (!question) return;
+    if (!question && game.hp > 0) {
+        showVictoryModal();
+    };
+
+    if (game.hp == 0) {
+        showDefeatModal();
+    }
 
     document.querySelector("#quiz-name").innerText = question.category;
     document.querySelector("#question-number").innerText = currentIndex + 1;
@@ -112,6 +118,36 @@ function drawHP() {
     }
 }
 
+function showVictoryModal() {
+    const modalOverlay = document.querySelector(".result-victory-overlay");
+
+    const total = game.session.total;
+    const score = game.score;
+    const percent = Math.round((score / total) * 100);
+
+    document.querySelector("#victory-result-score").innerText = score;
+    document.querySelector("#victory-result-total").innerText = total;
+    document.querySelector("#victory-result-percent").innerText = `${percent}%`;
+
+    modalOverlay.classList.add('active');
+}
+
+
+function showDefeatModal() {
+    const modalOverlay = document.querySelector(".result-defeat-overlay");
+
+    const total = game.session.total;
+    const score = game.score;
+    const percent = Math.round((score / total) * 100);
+
+    document.querySelector("#defeat-result-score").innerText = score;
+    document.querySelector("#defeat-result-total").innerText = total;
+    document.querySelector("#defeat-result-percent").innerText = `${percent}%`;
+
+    modalOverlay.classList.add('active');
+
+}
+
 // ---------------------------------------------------------------------------
 // INICIALIZAÇÃO — carrega o banco de perguntas e inicia o jogo
 // ---------------------------------------------------------------------------
@@ -124,7 +160,8 @@ async function init() {
 
         const QUESTION_BANK = await res.json()
 
-        game.session = createSession(QUESTION_BANK, { softSkills: 5, hardSkills: 0 });
+        game.session = createSession(QUESTION_BANK);
+        game.hp = Math.round(game.session.total * 0.3);
 
         loadQuestion();
         drawHP();
