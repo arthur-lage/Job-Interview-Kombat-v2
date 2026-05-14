@@ -32,6 +32,46 @@
         </div>
     </div>
 
+    <div class="result-victory-overlay">
+        <div class="result-modal">
+            <div class="result-modal-header">
+                <h1 class="result-modal-title">🏆 Congratulations!</h1>
+            </div>
+            <div class="result-modal-body">
+                <p class="result-score-label">Your score</p>
+                <p class="result-score">
+                    <span id="victory-result-score">0</span>
+                    <span class="result-score-sep">/</span>
+                    <span id="victory-result-total">0</span>
+                </p>
+                <p class="result-score-percent" id="victory-result-percent"></p>
+            </div>
+            <div class="result-modal-footer">
+                <button class="result-back-btn" onclick="history.back()">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="result-defeat-overlay">
+        <div class="result-modal">
+            <div class="result-modal-header">
+                <h1 class="result-modal-title"> Try again!</h1>
+            </div>
+            <div class="result-modal-body">
+                <p class="result-score-label">Your score</p>
+                <p class="result-score">
+                    <span id="defeat-result-score">0</span>
+                    <span class="result-score-sep">/</span>
+                    <span id="defeat-result-total">0</span>
+                </p>
+                <p class="result-score-percent" id="defeat-result-percent"></p>
+            </div>
+            <div class="result-modal-footer">
+                <button class="result-back-btn" onclick="history.back()">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
     <div class="quiz-container">
         <div class="hp-container"></div>
 
