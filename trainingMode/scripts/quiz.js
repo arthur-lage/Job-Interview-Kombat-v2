@@ -32,6 +32,14 @@ const game = {
     score: 0
 };
 
+game.hasQuestions = function () {
+    return this.session.currentIndex + 1 <= this.session.questions.length;
+}
+
+game.showFinalResults = function () {
+    alert('Parabéns! Você acertou ' + game.score + ' perguntas');
+}
+
 // ---------------------------------------------------------------------------
 // FUNÇÕES DE UI
 // ---------------------------------------------------------------------------
@@ -46,19 +54,26 @@ function showAnswerModal(questionData) {
     correct.innerText = questionData.options[questionData.correctOption];
 
     modalOverlay.classList.add('active');
-    nextBtn.addEventListener("click", () => {
+
+    nextBtn.onclick = () => {
         modalOverlay.classList.remove('active');
         nextQuestion();
-    });
+    };
 }
 
 
 function nextQuestion() {
+    if (game.session.currentIndex === game.session.questions.length - 1) {
+        game.showFinalResults();
+        return
+    }
+
     game.session.currentIndex++;
     loadQuestion()
 }
 
 function validateAnswer(e, letter) {
+    if (!game.hasQuestions()) return
     const correct = game.session.questions[game.session.currentIndex].correctOption;
     if (letter === correct) {
         e.target.classList.add("correct");

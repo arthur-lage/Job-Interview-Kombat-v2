@@ -27,44 +27,73 @@
 }
 
 .options-container {
-    margin-top: 3rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 25px;
     align-items: center;
-    width: 80%;
+    min-width: 1000px;
     align-self: center;
 }
 
 .question-number {
     font-size: 2rem;
     text-transform: uppercase;
+    color: black;
     font-family: "RainyHeartsFont", monospace;
-    margin: 2rem 0;
+    margin: 1rem 0;
     font-weight: 700;
+    background-image: url("../assets/images/faixa-question.png");
+    background-size: cover;
+    text-align: center;
+    width: 400px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .question-text {
     font-size: 2rem;
-    background: var(--quiz-primary-bg);
-    padding: 5px 15px;
-    border: 3px solid black;
+    background: url("../assets/images/question-box.png");
+    padding: 15px 30px;
     max-width: 80vw;
+    color: black;
 
     font-family: "RainyHeartsFont", monospace;
     text-align: center;
+
+    width: 1000px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .option {
     font-size: 2rem;
-    background: var(--question-primary-bg);
-    padding: 5px 10px;
-    width: 100%;
+    background-color: transparent;
+    padding: 10px 20px;
+
+    height: 80px;
+    width: 1000px;
     font-family: "RainyHeartsFont", monospace;
     color: white;
-    border: 3px solid black;
+
+    border: none;
     transition: .15s ease;
     cursor: pointer;
+
+    background-image: url("../assets/images/button.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .option.wrong {
