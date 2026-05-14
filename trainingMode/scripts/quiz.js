@@ -58,7 +58,7 @@ function showAnswerModal(questionData) {
     nextBtn.onclick = () => {
         modalOverlay.classList.remove('active');
         nextQuestion();
-    }, { once: true });
+    }, { once: true };
 }
 
 
