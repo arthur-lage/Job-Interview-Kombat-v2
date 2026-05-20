@@ -1,0 +1,92 @@
+[
+    {
+        "id": "aq_000",
+        "category": "Listening Comprehension",
+        "audioSrc": "../assets/audio/audio_quiz/aq_000.mp4",
+        "transcript": "My name is Rafael and I'm pursuing a degree in Computer Engineering",
+        "question": "What does the main verb of the sentence mean?",
+        "options": {
+            "a": "To give up",
+            "b": "To seek to achieve",
+            "c": "To cancel",
+            "d": "To repair"
+        },
+        "correctOption": "b",
+        "explanation": "The main verb of the sentence is 'pursuing'. In this context, 'pursuing a degree' means studying for or working toward completing a university degree."
+    },
+    {
+        "id": "aq_001",
+        "category": "Listening Comprehension",
+        "audioSrc": "../assets/audio/audio_quiz/aq_001.mp3",
+        "transcript": "Hi, I'm Sarah. I'm a software engineer with five years of experience working with distributed systems. In my last role at a fintech startup, I led the migration of our monolithic application to microservices, which reduced our deployment time by 60%.",
+        "question": "What did Sarah accomplish in her last role?",
+        "options": {
+            "a": "She designed a new database schema",
+            "b": "She led a migration from monolith to microservices",
+            "c": "She hired a new engineering team",
+            "d": "She reduced the team headcount by 60%"
+        },
+        "correctOption": "b",
+        "explanation": "Sarah mentioned she led the migration of their monolithic application to microservices, which reduced deployment time by 60%. This demonstrates leadership in a significant architectural decision."
+    },
+    {
+        "id": "aq_002",
+        "category": "Listening Comprehension",
+        "audioSrc": "../assets/audio/audio_quiz/aq_002.mp3",
+        "transcript": "I believe my greatest weakness is that I sometimes struggle to delegate tasks. I tend to want to handle everything myself to ensure quality. However, over the past year, I've actively worked on this by setting clearer expectations with my team and trusting them to deliver.",
+        "question": "How is the speaker addressing their weakness?",
+        "options": {
+            "a": "By working longer hours to do everything themselves",
+            "b": "By avoiding tasks they find difficult",
+            "c": "By setting expectations and trusting their team",
+            "d": "By asking management to assign fewer tasks"
+        },
+        "correctOption": "c",
+        "explanation": "The speaker acknowledged the weakness of not delegating and is actively addressing it by setting clearer expectations and trusting the team. This shows self-awareness and a growth mindset — key interview qualities."
+    },
+    {
+        "id": "aq_003",
+        "category": "Listening Comprehension",
+        "audioSrc": "../assets/audio/audio_quiz/aq_003.mp3",
+        "transcript": "We had a critical production bug on a Friday evening just before a major product launch. I stayed calm, immediately assembled the on-call team via our incident channel, and we worked through the night. By 3 AM we had identified the root cause — a misconfigured environment variable — and rolled back the deployment.",
+        "question": "What was the root cause of the production bug?",
+        "options": {
+            "a": "A corrupted database migration",
+            "b": "A missing security certificate",
+            "c": "A misconfigured environment variable",
+            "d": "A failed third-party API integration"
+        },
+        "correctOption": "c",
+        "explanation": "The speaker explicitly stated the root cause was a misconfigured environment variable. Active listening means catching specific technical details like this, not just the general story."
+    },
+    {
+        "id": "aq_004",
+        "category": "Listening Comprehension",
+        "audioSrc": "../assets/audio/audio_quiz/aq_004.mp3",
+        "transcript": "My five-year plan involves deepening my expertise in cloud architecture, particularly around serverless and container orchestration. I'd also like to transition into a technical leadership role where I can mentor junior engineers while still remaining hands-on with the technical work.",
+        "question": "What does the speaker want to achieve in five years?",
+        "options": {
+            "a": "Move into product management and stop coding",
+            "b": "Start their own company in the cloud space",
+            "c": "Become a technical leader while staying hands-on",
+            "d": "Specialize exclusively in frontend development"
+        },
+        "correctOption": "c",
+        "explanation": "The speaker's five-year plan combines deepening cloud expertise with transitioning into a technical leadership role while remaining hands-on. This balance of leadership and technical depth is a common and strong career goal in engineering."
+    },
+    {
+        "id": "aq_005",
+        "category": "Listening Comprehension",
+        "audioSrc": "../assets/audio/audio_quiz/aq_005.mp3",
+        "transcript": "When I have multiple urgent tasks, I first assess the business impact and deadlines of each one. Then I communicate transparently with stakeholders about priorities and realistic timelines. I use a simple matrix — impact versus effort — to decide what to tackle first.",
+        "question": "What method does the speaker use to prioritize tasks?",
+        "options": {
+            "a": "First in, first out — they work in the order tasks arrive",
+            "b": "An impact vs. effort matrix combined with stakeholder communication",
+            "c": "They delegate all urgent tasks to team members",
+            "d": "They ask their manager to decide the priority for them"
+        },
+        "correctOption": "b",
+        "explanation": "The speaker uses an impact vs. effort matrix and pairs it with transparent communication with stakeholders. This structured approach to prioritization demonstrates strong time management and organizational skills."
+    }
+]

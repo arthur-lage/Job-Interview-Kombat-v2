@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Quiz – Job Interview Kombat</title>
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/global.css">
+    <link rel="stylesheet" href="../styles/trainingMode.css">
+    <link rel="stylesheet" href="../styles/quiz.css">
+    <link rel="stylesheet" href="../styles/audio_quiz.css">
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/start.css">
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/fonts.css">
+</head>
+
+<body>
+    <div class="training-mode-background audio_quiz"></div>
+
+    <div class="answer-overlay">
+        <div class="answer-modal">
+            <div class="answer-header">
+                <h1 class="answer-title">Explanation</h1>
+            </div>
+            <div class="answer-body">
+                <p>Correct: <span id="answer-correct"></span></p>
+                <p>Why? <span id="answer-explanation"></span></p>
+            </div>
+            <div class="answer-body aq-transcript-block" id="transcript-block" style="display:none;">
+                <p class="aq-transcript-label">📄 Transcript</p>
+                <span id="answer-transcript"></span>
+            </div>
+            <div class="answer-footer">
+                <button class="answer-next-btn" id="answer-next-btn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="result-victory-overlay">
+        <div class="result-modal">
+            <div class="result-modal-header">
+                <h1 class="result-modal-title">🏆 Congratulations!</h1>
+            </div>
+            <div class="result-modal-body">
+                <p class="result-score-label">Your score</p>
+                <p class="result-score">
+                    <span id="victory-result-score">0</span>
+                    <span class="result-score-sep">/</span>
+                    <span id="victory-result-total">0</span>
+                </p>
+                <p class="result-score-percent" id="victory-result-percent"></p>
+            </div>
+            <div class="result-modal-footer">
+                <button class="result-back-btn" onclick="history.back()">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="result-defeat-overlay">
+        <div class="result-modal">
+            <div class="result-modal-header">
+                <h1 class="result-modal-title">😤 Try again!</h1>
+            </div>
+            <div class="result-modal-body">
+                <p class="result-score-label">Your score</p>
+                <p class="result-score">
+                    <span id="defeat-result-score">0</span>
+                    <span class="result-score-sep">/</span>
+                    <span id="defeat-result-total">0</span>
+                </p>
+                <p class="result-score-percent" id="defeat-result-percent"></p>
+            </div>
+            <div class="result-modal-footer">
+                <button class="result-back-btn" onclick="history.back()">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="hp-container"></div>
+
+        <div class="quiz-title">
+            <p>Audio Quiz – <span id="quiz-name">Listening</span></p>
+        </div>
+
+        <div class="question-number">
+            <p>Question <span id="question-number">1</span></p>
+        </div>
+
+        <div class="aq-player-wrapper" id="aq-player-wrapper">
+            <button class="aq-play-btn" id="aq-play-btn" title="Play / Pause">
+                <span id="aq-play-icon">▶</span>
+            </button>
+
+            <div class="aq-progress-container" id="aq-progress-container">
+                <div class="aq-progress-bar" id="aq-progress-bar"></div>
+            </div>
+
+            <span class="aq-time" id="aq-time">0:00</span>
+
+            <button class="aq-replay-btn" id="aq-replay-btn" title="Replay from start">↺</button>
+
+            <audio id="aq-audio" preload="auto"></audio>
+        </div>
+
+        <p class="aq-no-audio-notice" id="aq-no-audio-notice" style="display:none;">
+            🔇 Audio not available for this question yet.
+        </p>
+
+        <div class="question-text" id="question-text"></div>
+
+        <div class="options-container" id="options-container"></div>
+
+        <div class="quiz-footer">
+            <span id="current-question">1</span>
+            /
+            <span id="total-questions">5</span>
+        </div>
+    </div>
+
+    <script src="../scripts/audio_quiz.js"></script>
+</body>
+
+</html>

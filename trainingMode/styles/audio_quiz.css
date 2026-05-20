@@ -1,0 +1,169 @@
+.aq-player-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50px;
+    padding: 12px 22px;
+    width: 680px;
+    max-width: 90vw;
+    margin: 0.75rem 0 0.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    transition: border-color 0.3s ease;
+}
+
+.aq-player-wrapper.playing {
+    border-color: rgba(65, 213, 124, 0.6);
+    box-shadow: 0 4px 28px rgba(65, 213, 124, 0.2);
+}
+
+.aq-play-btn {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 3px solid #7d14b1;
+    background: #7d14b1;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+    line-height: 1;
+}
+
+.aq-play-btn:hover {
+    background: #9b1cd9;
+    border-color: #b129d6;
+    transform: scale(1.1);
+}
+
+.aq-play-btn:active {
+    transform: scale(0.95);
+}
+
+.aq-progress-container {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.15s ease;
+}
+
+.aq-progress-container:hover {
+    height: 12px;
+}
+
+.aq-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #7d14b1, #41D57C);
+    border-radius: 999px;
+    transition: width 0.1s linear;
+    pointer-events: none;
+}
+
+.aq-time {
+    font-family: "PixelOperatorFont", monospace;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.75);
+    flex-shrink: 0;
+    min-width: 40px;
+    text-align: right;
+}
+
+.aq-replay-btn {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    line-height: 1;
+}
+
+.aq-replay-btn:hover {
+    color: white;
+    border-color: white;
+    transform: rotate(-30deg) scale(1.1);
+}
+
+.aq-no-audio-notice {
+    font-family: "PixelOperatorFont", monospace;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0.25rem 0;
+    text-align: center;
+}
+
+.aq-transcript-block {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    max-width: 600px;
+}
+
+.aq-transcript-label {
+    font-size: 1.6rem !important;
+    color: rgba(255, 255, 255, 0.55) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.4rem;
+}
+
+.aq-transcript-block span {
+    font-size: 1.5rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.options-container.answered .option:not(.correct):not(.wrong) {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.options-container.answered .option {
+    pointer-events: none;
+}
+
+.option {
+    background-image: url(../assets/images/audio_quiz_button.png);
+    width: 900px;
+    height: 70px;
+}
+
+.question-text {
+    background-image: url(../assets/images/audio_quiz_question_box.png);
+    background-size: 100% 100%;
+    width: 1200px;
+    max-width: 95vw;
+    height: 35vh;
+    font-size: 2.7rem;
+}
+
+.training-mode-background.audio_quiz {
+    position: absolute;
+    background-image: url(../assets/images/background.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
