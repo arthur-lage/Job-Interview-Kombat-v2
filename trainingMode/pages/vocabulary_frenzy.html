@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Frenzy - Job Interview Kombat</title>
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/global.css">
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/fonts.css">
+    <link rel="stylesheet" href="../styles/vocabulary_frenzy.css">
+</head>
+
+<body>
+    <div class="background"></div>
+
+    <div class="mode-description">
+        <h1>VOCABULARY FRENZY</h1>
+        <p>You will have <span id="description-time">45</span> seconds to select as many vocabulary related to the
+            theme!</p>
+        <p>The theme is: <span id="description-theme">SOFT SKILLS</span></p>
+        <p style="font-size: 1.2rem; color: #efcb68">ATTENTION! The time starts running right after you click
+            the 'GO!' button.</p>
+
+        <div class="button">
+            <button id="description-go">GO!</button>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <div class="game-header">
+            <span>THEME: <span id="game-theme"></span></span>
+            <span id="timer">
+
+            </span>
+        </div>
+        <div class="game-cards">
+
+        </div>
+    </div>
+
+    <div class="result-container">
+        <h1 class="result-title">FRENZY COMPLETE!</h1>
+
+        <div class="result-theme">
+            <span class="label">THEME:</span>
+            <span id="result-theme">SOFT SKILLS</span>
+        </div>
+
+        <div class="result-score">
+            <span class="label">YOUR SCORE:</span>
+            <span id="result-score">20</span>
+        </div>
+
+
+        <div class="result-left-words">
+            <span class="label">WORDS LEFT OUT:</span>
+            <span class="word-list"></span>
+        </div>
+
+        <div class="result-footer">
+            <button class="finish-button">FINISH!</button>
+        </div>
+    </div>
+
+    <script src="../scripts/vocabulary_frenzy.js"></script>
+</body>
+
+</html>
