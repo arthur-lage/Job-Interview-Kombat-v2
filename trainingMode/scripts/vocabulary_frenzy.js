@@ -106,8 +106,17 @@ const game = {
         )
 
         const correctWords = game.chosenVocabulary.filter(word => themeVocabSet.has(word))
+        const wrongWords = game.chosenVocabulary.filter(word => !themeVocabSet.has(word))
 
         game.score = correctWords.length * game.scoreMultiplier
+        game.score -= wrongWords.length * game.scoreMultiplier
+
+        if (wrongWords.length > 0) {
+            document.querySelector(".result-wrong").style.display = "flex"
+            document.querySelector("#result-wrong-score").textContent = `-${wrongWords.length * game.scoreMultiplier}`
+        } else {
+            document.querySelector(".result-wrong").style.display = "none"
+        }
 
         setTimeout(() => {
             setupResultScreen(correctWords)

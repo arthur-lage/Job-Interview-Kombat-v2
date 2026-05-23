@@ -261,6 +261,22 @@ body {
     text-align: center;
 }
 
+.result-wrong {
+    font-size: 1.6rem;
+}
+
+#result-wrong-score {
+    color: rgb(255, 95, 95);
+    font-weight: bold;
+    margin-left: .4rem;
+    margin-right: .4rem;
+}
+
+.result-wrong :last-child {
+    color: rgb(255, 95, 95);
+    font-weight: bold;
+}
+
 .result-left-words .label {
     color: #efcb68;
 }
