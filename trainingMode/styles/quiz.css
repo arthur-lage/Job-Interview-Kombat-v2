@@ -327,3 +327,62 @@
 .result-back-btn:hover {
     transform: scale(1.1);
 }
+
+/* ---- Post-Answer Action Bar ---- */
+
+.post-answer-bar {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.25rem;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.post-answer-bar.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.show-feedback-btn {
+    cursor: pointer;
+    font-family: "PixelOperatorFont", monospace;
+    font-size: 1.6rem;
+    background: #1a6bb1;
+    color: white;
+    padding: 6px 18px;
+    border: 3px solid #3ea8ff;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: .15s ease;
+}
+
+.show-feedback-btn:hover {
+    transform: scale(1.08);
+    background: #1f7fcf;
+}
+
+.skip-feedback-btn {
+    cursor: pointer;
+    font-family: "PixelOperatorFont", monospace;
+    font-size: 1.6rem;
+    background: #3a3360;
+    color: white;
+    padding: 6px 18px;
+    border: 3px solid #7c6fd4;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: .15s ease;
+}
+
+.skip-feedback-btn:hover {
+    transform: scale(1.08);
+    background: #4a4380;
+}

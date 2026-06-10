@@ -205,6 +205,33 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
+#done-btn {
+    font-family: "PixelOperatorFont", monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+    background: #c0392b;
+    border: 3px solid #e74c3c;
+    border-radius: 6px;
+    padding: 6px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform .15s ease, background .15s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#done-btn:hover {
+    transform: scale(1.08);
+    background: #e74c3c;
+}
+
+#done-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
 .result-container {
     opacity: 0;
     pointer-events: none;
@@ -239,14 +266,64 @@ body {
     font-size: 2.5rem;
 }
 
-.result-theme,
-.result-score {
-    font-size: 1.8rem;
+/* ---- Result Stats Panel ---- */
+
+.result-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: .5rem;
 }
 
-#result-theme,
-#result-score {
-    font-size: 2rem;
+.stat-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .2rem;
+    padding: .6rem 1.8rem;
+}
+
+.stat-value {
+    font-family: "PixelOperatorFont", monospace;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: rgb(255, 134, 78);
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: "PixelOperatorFont", monospace;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-correct .stat-value {
+    color: #41D57C;
+}
+
+.stat-wrong .stat-value {
+    color: #ff6b8a;
+}
+
+.stat-divider {
+    width: 2px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+}
+
+.result-theme {
+    font-size: 1.5rem;
+}
+
+#result-theme {
+    font-size: 1.7rem;
     color: rgb(255, 134, 78);
     font-weight: bold;
 }
@@ -261,25 +338,10 @@ body {
     text-align: center;
 }
 
-.result-wrong {
-    font-size: 1.6rem;
-}
-
-#result-wrong-score {
-    color: rgb(255, 95, 95);
-    font-weight: bold;
-    margin-left: .4rem;
-    margin-right: .4rem;
-}
-
-.result-wrong :last-child {
-    color: rgb(255, 95, 95);
-    font-weight: bold;
-}
-
 .result-left-words .label {
     color: #efcb68;
 }
+
 
 .result-left-words .word-list {
     max-width: 40vw;
@@ -322,4 +384,88 @@ body {
 
 .finish-button:hover {
     transform: scale(1.05);
+}
+
+/* ---- Result: Your Picks ---- */
+
+.result-picks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.result-picks .label {
+    color: #efcb68;
+    font-size: 1.5rem;
+}
+
+.picks-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: center;
+    max-width: 50vw;
+}
+
+.picks-empty {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-style: italic;
+}
+
+@keyframes chip-pop {
+    0%   { transform: scale(0.5); opacity: 0; }
+    70%  { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1);   opacity: 1; }
+}
+
+.pick-chip {
+    display: inline-flex;
+    align-items: center;
+    font-family: "PixelOperatorFont", monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    font-weight: bold;
+    letter-spacing: .5px;
+    animation: chip-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+.pick-chip:nth-child(1)  { animation-delay: 0ms; }
+.pick-chip:nth-child(2)  { animation-delay: 40ms; }
+.pick-chip:nth-child(3)  { animation-delay: 80ms; }
+.pick-chip:nth-child(4)  { animation-delay: 120ms; }
+.pick-chip:nth-child(5)  { animation-delay: 160ms; }
+.pick-chip:nth-child(6)  { animation-delay: 200ms; }
+.pick-chip:nth-child(7)  { animation-delay: 240ms; }
+.pick-chip:nth-child(8)  { animation-delay: 280ms; }
+.pick-chip:nth-child(9)  { animation-delay: 320ms; }
+.pick-chip:nth-child(10) { animation-delay: 360ms; }
+.pick-chip:nth-child(11) { animation-delay: 400ms; }
+.pick-chip:nth-child(12) { animation-delay: 440ms; }
+
+.pick-correct {
+    background: rgba(65, 213, 124, 0.2);
+    border-color: #41D57C;
+    color: #41D57C;
+}
+
+.pick-correct::before {
+    content: "✓ ";
+}
+
+.pick-wrong {
+    background: rgba(239, 26, 90, 0.2);
+    border-color: #EF1A5A;
+    color: #ff6b8a;
+}
+
+.pick-wrong::before {
+    content: "✗ ";
 }

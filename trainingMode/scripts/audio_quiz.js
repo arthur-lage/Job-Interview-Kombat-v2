@@ -163,6 +163,30 @@ function showAnswerModal(questionData) {
     }, { once: true });
 }
 
+function showPostAnswerBar(questionData) {
+    const bar = document.getElementById('post-answer-bar');
+    const showFeedbackBtn = document.getElementById('show-feedback-btn');
+    const skipBtn = document.getElementById('skip-feedback-btn');
+
+    bar.classList.add('active');
+
+    // Clone to remove stale listeners
+    const newShowBtn = showFeedbackBtn.cloneNode(true);
+    showFeedbackBtn.parentNode.replaceChild(newShowBtn, showFeedbackBtn);
+    const newSkipBtn = skipBtn.cloneNode(true);
+    skipBtn.parentNode.replaceChild(newSkipBtn, skipBtn);
+
+    newShowBtn.addEventListener('click', () => {
+        bar.classList.remove('active');
+        showAnswerModal(questionData);
+    }, { once: true });
+
+    newSkipBtn.addEventListener('click', () => {
+        bar.classList.remove('active');
+        nextQuestion();
+    }, { once: true });
+}
+
 function validateAnswer(e, letter) {
     if (game.answered) return;
 
@@ -193,7 +217,7 @@ function validateAnswer(e, letter) {
         drawHP();
     }
 
-    showAnswerModal(question);
+    showPostAnswerBar(question);
 }
 
 function nextQuestion() {
@@ -234,6 +258,10 @@ function loadQuestion() {
 
     optionsContainer.innerHTML = '';
     optionsContainer.classList.remove('answered');
+
+    // Hide post-answer bar for new question
+    const bar = document.getElementById('post-answer-bar');
+    if (bar) bar.classList.remove('active');
 
     const shuffledOptions = Object.entries(question.options)
         .sort(() => Math.random() - 0.5);

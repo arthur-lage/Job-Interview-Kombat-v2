@@ -29,9 +29,8 @@
     <div class="game-container">
         <div class="game-header">
             <span>THEME: <span id="game-theme"></span></span>
-            <span id="timer">
-
-            </span>
+            <span id="timer"></span>
+            <button id="done-btn">Done!</button>
         </div>
         <div class="game-cards">
 
@@ -46,15 +45,26 @@
             <span id="result-theme">SOFT SKILLS</span>
         </div>
 
-        <div class="result-score">
-            <span class="label">YOUR SCORE:</span>
-            <span id="result-score">20</span>
+        <div class="result-stats">
+            <div class="stat-block">
+                <span class="stat-value" id="result-score">0</span>
+                <span class="stat-label">SCORE</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-block stat-correct">
+                <span class="stat-value" id="result-correct-count">0</span>
+                <span class="stat-label">✓ CORRECT</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-block stat-wrong">
+                <span class="stat-value" id="result-wrong-count">0</span>
+                <span class="stat-label">✗ WRONG</span>
+            </div>
         </div>
 
-        <div class="result-wrong">
-            <span class="label">YOU LOST:</span>
-            <span id="result-wrong-score">-20</span>
-            <span> POINTS</span>
+        <div class="result-picks">
+            <span class="label">YOUR PICKS:</span>
+            <div class="picks-list" id="picks-list"></div>
         </div>
 
         <div class="result-left-words">

@@ -111,28 +111,44 @@ const game = {
         game.score = correctWords.length * game.scoreMultiplier
         game.score -= wrongWords.length * game.scoreMultiplier
 
-        if (wrongWords.length > 0) {
-            document.querySelector(".result-wrong").style.display = "flex"
-            document.querySelector("#result-wrong-score").textContent = `-${wrongWords.length * game.scoreMultiplier}`
-        } else {
-            document.querySelector(".result-wrong").style.display = "none"
-        }
-
         setTimeout(() => {
-            setupResultScreen(correctWords)
+            setupResultScreen(correctWords, wrongWords)
         }, 500)
     }
 }
 
-const setupResultScreen = () => {
+const setupResultScreen = (correctWords, wrongWords) => {
     document.querySelector("#result-theme").textContent = game.theme.text
     document.querySelector("#result-score").textContent = game.score
+    document.getElementById("result-correct-count").textContent = correctWords.length
+    document.getElementById("result-wrong-count").textContent = wrongWords.length
+
     const missedWords = game.vocabularyData
         .filter(item => item.type === game.theme.type && !game.chosenVocabulary.includes(item.vocabulary))
         .map(item => item.vocabulary)
 
     document.querySelector(".result-left-words .word-list").textContent =
         missedWords.length > 0 ? missedWords.join(", ") : "None, you got all the right answers!"
+
+    // Render picked word chips
+    const picksList = document.getElementById('picks-list')
+    picksList.innerHTML = ''
+
+    if (game.chosenVocabulary.length === 0) {
+        const empty = document.createElement('span')
+        empty.classList.add('picks-empty')
+        empty.textContent = "You didn't select any words!"
+        picksList.appendChild(empty)
+    } else {
+        const correctSet = new Set(correctWords)
+        game.chosenVocabulary.forEach(word => {
+            const chip = document.createElement('span')
+            chip.classList.add('pick-chip')
+            chip.classList.add(correctSet.has(word) ? 'pick-correct' : 'pick-wrong')
+            chip.textContent = word
+            picksList.appendChild(chip)
+        })
+    }
 
     gameContainer.classList.remove("active")
     resultsContainer.classList.add("active")
@@ -145,6 +161,15 @@ const setupResultScreen = () => {
 const setupGameScreen = () => {
     document.querySelector("#game-theme").textContent = game.theme.text
     document.querySelector("#timer").textContent = game.timer.current + "s"
+
+    const doneBtn = document.getElementById('done-btn')
+    doneBtn.addEventListener('click', () => {
+        if (game.timerInterval === null) return // já encerrado
+        clearInterval(game.timerInterval)
+        game.timerInterval = null
+        doneBtn.disabled = true
+        game.endGame()
+    }, { once: true })
 }
 
 descriptionGoButton.addEventListener("click", () => {

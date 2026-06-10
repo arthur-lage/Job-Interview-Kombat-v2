@@ -61,6 +61,30 @@ function showAnswerModal(questionData) {
     }, { once: true };
 }
 
+function showPostAnswerBar(questionData) {
+    const bar = document.getElementById('post-answer-bar');
+    const showFeedbackBtn = document.getElementById('show-feedback-btn');
+    const skipBtn = document.getElementById('skip-feedback-btn');
+
+    bar.classList.add('active');
+
+    // Clone buttons to remove any previous listeners
+    const newShowBtn = showFeedbackBtn.cloneNode(true);
+    showFeedbackBtn.parentNode.replaceChild(newShowBtn, showFeedbackBtn);
+    const newSkipBtn = skipBtn.cloneNode(true);
+    skipBtn.parentNode.replaceChild(newSkipBtn, skipBtn);
+
+    newShowBtn.addEventListener('click', () => {
+        bar.classList.remove('active');
+        showAnswerModal(questionData);
+    }, { once: true });
+
+    newSkipBtn.addEventListener('click', () => {
+        bar.classList.remove('active');
+        nextQuestion();
+    }, { once: true });
+}
+
 
 function nextQuestion() {
     if (game.session.currentIndex === game.session.questions.length - 1) {
@@ -84,7 +108,7 @@ function validateAnswer(e, letter) {
         drawHP();
     }
 
-    showAnswerModal(game.session.questions[game.session.currentIndex]);
+    showPostAnswerBar(game.session.questions[game.session.currentIndex]);
 }
 
 function loadQuestion() {
@@ -105,6 +129,10 @@ function loadQuestion() {
 
     const optionsContainer = document.querySelector(".options-container");
     optionsContainer.innerHTML = "";
+
+    // Hide post-answer bar when loading new question
+    const bar = document.getElementById('post-answer-bar');
+    if (bar) bar.classList.remove('active');
 
     const shuffledOptions = Object.entries(question.options)
         .sort(() => Math.random() - 0.5);
