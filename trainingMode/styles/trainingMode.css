@@ -193,7 +193,8 @@ main a {
 }
 
 /* Espaços invisíveis laterais para o texto continuar centralizado quando o cursor aparecer */
-.menu-item::before, .menu-item::after {
+.menu-item::before,
+.menu-item::after {
     content: '';
     display: block;
     width: 25px;
@@ -211,7 +212,8 @@ main a {
 }
 
 .menu-item::after {
-    margin-left: 15px; /* Equilibra o espaçamento da esquerda */
+    margin-left: 15px;
+    /* Equilibra o espaçamento da esquerda */
 }
 
 .menu-item:hover {
@@ -282,11 +284,9 @@ body::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0) 50%,
-        rgba(0, 0, 0, 0.15) 50%
-    );
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0) 50%,
+            rgba(0, 0, 0, 0.25) 50%);
     background-size: 100% 4px;
     z-index: 9999;
     pointer-events: none;
@@ -294,8 +294,13 @@ body::after {
 
 /* --- Animations --- */
 @keyframes cursorPulse {
-    0% { transform: scale(0.9); }
-    100% { transform: scale(1.1); }
+    0% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 @keyframes fadeInUp {
