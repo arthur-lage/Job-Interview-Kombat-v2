@@ -1,0 +1,212 @@
+{
+    "gameModes": [
+        {
+            "id": "tutorial_grammar",
+            "name": "TUTORIAL (GRAMATICA)",
+            "subModes": [
+                {
+                    "id": "tutorial_vocab",
+                    "name": "VOCABULARY",
+                    "link": "vocabulary_frenzy.html?topic=tutorial_grammar"
+                },
+                {
+                    "id": "tutorial_audio",
+                    "name": "AUDIO QUIZ",
+                    "link": "audio_quiz.html?topic=tutorial_grammar"
+                },
+                {
+                    "id": "tutorial_quiz",
+                    "name": "QUIZ",
+                    "link": "quiz.html?topic=tutorial_grammar"
+                },
+                {
+                    "id": "tutorial_interview",
+                    "name": "INTERVIEW",
+                    "link": "quiz.html?topic=tutorial_grammar&mode=interview"
+                }
+            ]
+        },
+        {
+            "id": "persona",
+            "name": "PERSONA",
+            "subModes": [
+                {
+                    "id": "persona_vocab",
+                    "name": "VOCABULARY",
+                    "link": "vocabulary_frenzy.html?topic=persona"
+                },
+                {
+                    "id": "persona_audio",
+                    "name": "AUDIO QUIZ",
+                    "link": "audio_quiz.html?topic=persona"
+                },
+                {
+                    "id": "persona_quiz",
+                    "name": "QUIZ",
+                    "link": "quiz.html?topic=persona"
+                },
+                {
+                    "id": "persona_interview",
+                    "name": "INTERVIEW",
+                    "link": "quiz.html?topic=persona&mode=interview"
+                }
+            ]
+        },
+        {
+            "id": "introduction",
+            "name": "INTRODUCAO",
+            "subModes": [
+                {
+                    "id": "intro_vocab",
+                    "name": "VOCABULARY",
+                    "link": "vocabulary_frenzy.html?topic=introduction"
+                },
+                {
+                    "id": "intro_audio",
+                    "name": "AUDIO QUIZ",
+                    "link": "audio_quiz.html?topic=introduction"
+                },
+                {
+                    "id": "intro_quiz",
+                    "name": "QUIZ",
+                    "link": "quiz.html?topic=introduction"
+                },
+                {
+                    "id": "intro_interview",
+                    "name": "INTERVIEW",
+                    "link": "quiz.html?topic=introduction&mode=interview"
+                }
+            ]
+        },
+        {
+            "id": "experience",
+            "name": "EXPERIENCIA",
+            "subModes": [
+                {
+                    "id": "exp_vocab",
+                    "name": "VOCABULARY",
+                    "link": "vocabulary_frenzy.html?topic=experience"
+                },
+                {
+                    "id": "exp_audio",
+                    "name": "AUDIO QUIZ",
+                    "link": "audio_quiz.html?topic=experience"
+                },
+                {
+                    "id": "exp_quiz",
+                    "name": "QUIZ",
+                    "link": "quiz.html?topic=experience"
+                },
+                {
+                    "id": "exp_interview",
+                    "name": "INTERVIEW",
+                    "link": "quiz.html?topic=experience&mode=interview"
+                }
+            ]
+        },
+        {
+            "id": "meetings",
+            "name": "REUNIOES",
+            "subModes": [
+                {
+                    "id": "meetings_vocab",
+                    "name": "VOCABULARY",
+                    "link": "vocabulary_frenzy.html?topic=meetings"
+                },
+                {
+                    "id": "meetings_audio",
+                    "name": "AUDIO QUIZ",
+                    "link": "audio_quiz.html?topic=meetings"
+                },
+                {
+                    "id": "meetings_quiz",
+                    "name": "QUIZ",
+                    "link": "quiz.html?topic=meetings"
+                },
+                {
+                    "id": "meetings_interview",
+                    "name": "INTERVIEW",
+                    "link": "quiz.html?topic=meetings&mode=interview"
+                }
+            ]
+        },
+        {
+            "id": "classic_questions",
+            "name": "PERGUNTAS CLASSICAS",
+            "subModes": [
+                {
+                    "id": "classic_vocab",
+                    "name": "VOCABULARY",
+                    "link": "vocabulary_frenzy.html?topic=classic_questions"
+                },
+                {
+                    "id": "classic_audio",
+                    "name": "AUDIO QUIZ",
+                    "link": "audio_quiz.html?topic=classic_questions"
+                },
+                {
+                    "id": "classic_quiz",
+                    "name": "QUIZ",
+                    "link": "quiz.html?topic=classic_questions"
+                },
+                {
+                    "id": "classic_interview",
+                    "name": "INTERVIEW",
+                    "link": "quiz.html?topic=classic_questions&mode=interview"
+                }
+            ]
+        },
+        {
+            "id": "soft_skills",
+            "name": "SOFT SKILLS",
+            "subModes": [
+                {
+                    "id": "soft_vocab",
+                    "name": "VOCABULARY",
+                    "link": "vocabulary_frenzy.html?topic=soft_skills"
+                },
+                {
+                    "id": "soft_audio",
+                    "name": "AUDIO QUIZ",
+                    "link": "audio_quiz.html?topic=soft_skills"
+                },
+                {
+                    "id": "soft_quiz",
+                    "name": "QUIZ",
+                    "link": "quiz.html?topic=soft_skills"
+                },
+                {
+                    "id": "soft_interview",
+                    "name": "INTERVIEW",
+                    "link": "quiz.html?topic=soft_skills&mode=interview"
+                }
+            ]
+        },
+        {
+            "id": "salary_negotiation",
+            "name": "NEGOCIACAO DE SALARIO",
+            "subModes": [
+                {
+                    "id": "salary_vocab",
+                    "name": "VOCABULARY",
+                    "link": "vocabulary_frenzy.html?topic=salary_negotiation"
+                },
+                {
+                    "id": "salary_audio",
+                    "name": "AUDIO QUIZ",
+                    "link": "audio_quiz.html?topic=salary_negotiation"
+                },
+                {
+                    "id": "salary_quiz",
+                    "name": "QUIZ",
+                    "link": "quiz.html?topic=salary_negotiation"
+                },
+                {
+                    "id": "salary_interview",
+                    "name": "INTERVIEW",
+                    "link": "quiz.html?topic=salary_negotiation&mode=interview"
+                }
+            ]
+        }
+    ]
+}

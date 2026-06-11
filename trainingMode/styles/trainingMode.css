@@ -1,12 +1,64 @@
-body {
+header {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    /* align-items: center; */
+    padding: 1.5rem;
+    width: 100%;
+}
+
+header a {
+    transition: .3s ease;
+    display: block;
+    z-index: 15;
+    pointer-events: auto;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+}
+
+header h1 {
+    color: #fdd201;
+    font-family: MortalKombat1Font, monospace;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-align: center;
+    text-shadow: 3px 3px 1px #c93ed8;
+    letter-spacing: .1em;
+}
+
+header div {
+    width: 60px;
+}
+
+body {
+    overflow: hidden;
+    background: #12022B;
+    display: flex;
     align-items: center;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 5rem;
     min-height: 100vh;
 }
 
+.bg-triangle-left {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.bg-triangle-right {
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 
 .training-option {
     position: relative;
     display: flex !important;
@@ -15,12 +67,26 @@ body {
     gap: 1rem;
     width: 400px;
     font-size: 2.5rem;
+} */
+
+.training-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    font-size: 2.5rem;
+    color: white;
+    font-family: "PixelOperatorFont", monospace;
+    background: #12022B;
+    border: white;
 }
 
+/* 
 .training-option .star-hover {
     position: static !important;
-}
+} */
 
+/* 
 .training-mode-background {
     position: absolute;
     background-image: url(../assets/images/background.png);
@@ -43,7 +109,7 @@ body {
 .training-mode-background>* {
     position: relative;
     z-index: 1;
-}
+} */
 
 .title {
     font-family: 'MortalKombat1Font', monospace;
@@ -65,4 +131,186 @@ body {
     background-image: url(../assets/images/brain.svg);
     background-size: cover;
     background-position: center;
+}
+
+header a:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 700;
+    font-family: "PixelOperatorFont", monospace;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    z-index: 10;
+    flex: 1;
+    justify-content: center;
+    width: 100%;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* --- Menu dinâmico (game modes) --- */
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    min-height: 280px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    font-family: MortalKombat1Font, monospace;
+    font-weight: 700;
+    letter-spacing: .15rem;
+    text-shadow: 2px 2px 1px #d87add;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: .1s ease;
+    padding: 0.2rem 0;
+    width: 100%;
+}
+
+/* Espaços invisíveis laterais para o texto continuar centralizado quando o cursor aparecer */
+.menu-item::before, .menu-item::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    opacity: 0;
+    transition: .1s ease;
+}
+
+.menu-item::before {
+    background-image: url('../../JobInterviewKombat/assets/images/star-hover.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 15px;
+}
+
+.menu-item::after {
+    margin-left: 15px; /* Equilibra o espaçamento da esquerda */
+}
+
+.menu-item:hover {
+    color: #fdd201;
+    transform: scale(1.1);
+}
+
+.menu-item:hover::before {
+    opacity: 1;
+    animation: cursorPulse 0.4s infinite alternate;
+}
+
+.menu-item.back-btn {
+    color: #fdd201;
+    margin-top: 1rem;
+    /* Separate it a bit from the options */
+}
+
+.menu-item.back-btn:hover {
+    transform: scale(1.2);
+}
+
+/* --- Paginação --- */
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.page-arrow {
+    font-family: "PixelOperatorFont", monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: .1s ease;
+    padding: 0 0.5rem;
+}
+
+.page-arrow:hover {
+    color: #fdd201;
+    transform: scale(1.2);
+}
+
+.page-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+    transform: none;
+}
+
+.page-arrow:disabled:hover {
+    color: white;
+    transform: none;
+}
+
+.page-indicator {
+    font-family: "PixelOperatorFont", monospace;
+    font-size: 1.8rem;
+    color: rgb(196, 158, 227);
+    font-weight: 700;
+}
+
+/* --- CRT Monitor Scanlines Effect --- */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 0, 0, 0.15) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* --- Animations --- */
+@keyframes cursorPulse {
+    0% { transform: scale(0.9); }
+    100% { transform: scale(1.1); }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        translate: 0 30px;
+    }
+
+    100% {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+.animate-enter {
+    animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
 }

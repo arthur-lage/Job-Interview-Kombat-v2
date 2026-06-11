@@ -1,0 +1,146 @@
+/*
+   gameModes.css
+   Copia o estilo do menu principal do jogo (start.css .menu-options)
+   para manter consistência visual.
+*/
+
+body {
+    overflow: hidden;
+    background: #12022B;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header (igual ao trainingMode) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+header a {
+    transition: .3s ease;
+    display: block;
+    z-index: 15;
+    pointer-events: auto;
+}
+
+header a:hover {
+    transform: scale(1.1);
+}
+
+header h1 {
+    color: white;
+    font-family: PixelOperatorFont, monospace;
+    font-weight: 700;
+    font-size: 2.75rem;
+}
+
+header div {
+    width: 60px;
+}
+
+/* --- BG triangles --- */
+.bg-triangle-left {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.bg-triangle-right {
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* --- Main --- */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    flex: 1;
+    justify-content: center;
+    width: 100%;
+}
+
+/* --- Menu screens (topic list / submode list) --- */
+.menu-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-screen.active {
+    display: flex;
+}
+
+/* --- Screen title (estilo do jogo) --- */
+.screen-title {
+    font-family: MortalKombat1Font, monospace;
+    color: #fdd201;
+    font-size: 2.5rem;
+    text-shadow: 3px 3px 1px #c93ed8;
+    letter-spacing: .1em;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* --- Menu list (igual ao .menu-options do jogo) --- */
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 500px;
+    align-items: center;
+}
+
+/* --- Cada item do menu (igual ao .option do menu principal) --- */
+.menu-item {
+    color: white;
+    letter-spacing: .15rem;
+    background: transparent;
+    cursor: pointer;
+    font-family: MortalKombat1Font, monospace;
+    text-shadow: 2px 2px 1px #d87add;
+    font-size: 2rem;
+    border: 0;
+    transition: .1s ease;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 0.2rem 0;
+}
+
+.menu-item:hover {
+    color: #fdd201;
+    transform: scale(1.1);
+}
+
+/* --- Footer (igual ao jogo) --- */
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+}
+
+footer span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgb(196, 158, 227);
+    font-family: MortalKombat1Font, monospace;
+}
