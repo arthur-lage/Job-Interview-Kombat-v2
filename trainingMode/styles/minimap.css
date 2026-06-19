@@ -1,0 +1,615 @@
+/* ===========================
+   MINIMAP – Consistent with project style
+   =========================== */
+
+/* --- Base & Reset --- */
+body {
+    overflow: hidden;
+    background: #12022B;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'PixelOperatorFont', monospace;
+    position: relative;
+}
+
+/* --- BG Triangles (same as trainingMode) --- */
+.bg-triangle-left {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.bg-triangle-right {
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+/* --- Header (same as trainingMode) --- */
+header {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    width: 100%;
+    z-index: 10;
+}
+
+header a {
+    transition: .3s ease;
+    display: block;
+    z-index: 15;
+    pointer-events: auto;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+}
+
+header a:hover {
+    transform: scale(1.1);
+}
+
+header h1 {
+    color: #fdd201;
+    font-family: MortalKombat1Font, monospace;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-align: center;
+    text-shadow: 3px 3px 1px #c93ed8;
+    letter-spacing: .1em;
+    animation: titlePulse 3s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+    0%, 100% {
+        text-shadow: 3px 3px 1px #c93ed8;
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 4px 4px 4px #ff6cfb;
+        transform: scale(1.03);
+    }
+}
+
+/* ===============================
+   DROPDOWN – Squared, bold border
+   =============================== */
+.dropdown-container {
+    position: relative;
+    z-index: 50;
+    width: 460px;
+    max-width: 90vw;
+    margin-top: 0.5rem;
+}
+
+.dropdown-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: #1a0a3e;
+    border: 3px solid #fdd201;
+    border-radius: 4px;
+    color: #fdd201;
+    font-family: MortalKombat1Font, monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 1px #c93ed8;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 15px rgba(253, 210, 1, 0.15),
+                0 4px 0 #c9a401;
+}
+
+.dropdown-toggle:hover {
+    background: #230e52;
+    box-shadow: 0 0 25px rgba(253, 210, 1, 0.3),
+                0 4px 0 #c9a401;
+}
+
+.dropdown-toggle.open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-color: rgba(253, 210, 1, 0.3);
+    box-shadow: 0 0 25px rgba(253, 210, 1, 0.3);
+}
+
+.dropdown-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.dropdown-toggle.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #12022B;
+    border: 3px solid #fdd201;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease;
+    opacity: 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-menu.open {
+    max-height: 400px;
+    opacity: 1;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for dropdown */
+.dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+.dropdown-menu::-webkit-scrollbar-track {
+    background: rgba(253, 210, 1, 0.05);
+}
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: rgba(253, 210, 1, 0.3);
+    border-radius: 2px;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(253, 210, 1, 0.1);
+    color: white;
+    font-family: MortalKombat1Font, monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 1px #d87add;
+    transition: all 0.15s ease;
+    position: relative;
+}
+
+.dropdown-item::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    background-image: url('../../JobInterviewKombat/assets/images/star-hover.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.dropdown-item:hover {
+    color: #fdd201;
+    background: linear-gradient(90deg, rgba(253, 210, 1, 0.1) 0%, transparent 100%);
+    transform: translateX(4px);
+}
+
+.dropdown-item:hover::before {
+    opacity: 1;
+    animation: cursorPulse 0.4s infinite alternate;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item.selected {
+    color: #fdd201;
+    background: rgba(253, 210, 1, 0.08);
+}
+
+/* ===============================
+   PHASES CONTAINER (Main area)
+   =============================== */
+.phases-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    flex: 1;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+/* Placeholder */
+.phases-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    animation: floatBounce 2.5s ease-in-out infinite;
+}
+
+@keyframes floatBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.placeholder-text {
+    font-family: MortalKombat1Font, monospace;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: 2px 2px 1px rgba(201, 62, 216, 0.3);
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+/* ===============================
+   PHASES MAP (submodes as phases)
+   =============================== */
+.phases-map {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SVG path lines */
+.path-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.path-line {
+    stroke: rgba(253, 210, 1, 0.35);
+    stroke-width: 3;
+    stroke-dasharray: 10 8;
+    stroke-linecap: round;
+    fill: none;
+    filter: drop-shadow(0 0 4px rgba(253, 210, 1, 0.25));
+    animation: pathMarch 1.5s linear infinite;
+}
+
+@keyframes pathMarch {
+    to { stroke-dashoffset: -18; }
+}
+
+/* ===============================
+   PHASE NODES – Squared buttons
+   =============================== */
+.phases-nodes {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    justify-content: space-around;
+    padding: 2rem 1rem;
+}
+
+.phase-node {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 5;
+    text-decoration: none;
+    opacity: 0;
+    animation: nodeEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.phase-node:nth-child(1) { animation-delay: 0.1s; }
+.phase-node:nth-child(2) { animation-delay: 0.2s; }
+.phase-node:nth-child(3) { animation-delay: 0.3s; }
+.phase-node:nth-child(4) { animation-delay: 0.4s; }
+.phase-node:nth-child(5) { animation-delay: 0.5s; }
+.phase-node:nth-child(6) { animation-delay: 0.6s; }
+
+.phase-node:hover {
+    transform: scale(1.15);
+}
+
+.phase-node:hover .phase-icon {
+    border-color: #fdd201;
+    box-shadow:
+        0 0 0 2px #fdd201,
+        0 0 20px rgba(253, 210, 1, 0.5),
+        0 6px 0 var(--btn-shadow);
+}
+
+.phase-node:hover .phase-label {
+    color: #fdd201;
+    text-shadow: 0 0 10px rgba(253, 210, 1, 0.6);
+}
+
+/* Phase icon – SQUARED button with pixel-icon inside */
+.phase-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow:
+        0 6px 0 var(--btn-shadow),
+        0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Icon inside the phase button */
+.phase-icon i {
+    font-size: 2rem;
+    color: #ffffff;
+    filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.phase-node:hover .phase-icon i {
+    transform: scale(1.15);
+}
+
+/* Color per phase – theme-consistent purple/pink/gold tones */
+.phase-node:nth-child(1) .phase-icon {
+    background: linear-gradient(145deg, #7c2fff, #5a1ecc);
+    --btn-shadow: #3d1488;
+}
+.phase-node:nth-child(1) .phase-icon i { color: #e8d4ff; }
+
+.phase-node:nth-child(2) .phase-icon {
+    background: linear-gradient(145deg, #c93ed8, #9a2ba6);
+    --btn-shadow: #6e1d78;
+}
+.phase-node:nth-child(2) .phase-icon i { color: #ffe8fc; }
+
+.phase-node:nth-child(3) .phase-icon {
+    background: linear-gradient(145deg, #ff2b7c, #cc1f62);
+    --btn-shadow: #8c1544;
+}
+.phase-node:nth-child(3) .phase-icon i { color: #ffd4e5; }
+
+.phase-node:nth-child(4) .phase-icon {
+    background: linear-gradient(145deg, #fdd201, #c9a401);
+    --btn-shadow: #8a7200;
+}
+.phase-node:nth-child(4) .phase-icon i { color: #12022B; }
+
+.phase-node:nth-child(5) .phase-icon {
+    background: linear-gradient(145deg, #3498db, #2074b0);
+    --btn-shadow: #165080;
+}
+.phase-node:nth-child(5) .phase-icon i { color: #d4edff; }
+
+.phase-node:nth-child(6) .phase-icon {
+    background: linear-gradient(145deg, #e91e63, #b81650);
+    --btn-shadow: #7d0f37;
+}
+.phase-node:nth-child(6) .phase-icon i { color: #ffd4e3; }
+
+/* Phase number badge */
+.phase-num {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background: #fdd201;
+    color: #12022B;
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 0.75rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #12022B;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.phase-label {
+    margin-top: 12px;
+    font-family: MortalKombat1Font, monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 2px 2px 1px #d87add;
+    text-align: center;
+    max-width: 120px;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    transition: all 0.3s ease;
+}
+
+.phase-tag {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 0.7rem;
+    color: rgba(196, 158, 227, 0.7);
+    margin-top: 4px;
+    letter-spacing: 0.1em;
+}
+
+/* --- Selected mode title in map --- */
+.map-mode-title {
+    font-family: MortalKombat1Font, monospace;
+    font-size: 2rem;
+    color: #fdd201;
+    text-shadow: 3px 3px 1px #c93ed8;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+/* --- Footer (same as trainingMode) --- */
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    z-index: 10;
+}
+
+footer span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgb(196, 158, 227);
+    font-family: MortalKombat1Font, monospace;
+}
+
+/* --- CRT Monitor Scanlines Effect (same as all pages) --- */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0) 50%,
+            rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* --- Animations --- */
+@keyframes cursorPulse {
+    0% { transform: scale(0.9); }
+    100% { transform: scale(1.1); }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        translate: 0 30px;
+    }
+    100% {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes nodeEnter {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Map container entrance */
+.phases-map.entering {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 900px) {
+    .dropdown-container {
+        width: 360px;
+    }
+
+    .dropdown-toggle {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.2rem;
+    }
+
+    .dropdown-item {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .phases-nodes {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .phase-icon {
+        width: 65px;
+        height: 65px;
+    }
+
+    .phase-icon i {
+        font-size: 1.6rem;
+    }
+
+    .phase-label {
+        font-size: 0.9rem;
+        max-width: 90px;
+    }
+
+    .map-mode-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .dropdown-container {
+        width: 90vw;
+    }
+
+    .dropdown-toggle {
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .phases-nodes {
+        gap: 1.5rem;
+    }
+
+    .phase-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .phase-icon i {
+        font-size: 1.3rem;
+    }
+
+    .phase-label {
+        font-size: 0.8rem;
+    }
+}

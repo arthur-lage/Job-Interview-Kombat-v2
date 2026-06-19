@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Job Interview Kombat - Training Mode World Map. Select your game mode and conquer each phase!">
+    <title>WORLD MAP - Training Mode</title>
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/global.css">
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/fonts.css">
+    <link rel="stylesheet" href="../styles/minimap.css">
+    <script defer src="../scripts/minimap.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackernoon/pixel-icon-library/fonts/iconfont.css">
+
+</head>
+
+<body>
+    <!-- Decorative BG triangles (same as other pages) -->
+    <img src="../assets/images/bg_triangulo_l.png" class="bg-triangle-left" alt="">
+    <img src="../assets/images/bg_triangulo_r.png" class="bg-triangle-right" alt="">
+
+    <!-- Header -->
+    <header>
+        <a href="trainingMode.html" id="back-btn">
+            <img src="../../JobInterviewKombat/assets/images/arrow-back.png" alt="Voltar">
+        </a>
+        <h1>World Map</h1>
+    </header>
+
+    <!-- Game Mode Dropdown -->
+    <div class="dropdown-container" id="dropdown-container">
+        <button class="dropdown-toggle" id="dropdown-toggle">
+            <span class="dropdown-label" id="dropdown-label">SELECT GAME MODE</span>
+            <span class="dropdown-arrow" id="dropdown-arrow">▼</span>
+        </button>
+        <div class="dropdown-menu" id="dropdown-menu">
+            <!-- Filled by JS -->
+        </div>
+    </div>
+
+    <!-- Phases Map (submodes as phases) -->
+    <main class="phases-container" id="phases-container">
+        <!-- Placeholder when no mode selected -->
+        <div class="phases-placeholder" id="phases-placeholder">
+            <span class="placeholder-icon">🗺️</span>
+            <p class="placeholder-text">SELECT A GAME MODE TO VIEW THE MAP</p>
+        </div>
+
+        <!-- Phase nodes (filled by JS) -->
+        <div class="phases-map" id="phases-map" style="display:none;">
+            <svg class="path-layer" id="path-svg"></svg>
+            <div class="phases-nodes" id="phases-nodes">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <span>2026 @ CEFET-MG</span>
+    </footer>
+
+    <!-- CRT scanlines applied via CSS -->
+</body>
+
+</html>

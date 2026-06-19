@@ -7,22 +7,26 @@
                 {
                     "id": "tutorial_vocab",
                     "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=tutorial_grammar"
+                    "link": "vocabulary_frenzy.html?topic=tutorial_grammar",
+                    "icon_class": "hn hn-book-heart-solid"
                 },
                 {
                     "id": "tutorial_audio",
                     "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=tutorial_grammar"
+                    "link": "audio_quiz.html?topic=tutorial_grammar",
+                    "icon_class": "hn hn-headphones-solid"
                 },
                 {
                     "id": "tutorial_quiz",
                     "name": "QUIZ",
-                    "link": "quiz.html?topic=tutorial_grammar"
+                    "link": "quiz.html?topic=tutorial_grammar",
+                    "icon_class": "hn hn-question-circle-solid"
                 },
                 {
                     "id": "tutorial_interview",
                     "name": "INTERVIEW",
-                    "link": "quiz.html?topic=tutorial_grammar&mode=interview"
+                    "link": "quiz.html?topic=tutorial_grammar&mode=interview",
+                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },
@@ -33,22 +37,26 @@
                 {
                     "id": "persona_vocab",
                     "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=persona"
+                    "link": "vocabulary_frenzy.html?topic=persona",
+                    "icon_class": "hn hn-book-heart-solid"
                 },
                 {
                     "id": "persona_audio",
                     "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=persona"
+                    "link": "audio_quiz.html?topic=persona",
+                    "icon_class": "hn hn-headphones-solid"
                 },
                 {
                     "id": "persona_quiz",
                     "name": "QUIZ",
-                    "link": "quiz.html?topic=persona"
+                    "link": "quiz.html?topic=persona",
+                    "icon_class": "hn hn-question-circle-solid"
                 },
                 {
                     "id": "persona_interview",
                     "name": "INTERVIEW",
-                    "link": "quiz.html?topic=persona&mode=interview"
+                    "link": "quiz.html?topic=persona&mode=interview",
+                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },
@@ -59,22 +67,26 @@
                 {
                     "id": "intro_vocab",
                     "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=introduction"
+                    "link": "vocabulary_frenzy.html?topic=introduction",
+                    "icon_class": "hn hn-book-heart-solid"
                 },
                 {
                     "id": "intro_audio",
                     "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=introduction"
+                    "link": "audio_quiz.html?topic=introduction",
+                    "icon_class": "hn hn-headphones-solid"
                 },
                 {
                     "id": "intro_quiz",
                     "name": "QUIZ",
-                    "link": "quiz.html?topic=introduction"
+                    "link": "quiz.html?topic=introduction",
+                    "icon_class": "hn hn-question-circle-solid"
                 },
                 {
                     "id": "intro_interview",
                     "name": "INTERVIEW",
-                    "link": "quiz.html?topic=introduction&mode=interview"
+                    "link": "quiz.html?topic=introduction&mode=interview",
+                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },
@@ -85,22 +97,26 @@
                 {
                     "id": "exp_vocab",
                     "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=experience"
+                    "link": "vocabulary_frenzy.html?topic=experience",
+                    "icon_class": "hn hn-book-heart-solid"
                 },
                 {
                     "id": "exp_audio",
                     "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=experience"
+                    "link": "audio_quiz.html?topic=experience",
+                    "icon_class": "hn hn-headphones-solid"
                 },
                 {
                     "id": "exp_quiz",
                     "name": "QUIZ",
-                    "link": "quiz.html?topic=experience"
+                    "link": "quiz.html?topic=experience",
+                    "icon_class": "hn hn-question-circle-solid"
                 },
                 {
                     "id": "exp_interview",
                     "name": "INTERVIEW",
-                    "link": "quiz.html?topic=experience&mode=interview"
+                    "link": "quiz.html?topic=experience&mode=interview",
+                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },
@@ -111,22 +127,26 @@
                 {
                     "id": "meetings_vocab",
                     "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=meetings"
+                    "link": "vocabulary_frenzy.html?topic=meetings",
+                    "icon_class": "hn hn-book-heart-solid"
                 },
                 {
                     "id": "meetings_audio",
                     "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=meetings"
+                    "link": "audio_quiz.html?topic=meetings",
+                    "icon_class": "hn hn-headphones-solid"
                 },
                 {
                     "id": "meetings_quiz",
                     "name": "QUIZ",
-                    "link": "quiz.html?topic=meetings"
+                    "link": "quiz.html?topic=meetings",
+                    "icon_class": "hn hn-question-circle-solid"
                 },
                 {
                     "id": "meetings_interview",
                     "name": "INTERVIEW",
-                    "link": "quiz.html?topic=meetings&mode=interview"
+                    "link": "quiz.html?topic=meetings&mode=interview",
+                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },
@@ -137,22 +157,26 @@
                 {
                     "id": "classic_vocab",
                     "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=classic_questions"
+                    "link": "vocabulary_frenzy.html?topic=classic_questions",
+                    "icon_class": "hn hn-book-heart-solid"
                 },
                 {
                     "id": "classic_audio",
                     "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=classic_questions"
+                    "link": "audio_quiz.html?topic=classic_questions",
+                    "icon_class": "hn hn-headphones-solid"
                 },
                 {
                     "id": "classic_quiz",
                     "name": "QUIZ",
-                    "link": "quiz.html?topic=classic_questions"
+                    "link": "quiz.html?topic=classic_questions",
+                    "icon_class": "hn hn-question-circle-solid"
                 },
                 {
                     "id": "classic_interview",
                     "name": "INTERVIEW",
-                    "link": "quiz.html?topic=classic_questions&mode=interview"
+                    "link": "quiz.html?topic=classic_questions&mode=interview",
+                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },
@@ -163,22 +187,26 @@
                 {
                     "id": "soft_vocab",
                     "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=soft_skills"
+                    "link": "vocabulary_frenzy.html?topic=soft_skills",
+                    "icon_class": "hn hn-book-heart-solid"
                 },
                 {
                     "id": "soft_audio",
                     "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=soft_skills"
+                    "link": "audio_quiz.html?topic=soft_skills",
+                    "icon_class": "hn hn-headphones-solid"
                 },
                 {
                     "id": "soft_quiz",
                     "name": "QUIZ",
-                    "link": "quiz.html?topic=soft_skills"
+                    "link": "quiz.html?topic=soft_skills",
+                    "icon_class": "hn hn-question-circle-solid"
                 },
                 {
                     "id": "soft_interview",
                     "name": "INTERVIEW",
-                    "link": "quiz.html?topic=soft_skills&mode=interview"
+                    "link": "quiz.html?topic=soft_skills&mode=interview",
+                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },
@@ -189,22 +217,26 @@
                 {
                     "id": "salary_vocab",
                     "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=salary_negotiation"
+                    "link": "vocabulary_frenzy.html?topic=salary_negotiation",
+                    "icon_class": "hn hn-book-heart-solid"
                 },
                 {
                     "id": "salary_audio",
                     "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=salary_negotiation"
+                    "link": "audio_quiz.html?topic=salary_negotiation",
+                    "icon_class": "hn hn-headphones-solid"
                 },
                 {
                     "id": "salary_quiz",
                     "name": "QUIZ",
-                    "link": "quiz.html?topic=salary_negotiation"
+                    "link": "quiz.html?topic=salary_negotiation",
+                    "icon_class": "hn hn-question-circle-solid"
                 },
                 {
                     "id": "salary_interview",
                     "name": "INTERVIEW",
-                    "link": "quiz.html?topic=salary_negotiation&mode=interview"
+                    "link": "quiz.html?topic=salary_negotiation&mode=interview",
+                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         }
