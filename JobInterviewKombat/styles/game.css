@@ -1524,10 +1524,12 @@ body {
   opacity: 0;
   transition: .5s ease-out;
   z-index: 10000;
+  pointer-events: none;
 }
 
 .tutorial-frase.active {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .tutorial-frase-1 {

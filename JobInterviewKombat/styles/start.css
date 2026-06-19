@@ -750,8 +750,8 @@ header {
     flex-direction: column;
     gap: 1.5rem;
     width: 500px;
-    margin-top: 4rem;
-    z-index: 4;
+    margin-top: 0rem;
+    z-index: 0;
 }
 
 .menu-options .option {
@@ -768,6 +768,37 @@ header {
     width: 100%;
 }
 
+a.option{
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+#menu-play .star-hover {
+  top: -1rem;
+  left: 8.5rem;
+}
+
+#menu-training-mode .star-hover {
+  top: -1rem;
+  left: 3rem;
+}
+
+#menu-rules .star-hover {
+  top: -1rem;
+  left: 8rem;
+}
+
+#menu-options .star-hover {
+  top: -1rem;
+  left: 6.5rem;
+}
+
+#menu-credits .star-hover {
+  top: -1rem;
+  left: 6.5rem;
+}
+
 .menu-options .option .star-hover {
     width: 4rem;
     opacity: 0;
@@ -775,14 +806,6 @@ header {
     top: -1rem;
     left: 8.5rem;
     transition: .1s ease;
-}
-
-.menu-options .option:nth-child(2) .star-hover {
-    left:7.5rem;
-}
-
-.menu-options .option:nth-child(3) .star-hover, .menu-options .option:nth-child(4) .star-hover {
-    left:6rem;
 }
 
 .menu-options .option:hover {
@@ -880,13 +903,14 @@ footer span {
     background-position: center;
 }
 
+
 .rules {
     display: flex;
     gap: 2rem;
     flex-direction: column;
 }
 
-.rules:not(.active), .credits:not(.active), .options:not(.active) {
+ .trainingMode:not(.active), .rules:not(.active), .credits:not(.active), .options:not(.active) {
     opacity: 0;
     display: none;
 }

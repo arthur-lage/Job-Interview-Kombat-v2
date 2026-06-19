@@ -24,43 +24,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
         input.addEventListener("input", () => {
             localStorage.setItem(key, input.value);
-            loadOptions(); 
+            loadOptions();
         });
     });
 
 
     // Música: só inicia quando o usuário habilitar o som
-    const musicManager = new MusicManager();
-    const soundOn = document.querySelector('input[type="radio"][id="sound-on"]');
-    const soundOff = document.querySelector('input[type="radio"][id="sound-off"]');
+    // const musicManager = new MusicManager();
+    // const soundOn = document.querySelector('input[type="radio"][id="sound-on"]');
+    // const soundOff = document.querySelector('input[type="radio"][id="sound-off"]');
 
-    // Por padrão, som OFF
-    if (soundOn && soundOff) {
-        // Recupera preferência do localStorage
-        const savedSound = localStorage.getItem('sound');
-        if (savedSound === 'on') {
-            soundOn.checked = true;
-            soundOff.checked = false;
-            musicManager.play(true);
-        } else {
-            soundOn.checked = false;
-            soundOff.checked = true;
-        }
+    // // Por padrão, som OFF
+    // if (soundOn && soundOff) {
+    //     // Recupera preferência do localStorage
+    //     const savedSound = localStorage.getItem('sound');
+    //     if (savedSound === 'on') {
+    //         soundOn.checked = true;
+    //         soundOff.checked = false;
+    //         musicManager.play(true);
+    //     } else {
+    //         soundOn.checked = false;
+    //         soundOff.checked = true;
+    //     }
 
 
-        soundOn.addEventListener('change', async function() {
-            if (soundOn.checked) {
-                localStorage.setItem('sound', 'on');
-                await musicManager.play(true); // menu music
-            }
-        });
-        soundOff.addEventListener('change', function() {
-            if (soundOff.checked) {
-                localStorage.setItem('sound', 'off');
-                musicManager.stop();
-            }
-        });
-    }
+    //     soundOn.addEventListener('change', async function() {
+    //         if (soundOn.checked) {
+    //             localStorage.setItem('sound', 'on');
+    //             await musicManager.play(true); // menu music
+    //         }
+    //     });
+    //     soundOff.addEventListener('change', function() {
+    //         if (soundOff.checked) {
+    //             localStorage.setItem('sound', 'off');
+    //             musicManager.stop();
+    //         }
+    //     });
+    // }
 
     loadOptions();
 });
@@ -116,26 +116,26 @@ hoverSound.on('loaderror', (id, err) => {
 // Garante desbloqueio do áudio em primeiro input do usuário
 let audioUnlocked = false;
 const tryUnlockAudio = () => {
-        if (audioUnlocked) return;
-        audioUnlocked = true;
-        try { if (Howler && Howler.ctx && Howler.ctx.state === 'suspended') { Howler.ctx.resume(); } } catch(_){}
-        try { hoverSound.load(); } catch(_){}
-        // Prime silencioso para garantir liberação do contexto
-        try {
-            const prevMute = Howler._muted;
-            Howler.mute(true);
-            const id = hoverSound.play();
-            hoverSound.once('play', () => {
-                try { hoverSound.stop(id); } catch(_){}
-                Howler.mute(prevMute || false);
-            });
-        } catch(_){}
-        // remove unlock listeners após sucesso
-        ['pointerdown','click','touchstart','keydown'].forEach(evt => {
-            try { window.removeEventListener(evt, tryUnlockAudio, true); } catch(_){}
+    if (audioUnlocked) return;
+    audioUnlocked = true;
+    try { if (Howler && Howler.ctx && Howler.ctx.state === 'suspended') { Howler.ctx.resume(); } } catch (_) { }
+    try { hoverSound.load(); } catch (_) { }
+    // Prime silencioso para garantir liberação do contexto
+    try {
+        const prevMute = Howler._muted;
+        Howler.mute(true);
+        const id = hoverSound.play();
+        hoverSound.once('play', () => {
+            try { hoverSound.stop(id); } catch (_) { }
+            Howler.mute(prevMute || false);
         });
+    } catch (_) { }
+    // remove unlock listeners após sucesso
+    ['pointerdown', 'click', 'touchstart', 'keydown'].forEach(evt => {
+        try { window.removeEventListener(evt, tryUnlockAudio, true); } catch (_) { }
+    });
 };
-['pointerdown','click','touchstart','keydown'].forEach(evt => {
+['pointerdown', 'click', 'touchstart', 'keydown'].forEach(evt => {
     window.addEventListener(evt, tryUnlockAudio, { capture: true });
 });
 
@@ -191,6 +191,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+
+
 const menuRulesDialog = document.querySelector(".rules")
 const menuOptionsDialog = document.querySelector(".options")
 const menuCreditsDialog = document.querySelector(".credits")
@@ -229,7 +232,7 @@ const resetMenus = () => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    startMusic();
+    // startMusic();
     const jobCards = document.querySelectorAll(".choose-job-card");
     jobCards.forEach(card => {
         try { card.classList.remove("locked"); } catch (e) { /* ignore */ }
@@ -245,9 +248,9 @@ const loop = new Tone.Loop(time => {
     index++;
 }, "0.5s");
 
-    // Iniciar transporte e loop após interação (alguns browsers exigem isso)
-    async function startMusic() {
-      await Tone.start();
-      loop.start(0);
-      Tone.Transport.start();
-    }
+// Iniciar transporte e loop após interação (alguns browsers exigem isso)
+async function startMusic() {
+    await Tone.start();
+    loop.start(0);
+    Tone.Transport.start();
+}

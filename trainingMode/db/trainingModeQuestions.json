@@ -1,0 +1,266 @@
+{
+    "softSkills": [
+        {
+            "id": "ss_001",
+            "category": "Soft Skills",
+            "question": "What is the best example of 'Communication Skills'?",
+            "options": {
+                "a": "A Clear, Concise, and Confident Answer.",
+                "b": "A Confident Answer with a Funny Joke.",
+                "c": "A Clear, Concise, and Confident Answer with a Story.",
+                "d": "A Clear, Concise, and Confident Answer with a Joke."
+            },
+            "correctOption": "a",
+            "explanation": "A clear, concise, and confident answer is the best example of communication skills. It shows that you are able to communicate your ideas and information effectively to different audiences."
+        },
+        {
+            "id": "ss_002",
+            "category": "Soft Skills",
+            "question": "During a project, two teammates have a disagreement that is affecting the team's progress. As the team lead, what is the BEST approach?",
+            "options": {
+                "a": "Ignore the conflict and hope it resolves itself.",
+                "b": "Take sides with the teammate you agree with to move things forward.",
+                "c": "Facilitate a private conversation between both parties to understand their perspectives and find common ground.",
+                "d": "Escalate the issue to upper management immediately."
+            },
+            "correctOption": "c",
+            "explanation": "Effective conflict resolution involves actively listening to both sides, facilitating open dialogue, and guiding the parties toward a mutually acceptable solution. This preserves team morale and maintains forward momentum."
+        },
+        {
+            "id": "ss_003",
+            "category": "Soft Skills",
+            "question": "You receive critical feedback on your work from your manager during a performance review. What is the most professional response?",
+            "options": {
+                "a": "Defend your work immediately and explain why your approach was correct.",
+                "b": "Thank your manager, ask clarifying questions, and create an action plan to improve.",
+                "c": "Agree with everything your manager says to avoid further conflict.",
+                "d": "Request a transfer to another team where your work would be better appreciated."
+            },
+            "correctOption": "b",
+            "explanation": "Receiving feedback gracefully requires emotional intelligence. Acknowledging the feedback, seeking clarification, and proactively planning improvement demonstrates maturity, self-awareness, and a growth mindset."
+        },
+        {
+            "id": "ss_004",
+            "category": "Soft Skills",
+            "question": "Which behavior BEST demonstrates strong 'Active Listening' skills in an interview?",
+            "options": {
+                "a": "Interrupting the interviewer to add relevant points as soon as they come to mind.",
+                "b": "Nodding, maintaining eye contact, paraphrasing the question before answering, and asking for clarification if needed.",
+                "c": "Looking at your notes to prepare a well-structured answer while the interviewer is talking.",
+                "d": "Answering as quickly as possible to show you understood the question."
+            },
+            "correctOption": "b",
+            "explanation": "Active listening means fully concentrating on what is being said. Paraphrasing, maintaining eye contact, and seeking clarification shows the interviewer you are engaged and thoughtful — key traits for any collaborative role."
+        },
+        {
+            "id": "ss_005",
+            "category": "Soft Skills",
+            "question": "Your team is given a tight deadline and the workload is overwhelming. What is the BEST strategy to manage the situation?",
+            "options": {
+                "a": "Work extra hours alone to handle everything yourself.",
+                "b": "Inform your manager immediately that the deadline is impossible.",
+                "c": "Prioritize tasks by impact, delegate where possible, and proactively communicate any risks to stakeholders.",
+                "d": "Deliver whatever is done by the deadline and apologize for the rest later."
+            },
+            "correctOption": "c",
+            "explanation": "Strong time management under pressure involves prioritization, delegation, and transparent communication. Proactively flagging risks allows the team and stakeholders to adapt, which is far more professional than delivering incomplete work without warning."
+        },
+        {
+            "id": "ss_006",
+            "category": "Soft Skills",
+            "question": "What does 'Emotional Intelligence (EQ)' primarily involve in a professional context?",
+            "options": {
+                "a": "Having a high IQ and solving complex problems efficiently.",
+                "b": "Avoiding emotional conversations at work to stay professional.",
+                "c": "Recognizing, understanding, and managing your own emotions and empathizing with others.",
+                "d": "Being cheerful and positive in all situations regardless of how you feel."
+            },
+            "correctOption": "c",
+            "explanation": "Emotional Intelligence encompasses self-awareness, self-regulation, motivation, empathy, and social skills. It allows professionals to navigate complex interpersonal dynamics, build trust, and lead effectively."
+        },
+        {
+            "id": "ss_007",
+            "category": "Soft Skills",
+            "question": "A colleague consistently misses deadlines that affect your work. How should you address this?",
+            "options": {
+                "a": "Complain about the colleague to your manager without speaking to them first.",
+                "b": "Do their work for them to ensure deadlines are met.",
+                "c": "Ignore it; their performance is their manager's responsibility.",
+                "d": "Have a direct and respectful private conversation with the colleague to understand the issue and discuss solutions."
+            },
+            "correctOption": "d",
+            "explanation": "Addressing performance issues directly and privately is the hallmark of professional maturity. It respects the colleague's dignity, encourages accountability, and often resolves the issue before it requires escalation."
+        },
+        {
+            "id": "ss_008",
+            "category": "Soft Skills",
+            "question": "Which answer BEST describes 'adaptability' in the workplace?",
+            "options": {
+                "a": "Always following established processes regardless of new circumstances.",
+                "b": "Willingness to adjust your approach, learn new skills, and remain effective when faced with change or uncertainty.",
+                "c": "Being flexible enough to accept any task without pushing back.",
+                "d": "Changing your opinion to match that of your manager or team."
+            },
+            "correctOption": "b",
+            "explanation": "Adaptability is about resilience and agility — proactively updating your skills and strategies in response to new challenges, changing priorities, or evolving environments, while still maintaining your effectiveness."
+        },
+        {
+            "id": "ss_009",
+            "category": "Soft Skills",
+            "question": "When presenting an idea to a senior stakeholder, what is the MOST important thing to consider?",
+            "options": {
+                "a": "Using as much technical jargon as possible to demonstrate expertise.",
+                "b": "Making the presentation as long and detailed as possible.",
+                "c": "Tailoring the message to your audience's priorities, framing the idea in terms of business impact.",
+                "d": "Presenting every detail of the implementation plan to show thorough preparation."
+            },
+            "correctOption": "c",
+            "explanation": "Senior stakeholders are typically focused on business outcomes, risk, and value. Tailoring your communication to their priorities — rather than focusing on technical details — is a critical leadership and communication skill."
+        },
+        {
+            "id": "ss_010",
+            "category": "Soft Skills",
+            "question": "Which of the following is the BEST example of taking ownership and accountability?",
+            "options": {
+                "a": "Blaming unclear requirements when a project fails to meet expectations.",
+                "b": "Acknowledging your role in a failure, identifying lessons learned, and presenting a plan to prevent recurrence.",
+                "c": "Apologizing repeatedly without providing any concrete next steps.",
+                "d": "Reassigning tasks to team members when you anticipate a challenge."
+            },
+            "correctOption": "b",
+            "explanation": "True accountability means acknowledging mistakes without deflecting blame, extracting actionable lessons, and demonstrating a commitment to improvement. It builds trust and credibility with peers and leadership."
+        }
+    ],
+    "hardSkills": [
+        {
+            "id": "hs_001",
+            "category": "Hard Skills",
+            "question": "In a RESTful API, which HTTP method is MOST appropriate for partially updating an existing resource?",
+            "options": {
+                "a": "PUT",
+                "b": "POST",
+                "c": "PATCH",
+                "d": "DELETE"
+            },
+            "correctOption": "c",
+            "explanation": "PATCH is used for partial updates to a resource, modifying only the specified fields. PUT, by contrast, replaces the entire resource. POST is used for creating new resources, and DELETE for removing them."
+        },
+        {
+            "id": "hs_002",
+            "category": "Hard Skills",
+            "question": "What is the time complexity of a binary search algorithm on a sorted array of N elements?",
+            "options": {
+                "a": "O(N)",
+                "b": "O(N²)",
+                "c": "O(log N)",
+                "d": "O(1)"
+            },
+            "correctOption": "c",
+            "explanation": "Binary search works by repeatedly halving the search space. At each step, half the remaining elements are eliminated, resulting in O(log N) time complexity — far more efficient than linear search O(N) for large datasets."
+        },
+        {
+            "id": "hs_003",
+            "category": "Hard Skills",
+            "question": "Which SQL clause is used to filter records AFTER a GROUP BY aggregation?",
+            "options": {
+                "a": "WHERE",
+                "b": "FILTER",
+                "c": "ORDER BY",
+                "d": "HAVING"
+            },
+            "correctOption": "d",
+            "explanation": "HAVING filters results after aggregation (e.g., after GROUP BY), while WHERE filters rows before aggregation. For example, 'HAVING COUNT(*) > 5' filters groups with more than 5 records."
+        },
+        {
+            "id": "hs_004",
+            "category": "Hard Skills",
+            "question": "What does the 'S' in the SOLID principles stand for, and what does it mean?",
+            "options": {
+                "a": "Scalability Principle — a class should be designed to scale horizontally.",
+                "b": "Single Responsibility Principle — a class should have only one reason to change.",
+                "c": "Separation Principle — business logic should be separated from UI logic.",
+                "d": "Synchronization Principle — shared resources must be synchronized."
+            },
+            "correctOption": "b",
+            "explanation": "The Single Responsibility Principle states that a class or module should have only one job or reason to change. This keeps code modular, easier to test, and less prone to side effects when modified."
+        },
+        {
+            "id": "hs_005",
+            "category": "Hard Skills",
+            "question": "In the context of version control with Git, what does 'git rebase' do?",
+            "options": {
+                "a": "Merges two branches and creates a new merge commit.",
+                "b": "Reverts the repository to a previous commit.",
+                "c": "Moves or replays commits from one branch on top of another, creating a linear history.",
+                "d": "Deletes a remote branch from the repository."
+            },
+            "correctOption": "c",
+            "explanation": "Git rebase re-applies commits from your current branch on top of another base commit, resulting in a cleaner, linear project history. Unlike merge, it avoids extra merge commits but rewrites commit history."
+        },
+        {
+            "id": "hs_006",
+            "category": "Hard Skills",
+            "question": "Which of the following BEST describes a Docker container?",
+            "options": {
+                "a": "A virtual machine with a dedicated operating system kernel.",
+                "b": "A lightweight, standalone executable package that includes everything needed to run a piece of software.",
+                "c": "A cloud storage service for deploying applications.",
+                "d": "A build tool for compiling source code into machine-readable binaries."
+            },
+            "correctOption": "b",
+            "explanation": "A Docker container packages an application along with its runtime, libraries, and dependencies into an isolated, portable unit. Containers share the host OS kernel, making them far more lightweight than traditional virtual machines."
+        },
+        {
+            "id": "hs_007",
+            "category": "Hard Skills",
+            "question": "In JavaScript, what is the difference between '==' and '==='?",
+            "options": {
+                "a": "There is no practical difference; both check value equality.",
+                "b": "'==' checks both value and type; '===' checks only value.",
+                "c": "'==' performs type coercion before comparing values; '===' checks both value and type without coercion.",
+                "d": "'===' is used only for comparing objects, while '==' is used for primitives."
+            },
+            "correctOption": "c",
+            "explanation": "'==' (loose equality) coerces types before comparison, so '2' == 2 is true. '===' (strict equality) requires both value AND type to match, so '2' === 2 is false. Using '===' is generally safer and more predictable."
+        },
+        {
+            "id": "hs_008",
+            "category": "Hard Skills",
+            "question": "What is a 'race condition' in software development?",
+            "options": {
+                "a": "A performance optimization technique to execute tasks in parallel.",
+                "b": "A bug that occurs when the system's behavior depends on the relative timing of events such as thread execution order.",
+                "c": "A design pattern for managing concurrent database transactions.",
+                "d": "A load-testing scenario where multiple users access the same endpoint simultaneously."
+            },
+            "correctOption": "b",
+            "explanation": "A race condition occurs when two or more processes access shared data concurrently and the final outcome depends on the execution order. This can lead to unpredictable, hard-to-reproduce bugs, often requiring locks or atomic operations to prevent."
+        },
+        {
+            "id": "hs_009",
+            "category": "Hard Skills",
+            "question": "What is the PRIMARY purpose of an index in a relational database?",
+            "options": {
+                "a": "To enforce data uniqueness across all columns.",
+                "b": "To compress table data and reduce storage usage.",
+                "c": "To speed up data retrieval queries by providing a faster lookup path.",
+                "d": "To automatically back up table data on every write operation."
+            },
+            "correctOption": "c",
+            "explanation": "A database index is a data structure (commonly a B-tree) that allows the database engine to find rows quickly without scanning the entire table. While indexes improve read performance, they add overhead to write operations."
+        },
+        {
+            "id": "hs_010",
+            "category": "Hard Skills",
+            "question": "Which design pattern defines a one-to-many dependency so that when one object changes state, all its dependents are notified automatically?",
+            "options": {
+                "a": "Singleton",
+                "b": "Factory",
+                "c": "Observer",
+                "d": "Decorator"
+            },
+            "correctOption": "c",
+            "explanation": "The Observer pattern establishes a subject-observer relationship. When the subject's state changes, it automatically notifies all registered observers. This pattern is widely used in event handling systems and reactive frameworks like RxJS."
+        }
+    ]
+}
