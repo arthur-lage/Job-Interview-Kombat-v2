@@ -1,11 +1,10 @@
 // ---------------------------------------------------------------------------
-// RESUME INTEGRATION — detecta topicId da URL
+// RESUME / PROGRESS INTEGRATION — detecta topicId e subModeId da URL
 // ---------------------------------------------------------------------------
 
 function getAudioQuizSubModeId() {
     const params = new URLSearchParams(window.location.search);
-    const topic = params.get('topic');
-    return topic ? topic + '_audio' : null;
+    return params.get('submode') || null;
 }
 
 const game = {
@@ -129,10 +128,19 @@ function showVictoryModal() {
 
     overlay.classList.add('active');
 
-    // Resume Builder: registra vitória neste sub-modo
-    const subModeId = getAudioQuizSubModeId();
+    // Registra vitória neste sub-modo
+    const params = new URLSearchParams(window.location.search);
+    const topic = params.get('topic');
+    const subModeId = params.get('submode');
+
+    // Resume Builder
     if (subModeId && typeof window.markSubModeWon === 'function') {
         window.markSubModeWon(subModeId);
+    }
+
+    // Progress: marca sub-modo como completo para o sistema de desbloqueio
+    if (topic && subModeId && typeof Progress !== 'undefined') {
+        Progress.completeSubMode(topic, subModeId);
     }
 }
 

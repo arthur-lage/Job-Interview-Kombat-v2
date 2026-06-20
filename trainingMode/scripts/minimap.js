@@ -4,6 +4,14 @@
  * Loads gameModes.json, populates the dropdown, and renders
  * submodes as phase nodes on a map when a game mode is selected.
  * Uses HackerNoon Pixel Icon Library classes from icon_class in JSON.
+ *
+ * Sistema de desbloqueio:
+ *   - Game modes: TUTORIAL e PERSONA sempre desbloqueados.
+ *     A partir de INTRODUÇÃO, cada modo requer que TODOS os sub-modos
+ *     do modo anterior estejam completos.
+ *   - Fases (sub-modos): dentro de cada game mode, as fases são sequenciais.
+ *     Vocabulary é sempre desbloqueado. Audio Quiz requer Vocabulary completo.
+ *     Quiz requer Audio Quiz completo. Interview requer Quiz completo.
  */
 
 // --- DOM refs ---
@@ -21,6 +29,9 @@ let gameModes = [];
 let selectedModeId = null;
 let dropdownOpen = false;
 
+/** Índice a partir do qual os game modes ficam bloqueados por progresso (0-based) */
+const FIRST_LOCKED_MODE_INDEX = 2; // introduction é o 3º item (index 2)
+
 // --- Init ---
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -30,6 +41,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (err) {
         console.error('Error loading gameModes:', err);
         return;
+    }
+
+    // Garante que Progress esteja carregado
+    if (typeof Progress !== 'undefined') {
+        Progress.load();
     }
 
     renderDropdown();
@@ -57,16 +73,79 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 });
 
+// --- Game Mode Unlock Logic ---
+
+/**
+ * Verifica se um game mode (pelo seu índice global) está desbloqueado.
+ * - Índices < FIRST_LOCKED_MODE_INDEX: sempre desbloqueado.
+ * - Índices >= FIRST_LOCKED_MODE_INDEX: requer que o modo anterior esteja 100% completo.
+ */
+function isGameModeUnlocked(modeIndex) {
+    if (modeIndex < FIRST_LOCKED_MODE_INDEX) return true;
+    if (typeof Progress === 'undefined') return false;
+
+    const prevMode = gameModes[modeIndex - 1];
+    if (!prevMode) return false;
+
+    const subModeIds = prevMode.subModes.map(s => s.id);
+    return Progress.isGameModeComplete(prevMode.id, subModeIds);
+}
+
+/**
+ * Verifica se uma fase (sub-modo) dentro de um game mode está desbloqueada.
+ * A primeira fase (index 0, Vocabulary) é sempre desbloqueada.
+ * As fases seguintes requerem que a fase anterior esteja completa.
+ */
+function isPhaseUnlocked(mode, phaseIndex) {
+    if (phaseIndex === 0) return true;
+    if (typeof Progress === 'undefined') return false;
+
+    const prevPhase = mode.subModes[phaseIndex - 1];
+    if (!prevPhase) return false;
+
+    return Progress.isSubModeComplete(mode.id, prevPhase.id);
+}
+
+/**
+ * Verifica se uma fase (sub-modo) já foi completada.
+ */
+function isPhaseComplete(mode, subModeId) {
+    if (typeof Progress === 'undefined') return false;
+    return Progress.isSubModeComplete(mode.id, subModeId);
+}
+
 // --- Render dropdown items ---
 function renderDropdown() {
     dropdownMenu.innerHTML = '';
 
-    gameModes.forEach((mode) => {
+    gameModes.forEach((mode, index) => {
+        const unlocked = isGameModeUnlocked(index);
         const item = document.createElement('button');
         item.className = 'dropdown-item';
         item.id = 'dropdown-' + mode.id;
-        item.textContent = mode.name;
-        item.addEventListener('click', () => selectMode(mode));
+
+        if (unlocked) {
+            // Verifica se o modo está 100% completo
+            let isComplete = false;
+            if (typeof Progress !== 'undefined') {
+                const subModeIds = mode.subModes.map(s => s.id);
+                isComplete = Progress.isGameModeComplete(mode.id, subModeIds);
+            }
+
+            item.innerHTML = isComplete
+                ? `<span class="dropdown-complete-icon">✓</span> ${mode.name}`
+                : mode.name;
+
+            if (isComplete) item.classList.add('dropdown-complete');
+
+            item.addEventListener('click', () => selectMode(mode));
+        } else {
+            item.innerHTML = `<i class="hn hn-lock dropdown-lock-icon"></i> ${mode.name}`;
+            item.classList.add('dropdown-locked');
+            item.disabled = true;
+            item.title = 'Complete todos os sub-modos do modo anterior para desbloquear';
+        }
+
         dropdownMenu.appendChild(item);
     });
 }
@@ -113,21 +192,41 @@ function renderPhases(mode) {
     phasesNodes.innerHTML = '';
 
     mode.subModes.forEach((sub, i) => {
-        const node = document.createElement('a');
+        const unlocked = isPhaseUnlocked(mode, i);
+        const completed = isPhaseComplete(mode, sub.id);
+
+        const node = document.createElement(unlocked ? 'a' : 'div');
         node.className = 'phase-node';
-        node.href = sub.link;
         node.id = 'phase-' + sub.id;
 
+        if (unlocked) {
+            node.href = sub.link;
+        } else {
+            node.classList.add('phase-locked');
+        }
+
+        if (completed) {
+            node.classList.add('phase-completed');
+        }
+
         // Use icon_class from JSON (HackerNoon Pixel Icon Library)
-        const iconClass = sub.icon_class || 'hn hn-gamepad-solid';
+        // If locked, show lock icon instead
+        const iconClass = unlocked
+            ? (sub.icon_class || 'hn hn-gamepad-solid')
+            : 'hn hn-lock';
+
+        const completeBadge = completed
+            ? `<span class="phase-complete-badge">✓</span>`
+            : '';
 
         node.innerHTML = `
             <div class="phase-icon">
                 <i class="${iconClass}"></i>
                 <span class="phase-num">${i + 1}</span>
+                ${completeBadge}
             </div>
             <span class="phase-label">${sub.name}</span>
-            <span class="phase-tag">PHASE ${i + 1}</span>
+            <span class="phase-tag">${unlocked ? 'PHASE ' + (i + 1) : '🔒 LOCKED'}</span>
         `;
 
         phasesNodes.appendChild(node);
@@ -156,6 +255,7 @@ function drawPaths() {
         return {
             x: rect.left + rect.width / 2 - containerRect.left,
             y: rect.top + rect.height / 2 - containerRect.top,
+            locked: node.classList.contains('phase-locked'),
         };
     });
 
@@ -174,7 +274,7 @@ function drawPaths() {
 
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', `M ${from.x} ${from.y} Q ${midX} ${midY}, ${to.x} ${to.y}`);
-        path.setAttribute('class', 'path-line');
+        path.setAttribute('class', to.locked ? 'path-line path-line-locked' : 'path-line');
         pathSvg.appendChild(path);
     }
 }

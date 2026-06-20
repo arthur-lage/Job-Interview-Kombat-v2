@@ -319,3 +319,53 @@ body::after {
     animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
 }
+
+/* --- Locked mode items --- */
+.menu-item.locked {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(0.6);
+}
+
+.menu-item.locked:hover {
+    color: white;
+    transform: none;
+}
+
+.menu-item.locked:hover::before {
+    opacity: 0;
+    animation: none;
+}
+
+.mode-lock-icon {
+    font-size: 1.4rem;
+    margin-right: 0.4rem;
+    color: #ff6b6b;
+    vertical-align: middle;
+    display: inline-block;
+    animation: lockPulse 2s ease-in-out infinite;
+}
+
+@keyframes lockPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* --- Completed mode/submode indicators --- */
+.mode-complete-icon,
+.submode-complete-icon {
+    color: #5cff5c;
+    font-weight: 900;
+    margin-right: 0.3rem;
+    font-size: 1.2em;
+    text-shadow: 0 0 8px rgba(92, 255, 92, 0.6);
+}
+
+.menu-item.mode-complete {
+    color: #b8ffb8;
+}
+
+.menu-item.submode-complete {
+    color: #b8ffb8;
+}

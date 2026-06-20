@@ -535,6 +535,141 @@ body::after {
 }
 
 /* ===============================
+   LOCKED PHASES
+   =============================== */
+.phase-node.phase-locked {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.phase-node.phase-locked .phase-icon {
+    background: linear-gradient(145deg, #2a1a3e, #1a0e2e) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow:
+        0 6px 0 #0d0618,
+        0 8px 15px rgba(0, 0, 0, 0.5) !important;
+    opacity: 0.5;
+}
+
+.phase-node.phase-locked .phase-icon i {
+    color: rgba(255, 107, 107, 0.7) !important;
+    animation: lockPulse 2s ease-in-out infinite;
+}
+
+.phase-node.phase-locked .phase-label {
+    color: rgba(255, 255, 255, 0.25);
+    text-shadow: none;
+}
+
+.phase-node.phase-locked .phase-tag {
+    color: rgba(255, 107, 107, 0.5);
+    font-weight: 700;
+}
+
+.phase-node.phase-locked .phase-num {
+    background: #444;
+    color: #888;
+    border-color: #1a0e2e;
+}
+
+.phase-node.phase-locked:hover {
+    transform: none;
+}
+
+.phase-node.phase-locked:hover .phase-icon {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow:
+        0 6px 0 #0d0618,
+        0 8px 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+@keyframes lockPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.9; }
+}
+
+/* ===============================
+   COMPLETED PHASES
+   =============================== */
+.phase-node.phase-completed .phase-icon {
+    border-color: rgba(92, 255, 92, 0.4) !important;
+}
+
+.phase-complete-badge {
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #2ecc40;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #12022B;
+    box-shadow: 0 0 8px rgba(46, 204, 64, 0.5);
+    z-index: 10;
+}
+
+.phase-node.phase-completed .phase-label {
+    color: #b8ffb8;
+}
+
+.phase-node.phase-completed .phase-tag {
+    color: rgba(92, 255, 92, 0.6);
+}
+
+/* ===============================
+   LOCKED PATH LINES
+   =============================== */
+.path-line-locked {
+    stroke: rgba(255, 255, 255, 0.08) !important;
+    filter: none !important;
+    animation: none !important;
+    stroke-dasharray: 6 10 !important;
+}
+
+/* ===============================
+   LOCKED DROPDOWN ITEMS
+   =============================== */
+.dropdown-item.dropdown-locked {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(0.6);
+}
+
+.dropdown-item.dropdown-locked:hover {
+    color: white;
+    background: transparent;
+    transform: none;
+}
+
+.dropdown-lock-icon {
+    font-size: 0.9rem;
+    margin-right: 0.4rem;
+    color: #ff6b6b;
+    vertical-align: middle;
+}
+
+/* ===============================
+   COMPLETED DROPDOWN ITEMS
+   =============================== */
+.dropdown-complete-icon {
+    color: #5cff5c;
+    font-weight: 900;
+    margin-right: 0.3rem;
+    text-shadow: 0 0 6px rgba(92, 255, 92, 0.5);
+}
+
+.dropdown-item.dropdown-complete {
+    color: #b8ffb8;
+}
+
+/* ===============================
    RESPONSIVE
    =============================== */
 @media (max-width: 900px) {
