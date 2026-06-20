@@ -1,11 +1,10 @@
 // ---------------------------------------------------------------------------
-// RESUME INTEGRATION — detecta topicId da URL
+// RESUME / PROGRESS INTEGRATION — detecta topicId e subModeId da URL
 // ---------------------------------------------------------------------------
 
 function getVocabSubModeId() {
     const params = new URLSearchParams(window.location.search);
-    const topic = params.get('topic');
-    return topic ? topic + '_vocab' : null;
+    return params.get('submode') || null;
 }
 
 const descriptionGoButton = document.querySelector("#description-go")
@@ -163,16 +162,25 @@ const setupResultScreen = (correctWords, wrongWords) => {
     gameContainer.classList.remove("active")
     resultsContainer.classList.add("active")
 
-    // Resume Builder: registra vitória se score positivo
+    // Registra vitória se score positivo
     if (game.score > 0) {
-        const subModeId = getVocabSubModeId();
+        const params = new URLSearchParams(window.location.search);
+        const topic = params.get('topic');
+        const subModeId = params.get('submode');
+
+        // Resume Builder
         if (subModeId && typeof window.markSubModeWon === 'function') {
             window.markSubModeWon(subModeId);
+        }
+
+        // Progress: marca sub-modo como completo para o sistema de desbloqueio
+        if (topic && subModeId && typeof Progress !== 'undefined') {
+            Progress.completeSubMode(topic, subModeId);
         }
     }
 
     document.querySelector(".finish-button").addEventListener("click", () => {
-        document.location.href = "../pages/trainingMode.html"
+        document.location.href = "../pages/minimap.html"
     })
 }
 

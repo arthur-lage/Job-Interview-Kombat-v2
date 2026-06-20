@@ -1,7 +1,12 @@
 /**
  * gameModes.js
  * Carrega modos de jogo do JSON, renderiza na página trainingMode.html
- * com paginação e navegação tópicos → sub-modos.
+ * com paginação, navegação tópicos → sub-modos e sistema de desbloqueio progressivo.
+ *
+ * Regra de desbloqueio:
+ *   - Os dois primeiros modos (TUTORIAL GRAMATICA e PERSONA) são sempre desbloqueados.
+ *   - A partir de INTRODUCAO, cada modo só desbloqueia quando TODOS os sub-modos
+ *     do modo anterior foram completados (verificado via Progress).
  */
 
 const ITEMS_PER_PAGE = 4;
@@ -10,6 +15,9 @@ let gameModes = [];
 let currentPage = 0;
 let currentView = "topics"; // "topics" ou "submodes"
 let selectedMode = null;
+
+/** Índice a partir do qual os modos ficam bloqueados por progresso (0-based) */
+const FIRST_LOCKED_INDEX = 2; // introduction é o 3º item (index 2)
 
 const container = document.getElementById("menu-container");
 const pagination = document.getElementById("pagination");
@@ -26,6 +34,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (err) {
         console.error("Erro ao carregar gameModes:", err);
         return;
+    }
+
+    // Garante que Progress esteja carregado
+    if (typeof Progress !== 'undefined') {
+        Progress.load();
     }
 
     renderTopics();
@@ -59,6 +72,22 @@ function renderCurrentView() {
     }
 }
 
+/**
+ * Verifica se um modo (pelo seu índice global) está desbloqueado.
+ * - Índices < FIRST_LOCKED_INDEX: sempre desbloqueado.
+ * - Índices >= FIRST_LOCKED_INDEX: requer que o modo anterior esteja 100% completo.
+ */
+function isModeUnlocked(modeIndex) {
+    if (modeIndex < FIRST_LOCKED_INDEX) return true;
+    if (typeof Progress === 'undefined') return false;
+
+    const prevMode = gameModes[modeIndex - 1];
+    if (!prevMode) return false;
+
+    const subModeIds = prevMode.subModes.map(s => s.id);
+    return Progress.isGameModeComplete(prevMode.id, subModeIds);
+}
+
 function renderTopics() {
     currentView = "topics";
     container.innerHTML = "";
@@ -68,17 +97,41 @@ function renderTopics() {
     const end = Math.min(start + ITEMS_PER_PAGE, gameModes.length);
     const pageItems = gameModes.slice(start, end);
 
-    pageItems.forEach((mode, index) => {
+    pageItems.forEach((mode, localIndex) => {
+        const globalIndex = start + localIndex;
+        const unlocked = isModeUnlocked(globalIndex);
+
         const btn = document.createElement("button");
         btn.className = "menu-item animate-enter";
-        btn.style.animationDelay = `${index * 0.08}s`;
+        btn.style.animationDelay = `${localIndex * 0.08}s`;
         btn.id = "topic-" + mode.id;
-        btn.textContent = mode.name;
-        btn.addEventListener("click", () => {
-            selectedMode = mode;
-            currentPage = 0;
-            renderSubModes(mode);
-        });
+
+        if (unlocked) {
+            // Verifica se o modo está 100% completo para mostrar indicador
+            let isComplete = false;
+            if (typeof Progress !== 'undefined') {
+                const subModeIds = mode.subModes.map(s => s.id);
+                isComplete = Progress.isGameModeComplete(mode.id, subModeIds);
+            }
+
+            btn.innerHTML = isComplete
+                ? `<span class="mode-complete-icon">✓</span> ${mode.name}`
+                : mode.name;
+
+            if (isComplete) btn.classList.add("mode-complete");
+
+            btn.addEventListener("click", () => {
+                selectedMode = mode;
+                currentPage = 0;
+                renderSubModes(mode);
+            });
+        } else {
+            btn.innerHTML = `<i class="hn hn-lock mode-lock-icon"></i> ${mode.name}`;
+            btn.classList.add("locked");
+            btn.disabled = true;
+            btn.title = "Complete todos os sub-modos do modo anterior para desbloquear";
+        }
+
         container.appendChild(btn);
     });
 
@@ -104,7 +157,20 @@ function renderSubModes(mode) {
         link.style.animationDelay = `${index * 0.08}s`;
         link.id = sub.id;
         link.href = sub.link;
-        link.textContent = sub.name;
+
+        // Verifica se este sub-modo já foi completado
+        let isComplete = false;
+        if (typeof Progress !== 'undefined') {
+            isComplete = Progress.isSubModeComplete(mode.id, sub.id);
+        }
+
+        if (isComplete) {
+            link.innerHTML = `<span class="submode-complete-icon">✓</span> ${sub.name}`;
+            link.classList.add("submode-complete");
+        } else {
+            link.textContent = sub.name;
+        }
+
         container.appendChild(link);
     });
 
