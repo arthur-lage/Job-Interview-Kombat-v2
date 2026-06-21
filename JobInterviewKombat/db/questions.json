@@ -74,9 +74,25 @@
         {"question": "Tell me about a case where data analysis led to an unexpected insight."},
         {"question": "Have you ever worked with real-time data pipelines?"},
         {"question": "How do you communicate analysis results to non-technical people?"}
-    ],"tutorial": [
+    ],
+    "hard_skills": [
+        {"question": "Which programming language or technology are you most proficient in? Can you walk me through a project where you used it to solve a real problem?"},
+        {"question": "Explain the difference between REST and GraphQL APIs. When would you choose one over the other?"},
+        {"question": "What is the SOLID principles? Can you explain at least two of them with a practical example?"},
+        {"question": "Describe the concept of microservices architecture. What are its advantages and challenges compared to a monolith?"},
+        {"question": "What is CI/CD? Have you implemented or maintained a CI/CD pipeline? What tools did you use?"},
+        {"question": "Explain Big-O notation. What is the time complexity of binary search and why?"},
+        {"question": "What is a race condition and how do you prevent it in concurrent programming?"},
+        {"question": "How would you design a system that needs to handle 1 million requests per day? Walk me through your architectural decisions."},
+        {"question": "What are Docker and Kubernetes? How do they work together?"},
+        {"question": "Explain the difference between SQL and NoSQL databases. When would you use each?"},
+        {"question": "How do you approach debugging a performance issue in a production system?"},
+        {"question": "What is test-driven development (TDD)? Have you applied it? What are the benefits?"},
+        {"question": "Describe a situation where you identified and resolved significant technical debt. What was your approach?"},
+        {"question": "What are design patterns? Can you describe the Observer and Singleton patterns and their use cases?"},
+        {"question": "How do you stay current with new technologies and industry trends in software development?"}
+    ],
+    "tutorial": [
         {"question": "Why did you quit your last job?"}
     ]
-
-
-}   
+}

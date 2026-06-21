@@ -1,0 +1,609 @@
+/* =====================================================
+   lesson.css — Theory Lesson Reader
+   ===================================================== */
+
+/* --- Override body for lesson page --- */
+body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    gap: 0;
+    min-height: 100vh;
+}
+
+/* --- Header overrides for lesson page --- */
+header {
+    position: relative;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 2px solid rgba(200, 100, 255, 0.2);
+    background: rgba(18, 2, 43, 0.9);
+    backdrop-filter: blur(8px);
+    z-index: 20;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------- */
+/* LESSON INDEX                                       */
+/* -------------------------------------------------- */
+
+.lesson-index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 2rem 4rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.lesson-index-subtitle {
+    font-family: 'PixelOperatorFont', monospace;
+    color: rgba(200, 150, 255, 0.8);
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.lesson-index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.6rem;
+    width: 100%;
+}
+
+.lesson-index-card {
+    background: linear-gradient(135deg, rgba(60, 0, 100, 0.7), rgba(30, 0, 60, 0.9));
+    border: 2px solid rgba(200, 100, 255, 0.3);
+    border-radius: 12px;
+    padding: 1.8rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.lesson-index-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(200, 100, 255, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.lesson-index-card:hover {
+    border-color: rgba(200, 100, 255, 0.7);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(200, 100, 255, 0.25);
+}
+
+.lesson-index-card:hover::before {
+    opacity: 1;
+}
+
+.lesson-index-card.done {
+    border-color: rgba(92, 255, 92, 0.5);
+    background: linear-gradient(135deg, rgba(0, 60, 20, 0.5), rgba(0, 30, 10, 0.8));
+}
+
+.lesson-index-card.done::after {
+    content: '✓';
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    font-size: 1.4rem;
+    color: #5cff5c;
+    text-shadow: 0 0 8px rgba(92, 255, 92, 0.6);
+}
+
+.lesson-card-icon {
+    font-size: 2.4rem;
+}
+
+.lesson-card-category {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.1rem;
+    color: rgba(200, 150, 255, 0.7);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.lesson-card-title {
+    font-family: 'MortalKombat1Font', monospace;
+    font-size: 1.6rem;
+    color: #fdd201;
+    text-shadow: 2px 2px 1px #c93ed8;
+    line-height: 1.2;
+}
+
+.lesson-card-subtitle {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.lesson-index-card-arrow {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.3rem;
+    color: rgba(200, 100, 255, 0.7);
+    margin-top: auto;
+    padding-top: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+.lesson-index-card:hover .lesson-index-card-arrow {
+    transform: translateX(6px);
+    color: #c864ff;
+}
+
+/* -------------------------------------------------- */
+/* LESSON READER                                      */
+/* -------------------------------------------------- */
+
+.lesson-reader {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 1rem 4rem;
+    box-sizing: border-box;
+    gap: 1.5rem;
+}
+
+.lesson-reader.active {
+    display: flex;
+}
+
+.lesson-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.lesson-back-to-index {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.4rem;
+    color: rgba(200, 150, 255, 0.8);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    transition: color 0.15s ease;
+    padding: 0;
+}
+
+.lesson-back-to-index:hover {
+    color: #fdd201;
+}
+
+.lesson-progress-label {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.4rem;
+    color: rgba(200, 150, 255, 0.7);
+}
+
+/* --- Card Wrapper (flip container) --- */
+.lesson-card-wrapper {
+    width: 100%;
+    max-width: 800px;
+    perspective: 1200px;
+}
+
+/* --- The main card --- */
+.lesson-card {
+    background: linear-gradient(160deg, rgba(50, 0, 90, 0.95), rgba(20, 0, 50, 0.98));
+    border: 2px solid rgba(200, 100, 255, 0.35);
+    border-radius: 16px;
+    padding: 2.5rem 2.5rem 2rem;
+    box-shadow: 0 12px 50px rgba(100, 0, 200, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+.lesson-card.slide-out-left {
+    transform: translateX(-60px);
+    opacity: 0;
+}
+
+.lesson-card.slide-out-right {
+    transform: translateX(60px);
+    opacity: 0;
+}
+
+.lesson-card.slide-in {
+    animation: slideInCard 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInCard {
+    from { transform: translateX(40px); opacity: 0; }
+    to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* Decorative corner glow */
+.lesson-card::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(200, 100, 255, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+/* --- Card Header --- */
+.lesson-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(200, 100, 255, 0.2);
+}
+
+.lesson-icon {
+    font-size: 3.2rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.lesson-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.lesson-category {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.1rem;
+    color: rgba(200, 150, 255, 0.7);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.lesson-title {
+    font-family: 'MortalKombat1Font', monospace;
+    font-size: 2.2rem;
+    color: #fdd201;
+    text-shadow: 2px 2px 1px #c93ed8;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.lesson-subtitle {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+}
+
+/* --- Intro paragraph --- */
+.lesson-intro {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+/* --- Sections --- */
+.lesson-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.lesson-section {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(200, 100, 255, 0.18);
+    border-radius: 10px;
+    padding: 1.4rem 1.6rem;
+    position: relative;
+}
+
+.lesson-section-heading {
+    font-family: 'MortalKombat1Font', monospace;
+    font-size: 1.5rem;
+    color: #c864ff;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.08em;
+}
+
+.lesson-section-text {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.lesson-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.lesson-example {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.88);
+    background: rgba(200, 100, 255, 0.08);
+    border-left: 3px solid rgba(200, 100, 255, 0.5);
+    padding: 0.5rem 0.9rem;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.4;
+}
+
+.lesson-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    background: rgba(253, 210, 1, 0.08);
+    border: 1px solid rgba(253, 210, 1, 0.3);
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    margin-top: 0.5rem;
+}
+
+.lesson-tip-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.lesson-tip-text {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.2rem;
+    color: #fdd201;
+    line-height: 1.4;
+}
+
+/* --- Card Navigation --- */
+.lesson-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(200, 100, 255, 0.15);
+}
+
+.lesson-nav-btn {
+    font-family: 'MortalKombat1Font', monospace;
+    font-size: 1.4rem;
+    color: white;
+    background: transparent;
+    border: 2px solid rgba(200, 100, 255, 0.4);
+    border-radius: 8px;
+    padding: 0.6rem 1.4rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    letter-spacing: 0.05em;
+}
+
+.lesson-nav-btn:hover:not(:disabled) {
+    border-color: #fdd201;
+    color: #fdd201;
+    transform: scale(1.05);
+}
+
+.lesson-nav-btn:disabled {
+    opacity: 0.25;
+    cursor: default;
+}
+
+.lesson-dots {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.lesson-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(200, 100, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(200, 100, 255, 0.5);
+}
+
+.lesson-dot.active {
+    background: #fdd201;
+    border-color: #fdd201;
+    box-shadow: 0 0 8px rgba(253, 210, 1, 0.6);
+    transform: scale(1.2);
+}
+
+.lesson-dot.completed {
+    background: #5cff5c;
+    border-color: #5cff5c;
+}
+
+/* --- Done button --- */
+.lesson-done-btn {
+    font-family: 'MortalKombat1Font', monospace;
+    font-size: 1.6rem;
+    color: #12022B;
+    background: linear-gradient(135deg, #fdd201, #e0b800);
+    border: none;
+    border-radius: 10px;
+    padding: 0.9rem 2.5rem;
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px rgba(253, 210, 1, 0.3);
+}
+
+.lesson-done-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 28px rgba(253, 210, 1, 0.5);
+}
+
+.lesson-done-btn.already-done {
+    background: linear-gradient(135deg, #5cff5c, #3fcc3f);
+    box-shadow: 0 4px 20px rgba(92, 255, 92, 0.3);
+}
+
+/* -------------------------------------------------- */
+/* COMPLETION OVERLAY                                 */
+/* -------------------------------------------------- */
+
+.lesson-complete-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 0, 25, 0.92);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(6px);
+}
+
+.lesson-complete-overlay.active {
+    display: flex;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.lesson-complete-modal {
+    background: linear-gradient(160deg, rgba(50, 0, 90, 0.97), rgba(20, 0, 50, 0.99));
+    border: 2px solid rgba(200, 100, 255, 0.5);
+    border-radius: 20px;
+    padding: 3rem 3.5rem;
+    max-width: 500px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: center;
+    box-shadow: 0 20px 80px rgba(100, 0, 200, 0.4);
+    animation: popIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+
+.lesson-complete-icon {
+    font-size: 5rem;
+}
+
+.lesson-complete-title {
+    font-family: 'MortalKombat1Font', monospace;
+    font-size: 2.4rem;
+    color: #fdd201;
+    text-shadow: 2px 2px 1px #c93ed8;
+    margin: 0;
+}
+
+.lesson-complete-sub {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.lesson-complete-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin: 0.5rem 0;
+}
+
+.lesson-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.lesson-stat-num {
+    font-family: 'MortalKombat1Font', monospace;
+    font-size: 3rem;
+    color: #5cff5c;
+    text-shadow: 0 0 12px rgba(92, 255, 92, 0.5);
+}
+
+.lesson-stat-label {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.1rem;
+    color: rgba(200, 150, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.lesson-complete-back {
+    font-family: 'MortalKombat1Font', monospace;
+    font-size: 1.6rem;
+    color: #12022B;
+    background: linear-gradient(135deg, #fdd201, #e0b800);
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 2.5rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px rgba(253, 210, 1, 0.3);
+}
+
+.lesson-complete-back:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 28px rgba(253, 210, 1, 0.5);
+}
+
+/* -------------------------------------------------- */
+/* OPTIONAL BADGE (for minimap)                       */
+/* -------------------------------------------------- */
+
+.badge-optional {
+    display: inline-block;
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 0.9rem;
+    color: #fdd201;
+    background: rgba(253, 210, 1, 0.15);
+    border: 1px solid rgba(253, 210, 1, 0.4);
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    letter-spacing: 0.08em;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE                                         */
+/* -------------------------------------------------- */
+
+@media (max-width: 600px) {
+    .lesson-card {
+        padding: 1.8rem 1.4rem 1.5rem;
+    }
+
+    .lesson-title {
+        font-size: 1.7rem;
+    }
+
+    .lesson-nav-btn {
+        font-size: 1.1rem;
+        padding: 0.5rem 0.9rem;
+    }
+
+    .lesson-index-grid {
+        grid-template-columns: 1fr;
+    }
+}

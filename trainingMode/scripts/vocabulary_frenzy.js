@@ -7,6 +7,11 @@ function getVocabSubModeId() {
     return params.get('submode') || null;
 }
 
+function getTopicId() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('topic') || null;
+}
+
 const descriptionGoButton = document.querySelector("#description-go")
 const descriptionMenu = document.querySelector(".mode-description")
 const descriptionMenuTimer = document.querySelector("#description-time")
@@ -17,7 +22,8 @@ const gameCards = document.querySelector(".game-cards")
 
 const resultsContainer = document.querySelector(".result-container")
 
-const THEMES = [{
+// THEMES padrão (usados como fallback e para selecionar o tema do jogo)
+const DEFAULT_THEMES = [{
     type: 'soft_skills',
     text: "Soft Skills"
 }, {
@@ -28,24 +34,48 @@ const THEMES = [{
 const game = {
     score: 0,
     scoreMultiplier: 10,
-    theme: THEMES[Math.floor(Math.random() * THEMES.length)],
+    theme: null, // definido dinamicamente após carregar o vocabulário
     vocabularyData: null,
     chosenVocabulary: [],
     timer: {
         default: 30,
         current: 30
     },
-    chooseVocabulary: async (totalCount = 10) => {
+    chooseVocabulary: async (totalCount = 16) => {
         const response = await fetch('../db/vocabulary_frenzy.json')
         const data = await response.json()
 
+        const topicId = getTopicId()
+
+        let wordList = []
+
+        if (Array.isArray(data)) {
+            // Formato antigo (array plano) — compatibilidade
+            wordList = data
+        } else if (topicId && data[topicId]) {
+            // Tópico específico encontrado (novo formato por objeto)
+            wordList = data[topicId]
+        } else {
+            // Sem tópico: mistura tudo
+            wordList = Object.values(data).flat()
+        }
+
+        // Agrupa por tipo
         const groups = {}
-        data.forEach(item => {
+        wordList.forEach(item => {
             if (!groups[item.type]) groups[item.type] = []
             groups[item.type].push(item)
         })
 
         const types = Object.keys(groups)
+
+        // Define o THEME para o jogo baseado nos tipos disponíveis
+        const themeType = types[Math.floor(Math.random() * types.length)]
+        game.theme = {
+            type: themeType,
+            text: themeType.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+        }
+
         const perTypeCount = Math.floor(totalCount / types.length)
 
         const selected = []
@@ -74,7 +104,10 @@ const game = {
     },
 
     start: async () => {
-        await game.chooseVocabulary(16)
+        // Só recarrega se o vocabulário ainda não foi carregado pelo setupDescriptionMenu
+        if (!game.vocabularyData || game.vocabularyData.length === 0) {
+            await game.chooseVocabulary(16)
+        }
         game.createCards()
         game.startTimer()
     },
@@ -208,9 +241,12 @@ descriptionGoButton.addEventListener("click", () => {
     }, 500);
 })
 
-const setupDescriptionMenu = () => {
+const setupDescriptionMenu = async () => {
+    // Pré-carrega o vocabulário para que game.theme esteja disponível
+    await game.chooseVocabulary(16)
+
     descriptionMenuTimer.textContent = game.timer.default
-    descriptionMenuTheme.textContent = game.theme.text
+    descriptionMenuTheme.textContent = game.theme ? game.theme.text : '—'
 
     setTimeout(() => {
         descriptionMenu.classList.add("active")

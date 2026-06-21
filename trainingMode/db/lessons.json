@@ -1,0 +1,251 @@
+{
+    "tutorial_grammar": [
+        {
+            "id": "tg_lesson_001",
+            "title": "Verb Tenses in Interviews",
+            "subtitle": "When to use each tense",
+            "category": "Grammar Essentials",
+            "icon": "🕐",
+            "content": "Choosing the right verb tense tells the interviewer WHERE in time your experience happened. Using the wrong tense creates confusion and makes you sound unprepared.",
+            "sections": [
+                {
+                    "heading": "Simple Past",
+                    "text": "Use for completed actions at a previous job.",
+                    "examples": [
+                        "I led a team of five engineers.",
+                        "I reduced deployment time by 40%.",
+                        "I built the authentication system from scratch."
+                    ],
+                    "tip": "If the job is over → Simple Past."
+                },
+                {
+                    "heading": "Simple Present",
+                    "text": "Use for your current role and general truths.",
+                    "examples": [
+                        "I manage three ongoing projects.",
+                        "I work closely with the design team.",
+                        "I specialize in backend development."
+                    ],
+                    "tip": "Current job → Simple Present."
+                },
+                {
+                    "heading": "Present Perfect",
+                    "text": "Use when experience started in the past but is still relevant now.",
+                    "examples": [
+                        "I have worked with cloud systems for 4 years.",
+                        "I have led multiple successful product launches.",
+                        "I have always been passionate about clean code."
+                    ],
+                    "tip": "Experience that spans until now → Present Perfect."
+                }
+            ]
+        },
+        {
+            "id": "tg_lesson_002",
+            "title": "Formal vs. Informal Language",
+            "subtitle": "Sound professional, not casual",
+            "category": "Grammar Essentials",
+            "icon": "🎩",
+            "content": "Interviews are formal contexts. Using casual language signals a lack of professionalism. Small word choices make a big difference in how you are perceived.",
+            "sections": [
+                {
+                    "heading": "Word Choices",
+                    "text": "Replace casual words with professional equivalents.",
+                    "examples": [
+                        "❌ I did some stuff with Python → ✅ I developed data pipelines using Python.",
+                        "❌ My boss told me to fix it → ✅ My manager requested a solution.",
+                        "❌ It was pretty good → ✅ The outcome was highly effective.",
+                        "❌ I worked on a lot of things → ✅ I managed multiple concurrent responsibilities."
+                    ],
+                    "tip": "Avoid: stuff, things, a lot, pretty, basically, kind of."
+                },
+                {
+                    "heading": "Contractions",
+                    "text": "In formal speech, avoiding contractions sounds more polished.",
+                    "examples": [
+                        "❌ I don't have experience with X, but I'm a fast learner.",
+                        "✅ I do not have direct experience with X, but I am a quick learner."
+                    ],
+                    "tip": "In interviews, natural speech with some contractions is fine — the key is avoiding slang."
+                },
+                {
+                    "heading": "Filler Words",
+                    "text": "Filler words make you sound uncertain and unprepared.",
+                    "examples": [
+                        "❌ So, um... I was like, basically working on this thing...",
+                        "✅ [pause] In my previous role, I was responsible for..."
+                    ],
+                    "tip": "A confident pause is better than 'um', 'uh', 'like', or 'you know'."
+                }
+            ]
+        },
+        {
+            "id": "tg_lesson_003",
+            "title": "Quantifying Achievements",
+            "subtitle": "Turn vague answers into powerful ones",
+            "category": "Impact Language",
+            "icon": "📊",
+            "content": "Numbers make your answers concrete and credible. An answer with data is always more persuasive than one without. This is one of the highest-impact skills for English interviews.",
+            "sections": [
+                {
+                    "heading": "The Formula",
+                    "text": "Action Verb + What You Did + Result with a Number",
+                    "examples": [
+                        "Reduced API response time by 65% through query optimization.",
+                        "Increased team sprint velocity by 20% by introducing async standups.",
+                        "Delivered the project 3 weeks ahead of schedule, saving $40,000.",
+                        "Onboarded and mentored 4 junior developers within 6 months."
+                    ],
+                    "tip": "Can't remember exact numbers? Use approximations: 'approximately', 'roughly', 'around 30%'."
+                },
+                {
+                    "heading": "Strong Action Verbs",
+                    "text": "Start your achievements with powerful verbs — not weak ones.",
+                    "examples": [
+                        "❌ Helped with → ✅ Led / Spearheaded / Orchestrated",
+                        "❌ Worked on → ✅ Developed / Built / Implemented / Engineered",
+                        "❌ Was responsible for → ✅ Managed / Owned / Oversaw / Directed",
+                        "❌ Did some improvements → ✅ Optimized / Streamlined / Refactored / Reduced"
+                    ],
+                    "tip": "Your resume and interview answers should start sentences with strong past-tense verbs."
+                }
+            ]
+        },
+        {
+            "id": "tg_lesson_004",
+            "title": "The STAR Method",
+            "subtitle": "How to structure behavioral answers",
+            "category": "Answer Structure",
+            "icon": "⭐",
+            "content": "STAR is the most effective structure for answering behavioral interview questions ('Tell me about a time when...'). It turns rambling answers into clear, compelling stories.",
+            "sections": [
+                {
+                    "heading": "S — Situation",
+                    "text": "Set the scene. Give just enough context — don't over-explain.",
+                    "examples": [
+                        "\"We were three weeks from the product launch and our lead backend developer unexpectedly resigned.\""
+                    ],
+                    "tip": "Keep Situation brief — 1-2 sentences max."
+                },
+                {
+                    "heading": "T — Task",
+                    "text": "Define YOUR specific responsibility in that situation.",
+                    "examples": [
+                        "\"As the senior developer, I was responsible for either covering the missing work or quickly onboarding a replacement.\""
+                    ],
+                    "tip": "Use 'I', not 'we'. The interviewer wants to know YOUR role."
+                },
+                {
+                    "heading": "A — Action",
+                    "text": "Describe exactly what YOU did. This is the most important part.",
+                    "examples": [
+                        "\"I immediately audited the outstanding tasks, reprioritized the backlog with the PM, took on the core API work myself, and requested a contractor to cover the remaining frontend tasks.\""
+                    ],
+                    "tip": "The more specific the action, the more credible and impressive the answer."
+                },
+                {
+                    "heading": "R — Result",
+                    "text": "Quantify the outcome. What changed because of your actions?",
+                    "examples": [
+                        "\"We launched on time, with all core features complete. The product achieved 500 signups in the first week.\""
+                    ],
+                    "tip": "If you don't have a number, describe the qualitative impact: 'the team's morale improved significantly'."
+                }
+            ]
+        },
+        {
+            "id": "tg_lesson_005",
+            "title": "Professional Phrases Toolkit",
+            "subtitle": "Ready-made phrases for any interview moment",
+            "category": "Interview Toolkit",
+            "icon": "🛠️",
+            "content": "Having a set of professional phrases ready helps you buy time, sound confident, and pivot gracefully in any interview situation.",
+            "sections": [
+                {
+                    "heading": "Buying Time",
+                    "text": "Use these when you need a moment to think.",
+                    "examples": [
+                        "\"That's a great question — let me think for a moment.\"",
+                        "\"Could I take a second to organize my thoughts?\"",
+                        "\"I want to make sure I give you a complete answer...\""
+                    ],
+                    "tip": "A thoughtful pause sounds far better than a rushed, incoherent answer."
+                },
+                {
+                    "heading": "Asking for Clarification",
+                    "text": "Use these when you are unsure about the question.",
+                    "examples": [
+                        "\"Could you elaborate a bit more on what you mean by...?\"",
+                        "\"Just to make sure I understand — are you asking about X or Y?\"",
+                        "\"Would it be helpful if I focused on a specific example?\""
+                    ],
+                    "tip": "Asking for clarification is a sign of intelligence, not confusion."
+                },
+                {
+                    "heading": "Transitioning Between Points",
+                    "text": "Connect your ideas smoothly.",
+                    "examples": [
+                        "\"Building on that point...\"",
+                        "\"Another relevant example would be...\"",
+                        "\"To put that in context...\"",
+                        "\"What's particularly relevant here is...\""
+                    ],
+                    "tip": "Avoid: 'And also', 'Like I said', 'So yeah'. Use connectors that flow naturally."
+                },
+                {
+                    "heading": "Closing Strong",
+                    "text": "Phrases to wrap up your answer confidently.",
+                    "examples": [
+                        "\"Ultimately, the outcome demonstrated that...\"",
+                        "\"Looking back, the key lesson was...\"",
+                        "\"That experience reinforced my belief that...\""
+                    ],
+                    "tip": "A strong closing signals self-awareness and reflection — qualities interviewers love."
+                }
+            ]
+        },
+        {
+            "id": "tg_lesson_006",
+            "title": "Pronunciation & Clarity",
+            "subtitle": "Being understood is as important as what you say",
+            "category": "Spoken English",
+            "icon": "🎙️",
+            "content": "In a professional English interview, clarity of speech matters enormously. Even with accent, a clear, paced, and confident delivery is respected worldwide.",
+            "sections": [
+                {
+                    "heading": "Pace",
+                    "text": "Most non-native speakers speak too fast when nervous. Slow down.",
+                    "examples": [
+                        "Pause between sentences — it gives weight to your words.",
+                        "Breathe. A calm breath before answering signals confidence.",
+                        "Rushing makes you seem nervous; pausing makes you seem thoughtful."
+                    ],
+                    "tip": "Record yourself answering a practice question. Play it back. Are you rushing?"
+                },
+                {
+                    "heading": "Key Technical Terms",
+                    "text": "Pronounce technical terms correctly — interviewers notice.",
+                    "examples": [
+                        "Agile → /ˈædʒ.aɪl/ (not 'ah-JILE')",
+                        "Cache → /kæʃ/ (like 'cash')",
+                        "Queue → /kjuː/ (like 'cue')",
+                        "Schema → /ˈskiː.mə/ (SKEE-ma)",
+                        "SQL → 'ess-queue-ell' or 'sequel' (both are acceptable)"
+                    ],
+                    "tip": "When in doubt, listen to native speakers say the term on YouTube."
+                },
+                {
+                    "heading": "Confidence Signals",
+                    "text": "Non-verbal cues in a video or in-person interview.",
+                    "examples": [
+                        "Eye contact — look at the camera (not your own image) in video calls.",
+                        "Posture — sit upright; it actually improves how you sound.",
+                        "Smile at the beginning — it immediately sets a positive tone.",
+                        "Nod while the interviewer speaks — shows active engagement."
+                    ],
+                    "tip": "Your body language communicates as much as your words."
+                }
+            ]
+        }
+    ]
+}

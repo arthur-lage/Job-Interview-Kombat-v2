@@ -16,8 +16,7 @@ let currentPage = 0;
 let currentView = "topics"; // "topics" ou "submodes"
 let selectedMode = null;
 
-/** Índice a partir do qual os modos ficam bloqueados por progresso (0-based) */
-const FIRST_LOCKED_INDEX = 2; // introduction é o 3º item (index 2)
+/** Travas reativadas. Módulos opcionais são ignorados ao calcular pré-requisitos. */
 
 const container = document.getElementById("menu-container");
 const pagination = document.getElementById("pagination");
@@ -73,17 +72,30 @@ function renderCurrentView() {
 }
 
 /**
- * Verifica se um modo (pelo seu índice global) está desbloqueado.
- * - Índices < FIRST_LOCKED_INDEX: sempre desbloqueado.
- * - Índices >= FIRST_LOCKED_INDEX: requer que o modo anterior esteja 100% completo.
+ * Encontra o índice do último módulo obrigatório antes de `modeIndex`.
+ */
+function prevRequiredIndex(modeIndex) {
+    for (let i = modeIndex - 1; i >= 0; i--) {
+        if (!gameModes[i].optional) return i;
+    }
+    return -1;
+}
+
+/**
+ * Verifica se um modo está desbloqueado.
+ * - Opcionais: sempre desbloqueados.
+ * - Obrigatórios: requerem que o anterior obrigatório esteja 100% completo.
  */
 function isModeUnlocked(modeIndex) {
-    if (modeIndex < FIRST_LOCKED_INDEX) return true;
+    const mode = gameModes[modeIndex];
+    if (!mode) return false;
+    if (mode.optional) return true;
+
+    const prevIdx = prevRequiredIndex(modeIndex);
+    if (prevIdx === -1) return true;
+
     if (typeof Progress === 'undefined') return false;
-
-    const prevMode = gameModes[modeIndex - 1];
-    if (!prevMode) return false;
-
+    const prevMode = gameModes[prevIdx];
     const subModeIds = prevMode.subModes.map(s => s.id);
     return Progress.isGameModeComplete(prevMode.id, subModeIds);
 }

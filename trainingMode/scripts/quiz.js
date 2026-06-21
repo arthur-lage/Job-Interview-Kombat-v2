@@ -1,10 +1,6 @@
-// ---------------------------------------------------------------------------
-// RESUME / PROGRESS INTEGRATION — detecta topicId e subModeId da URL
-// ---------------------------------------------------------------------------
-
-function getQuizSubModeId() {
+function getTopicId() {
     const params = new URLSearchParams(window.location.search);
-    return params.get('submode') || null;
+    return params.get('topic') || null;
 }
 
 function pickRandom(arr, count) {
@@ -19,10 +15,27 @@ function toSentenceCase(str) {
 }
 
 function createSession(bank, { softSkills = 5, hardSkills = 2 } = {}) {
+    const topicId = getTopicId();
+
+    let topicBank = null;
+
+    if (topicId && bank[topicId]) {
+        // Tópico específico encontrado
+        topicBank = bank[topicId];
+    } else if (bank.softSkills || bank.hardSkills) {
+        // Formato antigo (flat) — compatibilidade
+        topicBank = bank;
+    } else {
+        // Sem tópico: mistura questões de todos os tópicos
+        const allSoft = Object.values(bank).flatMap(t => t.softSkills || []);
+        const allHard = Object.values(bank).flatMap(t => t.hardSkills || []);
+        topicBank = { softSkills: allSoft, hardSkills: allHard };
+    }
+
     const selected = [
-        ...pickRandom(bank.softSkills, softSkills),
-        ...pickRandom(bank.hardSkills, hardSkills)
-    ].sort(() => Math.random() - 0.5); // embaralha a lista final
+        ...pickRandom(topicBank.softSkills || [], softSkills),
+        ...pickRandom(topicBank.hardSkills || [], hardSkills)
+    ].sort(() => Math.random() - 0.5);
 
     return {
         questions: selected,

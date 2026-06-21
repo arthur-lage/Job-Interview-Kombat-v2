@@ -29,8 +29,7 @@ let gameModes = [];
 let selectedModeId = null;
 let dropdownOpen = false;
 
-/** Índice a partir do qual os game modes ficam bloqueados por progresso (0-based) */
-const FIRST_LOCKED_MODE_INDEX = 2; // introduction é o 3º item (index 2)
+/** Travas reativadas. Módulos opcionais são ignorados ao calcular pré-requisitos. */
 
 // --- Init ---
 document.addEventListener('DOMContentLoaded', async () => {
@@ -76,25 +75,39 @@ document.addEventListener('DOMContentLoaded', async () => {
 // --- Game Mode Unlock Logic ---
 
 /**
- * Verifica se um game mode (pelo seu índice global) está desbloqueado.
- * - Índices < FIRST_LOCKED_MODE_INDEX: sempre desbloqueado.
- * - Índices >= FIRST_LOCKED_MODE_INDEX: requer que o modo anterior esteja 100% completo.
+ * Encontra o índice do último módulo obrigatório antes de `modeIndex`.
+ * Módulos com optional:true são ignorados.
+ */
+function prevRequiredIndex(modeIndex) {
+    for (let i = modeIndex - 1; i >= 0; i--) {
+        if (!gameModes[i].optional) return i;
+    }
+    return -1; // nenhum obrigatório antes
+}
+
+/**
+ * Verifica se um game mode está desbloqueado.
+ * - Módulos opcionais: sempre desbloqueados.
+ * - Módulos obrigatórios: requerem que o anterior obrigatório esteja 100% completo.
  */
 function isGameModeUnlocked(modeIndex) {
-    if (modeIndex < FIRST_LOCKED_MODE_INDEX) return true;
+    const mode = gameModes[modeIndex];
+    if (!mode) return false;
+    if (mode.optional) return true; // opcionais sempre livres
+
+    const prevIdx = prevRequiredIndex(modeIndex);
+    if (prevIdx === -1) return true; // nenhum obrigatório antes → livre
+
     if (typeof Progress === 'undefined') return false;
-
-    const prevMode = gameModes[modeIndex - 1];
-    if (!prevMode) return false;
-
+    const prevMode = gameModes[prevIdx];
     const subModeIds = prevMode.subModes.map(s => s.id);
     return Progress.isGameModeComplete(prevMode.id, subModeIds);
 }
 
 /**
  * Verifica se uma fase (sub-modo) dentro de um game mode está desbloqueada.
- * A primeira fase (index 0, Vocabulary) é sempre desbloqueada.
- * As fases seguintes requerem que a fase anterior esteja completa.
+ * A primeira fase é sempre desbloqueada.
+ * As seguintes requerem que a fase anterior esteja completa.
  */
 function isPhaseUnlocked(mode, phaseIndex) {
     if (phaseIndex === 0) return true;
@@ -124,6 +137,10 @@ function renderDropdown() {
         item.className = 'dropdown-item';
         item.id = 'dropdown-' + mode.id;
 
+        const optionalBadge = mode.optional
+            ? `<span class="badge-optional">OPTIONAL</span>`
+            : '';
+
         if (unlocked) {
             // Verifica se o modo está 100% completo
             let isComplete = false;
@@ -133,14 +150,14 @@ function renderDropdown() {
             }
 
             item.innerHTML = isComplete
-                ? `<span class="dropdown-complete-icon">✓</span> ${mode.name}`
-                : mode.name;
+                ? `<span class="dropdown-complete-icon">✓</span> ${mode.name}${optionalBadge}`
+                : `${mode.name}${optionalBadge}`;
 
             if (isComplete) item.classList.add('dropdown-complete');
 
             item.addEventListener('click', () => selectMode(mode));
         } else {
-            item.innerHTML = `<i class="hn hn-lock dropdown-lock-icon"></i> ${mode.name}`;
+            item.innerHTML = `<i class="hn hn-lock dropdown-lock-icon"></i> ${mode.name}${optionalBadge}`;
             item.classList.add('dropdown-locked');
             item.disabled = true;
             item.title = 'Complete todos os sub-modos do modo anterior para desbloquear';

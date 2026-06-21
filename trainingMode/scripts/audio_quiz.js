@@ -311,7 +311,24 @@ async function init() {
             throw new Error(`Erro ao carregar perguntas: ${res.status}`);
         }
 
-        const questions = await res.json();
+        const data = await res.json();
+
+        // Detecta ?topic= da URL
+        const params = new URLSearchParams(window.location.search);
+        const topicId = params.get('topic');
+
+        let questions;
+
+        if (Array.isArray(data)) {
+            // Formato antigo (array plano) — compatibilidade
+            questions = data;
+        } else if (topicId && data[topicId]) {
+            // Tópico específico encontrado no novo formato (objeto por tópico)
+            questions = data[topicId];
+        } else {
+            // Sem tópico ou tópico não encontrado: mistura tudo
+            questions = Object.values(data).flat();
+        }
 
         const shuffled = [...questions]
             .sort(() => Math.random() - 0.5);

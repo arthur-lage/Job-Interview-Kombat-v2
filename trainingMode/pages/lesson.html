@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Lessons — Training Mode</title>
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/global.css">
+    <link rel="stylesheet" href="../styles/trainingMode.css">
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/fonts.css">
+    <link rel="stylesheet" href="../styles/lesson.css">
+</head>
+
+<body>
+    <div class="training-mode-background"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="../pages/minimap.html" id="back-btn" aria-label="Back to minimap">
+            <img src="../../JobInterviewKombat/assets/images/arrow-back.png" alt="Back" width="40">
+        </a>
+        <h1 id="lesson-module-title">GRAMMAR</h1>
+    </header>
+
+    <!-- Lesson Index Screen -->
+    <div class="lesson-index" id="lesson-index">
+        <p class="lesson-index-subtitle">Choose a lesson to start</p>
+        <div class="lesson-index-grid" id="lesson-index-grid"></div>
+    </div>
+
+    <!-- Lesson Reader Screen -->
+    <div class="lesson-reader" id="lesson-reader">
+
+        <!-- Top bar -->
+        <div class="lesson-topbar">
+            <button class="lesson-back-to-index" id="lesson-back-to-index" aria-label="Back to lesson list">
+                ← LESSONS
+            </button>
+            <span class="lesson-progress-label" id="lesson-progress-label">1 / 6</span>
+        </div>
+
+        <!-- Card -->
+        <div class="lesson-card-wrapper">
+            <div class="lesson-card" id="lesson-card">
+
+                <!-- Card Header -->
+                <div class="lesson-card-header">
+                    <span class="lesson-icon" id="lesson-icon">📖</span>
+                    <div class="lesson-card-meta">
+                        <span class="lesson-category" id="lesson-category">Grammar</span>
+                        <h2 class="lesson-title" id="lesson-title">Verb Tenses</h2>
+                        <p class="lesson-subtitle" id="lesson-subtitle">When to use each tense</p>
+                    </div>
+                </div>
+
+                <!-- Intro content -->
+                <p class="lesson-intro" id="lesson-intro"></p>
+
+                <!-- Sections -->
+                <div class="lesson-sections" id="lesson-sections"></div>
+
+                <!-- Navigation -->
+                <div class="lesson-nav">
+                    <button class="lesson-nav-btn" id="lesson-prev-btn" aria-label="Previous lesson">← PREV</button>
+                    <div class="lesson-dots" id="lesson-dots"></div>
+                    <button class="lesson-nav-btn" id="lesson-next-btn" aria-label="Next lesson">NEXT →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mark as done -->
+        <button class="lesson-done-btn" id="lesson-done-btn">✓ MARK AS DONE</button>
+
+    </div>
+
+    <!-- Completion overlay -->
+    <div class="lesson-complete-overlay" id="lesson-complete-overlay">
+        <div class="lesson-complete-modal">
+            <div class="lesson-complete-icon">🎓</div>
+            <h2 class="lesson-complete-title">All Lessons Complete!</h2>
+            <p class="lesson-complete-sub">You've studied all the grammar lessons in this module.</p>
+            <div class="lesson-complete-stats">
+                <div class="lesson-stat">
+                    <span class="lesson-stat-num" id="stat-done">0</span>
+                    <span class="lesson-stat-label">Lessons Done</span>
+                </div>
+                <div class="lesson-stat">
+                    <span class="lesson-stat-num" id="stat-total">0</span>
+                    <span class="lesson-stat-label">Total Lessons</span>
+                </div>
+            </div>
+            <button class="lesson-complete-back" onclick="history.back()">BACK TO MAP</button>
+        </div>
+    </div>
+
+    <script src="../scripts/progress.js"></script>
+    <script src="../scripts/resume.js"></script>
+    <script src="../scripts/lesson.js"></script>
+</body>
+
+</html>

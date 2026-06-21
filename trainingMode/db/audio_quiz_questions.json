@@ -1,92 +1,425 @@
-[
-    {
-        "id": "aq_000",
-        "category": "Listening Comprehension",
-        "audioSrc": "../assets/audio/audio_quiz/aq_000.mp4",
-        "transcript": "My name is Rafael and I'm pursuing a degree in Computer Engineering",
-        "question": "What does the main verb of the sentence mean?",
-        "options": {
-            "a": "To give up",
-            "b": "To seek to achieve",
-            "c": "To cancel",
-            "d": "To repair"
+{
+    "tutorial_grammar": [
+        {
+            "id": "tg_aq_001",
+            "category": "Professional English",
+            "audioSrc": null,
+            "transcript": "My name is Rafael and I'm currently pursuing a degree in Computer Engineering at CEFET. I have a strong foundation in web development and I'm passionate about building scalable applications.",
+            "question": "What does the word 'pursuing' mean in the context of the sentence?",
+            "options": {
+                "a": "To give up on something",
+                "b": "To actively work toward achieving something",
+                "c": "To cancel a plan",
+                "d": "To complete something already finished"
+            },
+            "correctOption": "b",
+            "explanation": "'Pursuing' means actively working toward a goal. 'Pursuing a degree' means you are currently enrolled and working to complete a university program. It is stronger than 'studying' as it implies active commitment."
         },
-        "correctOption": "b",
-        "explanation": "The main verb of the sentence is 'pursuing'. In this context, 'pursuing a degree' means studying for or working toward completing a university degree."
-    },
-    {
-        "id": "aq_001",
-        "category": "Listening Comprehension",
-        "audioSrc": "../assets/audio/audio_quiz/aq_001.mp3",
-        "transcript": "Hi, I'm Sarah. I'm a software engineer with five years of experience working with distributed systems. In my last role at a fintech startup, I led the migration of our monolithic application to microservices, which reduced our deployment time by 60%.",
-        "question": "What did Sarah accomplish in her last role?",
-        "options": {
-            "a": "She designed a new database schema",
-            "b": "She led a migration from monolith to microservices",
-            "c": "She hired a new engineering team",
-            "d": "She reduced the team headcount by 60%"
+        {
+            "id": "tg_aq_002",
+            "category": "Professional English",
+            "audioSrc": null,
+            "transcript": "I consider myself a highly motivated and results-driven professional. Throughout my career, I have consistently delivered projects on time and within budget.",
+            "question": "What does 'results-driven' mean in this professional context?",
+            "options": {
+                "a": "Someone who works very fast regardless of quality",
+                "b": "Someone focused on achieving measurable outcomes and tangible impact",
+                "c": "Someone who drives to work every day",
+                "d": "Someone who only cares about money"
+            },
+            "correctOption": "b",
+            "explanation": "'Results-driven' is a professional adjective meaning focused on achieving concrete, measurable outcomes. It signals that you prioritize impact over mere activity — a key quality employers look for."
         },
-        "correctOption": "b",
-        "explanation": "Sarah mentioned she led the migration of their monolithic application to microservices, which reduced deployment time by 60%. This demonstrates leadership in a significant architectural decision."
-    },
-    {
-        "id": "aq_002",
-        "category": "Listening Comprehension",
-        "audioSrc": "../assets/audio/audio_quiz/aq_002.mp3",
-        "transcript": "I believe my greatest weakness is that I sometimes struggle to delegate tasks. I tend to want to handle everything myself to ensure quality. However, over the past year, I've actively worked on this by setting clearer expectations with my team and trusting them to deliver.",
-        "question": "How is the speaker addressing their weakness?",
-        "options": {
-            "a": "By working longer hours to do everything themselves",
-            "b": "By avoiding tasks they find difficult",
-            "c": "By setting expectations and trusting their team",
-            "d": "By asking management to assign fewer tasks"
+        {
+            "id": "tg_aq_003",
+            "category": "Professional English",
+            "audioSrc": null,
+            "transcript": "Thank you for taking the time to speak with me today. I would like to briefly introduce myself. I have three years of professional experience in backend development, primarily working with Java and Spring Boot.",
+            "question": "What does 'primarily' mean in this sentence?",
+            "options": {
+                "a": "Never",
+                "b": "Occasionally",
+                "c": "Mainly or mostly",
+                "d": "Exclusively, with no exceptions"
+            },
+            "correctOption": "c",
+            "explanation": "'Primarily' means mainly or for the most part. It acknowledges that your main experience is in one area while leaving room for other skills. This nuance is important in interviews — it's honest without unnecessarily limiting how you are perceived."
+        }
+    ],
+    "introduction": [
+        {
+            "id": "int_aq_001",
+            "category": "Self Introduction",
+            "audioSrc": null,
+            "transcript": "Hi, I'm Daniel. I'm a full-stack developer with four years of experience. Most recently, I worked at a startup where I built the entire customer-facing dashboard from scratch, which improved user engagement by 35%.",
+            "question": "What was Daniel's main accomplishment in his most recent role?",
+            "options": {
+                "a": "He managed a team of four developers",
+                "b": "He built the customer-facing dashboard from scratch, improving engagement by 35%",
+                "c": "He reduced infrastructure costs by 35%",
+                "d": "He launched the company's mobile application"
+            },
+            "correctOption": "b",
+            "explanation": "Daniel specifically mentioned building the customer-facing dashboard from scratch, which resulted in a 35% improvement in user engagement. Note the specificity of both the achievement and the quantified result — this is a model self-introduction technique."
         },
-        "correctOption": "c",
-        "explanation": "The speaker acknowledged the weakness of not delegating and is actively addressing it by setting clearer expectations and trusting the team. This shows self-awareness and a growth mindset — key interview qualities."
-    },
-    {
-        "id": "aq_003",
-        "category": "Listening Comprehension",
-        "audioSrc": "../assets/audio/audio_quiz/aq_003.mp3",
-        "transcript": "We had a critical production bug on a Friday evening just before a major product launch. I stayed calm, immediately assembled the on-call team via our incident channel, and we worked through the night. By 3 AM we had identified the root cause — a misconfigured environment variable — and rolled back the deployment.",
-        "question": "What was the root cause of the production bug?",
-        "options": {
-            "a": "A corrupted database migration",
-            "b": "A missing security certificate",
-            "c": "A misconfigured environment variable",
-            "d": "A failed third-party API integration"
+        {
+            "id": "int_aq_002",
+            "category": "Self Introduction",
+            "audioSrc": null,
+            "transcript": "Good morning. My name is Priya and I am very excited to be here today. I have a background in data science with a specialization in natural language processing. I am particularly interested in this role because of your company's recent expansion into AI-powered customer service tools.",
+            "question": "Why is Priya specifically interested in this company?",
+            "options": {
+                "a": "Because the company has a good salary package",
+                "b": "Because the company is close to her home",
+                "c": "Because of the company's recent expansion into AI-powered customer service tools",
+                "d": "Because she knows people who work there"
+            },
+            "correctOption": "c",
+            "explanation": "Priya explicitly connects her interest to the company's specific initiative — their AI-powered customer service tools expansion. This is a best practice: researching the company and connecting your background to their specific work demonstrates genuine interest and preparation."
         },
-        "correctOption": "c",
-        "explanation": "The speaker explicitly stated the root cause was a misconfigured environment variable. Active listening means catching specific technical details like this, not just the general story."
-    },
-    {
-        "id": "aq_004",
-        "category": "Listening Comprehension",
-        "audioSrc": "../assets/audio/audio_quiz/aq_004.mp3",
-        "transcript": "My five-year plan involves deepening my expertise in cloud architecture, particularly around serverless and container orchestration. I'd also like to transition into a technical leadership role where I can mentor junior engineers while still remaining hands-on with the technical work.",
-        "question": "What does the speaker want to achieve in five years?",
-        "options": {
-            "a": "Move into product management and stop coding",
-            "b": "Start their own company in the cloud space",
-            "c": "Become a technical leader while staying hands-on",
-            "d": "Specialize exclusively in frontend development"
+        {
+            "id": "int_aq_003",
+            "category": "Self Introduction",
+            "audioSrc": null,
+            "transcript": "Let me tell you a bit about my background. I graduated with a degree in Computer Science in 2021 and immediately joined a mid-sized consulting firm. Over the past three years, I've helped clients across healthcare and finance modernize their legacy systems.",
+            "question": "What industry sectors has the speaker worked in?",
+            "options": {
+                "a": "Education and retail",
+                "b": "Healthcare and finance",
+                "c": "Logistics and manufacturing",
+                "d": "Government and telecommunications"
+            },
+            "correctOption": "b",
+            "explanation": "The speaker explicitly mentioned healthcare and finance as the sectors their clients operate in. Listening for specific details like industry sectors, numbers, and timeframes is key to demonstrating strong listening comprehension."
+        }
+    ],
+    "experience": [
+        {
+            "id": "exp_aq_001",
+            "category": "Work Experience",
+            "audioSrc": "../assets/audio/audio_quiz/aq_001.mp3",
+            "transcript": "Hi, I'm Sarah. I'm a software engineer with five years of experience working with distributed systems. In my last role at a fintech startup, I led the migration of our monolithic application to microservices, which reduced our deployment time by 60%.",
+            "question": "What did Sarah accomplish in her last role?",
+            "options": {
+                "a": "She designed a new database schema",
+                "b": "She led a migration from monolith to microservices",
+                "c": "She hired a new engineering team",
+                "d": "She reduced the team headcount by 60%"
+            },
+            "correctOption": "b",
+            "explanation": "Sarah mentioned she led the migration of their monolithic application to microservices, which reduced deployment time by 60%. This demonstrates leadership in a significant architectural decision."
         },
-        "correctOption": "c",
-        "explanation": "The speaker's five-year plan combines deepening cloud expertise with transitioning into a technical leadership role while remaining hands-on. This balance of leadership and technical depth is a common and strong career goal in engineering."
-    },
-    {
-        "id": "aq_005",
-        "category": "Listening Comprehension",
-        "audioSrc": "../assets/audio/audio_quiz/aq_005.mp3",
-        "transcript": "When I have multiple urgent tasks, I first assess the business impact and deadlines of each one. Then I communicate transparently with stakeholders about priorities and realistic timelines. I use a simple matrix — impact versus effort — to decide what to tackle first.",
-        "question": "What method does the speaker use to prioritize tasks?",
-        "options": {
-            "a": "First in, first out — they work in the order tasks arrive",
-            "b": "An impact vs. effort matrix combined with stakeholder communication",
-            "c": "They delegate all urgent tasks to team members",
-            "d": "They ask their manager to decide the priority for them"
+        {
+            "id": "exp_aq_002",
+            "category": "Work Experience",
+            "audioSrc": "../assets/audio/audio_quiz/aq_002.mp3",
+            "transcript": "I believe my greatest weakness is that I sometimes struggle to delegate tasks. I tend to want to handle everything myself to ensure quality. However, over the past year, I've actively worked on this by setting clearer expectations with my team and trusting them to deliver.",
+            "question": "How is the speaker addressing their weakness?",
+            "options": {
+                "a": "By working longer hours to do everything themselves",
+                "b": "By avoiding tasks they find difficult",
+                "c": "By setting expectations and trusting their team",
+                "d": "By asking management to assign fewer tasks"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker acknowledged the weakness of not delegating and is actively addressing it by setting clearer expectations and trusting the team. This shows self-awareness and a growth mindset — key interview qualities."
         },
-        "correctOption": "b",
-        "explanation": "The speaker uses an impact vs. effort matrix and pairs it with transparent communication with stakeholders. This structured approach to prioritization demonstrates strong time management and organizational skills."
-    }
-]
+        {
+            "id": "exp_aq_003",
+            "category": "Work Experience",
+            "audioSrc": "../assets/audio/audio_quiz/aq_003.mp3",
+            "transcript": "We had a critical production bug on a Friday evening just before a major product launch. I stayed calm, immediately assembled the on-call team via our incident channel, and we worked through the night. By 3 AM we had identified the root cause — a misconfigured environment variable — and rolled back the deployment.",
+            "question": "What was the root cause of the production bug?",
+            "options": {
+                "a": "A corrupted database migration",
+                "b": "A missing security certificate",
+                "c": "A misconfigured environment variable",
+                "d": "A failed third-party API integration"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker explicitly stated the root cause was a misconfigured environment variable. Active listening means catching specific technical details like this, not just the general story."
+        }
+    ],
+    "meetings": [
+        {
+            "id": "mtg_aq_001",
+            "category": "Meetings & Communication",
+            "audioSrc": null,
+            "transcript": "Before we start today's sprint planning, let's quickly review the agenda. We have three main items: first, reviewing the backlog priorities; second, estimating effort for the top five stories; and third, confirming team capacity for this sprint.",
+            "question": "How many main agenda items does the meeting have?",
+            "options": {
+                "a": "Two",
+                "b": "Four",
+                "c": "Three",
+                "d": "Five"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker explicitly listed three agenda items: reviewing backlog priorities, estimating effort, and confirming team capacity. In professional meetings, listening carefully to the agenda structure helps you participate effectively and know what's expected."
+        },
+        {
+            "id": "mtg_aq_002",
+            "category": "Meetings & Communication",
+            "audioSrc": null,
+            "transcript": "I'd like to propose that we move this decision to an asynchronous format. Rather than spending another 30 minutes in this meeting, I can summarize the two options in a document and ask everyone to vote by end of day. This respects everyone's time and ensures more thoughtful input.",
+            "question": "What solution is the speaker proposing for the decision?",
+            "options": {
+                "a": "Schedule a longer meeting tomorrow to discuss more",
+                "b": "Make the decision alone without consulting the team",
+                "c": "Move the decision to an async document with an end-of-day vote",
+                "d": "Ask only the senior members to decide"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker proposed moving to an asynchronous format — a written document with an end-of-day vote — to respect everyone's time. This is an increasingly valued meeting culture skill: knowing when a decision should be made in a meeting vs. asynchronously."
+        },
+        {
+            "id": "mtg_aq_003",
+            "category": "Meetings & Communication",
+            "audioSrc": null,
+            "transcript": "Just to confirm what we decided: the API integration deadline is moved to the 15th, Marcus will own the backend changes, and Ana will coordinate with the client to update their expectations. I'll send a recap email within the hour.",
+            "question": "What will happen within the hour according to the speaker?",
+            "options": {
+                "a": "A new meeting will be scheduled",
+                "b": "The API integration will be delivered",
+                "c": "A recap email with the decisions will be sent",
+                "d": "The client will be called directly"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker committed to sending a recap email within the hour. This closing summary — restating decisions, owners, and next steps — is a hallmark of effective meeting facilitation and professional follow-through."
+        }
+    ],
+    "classic_questions": [
+        {
+            "id": "cq_aq_001",
+            "category": "Classic Interview Questions",
+            "audioSrc": "../assets/audio/audio_quiz/aq_004.mp3",
+            "transcript": "My five-year plan involves deepening my expertise in cloud architecture, particularly around serverless and container orchestration. I'd also like to transition into a technical leadership role where I can mentor junior engineers while still remaining hands-on with the technical work.",
+            "question": "What does the speaker want to achieve in five years?",
+            "options": {
+                "a": "Move into product management and stop coding",
+                "b": "Start their own company in the cloud space",
+                "c": "Become a technical leader while staying hands-on",
+                "d": "Specialize exclusively in frontend development"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker's five-year plan combines deepening cloud expertise with transitioning into a technical leadership role while remaining hands-on. This balance of leadership and technical depth is a common and strong career goal in engineering."
+        },
+        {
+            "id": "cq_aq_002",
+            "category": "Classic Interview Questions",
+            "audioSrc": "../assets/audio/audio_quiz/aq_005.mp3",
+            "transcript": "When I have multiple urgent tasks, I first assess the business impact and deadlines of each one. Then I communicate transparently with stakeholders about priorities and realistic timelines. I use a simple matrix — impact versus effort — to decide what to tackle first.",
+            "question": "What method does the speaker use to prioritize tasks?",
+            "options": {
+                "a": "First in, first out — they work in the order tasks arrive",
+                "b": "An impact vs. effort matrix combined with stakeholder communication",
+                "c": "They delegate all urgent tasks to team members",
+                "d": "They ask their manager to decide the priority for them"
+            },
+            "correctOption": "b",
+            "explanation": "The speaker uses an impact vs. effort matrix and pairs it with transparent communication with stakeholders. This structured approach to prioritization demonstrates strong time management and organizational skills."
+        },
+        {
+            "id": "cq_aq_003",
+            "category": "Classic Interview Questions",
+            "audioSrc": null,
+            "transcript": "When I'm asked about my greatest strength, I always come back to analytical thinking. I have a natural ability to break complex problems into smaller, manageable parts. For example, when we had a major performance regression last quarter, I was the one who traced it back to a single inefficient SQL query that was running in a nested loop.",
+            "question": "What specific strength does the speaker highlight?",
+            "options": {
+                "a": "Leadership and team management",
+                "b": "Creative design skills",
+                "c": "Analytical thinking and problem decomposition",
+                "d": "Customer relationship management"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker names 'analytical thinking' as their strength and immediately backs it up with a concrete example — tracing a performance regression to a specific SQL query. This STAR-like structure (claim + evidence) is the model for answering strength questions."
+        }
+    ],
+    "soft_skills": [
+        {
+            "id": "ss_aq_001",
+            "category": "Soft Skills",
+            "audioSrc": null,
+            "transcript": "I've always believed that strong communication is the foundation of effective teamwork. In my previous role, I introduced weekly one-on-one check-ins with my team members. This simple change reduced misunderstandings and improved our sprint velocity by 20% over two months.",
+            "question": "What impact did the weekly one-on-one check-ins have?",
+            "options": {
+                "a": "They increased the number of meetings but had no measurable impact",
+                "b": "They reduced misunderstandings and improved sprint velocity by 20%",
+                "c": "They were cancelled after one month due to time constraints",
+                "d": "They led to two team members being reassigned"
+            },
+            "correctOption": "b",
+            "explanation": "The speaker connected their communication initiative directly to a measurable outcome: 20% improvement in sprint velocity over two months. This is a model answer — it links a soft skill (communication) to a hard, quantified business result."
+        },
+        {
+            "id": "ss_aq_002",
+            "category": "Soft Skills",
+            "audioSrc": null,
+            "transcript": "Dealing with conflict is something I've had to navigate more than once. My approach is always to address issues privately and early — before they escalate. I set up a conversation, listen actively, and try to find a solution that both parties can own. I've found that most conflicts come from miscommunication, not malicious intent.",
+            "question": "According to the speaker, what is the most common root cause of workplace conflicts?",
+            "options": {
+                "a": "Malicious intent between colleagues",
+                "b": "Poor management decisions",
+                "c": "Miscommunication between team members",
+                "d": "Salary differences within the team"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker explicitly states: 'most conflicts come from miscommunication, not malicious intent.' This reflects a mature, charitable perspective on workplace conflict — one that interviewers view very positively as it signals collaborative problem-solving."
+        },
+        {
+            "id": "ss_aq_003",
+            "category": "Soft Skills",
+            "audioSrc": null,
+            "transcript": "Adaptability is something I genuinely value. When our team switched from Waterfall to Agile mid-project, many people struggled with the change. I volunteered to help onboard the team by creating a quick reference guide and running informal Q&A sessions. Within three weeks, the whole team was comfortable with the new workflow.",
+            "question": "How did the speaker help their team adapt to the change?",
+            "options": {
+                "a": "By complaining to management that the change was too sudden",
+                "b": "By creating a reference guide and running informal Q&A sessions",
+                "c": "By ignoring the change and continuing to use Waterfall",
+                "d": "By requesting an extension on the project deadline"
+            },
+            "correctOption": "b",
+            "explanation": "The speaker proactively created a reference guide and ran Q&A sessions to help their team adapt. This demonstrates adaptability not just personally, but also as a collaborative contributor who helps others through change — a leadership quality."
+        }
+    ],
+    "hard_skills": [
+        {
+            "id": "hs_aq_001",
+            "category": "Hard Skills",
+            "audioSrc": null,
+            "transcript": "When designing the API, I chose a RESTful architecture over GraphQL because our client's requirements were relatively straightforward — simple CRUD operations with predictable data shapes. GraphQL's flexibility would have added unnecessary complexity for this use case.",
+            "question": "Why did the speaker choose REST over GraphQL?",
+            "options": {
+                "a": "Because GraphQL is more expensive to implement",
+                "b": "Because the team didn't know GraphQL",
+                "c": "Because the client's requirements were simple CRUD operations with predictable data shapes",
+                "d": "Because REST is always better than GraphQL"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker made a deliberate, reasoned architectural choice based on the specific use case. They chose REST because the requirements were simple and predictable — GraphQL's flexibility would have been overkill. This type of trade-off analysis is exactly what senior developers demonstrate in interviews."
+        },
+        {
+            "id": "hs_aq_002",
+            "category": "Hard Skills",
+            "audioSrc": null,
+            "transcript": "The performance issue we were facing was subtle. Queries that worked fine in development were timing out in production. After profiling, I discovered we had N+1 query problem — for every user record we loaded, we were making an additional database call to fetch their preferences. We solved it with eager loading and the response time went from 4 seconds to under 200 milliseconds.",
+            "question": "What was the root cause of the performance issue?",
+            "options": {
+                "a": "The database server was underpowered",
+                "b": "An N+1 query problem causing excess database calls",
+                "c": "A missing database index on the users table",
+                "d": "Network latency between the app server and database"
+            },
+            "correctOption": "b",
+            "explanation": "The speaker identified an N+1 query problem: for every user record, an additional database call was being made to fetch preferences. This is a classic performance anti-pattern. The solution (eager loading) reduced response time from 4 seconds to under 200ms — a 95%+ improvement."
+        },
+        {
+            "id": "hs_aq_003",
+            "category": "Hard Skills",
+            "audioSrc": null,
+            "transcript": "We decided to containerize our entire application stack using Docker and orchestrate it with Kubernetes. The main benefit wasn't just portability — it was that our deployment process became fully automated and reproducible. Any developer could spin up a complete local environment in under five minutes.",
+            "question": "What was the PRIMARY benefit of containerizing with Docker and Kubernetes, according to the speaker?",
+            "options": {
+                "a": "The application became significantly faster",
+                "b": "They could now sell the application to more clients",
+                "c": "Deployments became fully automated and reproducible, with quick local environment setup",
+                "d": "The team was able to reduce their cloud costs by half"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker emphasizes that the main benefit was automated, reproducible deployments — not just portability. The ability to spin up a complete environment in under five minutes speaks to developer productivity and consistency across environments."
+        }
+    ],
+    "salary_negotiation": [
+        {
+            "id": "sal_aq_001",
+            "category": "Salary Negotiation",
+            "audioSrc": null,
+            "transcript": "When the recruiter asked for my salary expectations, I didn't give a number right away. Instead, I asked about the full compensation package — base salary, equity, and benefits. Once I understood the total value, I was in a much better position to negotiate effectively.",
+            "question": "What did the speaker do before giving a salary number?",
+            "options": {
+                "a": "They immediately named the highest number they could think of",
+                "b": "They asked about the full compensation package first",
+                "c": "They said they had no salary expectations",
+                "d": "They left the negotiation to their agent"
+            },
+            "correctOption": "b",
+            "explanation": "The speaker strategically asked about the full package before naming a number. This is a classic negotiation technique — understanding the complete value of an offer (including equity and benefits) allows you to negotiate from a position of knowledge rather than guessing."
+        },
+        {
+            "id": "sal_aq_002",
+            "category": "Salary Negotiation",
+            "audioSrc": null,
+            "transcript": "I did my research before the negotiation. I checked Glassdoor, LinkedIn Salary, and talked to peers in similar roles. I knew the market range for a senior engineer in this city was between $120,000 and $145,000. Their initial offer was $115,000, so I countered with $138,000 — well-supported by data.",
+            "question": "What was the market range the speaker identified for their role?",
+            "options": {
+                "a": "$100,000 to $125,000",
+                "b": "$115,000 to $130,000",
+                "c": "$120,000 to $145,000",
+                "d": "$130,000 to $160,000"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker identified a market range of $120,000 to $145,000 based on research from Glassdoor, LinkedIn Salary, and peer conversations. They then received an offer of $115,000 and countered at $138,000 — a data-backed counter within the upper portion of the market range."
+        },
+        {
+            "id": "sal_aq_003",
+            "category": "Salary Negotiation",
+            "audioSrc": null,
+            "transcript": "They said they couldn't go higher on the base salary. Instead of walking away, I pivoted and asked about the signing bonus and the equity vesting schedule. We ended up negotiating a $10,000 signing bonus and accelerating my first equity refresh by six months. In total, it added significant value to the first year package.",
+            "question": "When the employer couldn't raise the base salary, what did the speaker negotiate instead?",
+            "options": {
+                "a": "Additional vacation days and remote work policy",
+                "b": "A company car and expense account",
+                "c": "A signing bonus and accelerated equity refresh",
+                "d": "A promotion promise after 6 months"
+            },
+            "correctOption": "c",
+            "explanation": "When the salary ceiling was reached, the speaker pivoted to a $10,000 signing bonus and an accelerated equity refresh. This demonstrates sophisticated negotiation: when one lever is unavailable, skilled negotiators identify alternative forms of value rather than accepting the initial constraint."
+        }
+    ],
+    "persona": [
+        {
+            "id": "per_aq_001",
+            "category": "Personal Brand",
+            "audioSrc": null,
+            "transcript": "I think of my personal brand as the reputation I build through consistency. People who work with me know that if I say I'll do something by Friday, it will be done by Friday. That reliability has opened more doors for me than any certification or degree.",
+            "question": "According to the speaker, what is the foundation of their personal brand?",
+            "options": {
+                "a": "Their university degree and certifications",
+                "b": "Their social media presence and content creation",
+                "c": "Consistent reliability — following through on commitments",
+                "d": "Their ability to network at events"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker defines their personal brand through consistent reliability — specifically, always delivering on commitments. They explicitly state this has been more valuable than formal credentials. This is a powerful insight: personal brand is built through repeated, observable behavior."
+        },
+        {
+            "id": "per_aq_002",
+            "category": "Personal Brand",
+            "audioSrc": null,
+            "transcript": "When they asked how my colleagues would describe me, I shared something genuine. I told them that my teammates often come to me when they are stuck — not because I always have the answer, but because I ask the questions that help them find it themselves. I've been told I'm a natural Socratic coach.",
+            "question": "How do the speaker's colleagues typically describe them?",
+            "options": {
+                "a": "As the fastest developer on the team",
+                "b": "As someone who always has all the answers",
+                "c": "As a natural Socratic coach who helps others find answers through questions",
+                "d": "As the team's official documentation writer"
+            },
+            "correctOption": "c",
+            "explanation": "Colleagues describe the speaker as a 'Socratic coach' — someone who helps others find answers through well-placed questions rather than simply providing solutions. This is a sophisticated, honest self-description that shows self-awareness, humility, and genuine leadership quality."
+        },
+        {
+            "id": "per_aq_003",
+            "category": "Personal Brand",
+            "audioSrc": null,
+            "transcript": "Cultural fit was a big factor for me when evaluating this opportunity. I read through your engineering blog, watched your CTO's talk at the last conference, and reached out to three of your engineers on LinkedIn to understand what it's really like to work here. I wanted to make sure my values around transparency and ownership align with your team.",
+            "question": "How did the speaker research the company's culture?",
+            "options": {
+                "a": "They only read the company's Wikipedia page",
+                "b": "They relied entirely on Glassdoor reviews",
+                "c": "They read the engineering blog, watched a CTO talk, and contacted current engineers on LinkedIn",
+                "d": "They asked the recruiter to describe the culture"
+            },
+            "correctOption": "c",
+            "explanation": "The speaker did comprehensive cultural research: engineering blog, a CTO conference talk, and direct conversations with current engineers. This level of preparation signals serious interest, intellectual curiosity, and thoroughness — all highly valued professional traits."
+        }
+    ]
+}

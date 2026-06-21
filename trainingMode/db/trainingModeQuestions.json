@@ -1,266 +1,1096 @@
 {
-    "softSkills": [
-        {
-            "id": "ss_001",
-            "category": "Soft Skills",
-            "question": "What is the best example of 'Communication Skills'?",
-            "options": {
-                "a": "A Clear, Concise, and Confident Answer.",
-                "b": "A Confident Answer with a Funny Joke.",
-                "c": "A Clear, Concise, and Confident Answer with a Story.",
-                "d": "A Clear, Concise, and Confident Answer with a Joke."
+    "tutorial_grammar": {
+        "softSkills": [
+            {
+                "id": "tg_ss_001",
+                "category": "Professional English",
+                "question": "Which sentence uses the MOST professional tone for an interview?",
+                "options": {
+                    "a": "I worked at a tech company and stuff.",
+                    "b": "I have three years of experience in software development at a mid-sized tech firm.",
+                    "c": "I've been doing coding for a while now.",
+                    "d": "I did some tech stuff for about three years."
+                },
+                "correctOption": "b",
+                "explanation": "Professional English in interviews requires specific, formal language. Option B uses precise vocabulary ('three years of experience'), names the field correctly ('software development'), and avoids informal fillers like 'stuff' or 'a while'."
             },
-            "correctOption": "a",
-            "explanation": "A clear, concise, and confident answer is the best example of communication skills. It shows that you are able to communicate your ideas and information effectively to different audiences."
-        },
-        {
-            "id": "ss_002",
-            "category": "Soft Skills",
-            "question": "During a project, two teammates have a disagreement that is affecting the team's progress. As the team lead, what is the BEST approach?",
-            "options": {
-                "a": "Ignore the conflict and hope it resolves itself.",
-                "b": "Take sides with the teammate you agree with to move things forward.",
-                "c": "Facilitate a private conversation between both parties to understand their perspectives and find common ground.",
-                "d": "Escalate the issue to upper management immediately."
+            {
+                "id": "tg_ss_002",
+                "category": "Professional English",
+                "question": "When answering 'Tell me about yourself', which structure is MOST effective?",
+                "options": {
+                    "a": "Start with your childhood and work forward to the present.",
+                    "b": "List every job you have ever had in chronological order.",
+                    "c": "Present, Past, Future — briefly cover your current role, relevant experience, and career goals.",
+                    "d": "Focus only on your personal hobbies and interests."
+                },
+                "correctOption": "c",
+                "explanation": "The Present-Past-Future framework is the most widely recommended structure. It tells a concise, forward-looking story: where you are now, how you got here, and where you want to go. It keeps the answer focused and relevant."
             },
-            "correctOption": "c",
-            "explanation": "Effective conflict resolution involves actively listening to both sides, facilitating open dialogue, and guiding the parties toward a mutually acceptable solution. This preserves team morale and maintains forward momentum."
-        },
-        {
-            "id": "ss_003",
-            "category": "Soft Skills",
-            "question": "You receive critical feedback on your work from your manager during a performance review. What is the most professional response?",
-            "options": {
-                "a": "Defend your work immediately and explain why your approach was correct.",
-                "b": "Thank your manager, ask clarifying questions, and create an action plan to improve.",
-                "c": "Agree with everything your manager says to avoid further conflict.",
-                "d": "Request a transfer to another team where your work would be better appreciated."
+            {
+                "id": "tg_ss_003",
+                "category": "Professional English",
+                "question": "Which phrase is the MOST appropriate way to ask for clarification during an interview?",
+                "options": {
+                    "a": "What do you mean by that?",
+                    "b": "Could you elaborate a bit more on what you're looking for?",
+                    "c": "I didn't get that.",
+                    "d": "Huh? Can you say it again?"
+                },
+                "correctOption": "b",
+                "explanation": "Asking for clarification is completely acceptable in an interview, but the phrasing matters. 'Could you elaborate...' is polite, professional, and shows genuine engagement. Casual phrases like 'I didn't get that' or 'Huh?' can seem unprepared."
             },
-            "correctOption": "b",
-            "explanation": "Receiving feedback gracefully requires emotional intelligence. Acknowledging the feedback, seeking clarification, and proactively planning improvement demonstrates maturity, self-awareness, and a growth mindset."
-        },
-        {
-            "id": "ss_004",
-            "category": "Soft Skills",
-            "question": "Which behavior BEST demonstrates strong 'Active Listening' skills in an interview?",
-            "options": {
-                "a": "Interrupting the interviewer to add relevant points as soon as they come to mind.",
-                "b": "Nodding, maintaining eye contact, paraphrasing the question before answering, and asking for clarification if needed.",
-                "c": "Looking at your notes to prepare a well-structured answer while the interviewer is talking.",
-                "d": "Answering as quickly as possible to show you understood the question."
+            {
+                "id": "tg_ss_004",
+                "category": "Professional English",
+                "question": "In an email to a recruiter, which opening is MOST appropriate?",
+                "options": {
+                    "a": "Hey! I saw your job post.",
+                    "b": "Dear Hiring Manager, I am writing to express my interest in the Software Engineer position.",
+                    "c": "To Whom It May Concern, I want a job.",
+                    "d": "Hi there, hope you're good!"
+                },
+                "correctOption": "b",
+                "explanation": "Professional correspondence requires a formal salutation, clear purpose statement, and specific mention of the role. 'Dear Hiring Manager' is widely accepted when you don't know the name. Starting with 'Hey' or overly casual greetings undermines your professional image."
             },
-            "correctOption": "b",
-            "explanation": "Active listening means fully concentrating on what is being said. Paraphrasing, maintaining eye contact, and seeking clarification shows the interviewer you are engaged and thoughtful — key traits for any collaborative role."
-        },
-        {
-            "id": "ss_005",
-            "category": "Soft Skills",
-            "question": "Your team is given a tight deadline and the workload is overwhelming. What is the BEST strategy to manage the situation?",
-            "options": {
-                "a": "Work extra hours alone to handle everything yourself.",
-                "b": "Inform your manager immediately that the deadline is impossible.",
-                "c": "Prioritize tasks by impact, delegate where possible, and proactively communicate any risks to stakeholders.",
-                "d": "Deliver whatever is done by the deadline and apologize for the rest later."
+            {
+                "id": "tg_ss_005",
+                "category": "Professional English",
+                "question": "Which verb tense is MOST appropriate when describing a past job experience in an interview?",
+                "options": {
+                    "a": "Simple Present — 'I manage a team of five developers.'",
+                    "b": "Future — 'I will lead many projects.'",
+                    "c": "Simple Past — 'I managed a team of five developers and delivered three key projects.'",
+                    "d": "Present Progressive — 'I am managing a team in my old job.'"
+                },
+                "correctOption": "c",
+                "explanation": "When describing past roles and achievements, use the Simple Past tense. It clearly signals that the experience happened at a previous job. Use Simple Present only for your current role. Using incorrect tenses can confuse the interviewer about your timeline."
+            }
+        ],
+        "hardSkills": [
+            {
+                "id": "tg_hs_001",
+                "category": "Professional English",
+                "question": "What does the phrase 'I am proficient in Python' mean in a professional context?",
+                "options": {
+                    "a": "You have tried Python at least once.",
+                    "b": "You are an expert with 10+ years of experience.",
+                    "c": "You have a solid working knowledge and can use it effectively in a professional setting.",
+                    "d": "You invented the Python programming language."
+                },
+                "correctOption": "c",
+                "explanation": "In a professional context, 'proficient' means you have a good, functional command of the skill — enough to work independently and effectively. It is stronger than 'familiar with' but does not imply mastery or expertise (which you'd express as 'expert in' or 'extensive experience with')."
             },
-            "correctOption": "c",
-            "explanation": "Strong time management under pressure involves prioritization, delegation, and transparent communication. Proactively flagging risks allows the team and stakeholders to adapt, which is far more professional than delivering incomplete work without warning."
-        },
-        {
-            "id": "ss_006",
-            "category": "Soft Skills",
-            "question": "What does 'Emotional Intelligence (EQ)' primarily involve in a professional context?",
-            "options": {
-                "a": "Having a high IQ and solving complex problems efficiently.",
-                "b": "Avoiding emotional conversations at work to stay professional.",
-                "c": "Recognizing, understanding, and managing your own emotions and empathizing with others.",
-                "d": "Being cheerful and positive in all situations regardless of how you feel."
+            {
+                "id": "tg_hs_002",
+                "category": "Professional English",
+                "question": "Which phrase correctly describes a quantified achievement on a resume?",
+                "options": {
+                    "a": "Improved the website a lot.",
+                    "b": "Did some work on improving performance.",
+                    "c": "Reduced page load time by 40% by optimizing database queries.",
+                    "d": "Made the website faster and better."
+                },
+                "correctOption": "c",
+                "explanation": "Quantified achievements use specific numbers and clearly state the action taken and the result. 'Reduced by 40%' is concrete and measurable. Vague phrases like 'a lot' or 'better' don't demonstrate the real impact of your work to an employer."
             },
-            "correctOption": "c",
-            "explanation": "Emotional Intelligence encompasses self-awareness, self-regulation, motivation, empathy, and social skills. It allows professionals to navigate complex interpersonal dynamics, build trust, and lead effectively."
-        },
-        {
-            "id": "ss_007",
-            "category": "Soft Skills",
-            "question": "A colleague consistently misses deadlines that affect your work. How should you address this?",
-            "options": {
-                "a": "Complain about the colleague to your manager without speaking to them first.",
-                "b": "Do their work for them to ensure deadlines are met.",
-                "c": "Ignore it; their performance is their manager's responsibility.",
-                "d": "Have a direct and respectful private conversation with the colleague to understand the issue and discuss solutions."
+            {
+                "id": "tg_hs_003",
+                "category": "Professional English",
+                "question": "What is the correct meaning of 'deadline' in a professional context?",
+                "options": {
+                    "a": "A project that has been cancelled.",
+                    "b": "The final date or time by which something must be completed.",
+                    "c": "A meeting scheduled at the end of the day.",
+                    "d": "A line of code that stops program execution."
+                },
+                "correctOption": "b",
+                "explanation": "A 'deadline' is the fixed point in time by which a task, project, or deliverable must be finished. Missing a deadline in a professional environment can have serious consequences, which is why time management and communication about deadlines are crucial skills."
+            }
+        ]
+    },
+    "introduction": {
+        "softSkills": [
+            {
+                "id": "int_ss_001",
+                "category": "Self Introduction",
+                "question": "During your self-introduction, you freeze and forget what to say. What is the BEST way to recover?",
+                "options": {
+                    "a": "Apologize profusely and ask to start over.",
+                    "b": "Take a brief pause, smile, and continue with your key point confidently.",
+                    "c": "Read directly from your notes or phone.",
+                    "d": "Fill the silence with 'um' and 'uh' until you remember."
+                },
+                "correctOption": "b",
+                "explanation": "A brief, confident pause is far more professional than a panicked recovery. Interviewers understand nerves. Smiling, taking a breath, and continuing shows composure under pressure — itself a desirable quality."
             },
-            "correctOption": "d",
-            "explanation": "Addressing performance issues directly and privately is the hallmark of professional maturity. It respects the colleague's dignity, encourages accountability, and often resolves the issue before it requires escalation."
-        },
-        {
-            "id": "ss_008",
-            "category": "Soft Skills",
-            "question": "Which answer BEST describes 'adaptability' in the workplace?",
-            "options": {
-                "a": "Always following established processes regardless of new circumstances.",
-                "b": "Willingness to adjust your approach, learn new skills, and remain effective when faced with change or uncertainty.",
-                "c": "Being flexible enough to accept any task without pushing back.",
-                "d": "Changing your opinion to match that of your manager or team."
+            {
+                "id": "int_ss_002",
+                "category": "Self Introduction",
+                "question": "An effective elevator pitch for an interview should be approximately how long?",
+                "options": {
+                    "a": "10–15 seconds",
+                    "b": "60–90 seconds",
+                    "c": "5 minutes",
+                    "d": "10 minutes"
+                },
+                "correctOption": "b",
+                "explanation": "A well-crafted elevator pitch in an interview context is 60 to 90 seconds — long enough to cover who you are, your background, and your value proposition, but short enough to maintain the interviewer's attention and leave room for follow-up questions."
             },
-            "correctOption": "b",
-            "explanation": "Adaptability is about resilience and agility — proactively updating your skills and strategies in response to new challenges, changing priorities, or evolving environments, while still maintaining your effectiveness."
-        },
-        {
-            "id": "ss_009",
-            "category": "Soft Skills",
-            "question": "When presenting an idea to a senior stakeholder, what is the MOST important thing to consider?",
-            "options": {
-                "a": "Using as much technical jargon as possible to demonstrate expertise.",
-                "b": "Making the presentation as long and detailed as possible.",
-                "c": "Tailoring the message to your audience's priorities, framing the idea in terms of business impact.",
-                "d": "Presenting every detail of the implementation plan to show thorough preparation."
+            {
+                "id": "int_ss_003",
+                "category": "Self Introduction",
+                "question": "What should you AVOID when introducing yourself in a job interview?",
+                "options": {
+                    "a": "Mentioning your current role and key responsibilities.",
+                    "b": "Stating your enthusiasm for the position.",
+                    "c": "Reading your introduction word-for-word from a script.",
+                    "d": "Briefly highlighting a recent accomplishment."
+                },
+                "correctOption": "c",
+                "explanation": "Reading from a script sounds robotic and signals a lack of genuine preparation. Your self-introduction should feel natural and conversational. Practice enough to internalize the key points, but allow your personality to come through organically."
             },
-            "correctOption": "c",
-            "explanation": "Senior stakeholders are typically focused on business outcomes, risk, and value. Tailoring your communication to their priorities — rather than focusing on technical details — is a critical leadership and communication skill."
-        },
-        {
-            "id": "ss_010",
-            "category": "Soft Skills",
-            "question": "Which of the following is the BEST example of taking ownership and accountability?",
-            "options": {
-                "a": "Blaming unclear requirements when a project fails to meet expectations.",
-                "b": "Acknowledging your role in a failure, identifying lessons learned, and presenting a plan to prevent recurrence.",
-                "c": "Apologizing repeatedly without providing any concrete next steps.",
-                "d": "Reassigning tasks to team members when you anticipate a challenge."
+            {
+                "id": "int_ss_004",
+                "category": "Self Introduction",
+                "question": "Which of the following BEST demonstrates a strong first impression in an interview?",
+                "options": {
+                    "a": "Arriving exactly on time, rushing to the chair, and immediately talking.",
+                    "b": "Arriving slightly early, greeting the interviewer warmly, making eye contact, and waiting to be invited to sit.",
+                    "c": "Arriving early and criticizing the competition to show market awareness.",
+                    "d": "Sending a message saying you are running late and will arrive in 30 minutes."
+                },
+                "correctOption": "b",
+                "explanation": "First impressions are formed within seconds. Arriving early, greeting confidently, making eye contact, and waiting to be seated all signal professionalism, respect, and social awareness — soft skills that employers evaluate before you've even answered a question."
             },
-            "correctOption": "b",
-            "explanation": "True accountability means acknowledging mistakes without deflecting blame, extracting actionable lessons, and demonstrating a commitment to improvement. It builds trust and credibility with peers and leadership."
-        }
-    ],
-    "hardSkills": [
-        {
-            "id": "hs_001",
-            "category": "Hard Skills",
-            "question": "In a RESTful API, which HTTP method is MOST appropriate for partially updating an existing resource?",
-            "options": {
-                "a": "PUT",
-                "b": "POST",
-                "c": "PATCH",
-                "d": "DELETE"
+            {
+                "id": "int_ss_005",
+                "category": "Self Introduction",
+                "question": "When asked 'What do you know about our company?', what is the BEST response strategy?",
+                "options": {
+                    "a": "Say you don't know much yet, but you're excited to learn.",
+                    "b": "Demonstrate specific knowledge of their products, mission, recent news, and connect it to your own skills.",
+                    "c": "Mention only the company's founding year and headquarters.",
+                    "d": "Say you Googled them briefly before the interview."
+                },
+                "correctOption": "b",
+                "explanation": "This question tests your level of genuine interest and preparation. Researching the company's products, culture, mission statement, and recent developments — and connecting that knowledge to how you can contribute — shows initiative and a real desire to work there."
+            }
+        ],
+        "hardSkills": [
+            {
+                "id": "int_hs_001",
+                "category": "Self Introduction",
+                "question": "On a resume or LinkedIn profile, what does 'summary' or 'professional headline' primarily serve?",
+                "options": {
+                    "a": "To list all your technical certifications in detail.",
+                    "b": "To provide a brief, compelling snapshot of who you are and the value you bring.",
+                    "c": "To explain why you left your previous jobs.",
+                    "d": "To show your salary expectations upfront."
+                },
+                "correctOption": "b",
+                "explanation": "A professional summary is a short (2–4 sentence) paragraph at the top of your profile that captures your identity as a professional, your strongest skills, and your unique value proposition. Recruiters spend seconds scanning resumes, so a strong summary is your hook."
             },
-            "correctOption": "c",
-            "explanation": "PATCH is used for partial updates to a resource, modifying only the specified fields. PUT, by contrast, replaces the entire resource. POST is used for creating new resources, and DELETE for removing them."
-        },
-        {
-            "id": "hs_002",
-            "category": "Hard Skills",
-            "question": "What is the time complexity of a binary search algorithm on a sorted array of N elements?",
-            "options": {
-                "a": "O(N)",
-                "b": "O(N²)",
-                "c": "O(log N)",
-                "d": "O(1)"
+            {
+                "id": "int_hs_002",
+                "category": "Self Introduction",
+                "question": "What is the purpose of a 'cover letter' in a job application?",
+                "options": {
+                    "a": "To replace the resume with a more detailed document.",
+                    "b": "To complement the resume by explaining your motivation, personality, and why you are the best fit for the specific role.",
+                    "c": "To list references from previous employers.",
+                    "d": "To provide your salary history."
+                },
+                "correctOption": "b",
+                "explanation": "A cover letter is your opportunity to speak directly to the hiring manager, go beyond bullet points, and tell the story of why you want this specific job at this specific company. It demonstrates communication skills, motivation, and cultural fit that a resume cannot."
             },
-            "correctOption": "c",
-            "explanation": "Binary search works by repeatedly halving the search space. At each step, half the remaining elements are eliminated, resulting in O(log N) time complexity — far more efficient than linear search O(N) for large datasets."
-        },
-        {
-            "id": "hs_003",
-            "category": "Hard Skills",
-            "question": "Which SQL clause is used to filter records AFTER a GROUP BY aggregation?",
-            "options": {
-                "a": "WHERE",
-                "b": "FILTER",
-                "c": "ORDER BY",
-                "d": "HAVING"
+            {
+                "id": "int_hs_003",
+                "category": "Self Introduction",
+                "question": "In a LinkedIn profile, what does 'Open to Work' signal to recruiters?",
+                "options": {
+                    "a": "That you are currently unemployed only.",
+                    "b": "That you are actively seeking new job opportunities.",
+                    "c": "That you are available for freelance work only.",
+                    "d": "That you are willing to relocate internationally."
+                },
+                "correctOption": "b",
+                "explanation": "The 'Open to Work' feature on LinkedIn signals to recruiters that you are receptive to new job opportunities. You can configure it to be visible only to recruiters or publicly. It does not imply unemployment — many professionals enable it while currently employed."
+            }
+        ]
+    },
+    "experience": {
+        "softSkills": [
+            {
+                "id": "exp_ss_001",
+                "category": "Work Experience",
+                "question": "When asked 'Tell me about your greatest professional achievement', what is the BEST framework to use?",
+                "options": {
+                    "a": "STAR — Situation, Task, Action, Result",
+                    "b": "SWOT — Strengths, Weaknesses, Opportunities, Threats",
+                    "c": "SMART — Specific, Measurable, Achievable, Relevant, Time-bound",
+                    "d": "PDCA — Plan, Do, Check, Act"
+                },
+                "correctOption": "a",
+                "explanation": "The STAR method is the gold standard for answering behavioral interview questions. It ensures your answer is structured: you set the context (Situation), define your role (Task), explain what you did (Action), and demonstrate the impact (Result). This makes your answer concrete and compelling."
             },
-            "correctOption": "d",
-            "explanation": "HAVING filters results after aggregation (e.g., after GROUP BY), while WHERE filters rows before aggregation. For example, 'HAVING COUNT(*) > 5' filters groups with more than 5 records."
-        },
-        {
-            "id": "hs_004",
-            "category": "Hard Skills",
-            "question": "What does the 'S' in the SOLID principles stand for, and what does it mean?",
-            "options": {
-                "a": "Scalability Principle — a class should be designed to scale horizontally.",
-                "b": "Single Responsibility Principle — a class should have only one reason to change.",
-                "c": "Separation Principle — business logic should be separated from UI logic.",
-                "d": "Synchronization Principle — shared resources must be synchronized."
+            {
+                "id": "exp_ss_002",
+                "category": "Work Experience",
+                "question": "You had a gap of 8 months between jobs. How should you BEST address this in an interview?",
+                "options": {
+                    "a": "Lie and say you were working freelance.",
+                    "b": "Avoid mentioning it and hope the interviewer doesn't notice.",
+                    "c": "Be honest and frame it positively — mentioning any skills learned, personal development, or challenges overcome.",
+                    "d": "Apologize for the gap and explain it was a mistake."
+                },
+                "correctOption": "c",
+                "explanation": "Employment gaps are common and increasingly accepted. Honesty combined with a positive framing is the best approach. Whether you took time to upskill, deal with health, care for family, or travel — own the experience and connect any learnings to why you are now ready to contribute."
             },
-            "correctOption": "b",
-            "explanation": "The Single Responsibility Principle states that a class or module should have only one job or reason to change. This keeps code modular, easier to test, and less prone to side effects when modified."
-        },
-        {
-            "id": "hs_005",
-            "category": "Hard Skills",
-            "question": "In the context of version control with Git, what does 'git rebase' do?",
-            "options": {
-                "a": "Merges two branches and creates a new merge commit.",
-                "b": "Reverts the repository to a previous commit.",
-                "c": "Moves or replays commits from one branch on top of another, creating a linear history.",
-                "d": "Deletes a remote branch from the repository."
+            {
+                "id": "exp_ss_003",
+                "category": "Work Experience",
+                "question": "An interviewer asks 'Describe a time you failed.' What is the MOST effective response?",
+                "options": {
+                    "a": "Claim you never fail because you are very careful.",
+                    "b": "Describe a real failure, take ownership, explain what you learned, and how you applied that lesson.",
+                    "c": "Describe a failure that was entirely someone else's fault.",
+                    "d": "Give a very minor example that doesn't demonstrate any real challenge."
+                },
+                "correctOption": "b",
+                "explanation": "This question evaluates self-awareness, accountability, and growth mindset. Saying you never fail is a red flag. The ideal answer takes clear ownership of a real failure, shows introspection about what went wrong, and demonstrates how the experience made you better."
             },
-            "correctOption": "c",
-            "explanation": "Git rebase re-applies commits from your current branch on top of another base commit, resulting in a cleaner, linear project history. Unlike merge, it avoids extra merge commits but rewrites commit history."
-        },
-        {
-            "id": "hs_006",
-            "category": "Hard Skills",
-            "question": "Which of the following BEST describes a Docker container?",
-            "options": {
-                "a": "A virtual machine with a dedicated operating system kernel.",
-                "b": "A lightweight, standalone executable package that includes everything needed to run a piece of software.",
-                "c": "A cloud storage service for deploying applications.",
-                "d": "A build tool for compiling source code into machine-readable binaries."
+            {
+                "id": "exp_ss_004",
+                "category": "Work Experience",
+                "question": "When describing a team project in an interview, how should you balance 'we' vs 'I'?",
+                "options": {
+                    "a": "Use only 'we' to show you are a team player.",
+                    "b": "Use only 'I' to make clear you did all the work.",
+                    "c": "Acknowledge the team's contribution with 'we', but clearly articulate YOUR specific role and impact with 'I'.",
+                    "d": "Avoid talking about team projects since individual contributions are what matter."
+                },
+                "correctOption": "c",
+                "explanation": "Balance is key. Interviewers are evaluating YOU, so they need to understand your specific contributions. Using only 'we' is vague and doesn't demonstrate your individual value. Conversely, taking sole credit for team success appears arrogant and dishonest."
             },
-            "correctOption": "b",
-            "explanation": "A Docker container packages an application along with its runtime, libraries, and dependencies into an isolated, portable unit. Containers share the host OS kernel, making them far more lightweight than traditional virtual machines."
-        },
-        {
-            "id": "hs_007",
-            "category": "Hard Skills",
-            "question": "In JavaScript, what is the difference between '==' and '==='?",
-            "options": {
-                "a": "There is no practical difference; both check value equality.",
-                "b": "'==' checks both value and type; '===' checks only value.",
-                "c": "'==' performs type coercion before comparing values; '===' checks both value and type without coercion.",
-                "d": "'===' is used only for comparing objects, while '==' is used for primitives."
+            {
+                "id": "exp_ss_005",
+                "category": "Work Experience",
+                "question": "How should you handle a question about a former manager you didn't get along with?",
+                "options": {
+                    "a": "Be completely honest and describe all the manager's flaws in detail.",
+                    "b": "Say the manager was perfect and there were never any issues.",
+                    "c": "Acknowledge the challenge diplomatically, focus on how you managed the situation professionally, and avoid personal attacks.",
+                    "d": "Refuse to discuss previous managers."
+                },
+                "correctOption": "c",
+                "explanation": "Speaking negatively about a former employer is one of the biggest interview red flags. It raises concerns about your professionalism, loyalty, and how you might talk about this new employer in the future. A diplomatic, mature answer shows emotional intelligence and professionalism."
+            }
+        ],
+        "hardSkills": [
+            {
+                "id": "exp_hs_001",
+                "category": "Work Experience",
+                "question": "In version control, what does a 'merge conflict' indicate?",
+                "options": {
+                    "a": "A failed network connection to the remote repository.",
+                    "b": "Two branches have changes to the same part of the same file that Git cannot automatically reconcile.",
+                    "c": "A branch that has been deleted by another team member.",
+                    "d": "A commit that has been pushed to the wrong repository."
+                },
+                "correctOption": "b",
+                "explanation": "A merge conflict occurs when Git cannot automatically determine which version of a file to keep because two branches have modified the same region of the same file differently. They require manual resolution by a developer who must choose which changes to keep."
             },
-            "correctOption": "c",
-            "explanation": "'==' (loose equality) coerces types before comparison, so '2' == 2 is true. '===' (strict equality) requires both value AND type to match, so '2' === 2 is false. Using '===' is generally safer and more predictable."
-        },
-        {
-            "id": "hs_008",
-            "category": "Hard Skills",
-            "question": "What is a 'race condition' in software development?",
-            "options": {
-                "a": "A performance optimization technique to execute tasks in parallel.",
-                "b": "A bug that occurs when the system's behavior depends on the relative timing of events such as thread execution order.",
-                "c": "A design pattern for managing concurrent database transactions.",
-                "d": "A load-testing scenario where multiple users access the same endpoint simultaneously."
+            {
+                "id": "exp_hs_002",
+                "category": "Work Experience",
+                "question": "What is the PRIMARY benefit of writing unit tests for your code?",
+                "options": {
+                    "a": "They make the codebase larger and more impressive.",
+                    "b": "They ensure individual components work correctly in isolation, enabling faster and safer refactoring.",
+                    "c": "They replace the need for code reviews entirely.",
+                    "d": "They are only useful for large enterprise projects."
+                },
+                "correctOption": "b",
+                "explanation": "Unit tests validate that individual pieces of code (units) behave as expected in isolation. Their greatest value is enabling confident refactoring — you can change code knowing tests will catch regressions. They also serve as living documentation of how code is intended to work."
             },
-            "correctOption": "b",
-            "explanation": "A race condition occurs when two or more processes access shared data concurrently and the final outcome depends on the execution order. This can lead to unpredictable, hard-to-reproduce bugs, often requiring locks or atomic operations to prevent."
-        },
-        {
-            "id": "hs_009",
-            "category": "Hard Skills",
-            "question": "What is the PRIMARY purpose of an index in a relational database?",
-            "options": {
-                "a": "To enforce data uniqueness across all columns.",
-                "b": "To compress table data and reduce storage usage.",
-                "c": "To speed up data retrieval queries by providing a faster lookup path.",
-                "d": "To automatically back up table data on every write operation."
+            {
+                "id": "exp_hs_003",
+                "category": "Work Experience",
+                "question": "What does 'technical debt' mean in a software development context?",
+                "options": {
+                    "a": "Money owed for software licenses and tools.",
+                    "b": "The accumulated cost of choosing quick, easy solutions now instead of better, more maintainable approaches.",
+                    "c": "Security vulnerabilities in legacy code.",
+                    "d": "Outdated documentation that needs to be rewritten."
+                },
+                "correctOption": "b",
+                "explanation": "Technical debt is a metaphor for the implied cost of taking shortcuts in development. Just like financial debt accrues interest, technical debt makes future changes harder and more expensive. Managing and communicating technical debt is a key senior developer responsibility."
+            }
+        ]
+    },
+    "meetings": {
+        "softSkills": [
+            {
+                "id": "mtg_ss_001",
+                "category": "Meetings & Communication",
+                "question": "You are leading a meeting and a participant keeps interrupting others. What is the BEST approach?",
+                "options": {
+                    "a": "Shout at them to stop interrupting.",
+                    "b": "Ignore the behavior and let the meeting continue.",
+                    "c": "Politely but firmly redirect: 'Great point — let's let [Name] finish, then we'll hear your thoughts.'",
+                    "d": "Ask the person to leave the meeting."
+                },
+                "correctOption": "c",
+                "explanation": "As a meeting facilitator, managing dynamics is your responsibility. A calm, inclusive redirect — acknowledging the interrupter while protecting the speaker — is the professional way to handle this. It maintains order without creating embarrassment or conflict."
             },
-            "correctOption": "c",
-            "explanation": "A database index is a data structure (commonly a B-tree) that allows the database engine to find rows quickly without scanning the entire table. While indexes improve read performance, they add overhead to write operations."
-        },
-        {
-            "id": "hs_010",
-            "category": "Hard Skills",
-            "question": "Which design pattern defines a one-to-many dependency so that when one object changes state, all its dependents are notified automatically?",
-            "options": {
-                "a": "Singleton",
-                "b": "Factory",
-                "c": "Observer",
-                "d": "Decorator"
+            {
+                "id": "mtg_ss_002",
+                "category": "Meetings & Communication",
+                "question": "Which element is MOST important in a well-run meeting?",
+                "options": {
+                    "a": "Having a large number of participants.",
+                    "b": "A clear agenda shared in advance with defined objectives and expected outcomes.",
+                    "c": "A meeting that lasts at least two hours to cover all topics.",
+                    "d": "The most senior person doing all the talking."
+                },
+                "correctOption": "b",
+                "explanation": "A clear agenda with defined objectives is the foundation of an effective meeting. It allows participants to prepare, keeps the discussion focused, respects everyone's time, and ensures decisions are made. Without an agenda, meetings drift and rarely achieve their goals."
             },
-            "correctOption": "c",
-            "explanation": "The Observer pattern establishes a subject-observer relationship. When the subject's state changes, it automatically notifies all registered observers. This pattern is widely used in event handling systems and reactive frameworks like RxJS."
-        }
-    ]
+            {
+                "id": "mtg_ss_003",
+                "category": "Meetings & Communication",
+                "question": "After a meeting, what is the MOST professional follow-up action?",
+                "options": {
+                    "a": "Nothing — assume everyone remembers the discussion.",
+                    "b": "Send a brief summary of decisions made, action items, owners, and deadlines.",
+                    "c": "Schedule another meeting to discuss what was decided.",
+                    "d": "Post the full meeting recording in a shared folder."
+                },
+                "correctOption": "b",
+                "explanation": "A concise meeting summary (often called 'meeting minutes' or a 'recap') sent promptly after creates a written record, ensures alignment, and holds people accountable for their action items. It is a hallmark of professional organization."
+            },
+            {
+                "id": "mtg_ss_004",
+                "category": "Meetings & Communication",
+                "question": "During a remote video call, which behavior is MOST professional?",
+                "options": {
+                    "a": "Keeping your camera off to avoid distractions.",
+                    "b": "Multitasking and checking emails during the meeting.",
+                    "c": "Having your camera on, muting when not speaking, and being in a well-lit, quiet environment.",
+                    "d": "Talking over others when you have something urgent to add."
+                },
+                "correctOption": "c",
+                "explanation": "In remote meetings, camera-on signals engagement and presence. Muting when not speaking prevents background noise disruptions. A proper environment (lighting, quiet) shows respect for participants. These basics significantly impact your perceived professionalism."
+            },
+            {
+                "id": "mtg_ss_005",
+                "category": "Meetings & Communication",
+                "question": "When presenting an idea in a meeting and someone disagrees, what is the BEST response?",
+                "options": {
+                    "a": "Immediately concede to avoid conflict.",
+                    "b": "Insist your idea is correct and repeat your points more forcefully.",
+                    "c": "Acknowledge their perspective, ask clarifying questions to understand their concern, and look for common ground.",
+                    "d": "Take it personally and disengage from the meeting."
+                },
+                "correctOption": "c",
+                "explanation": "Disagreement in meetings is healthy and leads to better decisions. The key is to respond with curiosity rather than defensiveness. Acknowledging the other person's view, asking questions, and seeking common ground demonstrates maturity and collaborative thinking."
+            }
+        ],
+        "hardSkills": [
+            {
+                "id": "mtg_hs_001",
+                "category": "Meetings & Communication",
+                "question": "In a software team using Agile/Scrum, what is the purpose of a 'Daily Standup' (or Daily Scrum)?",
+                "options": {
+                    "a": "A 60-minute planning session to assign tasks for the day.",
+                    "b": "A brief daily synchronization (max 15 min) where each member shares what they did, what they plan to do, and any blockers.",
+                    "c": "A performance review held every morning by the manager.",
+                    "d": "A technical deep-dive to solve the most complex problem of the day."
+                },
+                "correctOption": "b",
+                "explanation": "The Daily Standup is a 15-minute time-boxed event for the team to synchronize activities and identify impediments. Each member answers three questions: What did I do yesterday? What will I do today? Is anything blocking me? It promotes transparency and quick impediment resolution."
+            },
+            {
+                "id": "mtg_hs_002",
+                "category": "Meetings & Communication",
+                "question": "What is a 'Sprint Retrospective' in Scrum?",
+                "options": {
+                    "a": "A meeting to demonstrate completed features to stakeholders.",
+                    "b": "A session at the end of a sprint for the team to reflect on the process and identify improvements.",
+                    "c": "A planning session for the next sprint's backlog.",
+                    "d": "A weekly status report sent to management."
+                },
+                "correctOption": "b",
+                "explanation": "The Sprint Retrospective is a Scrum ceremony held at the end of each sprint where the team inspects their own process. They discuss what went well, what could be improved, and commit to concrete process improvements. It drives continuous team improvement."
+            },
+            {
+                "id": "mtg_hs_003",
+                "category": "Meetings & Communication",
+                "question": "Which tool is MOST commonly used for asynchronous team communication in tech companies?",
+                "options": {
+                    "a": "Fax",
+                    "b": "Slack or Microsoft Teams — team messaging platforms with channels and threads",
+                    "c": "Sending physical memos",
+                    "d": "Making phone calls for every update"
+                },
+                "correctOption": "b",
+                "explanation": "Slack and Microsoft Teams are the dominant asynchronous communication platforms in modern tech companies. They organize conversations by channels (topics/projects), support threads, integrations with tools like Jira/GitHub, and reduce email overload."
+            }
+        ]
+    },
+    "classic_questions": {
+        "softSkills": [
+            {
+                "id": "cq_ss_001",
+                "category": "Classic Interview Questions",
+                "question": "When asked 'What is your greatest weakness?', which approach is MOST effective?",
+                "options": {
+                    "a": "Claim you have no weaknesses.",
+                    "b": "Mention a weakness completely unrelated to the job.",
+                    "c": "Name a genuine, relevant weakness and immediately explain the concrete steps you are taking to improve it.",
+                    "d": "Turn a strength into a weakness (e.g., 'I work too hard')."
+                },
+                "correctOption": "c",
+                "explanation": "Interviewers see through the 'I work too hard' trick immediately. A genuine answer paired with proactive improvement steps demonstrates self-awareness and a growth mindset — traits far more impressive than a fake weakness. The key is choosing a weakness that is real but not disqualifying for the role."
+            },
+            {
+                "id": "cq_ss_002",
+                "category": "Classic Interview Questions",
+                "question": "How should you BEST answer 'Where do you see yourself in 5 years?'",
+                "options": {
+                    "a": "Say you want to be the CEO of the company.",
+                    "b": "Say you have no plans and prefer to take life day by day.",
+                    "c": "Describe realistic career growth in the field, showing ambition that aligns with what the company can offer.",
+                    "d": "Admit you are only taking this job temporarily while you look for something better."
+                },
+                "correctOption": "c",
+                "explanation": "This question gauges ambition, self-awareness, and alignment. Employers want to know if they are investing in someone who will grow with the company. A good answer shows you have thought about your career, are ambitious, and see a future in this industry — ideally at this company."
+            },
+            {
+                "id": "cq_ss_003",
+                "category": "Classic Interview Questions",
+                "question": "When asked 'Why do you want to work here?', which answer is STRONGEST?",
+                "options": {
+                    "a": "'Because I need a job and your company was hiring.'",
+                    "b": "'I've followed your company's growth for two years. Your mission to democratize cloud technology aligns with my background in distributed systems, and I'd like to contribute to that.'",
+                    "c": "'The salary and benefits package looked good.'",
+                    "d": "'My friend works here and said it was a cool place.'"
+                },
+                "correctOption": "b",
+                "explanation": "This answer demonstrates genuine research, passion for the company's mission, and a clear connection between your skills and their needs. Interviewers respond to candidates who can articulate exactly WHY this company — not just any company."
+            },
+            {
+                "id": "cq_ss_004",
+                "category": "Classic Interview Questions",
+                "question": "How should you answer 'Why are you leaving your current job?'",
+                "options": {
+                    "a": "Complain extensively about your current manager and colleagues.",
+                    "b": "Say you are leaving only because of the salary.",
+                    "c": "Frame it positively around growth, new challenges, or alignment with your long-term goals — without disparaging your current employer.",
+                    "d": "Say you were fired but don't want to talk about it."
+                },
+                "correctOption": "c",
+                "explanation": "This is a sensitive question that tests professionalism. Always frame your departure positively (seeking growth, new challenges, better alignment with your goals). Never speak negatively about your current employer — it signals potential future behavior that no company wants."
+            },
+            {
+                "id": "cq_ss_005",
+                "category": "Classic Interview Questions",
+                "question": "At the end of an interview, when asked 'Do you have any questions for us?', what is the BEST approach?",
+                "options": {
+                    "a": "Say 'No, I think I have everything I need, thanks.'",
+                    "b": "Ask only about salary and vacation days.",
+                    "c": "Ask thoughtful questions about the team, the role's challenges, culture, or the company's future direction.",
+                    "d": "Ask the interviewer personal questions to build rapport."
+                },
+                "correctOption": "c",
+                "explanation": "Saying 'no questions' is a missed opportunity and signals low interest. Asking about salary immediately can seem transactional. Thoughtful, specific questions show genuine curiosity about the role and company, and they give you information to evaluate if this is truly the right fit for you."
+            }
+        ],
+        "hardSkills": [
+            {
+                "id": "cq_hs_001",
+                "category": "Classic Interview Questions",
+                "question": "In a technical interview, you are asked a coding problem you have never seen. What is the BEST first step?",
+                "options": {
+                    "a": "Start coding immediately to show enthusiasm.",
+                    "b": "Clarify requirements, discuss your approach out loud, and agree on the solution before writing code.",
+                    "c": "Ask if you can look up the answer online.",
+                    "d": "Say you don't know how to solve it and move on."
+                },
+                "correctOption": "b",
+                "explanation": "In technical interviews, the thinking process matters as much as the final solution. Clarifying requirements, thinking aloud, and discussing your approach before coding demonstrates problem-solving methodology, communication skills, and engineering maturity."
+            },
+            {
+                "id": "cq_hs_002",
+                "category": "Classic Interview Questions",
+                "question": "When asked 'What is your greatest technical strength?', what is the MOST effective answer style?",
+                "options": {
+                    "a": "Say you are good at everything equally.",
+                    "b": "Name a specific skill, provide a concrete example of how you applied it, and quantify the outcome if possible.",
+                    "c": "List every technology on your resume.",
+                    "d": "Name the most trendy technology to sound impressive."
+                },
+                "correctOption": "b",
+                "explanation": "Specificity wins in technical interviews. Naming a skill without evidence is hollow. Pairing it with a concrete example and measurable outcome (e.g., 'My strength is SQL optimization — I reduced query time by 70% in my last project') is persuasive and memorable."
+            },
+            {
+                "id": "cq_hs_003",
+                "category": "Classic Interview Questions",
+                "question": "What does 'Big-O notation' describe in computer science?",
+                "options": {
+                    "a": "The memory usage of a program in bytes.",
+                    "b": "The number of lines of code in an algorithm.",
+                    "c": "The upper bound of an algorithm's time or space complexity as input size grows.",
+                    "d": "The version number of an operating system."
+                },
+                "correctOption": "c",
+                "explanation": "Big-O notation describes how an algorithm's performance (time or space) scales as the input size grows. Common examples: O(1) constant, O(log n) logarithmic, O(n) linear, O(n²) quadratic. Understanding Big-O is fundamental to evaluating algorithmic efficiency."
+            }
+        ]
+    },
+    "soft_skills": {
+        "softSkills": [
+            {
+                "id": "ss_001",
+                "category": "Soft Skills",
+                "question": "During a project, two teammates have a disagreement that is affecting the team's progress. As the team lead, what is the BEST approach?",
+                "options": {
+                    "a": "Ignore the conflict and hope it resolves itself.",
+                    "b": "Take sides with the teammate you agree with to move things forward.",
+                    "c": "Facilitate a private conversation between both parties to understand their perspectives and find common ground.",
+                    "d": "Escalate the issue to upper management immediately."
+                },
+                "correctOption": "c",
+                "explanation": "Effective conflict resolution involves actively listening to both sides, facilitating open dialogue, and guiding the parties toward a mutually acceptable solution. This preserves team morale and maintains forward momentum."
+            },
+            {
+                "id": "ss_002",
+                "category": "Soft Skills",
+                "question": "You receive critical feedback on your work from your manager during a performance review. What is the most professional response?",
+                "options": {
+                    "a": "Defend your work immediately and explain why your approach was correct.",
+                    "b": "Thank your manager, ask clarifying questions, and create an action plan to improve.",
+                    "c": "Agree with everything your manager says to avoid further conflict.",
+                    "d": "Request a transfer to another team where your work would be better appreciated."
+                },
+                "correctOption": "b",
+                "explanation": "Receiving feedback gracefully requires emotional intelligence. Acknowledging the feedback, seeking clarification, and proactively planning improvement demonstrates maturity, self-awareness, and a growth mindset."
+            },
+            {
+                "id": "ss_003",
+                "category": "Soft Skills",
+                "question": "Which behavior BEST demonstrates strong 'Active Listening' skills in an interview?",
+                "options": {
+                    "a": "Interrupting the interviewer to add relevant points as soon as they come to mind.",
+                    "b": "Nodding, maintaining eye contact, paraphrasing the question before answering, and asking for clarification if needed.",
+                    "c": "Looking at your notes to prepare a well-structured answer while the interviewer is talking.",
+                    "d": "Answering as quickly as possible to show you understood the question."
+                },
+                "correctOption": "b",
+                "explanation": "Active listening means fully concentrating on what is being said. Paraphrasing, maintaining eye contact, and seeking clarification shows the interviewer you are engaged and thoughtful — key traits for any collaborative role."
+            },
+            {
+                "id": "ss_004",
+                "category": "Soft Skills",
+                "question": "Your team is given a tight deadline and the workload is overwhelming. What is the BEST strategy to manage the situation?",
+                "options": {
+                    "a": "Work extra hours alone to handle everything yourself.",
+                    "b": "Inform your manager immediately that the deadline is impossible.",
+                    "c": "Prioritize tasks by impact, delegate where possible, and proactively communicate any risks to stakeholders.",
+                    "d": "Deliver whatever is done by the deadline and apologize for the rest later."
+                },
+                "correctOption": "c",
+                "explanation": "Strong time management under pressure involves prioritization, delegation, and transparent communication. Proactively flagging risks allows the team and stakeholders to adapt, which is far more professional than delivering incomplete work without warning."
+            },
+            {
+                "id": "ss_005",
+                "category": "Soft Skills",
+                "question": "What does 'Emotional Intelligence (EQ)' primarily involve in a professional context?",
+                "options": {
+                    "a": "Having a high IQ and solving complex problems efficiently.",
+                    "b": "Avoiding emotional conversations at work to stay professional.",
+                    "c": "Recognizing, understanding, and managing your own emotions and empathizing with others.",
+                    "d": "Being cheerful and positive in all situations regardless of how you feel."
+                },
+                "correctOption": "c",
+                "explanation": "Emotional Intelligence encompasses self-awareness, self-regulation, motivation, empathy, and social skills. It allows professionals to navigate complex interpersonal dynamics, build trust, and lead effectively."
+            },
+            {
+                "id": "ss_006",
+                "category": "Soft Skills",
+                "question": "A colleague consistently misses deadlines that affect your work. How should you address this?",
+                "options": {
+                    "a": "Complain about the colleague to your manager without speaking to them first.",
+                    "b": "Do their work for them to ensure deadlines are met.",
+                    "c": "Ignore it; their performance is their manager's responsibility.",
+                    "d": "Have a direct and respectful private conversation with the colleague to understand the issue and discuss solutions."
+                },
+                "correctOption": "d",
+                "explanation": "Addressing performance issues directly and privately is the hallmark of professional maturity. It respects the colleague's dignity, encourages accountability, and often resolves the issue before it requires escalation."
+            },
+            {
+                "id": "ss_007",
+                "category": "Soft Skills",
+                "question": "Which answer BEST describes 'adaptability' in the workplace?",
+                "options": {
+                    "a": "Always following established processes regardless of new circumstances.",
+                    "b": "Willingness to adjust your approach, learn new skills, and remain effective when faced with change or uncertainty.",
+                    "c": "Being flexible enough to accept any task without pushing back.",
+                    "d": "Changing your opinion to match that of your manager or team."
+                },
+                "correctOption": "b",
+                "explanation": "Adaptability is about resilience and agility — proactively updating your skills and strategies in response to new challenges, changing priorities, or evolving environments, while still maintaining your effectiveness."
+            },
+            {
+                "id": "ss_008",
+                "category": "Soft Skills",
+                "question": "When presenting an idea to a senior stakeholder, what is the MOST important thing to consider?",
+                "options": {
+                    "a": "Using as much technical jargon as possible to demonstrate expertise.",
+                    "b": "Making the presentation as long and detailed as possible.",
+                    "c": "Tailoring the message to your audience's priorities, framing the idea in terms of business impact.",
+                    "d": "Presenting every detail of the implementation plan to show thorough preparation."
+                },
+                "correctOption": "c",
+                "explanation": "Senior stakeholders are typically focused on business outcomes, risk, and value. Tailoring your communication to their priorities — rather than focusing on technical details — is a critical leadership and communication skill."
+            },
+            {
+                "id": "ss_009",
+                "category": "Soft Skills",
+                "question": "Which of the following is the BEST example of taking ownership and accountability?",
+                "options": {
+                    "a": "Blaming unclear requirements when a project fails to meet expectations.",
+                    "b": "Acknowledging your role in a failure, identifying lessons learned, and presenting a plan to prevent recurrence.",
+                    "c": "Apologizing repeatedly without providing any concrete next steps.",
+                    "d": "Reassigning tasks to team members when you anticipate a challenge."
+                },
+                "correctOption": "b",
+                "explanation": "True accountability means acknowledging mistakes without deflecting blame, extracting actionable lessons, and demonstrating a commitment to improvement. It builds trust and credibility with peers and leadership."
+            },
+            {
+                "id": "ss_010",
+                "category": "Soft Skills",
+                "question": "What is the BEST example of 'Communication Skills' in a professional context?",
+                "options": {
+                    "a": "A Clear, Concise, and Confident Answer.",
+                    "b": "A Confident Answer with a Funny Joke.",
+                    "c": "A Clear, Concise, and Confident Answer with a Story.",
+                    "d": "A Clear, Concise, and Confident Answer with a Joke."
+                },
+                "correctOption": "a",
+                "explanation": "A clear, concise, and confident answer is the best example of communication skills. It shows that you are able to communicate your ideas and information effectively to different audiences."
+            }
+        ],
+        "hardSkills": [
+            {
+                "id": "ss_hs_001",
+                "category": "Soft Skills",
+                "question": "Which collaboration tool is MOST used for project management in agile software teams?",
+                "options": {
+                    "a": "Microsoft Word",
+                    "b": "Jira or Trello — kanban/scrum boards for tracking tasks and sprints",
+                    "c": "A shared spreadsheet",
+                    "d": "Printed task lists"
+                },
+                "correctOption": "b",
+                "explanation": "Jira (by Atlassian) and Trello are the most widely used tools for managing agile workflows. They allow teams to organize tasks on kanban boards, track sprints, assign issues, and monitor progress. Demonstrating familiarity with these tools is a strong signal in software interviews."
+            },
+            {
+                "id": "ss_hs_002",
+                "category": "Soft Skills",
+                "question": "What does 'pair programming' mean in software development?",
+                "options": {
+                    "a": "Two developers independently working on the same feature and merging afterward.",
+                    "b": "Two developers working together at the same workstation — one writes code while the other reviews in real time.",
+                    "c": "A junior developer copying the code of a senior developer.",
+                    "d": "Two developers scheduled to work the same shift."
+                },
+                "correctOption": "b",
+                "explanation": "Pair programming is an Agile technique where two developers collaborate at a single workstation: one 'drives' (writes code) while the other 'navigates' (reviews, thinks ahead). It improves code quality, speeds up problem-solving, and facilitates knowledge sharing."
+            }
+        ]
+    },
+    "hard_skills": {
+        "softSkills": [
+            {
+                "id": "hs_ss_001",
+                "category": "Hard Skills",
+                "question": "You are asked in an interview to explain a complex technical concept to a non-technical stakeholder. What is the BEST approach?",
+                "options": {
+                    "a": "Use as many technical acronyms as possible to sound expert.",
+                    "b": "Use analogies, avoid jargon, focus on the business value and impact rather than the technical details.",
+                    "c": "Tell them they wouldn't understand and offer to send documentation.",
+                    "d": "Skip the explanation and jump straight to the solution."
+                },
+                "correctOption": "b",
+                "explanation": "Bridging the communication gap between technical and non-technical stakeholders is a critical professional skill. Using real-world analogies and focusing on business impact makes complex concepts accessible. This demonstrates both technical knowledge and communication maturity."
+            },
+            {
+                "id": "hs_ss_002",
+                "category": "Hard Skills",
+                "question": "How should you handle a situation where you don't know the answer to a technical question in an interview?",
+                "options": {
+                    "a": "Make up an answer that sounds plausible.",
+                    "b": "Say 'I don't know' and stop there.",
+                    "c": "Acknowledge you don't know the exact answer, reason through what you do know, and explain how you would find the answer.",
+                    "d": "Change the subject immediately."
+                },
+                "correctOption": "c",
+                "explanation": "Honesty about knowledge gaps is respected. What impresses interviewers is how you handle uncertainty: using first principles, reasoning from known concepts, and demonstrating a problem-solving methodology. 'I would look it up in the documentation and test it like this...' is a strong answer."
+            }
+        ],
+        "hardSkills": [
+            {
+                "id": "hs_001",
+                "category": "Hard Skills",
+                "question": "In a RESTful API, which HTTP method is MOST appropriate for partially updating an existing resource?",
+                "options": {
+                    "a": "PUT",
+                    "b": "POST",
+                    "c": "PATCH",
+                    "d": "DELETE"
+                },
+                "correctOption": "c",
+                "explanation": "PATCH is used for partial updates to a resource, modifying only the specified fields. PUT, by contrast, replaces the entire resource. POST is used for creating new resources, and DELETE for removing them."
+            },
+            {
+                "id": "hs_002",
+                "category": "Hard Skills",
+                "question": "What is the time complexity of a binary search algorithm on a sorted array of N elements?",
+                "options": {
+                    "a": "O(N)",
+                    "b": "O(N²)",
+                    "c": "O(log N)",
+                    "d": "O(1)"
+                },
+                "correctOption": "c",
+                "explanation": "Binary search works by repeatedly halving the search space. At each step, half the remaining elements are eliminated, resulting in O(log N) time complexity — far more efficient than linear search O(N) for large datasets."
+            },
+            {
+                "id": "hs_003",
+                "category": "Hard Skills",
+                "question": "Which SQL clause is used to filter records AFTER a GROUP BY aggregation?",
+                "options": {
+                    "a": "WHERE",
+                    "b": "FILTER",
+                    "c": "ORDER BY",
+                    "d": "HAVING"
+                },
+                "correctOption": "d",
+                "explanation": "HAVING filters results after aggregation (e.g., after GROUP BY), while WHERE filters rows before aggregation. For example, 'HAVING COUNT(*) > 5' filters groups with more than 5 records."
+            },
+            {
+                "id": "hs_004",
+                "category": "Hard Skills",
+                "question": "What does the 'S' in the SOLID principles stand for, and what does it mean?",
+                "options": {
+                    "a": "Scalability Principle — a class should be designed to scale horizontally.",
+                    "b": "Single Responsibility Principle — a class should have only one reason to change.",
+                    "c": "Separation Principle — business logic should be separated from UI logic.",
+                    "d": "Synchronization Principle — shared resources must be synchronized."
+                },
+                "correctOption": "b",
+                "explanation": "The Single Responsibility Principle states that a class or module should have only one job or reason to change. This keeps code modular, easier to test, and less prone to side effects when modified."
+            },
+            {
+                "id": "hs_005",
+                "category": "Hard Skills",
+                "question": "In the context of version control with Git, what does 'git rebase' do?",
+                "options": {
+                    "a": "Merges two branches and creates a new merge commit.",
+                    "b": "Reverts the repository to a previous commit.",
+                    "c": "Moves or replays commits from one branch on top of another, creating a linear history.",
+                    "d": "Deletes a remote branch from the repository."
+                },
+                "correctOption": "c",
+                "explanation": "Git rebase re-applies commits from your current branch on top of another base commit, resulting in a cleaner, linear project history. Unlike merge, it avoids extra merge commits but rewrites commit history."
+            },
+            {
+                "id": "hs_006",
+                "category": "Hard Skills",
+                "question": "Which of the following BEST describes a Docker container?",
+                "options": {
+                    "a": "A virtual machine with a dedicated operating system kernel.",
+                    "b": "A lightweight, standalone executable package that includes everything needed to run a piece of software.",
+                    "c": "A cloud storage service for deploying applications.",
+                    "d": "A build tool for compiling source code into machine-readable binaries."
+                },
+                "correctOption": "b",
+                "explanation": "A Docker container packages an application along with its runtime, libraries, and dependencies into an isolated, portable unit. Containers share the host OS kernel, making them far more lightweight than traditional virtual machines."
+            },
+            {
+                "id": "hs_007",
+                "category": "Hard Skills",
+                "question": "In JavaScript, what is the difference between '==' and '==='?",
+                "options": {
+                    "a": "There is no practical difference; both check value equality.",
+                    "b": "'==' checks both value and type; '===' checks only value.",
+                    "c": "'==' performs type coercion before comparing values; '===' checks both value and type without coercion.",
+                    "d": "'===' is used only for comparing objects, while '==' is used for primitives."
+                },
+                "correctOption": "c",
+                "explanation": "'==' (loose equality) coerces types before comparison, so '2' == 2 is true. '===' (strict equality) requires both value AND type to match, so '2' === 2 is false. Using '===' is generally safer and more predictable."
+            },
+            {
+                "id": "hs_008",
+                "category": "Hard Skills",
+                "question": "What is a 'race condition' in software development?",
+                "options": {
+                    "a": "A performance optimization technique to execute tasks in parallel.",
+                    "b": "A bug that occurs when the system's behavior depends on the relative timing of events such as thread execution order.",
+                    "c": "A design pattern for managing concurrent database transactions.",
+                    "d": "A load-testing scenario where multiple users access the same endpoint simultaneously."
+                },
+                "correctOption": "b",
+                "explanation": "A race condition occurs when two or more processes access shared data concurrently and the final outcome depends on the execution order. This can lead to unpredictable, hard-to-reproduce bugs, often requiring locks or atomic operations to prevent."
+            },
+            {
+                "id": "hs_009",
+                "category": "Hard Skills",
+                "question": "What is the PRIMARY purpose of an index in a relational database?",
+                "options": {
+                    "a": "To enforce data uniqueness across all columns.",
+                    "b": "To compress table data and reduce storage usage.",
+                    "c": "To speed up data retrieval queries by providing a faster lookup path.",
+                    "d": "To automatically back up table data on every write operation."
+                },
+                "correctOption": "c",
+                "explanation": "A database index is a data structure (commonly a B-tree) that allows the database engine to find rows quickly without scanning the entire table. While indexes improve read performance, they add overhead to write operations."
+            },
+            {
+                "id": "hs_010",
+                "category": "Hard Skills",
+                "question": "Which design pattern defines a one-to-many dependency so that when one object changes state, all its dependents are notified automatically?",
+                "options": {
+                    "a": "Singleton",
+                    "b": "Factory",
+                    "c": "Observer",
+                    "d": "Decorator"
+                },
+                "correctOption": "c",
+                "explanation": "The Observer pattern establishes a subject-observer relationship. When the subject's state changes, it automatically notifies all registered observers. This pattern is widely used in event handling systems and reactive frameworks like RxJS."
+            }
+        ]
+    },
+    "salary_negotiation": {
+        "softSkills": [
+            {
+                "id": "sal_ss_001",
+                "category": "Salary Negotiation",
+                "question": "A recruiter asks your expected salary before you have received any information about the compensation package. What is the BEST response?",
+                "options": {
+                    "a": "Give the lowest number you'd accept to seem humble.",
+                    "b": "Deflect by asking about the full compensation package first, then provide a research-based range.",
+                    "c": "Refuse to discuss salary entirely.",
+                    "d": "Name the highest possible number to give yourself negotiation room."
+                },
+                "correctOption": "b",
+                "explanation": "Whoever names a number first is at a disadvantage. Asking about the full package first shows financial literacy (salary is not the only component — equity, bonuses, benefits matter). When you do give a range, base it on market research, not guesswork."
+            },
+            {
+                "id": "sal_ss_002",
+                "category": "Salary Negotiation",
+                "question": "After receiving a job offer, you want to negotiate. Which approach is MOST effective?",
+                "options": {
+                    "a": "Reject the offer immediately if it's below your expectations.",
+                    "b": "Accept immediately without negotiation to appear grateful.",
+                    "c": "Express enthusiasm for the offer, then professionally counter with a specific number backed by market data and your experience.",
+                    "d": "Tell the recruiter that a competing company offered you more (even if not true)."
+                },
+                "correctOption": "c",
+                "explanation": "Negotiation is expected and respected. The key formula: express genuine enthusiasm for the role (you don't want them to think you're uninterested), counter with a specific number (not a range), and anchor it to market data and your unique value. Lying about competing offers is risky and unethical."
+            },
+            {
+                "id": "sal_ss_003",
+                "category": "Salary Negotiation",
+                "question": "During salary negotiation, the employer says 'That is the maximum we can offer for this role.' What should you do next?",
+                "options": {
+                    "a": "Accept immediately, as they have reached their limit.",
+                    "b": "Walk away from the offer.",
+                    "c": "Explore negotiating other elements of the package: signing bonus, remote work flexibility, extra vacation days, or earlier salary review.",
+                    "d": "Ask them to reconsider by repeating your salary expectations louder."
+                },
+                "correctOption": "c",
+                "explanation": "If base salary is fixed, many other compensation elements may be negotiable. Signing bonuses, flexible work arrangements, additional PTO, earlier performance reviews, or professional development budgets can add significant value. A skilled negotiator always looks for alternative levers."
+            },
+            {
+                "id": "sal_ss_004",
+                "category": "Salary Negotiation",
+                "question": "What is the MOST important preparation step before entering a salary negotiation?",
+                "options": {
+                    "a": "Deciding the maximum salary you will demand.",
+                    "b": "Researching market rates for the role using multiple sources (Glassdoor, LinkedIn Salary, industry reports) and knowing your own minimum acceptable number.",
+                    "c": "Asking friends what they earn in similar roles.",
+                    "d": "Choosing a salary number that 'sounds good'."
+                },
+                "correctOption": "b",
+                "explanation": "Data is your greatest asset in salary negotiation. Researching market benchmarks for your role, seniority level, location, and industry gives your ask credibility and confidence. Knowing your BATNA (Best Alternative to Negotiated Agreement) — your minimum acceptable offer — is also crucial."
+            },
+            {
+                "id": "sal_ss_005",
+                "category": "Salary Negotiation",
+                "question": "An employer asks 'What are you currently making?' How should you handle this question?",
+                "options": {
+                    "a": "Always provide your exact current salary immediately.",
+                    "b": "Lie and inflate your current salary significantly.",
+                    "c": "Be aware that in many regions you are not legally required to disclose this; redirect to discussing the value you'd bring and your expected range.",
+                    "d": "Refuse to speak and end the interview."
+                },
+                "correctOption": "c",
+                "explanation": "Disclosing your current salary anchors the employer's offer to your past, not your market value. In many jurisdictions, salary history questions are restricted or banned. You can professionally deflect: 'I'd prefer to focus on the value I bring to this role. My expectation is in the range of X to Y based on market research.'"
+            }
+        ],
+        "hardSkills": [
+            {
+                "id": "sal_hs_001",
+                "category": "Salary Negotiation",
+                "question": "What does 'total compensation' include beyond base salary?",
+                "options": {
+                    "a": "Only the monthly salary deposited in your bank account.",
+                    "b": "Base salary, bonuses, equity (stock/options), benefits (health, dental, vision), retirement contributions, and perks.",
+                    "c": "Salary plus the value of free coffee at the office.",
+                    "d": "Only salary and paid vacation."
+                },
+                "correctOption": "b",
+                "explanation": "Total compensation is the complete value of your employment package. For tech roles especially, equity (RSUs or options) can be worth substantially more than salary over time. Evaluating and negotiating total comp — not just base salary — is essential for maximizing your true earnings."
+            },
+            {
+                "id": "sal_hs_002",
+                "category": "Salary Negotiation",
+                "question": "What does 'RSU' stand for, and what does it mean in compensation?",
+                "options": {
+                    "a": "Restricted Stock Unit — company shares granted to an employee that vest over time.",
+                    "b": "Remote Support Upgrade — a technology allowance for remote workers.",
+                    "c": "Regular Salary Update — an annual raise included in the contract.",
+                    "d": "Resource Scheduling Unit — a project management allocation tool."
+                },
+                "correctOption": "a",
+                "explanation": "RSUs (Restricted Stock Units) are a form of equity compensation. The company grants you a specific number of shares that 'vest' (become yours) over a schedule — typically over 4 years. They are very common in tech companies and can represent a significant portion of total compensation."
+            },
+            {
+                "id": "sal_hs_003",
+                "category": "Salary Negotiation",
+                "question": "What is a 'vesting cliff' in the context of equity compensation?",
+                "options": {
+                    "a": "The maximum number of shares you can receive.",
+                    "b": "A minimum time period you must work before any equity begins to vest.",
+                    "c": "The penalty for leaving the company before your contract ends.",
+                    "d": "The point at which your salary reaches its maximum."
+                },
+                "correctOption": "b",
+                "explanation": "A 'vesting cliff' is a minimum tenure requirement before equity starts to vest. A common structure is a 1-year cliff with 4-year vesting: if you leave before 12 months, you receive no equity. After the cliff, shares vest monthly or quarterly for the remaining 3 years."
+            }
+        ]
+    },
+    "persona": {
+        "softSkills": [
+            {
+                "id": "per_ss_001",
+                "category": "Personal Brand",
+                "question": "What is a 'personal brand' in a professional context?",
+                "options": {
+                    "a": "A logo you design for your personal business cards.",
+                    "b": "The consistent, authentic image, reputation, and value you project to the professional world through your actions, communication, and presence.",
+                    "c": "Your LinkedIn profile picture.",
+                    "d": "The name you use on social media."
+                },
+                "correctOption": "b",
+                "explanation": "A personal brand is the intersection of who you are, what you stand for, and how others perceive you professionally. It is built over time through consistent communication, your online presence, the work you produce, and how you interact with others."
+            },
+            {
+                "id": "per_ss_002",
+                "category": "Personal Brand",
+                "question": "An interviewer asks 'How would your colleagues describe you?' What is the BEST approach?",
+                "options": {
+                    "a": "Say you don't know, as you've never asked.",
+                    "b": "Give generic adjectives like 'nice' and 'hardworking'.",
+                    "c": "Share specific traits backed by concrete examples or genuine feedback you have received, showing self-awareness.",
+                    "d": "Say your colleagues think you are the best on the team."
+                },
+                "correctOption": "c",
+                "explanation": "This question tests self-awareness and how you are perceived. The strongest answers are specific ('My colleagues often say I'm the go-to person for unblocking complex problems') and ideally grounded in real feedback you've received, which demonstrates a growth mindset."
+            },
+            {
+                "id": "per_ss_003",
+                "category": "Personal Brand",
+                "question": "What does 'cultural fit' mean when a company says they are evaluating it?",
+                "options": {
+                    "a": "Whether you speak the same language as the team.",
+                    "b": "How well your values, work style, and behaviors align with the company's culture and the team dynamics.",
+                    "c": "Whether your educational background matches their requirements.",
+                    "d": "Whether you live close to the office."
+                },
+                "correctOption": "b",
+                "explanation": "Cultural fit is about alignment between your professional values, communication style, work ethic, and the company's established culture. It goes beyond hard skills — companies know skills can be taught, but someone who conflicts with the team culture can disrupt the entire group."
+            },
+            {
+                "id": "per_ss_004",
+                "category": "Personal Brand",
+                "question": "When should you send a 'thank you' note after a job interview?",
+                "options": {
+                    "a": "Only after you receive a job offer.",
+                    "b": "Within 24 hours of the interview, thanking the interviewer and briefly reinforcing your enthusiasm for the role.",
+                    "c": "Never — it can seem desperate.",
+                    "d": "One week later, after they've had time to decide."
+                },
+                "correctOption": "b",
+                "explanation": "A timely thank-you note (email within 24 hours) is a professional courtesy that differentiates you from other candidates. It reinforces your enthusiasm, gives you a chance to mention something you forgot to say, and demonstrates attention to follow-through."
+            },
+            {
+                "id": "per_ss_005",
+                "category": "Personal Brand",
+                "question": "Which of the following BEST defines 'professional integrity' in the workplace?",
+                "options": {
+                    "a": "Always agreeing with your manager to maintain a smooth relationship.",
+                    "b": "Consistently acting in alignment with your values — being honest, keeping commitments, and taking responsibility.",
+                    "c": "Never making mistakes at work.",
+                    "d": "Working the maximum number of hours possible."
+                },
+                "correctOption": "b",
+                "explanation": "Professional integrity is the alignment between what you say and what you do. It means being honest even when it's inconvenient, keeping your commitments, and taking responsibility for your actions. It is the foundation of trust and long-term career reputation."
+            }
+        ],
+        "hardSkills": [
+            {
+                "id": "per_hs_001",
+                "category": "Personal Brand",
+                "question": "What makes a strong GitHub profile for a software developer job seeker?",
+                "options": {
+                    "a": "Having thousands of repositories with a single commit each.",
+                    "b": "A pinned set of quality projects with clear READMEs, consistent commit history, and evidence of real problem-solving.",
+                    "c": "Forking popular repositories without contributing.",
+                    "d": "Only having private repositories."
+                },
+                "correctOption": "b",
+                "explanation": "A strong GitHub profile tells the story of you as a developer. Pinned, well-documented projects (with clear READMEs explaining the problem, solution, and tech stack) demonstrate engineering quality. A consistent commit history shows steady practice and commitment."
+            },
+            {
+                "id": "per_hs_002",
+                "category": "Personal Brand",
+                "question": "What is the PRIMARY benefit of contributing to open-source projects for career development?",
+                "options": {
+                    "a": "You get paid directly for every contribution.",
+                    "b": "It demonstrates real-world collaboration skills, code quality, and community engagement — all visible to potential employers.",
+                    "c": "It guarantees a job at the company that owns the project.",
+                    "d": "It replaces the need for a formal education."
+                },
+                "correctOption": "b",
+                "explanation": "Open-source contributions are powerful for career building: they demonstrate you can collaborate asynchronously with global teams, navigate codebases you didn't write, write code that meets community standards, and communicate effectively through pull requests and issues."
+            },
+            {
+                "id": "per_hs_003",
+                "category": "Personal Brand",
+                "question": "What does a strong technical portfolio for a developer typically include?",
+                "options": {
+                    "a": "A list of technologies you wish to learn someday.",
+                    "b": "Live or deployed projects, source code, descriptions of the problems solved, technologies used, and your role in building them.",
+                    "c": "Screenshots of code from your university assignments.",
+                    "d": "A PDF of your university transcript."
+                },
+                "correctOption": "b",
+                "explanation": "A technical portfolio is concrete evidence of your abilities. Employers want to see projects that solve real problems, with working demos or deployed links, clean source code, and context about the challenges you faced. It transforms your resume claims into verifiable proof."
+            }
+        ]
+    }
 }
