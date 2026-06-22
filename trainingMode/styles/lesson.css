@@ -4,7 +4,7 @@
 
 /* --- Override body for lesson page --- */
 body {
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     gap: 0;
     min-height: 100vh;
@@ -223,8 +223,15 @@ header {
 }
 
 @keyframes slideInCard {
-    from { transform: translateX(40px); opacity: 0; }
-    to   { transform: translateX(0);    opacity: 1; }
+    from {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 /* Decorative corner glow */
@@ -475,8 +482,13 @@ header {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .lesson-complete-modal {
@@ -496,8 +508,15 @@ header {
 }
 
 @keyframes popIn {
-    from { transform: scale(0.85); opacity: 0; }
-    to   { transform: scale(1);    opacity: 1; }
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .lesson-complete-icon {

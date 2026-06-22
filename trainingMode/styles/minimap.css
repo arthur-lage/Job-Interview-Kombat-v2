@@ -68,10 +68,13 @@ header h1 {
 }
 
 @keyframes titlePulse {
-    0%, 100% {
+
+    0%,
+    100% {
         text-shadow: 3px 3px 1px #c93ed8;
         transform: scale(1);
     }
+
     50% {
         text-shadow: 4px 4px 4px #ff6cfb;
         transform: scale(1.03);
@@ -107,13 +110,13 @@ header h1 {
     text-shadow: 2px 2px 1px #c93ed8;
     transition: all 0.2s ease;
     box-shadow: 0 0 15px rgba(253, 210, 1, 0.15),
-                0 4px 0 #c9a401;
+        0 4px 0 #c9a401;
 }
 
 .dropdown-toggle:hover {
     background: #230e52;
     box-shadow: 0 0 25px rgba(253, 210, 1, 0.3),
-                0 4px 0 #c9a401;
+        0 4px 0 #c9a401;
 }
 
 .dropdown-toggle.open {
@@ -145,7 +148,7 @@ header h1 {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                opacity 0.25s ease;
+        opacity 0.25s ease;
     opacity: 0;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
 }
@@ -160,9 +163,11 @@ header h1 {
 .dropdown-menu::-webkit-scrollbar {
     width: 6px;
 }
+
 .dropdown-menu::-webkit-scrollbar-track {
     background: rgba(253, 210, 1, 0.05);
 }
+
 .dropdown-menu::-webkit-scrollbar-thumb {
     background: rgba(253, 210, 1, 0.3);
     border-radius: 2px;
@@ -252,8 +257,15 @@ header h1 {
 }
 
 @keyframes floatBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
 }
 
 .placeholder-text {
@@ -297,7 +309,9 @@ header h1 {
 }
 
 @keyframes pathMarch {
-    to { stroke-dashoffset: -18; }
+    to {
+        stroke-dashoffset: -18;
+    }
 }
 
 /* ===============================
@@ -327,12 +341,29 @@ header h1 {
     animation: nodeEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.phase-node:nth-child(1) { animation-delay: 0.1s; }
-.phase-node:nth-child(2) { animation-delay: 0.2s; }
-.phase-node:nth-child(3) { animation-delay: 0.3s; }
-.phase-node:nth-child(4) { animation-delay: 0.4s; }
-.phase-node:nth-child(5) { animation-delay: 0.5s; }
-.phase-node:nth-child(6) { animation-delay: 0.6s; }
+.phase-node:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.phase-node:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.phase-node:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.phase-node:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.phase-node:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.phase-node:nth-child(6) {
+    animation-delay: 0.6s;
+}
 
 .phase-node:hover {
     transform: scale(1.15);
@@ -385,37 +416,55 @@ header h1 {
     background: linear-gradient(145deg, #7c2fff, #5a1ecc);
     --btn-shadow: #3d1488;
 }
-.phase-node:nth-child(1) .phase-icon i { color: #e8d4ff; }
+
+.phase-node:nth-child(1) .phase-icon i {
+    color: #e8d4ff;
+}
 
 .phase-node:nth-child(2) .phase-icon {
     background: linear-gradient(145deg, #c93ed8, #9a2ba6);
     --btn-shadow: #6e1d78;
 }
-.phase-node:nth-child(2) .phase-icon i { color: #ffe8fc; }
+
+.phase-node:nth-child(2) .phase-icon i {
+    color: #ffe8fc;
+}
 
 .phase-node:nth-child(3) .phase-icon {
     background: linear-gradient(145deg, #ff2b7c, #cc1f62);
     --btn-shadow: #8c1544;
 }
-.phase-node:nth-child(3) .phase-icon i { color: #ffd4e5; }
+
+.phase-node:nth-child(3) .phase-icon i {
+    color: #ffd4e5;
+}
 
 .phase-node:nth-child(4) .phase-icon {
     background: linear-gradient(145deg, #fdd201, #c9a401);
     --btn-shadow: #8a7200;
 }
-.phase-node:nth-child(4) .phase-icon i { color: #12022B; }
+
+.phase-node:nth-child(4) .phase-icon i {
+    color: #12022B;
+}
 
 .phase-node:nth-child(5) .phase-icon {
     background: linear-gradient(145deg, #3498db, #2074b0);
     --btn-shadow: #165080;
 }
-.phase-node:nth-child(5) .phase-icon i { color: #d4edff; }
+
+.phase-node:nth-child(5) .phase-icon i {
+    color: #d4edff;
+}
 
 .phase-node:nth-child(6) .phase-icon {
     background: linear-gradient(145deg, #e91e63, #b81650);
     --btn-shadow: #7d0f37;
 }
-.phase-node:nth-child(6) .phase-icon i { color: #ffd4e3; }
+
+.phase-node:nth-child(6) .phase-icon i {
+    color: #ffd4e3;
+}
 
 /* Phase number badge */
 .phase-num {
@@ -503,8 +552,13 @@ body::after {
 
 /* --- Animations --- */
 @keyframes cursorPulse {
-    0% { transform: scale(0.9); }
-    100% { transform: scale(1.1); }
+    0% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 @keyframes fadeInUp {
@@ -512,6 +566,7 @@ body::after {
         opacity: 0;
         translate: 0 30px;
     }
+
     100% {
         opacity: 1;
         translate: 0 0;
@@ -523,6 +578,7 @@ body::after {
         opacity: 0;
         transform: scale(0.5) translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: scale(1) translateY(0);
@@ -584,8 +640,15 @@ body::after {
 }
 
 @keyframes lockPulse {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.9; }
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
 }
 
 /* ===============================
