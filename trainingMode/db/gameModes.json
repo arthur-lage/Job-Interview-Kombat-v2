@@ -2,7 +2,7 @@
     "gameModes": [
         {
             "id": "tutorial_grammar",
-            "name": "GRAMATICA",
+            "name": "GRAMMAR",
             "optional": true,
             "subModes": [
                 {
@@ -27,7 +27,7 @@
         },
         {
             "id": "introduction",
-            "name": "INTRODUCAO",
+            "name": "INTRODUCTION",
             "subModes": [
                 {
                     "id": "intro_vocab",
@@ -57,7 +57,7 @@
         },
         {
             "id": "experience",
-            "name": "EXPERIENCIA",
+            "name": "EXPERIENCE",
             "subModes": [
                 {
                     "id": "exp_vocab",
@@ -87,7 +87,7 @@
         },
         {
             "id": "meetings",
-            "name": "REUNIOES",
+            "name": "MEETINGS",
             "subModes": [
                 {
                     "id": "meetings_vocab",
@@ -117,7 +117,7 @@
         },
         {
             "id": "classic_questions",
-            "name": "PERGUNTAS CLASSICAS",
+            "name": "CLASSIC QUESTIONS",
             "subModes": [
                 {
                     "id": "classic_vocab",
@@ -207,7 +207,7 @@
         },
         {
             "id": "salary_negotiation",
-            "name": "NEGOCIACAO DE SALARIO",
+            "name": "SALARY NEGOTIATION",
             "subModes": [
                 {
                     "id": "salary_vocab",
