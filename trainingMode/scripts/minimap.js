@@ -88,12 +88,14 @@ function prevRequiredIndex(modeIndex) {
 /**
  * Verifica se um game mode está desbloqueado.
  * - Módulos opcionais: sempre desbloqueados.
+ * - Módulos com unlocked:true: sempre desbloqueados (independente de progresso).
  * - Módulos obrigatórios: requerem que o anterior obrigatório esteja 100% completo.
  */
 function isGameModeUnlocked(modeIndex) {
     const mode = gameModes[modeIndex];
     if (!mode) return false;
     if (mode.optional) return true; // opcionais sempre livres
+    if (mode.unlocked) return true; // desbloqueados manualmente no JSON
 
     const prevIdx = prevRequiredIndex(modeIndex);
     if (prevIdx === -1) return true; // nenhum obrigatório antes → livre
@@ -107,10 +109,13 @@ function isGameModeUnlocked(modeIndex) {
 /**
  * Verifica se uma fase (sub-modo) dentro de um game mode está desbloqueada.
  * A primeira fase é sempre desbloqueada.
- * As seguintes requerem que a fase anterior esteja completa.
+ * Se o game mode pai tiver unlocked:true, todas as fases ficam livres.
+ * Caso contrário, as fases seguintes requerem que a anterior esteja completa.
  */
 function isPhaseUnlocked(mode, phaseIndex) {
     if (phaseIndex === 0) return true;
+    if (mode.unlocked) return true; // modo desbloqueado → todas as fases livres
+
     if (typeof Progress === 'undefined') return false;
 
     const prevPhase = mode.subModes[phaseIndex - 1];
@@ -138,7 +143,7 @@ function renderDropdown() {
         item.id = 'dropdown-' + mode.id;
 
         const optionalBadge = mode.optional
-            ? `<span class="badge-optional">OPTIONAL</span>`
+            ? `<span class="badge-optional">(OPTIONAL)</span>`
             : '';
 
         if (unlocked) {
@@ -150,14 +155,14 @@ function renderDropdown() {
             }
 
             item.innerHTML = isComplete
-                ? `<span class="dropdown-complete-icon">✓</span> ${mode.name}${optionalBadge}`
-                : `${mode.name}${optionalBadge}`;
+                ? `<span class="dropdown-complete-icon">✓</span> ${mode.name} ${optionalBadge}`
+                : `${mode.name} ${optionalBadge}`;
 
             if (isComplete) item.classList.add('dropdown-complete');
 
             item.addEventListener('click', () => selectMode(mode));
         } else {
-            item.innerHTML = `<i class="hn hn-lock dropdown-lock-icon"></i> ${mode.name}${optionalBadge}`;
+            item.innerHTML = `<i class="hn hn-lock dropdown-lock-icon"></i> ${mode.name} ${optionalBadge}`;
             item.classList.add('dropdown-locked');
             item.disabled = true;
             item.title = 'Complete todos os sub-modos do modo anterior para desbloquear';

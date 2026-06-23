@@ -282,11 +282,11 @@ main a {
 /* --- CRT Monitor Scanlines Effect --- */
 body::after {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
     background: linear-gradient(to bottom,
             rgba(255, 255, 255, 0) 50%,
-            rgba(0, 0, 0, 0.1) 50%);
+            rgba(0, 0, 0, 0.02) 50%);
     background-size: 100% 4px;
     z-index: 9999;
     pointer-events: none;
@@ -348,8 +348,15 @@ body::after {
 }
 
 @keyframes lockPulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 /* --- Completed mode/submode indicators --- */

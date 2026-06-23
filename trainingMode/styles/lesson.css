@@ -4,7 +4,7 @@
 
 /* --- Override body for lesson page --- */
 body {
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
     gap: 0;
     min-height: 100vh;

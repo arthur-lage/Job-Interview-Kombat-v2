@@ -28,6 +28,7 @@
         {
             "id": "introduction",
             "name": "INTRODUCTION",
+            "unlocked": true,
             "subModes": [
                 {
                     "id": "intro_vocab",
@@ -58,6 +59,7 @@
         {
             "id": "experience",
             "name": "EXPERIENCE",
+            "unlocked": true,
             "subModes": [
                 {
                     "id": "exp_vocab",
@@ -88,6 +90,7 @@
         {
             "id": "meetings",
             "name": "MEETINGS",
+            "unlocked": true,
             "subModes": [
                 {
                     "id": "meetings_vocab",
@@ -118,6 +121,7 @@
         {
             "id": "classic_questions",
             "name": "CLASSIC QUESTIONS",
+            "unlocked": true,
             "subModes": [
                 {
                     "id": "classic_vocab",
@@ -148,6 +152,7 @@
         {
             "id": "soft_skills",
             "name": "SOFT SKILLS",
+            "unlocked": true,
             "subModes": [
                 {
                     "id": "soft_vocab",
@@ -178,6 +183,7 @@
         {
             "id": "hard_skills",
             "name": "HARD SKILLS",
+            "unlocked": true,
             "subModes": [
                 {
                     "id": "hard_vocab",
@@ -208,6 +214,7 @@
         {
             "id": "salary_negotiation",
             "name": "SALARY NEGOTIATION",
+            "unlocked": true,
             "subModes": [
                 {
                     "id": "salary_vocab",
@@ -238,6 +245,7 @@
         {
             "id": "persona",
             "name": "PERSONA",
+            "unlocked": true,
             "subModes": [
                 {
                     "id": "persona_vocab",
