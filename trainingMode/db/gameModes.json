@@ -243,32 +243,32 @@
             ]
         },
         {
-            "id": "persona",
-            "name": "PERSONA",
+            "id": "profile",
+            "name": "PROFILE",
             "unlocked": true,
             "subModes": [
                 {
-                    "id": "persona_vocab",
+                    "id": "profile_vocab",
                     "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=persona&submode=persona_vocab",
+                    "link": "vocabulary_frenzy.html?topic=profile&submode=profile_vocab",
                     "icon_class": "hn hn-book-heart-solid"
                 },
                 {
-                    "id": "persona_audio",
+                    "id": "profile_audio",
                     "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=persona&submode=persona_audio",
+                    "link": "audio_quiz.html?topic=profile&submode=profile_audio",
                     "icon_class": "hn hn-headphones-solid"
                 },
                 {
-                    "id": "persona_quiz",
+                    "id": "profile_quiz",
                     "name": "QUIZ",
-                    "link": "quiz.html?topic=persona&submode=persona_quiz",
+                    "link": "quiz.html?topic=profile&submode=profile_quiz",
                     "icon_class": "hn hn-question-circle-solid"
                 },
                 {
-                    "id": "persona_interview",
+                    "id": "profile_interview",
                     "name": "INTERVIEW",
-                    "link": "quiz.html?topic=persona&mode=interview&submode=persona_interview",
+                    "link": "quiz.html?topic=profile&mode=interview&submode=profile_interview",
                     "icon_class": "hn hn-comment-dots-solid"
                 }
             ]

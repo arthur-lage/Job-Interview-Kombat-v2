@@ -6,7 +6,7 @@
  * Uses HackerNoon Pixel Icon Library classes from icon_class in JSON.
  *
  * Sistema de desbloqueio:
- *   - Game modes: TUTORIAL e PERSONA sempre desbloqueados.
+ *   - Game modes: TUTORIAL e PROFILE sempre desbloqueados.
  *     A partir de INTRODUÇÃO, cada modo requer que TODOS os sub-modos
  *     do modo anterior estejam completos.
  *   - Fases (sub-modos): dentro de cada game mode, as fases são sequenciais.

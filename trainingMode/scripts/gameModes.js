@@ -4,7 +4,7 @@
  * com paginação, navegação tópicos → sub-modos e sistema de desbloqueio progressivo.
  *
  * Regra de desbloqueio:
- *   - Os dois primeiros modos (TUTORIAL GRAMATICA e PERSONA) são sempre desbloqueados.
+ *   - Os dois primeiros modos (TUTORIAL GRAMATICA e PROFILE) são sempre desbloqueados.
  *   - A partir de INTRODUCAO, cada modo só desbloqueia quando TODOS os sub-modos
  *     do modo anterior foram completados (verificado via Progress).
  */

@@ -14,14 +14,14 @@
 // (deve espelhar gameModes.json)
 // ---------------------------------------------------------------------------
 const TOPIC_SUBMODES = {
-    tutorial_grammar:   ['tutorial_vocab', 'tutorial_audio', 'tutorial_quiz', 'tutorial_interview'],
-    persona:            ['persona_vocab',   'persona_audio',   'persona_quiz',   'persona_interview'],
-    introduction:       ['intro_vocab',     'intro_audio',     'intro_quiz',     'intro_interview'],
-    experience:         ['exp_vocab',       'exp_audio',       'exp_quiz',       'exp_interview'],
-    meetings:           ['meetings_vocab',  'meetings_audio',  'meetings_quiz',  'meetings_interview'],
-    classic_questions:  ['classic_vocab',   'classic_audio',   'classic_quiz',   'classic_interview'],
-    soft_skills:        ['soft_vocab',      'soft_audio',      'soft_quiz',      'soft_interview'],
-    salary_negotiation: ['salary_vocab',    'salary_audio',    'salary_quiz',    'salary_interview'],
+    tutorial_grammar: ['tutorial_vocab', 'tutorial_audio', 'tutorial_quiz', 'tutorial_interview'],
+    profile: ['profile_vocab', 'profile_audio', 'profile_quiz', 'profile_interview'],
+    introduction: ['intro_vocab', 'intro_audio', 'intro_quiz', 'intro_interview'],
+    experience: ['exp_vocab', 'exp_audio', 'exp_quiz', 'exp_interview'],
+    meetings: ['meetings_vocab', 'meetings_audio', 'meetings_quiz', 'meetings_interview'],
+    classic_questions: ['classic_vocab', 'classic_audio', 'classic_quiz', 'classic_interview'],
+    soft_skills: ['soft_vocab', 'soft_audio', 'soft_quiz', 'soft_interview'],
+    salary_negotiation: ['salary_vocab', 'salary_audio', 'salary_quiz', 'salary_interview'],
 };
 
 // ---------------------------------------------------------------------------
@@ -33,10 +33,10 @@ const RESUME_SECTIONS = [
         title: '👤 Personal Information',
         topic: 'tutorial_grammar',
         fields: [
-            { id: 'full_name',  label: 'Full Name',    placeholder: 'e.g. John Smith',                    type: 'text' },
-            { id: 'email',      label: 'Email',         placeholder: 'e.g. john.smith@email.com',          type: 'text' },
-            { id: 'linkedin',   label: 'LinkedIn',      placeholder: 'e.g. linkedin.com/in/johnsmith',     type: 'text' },
-            { id: 'phone',      label: 'Phone',         placeholder: 'e.g. +55 (31) 9 1234-5678',          type: 'text' },
+            { id: 'full_name', label: 'Full Name', placeholder: 'e.g. John Smith', type: 'text' },
+            { id: 'email', label: 'Email', placeholder: 'e.g. john.smith@email.com', type: 'text' },
+            { id: 'linkedin', label: 'LinkedIn', placeholder: 'e.g. linkedin.com/in/johnsmith', type: 'text' },
+            { id: 'phone', label: 'Phone', placeholder: 'e.g. +55 (31) 9 1234-5678', type: 'text' },
         ]
     },
     {
@@ -44,8 +44,8 @@ const RESUME_SECTIONS = [
         title: '🎯 Professional Summary',
         topic: 'persona',
         fields: [
-            { id: 'summary_kw1', label: 'Keyword 1', placeholder: 'e.g. proactive',       type: 'text' },
-            { id: 'summary_kw2', label: 'Keyword 2', placeholder: 'e.g. collaborative',   type: 'text' },
+            { id: 'summary_kw1', label: 'Keyword 1', placeholder: 'e.g. proactive', type: 'text' },
+            { id: 'summary_kw2', label: 'Keyword 2', placeholder: 'e.g. collaborative', type: 'text' },
             { id: 'summary_kw3', label: 'Keyword 3', placeholder: 'e.g. detail-oriented', type: 'text' },
             { id: 'summary_text', label: 'Summary Sentence', placeholder: 'e.g. I am a proactive and collaborative professional with strong attention to detail.', type: 'textarea' },
         ]
@@ -63,10 +63,10 @@ const RESUME_SECTIONS = [
         title: '💼 Work Experience',
         topic: 'experience',
         fields: [
-            { id: 'job_title',   label: 'Job Title',        placeholder: 'e.g. Junior Developer',              type: 'text' },
-            { id: 'company',     label: 'Company',          placeholder: 'e.g. Tech Corp Ltda.',               type: 'text' },
-            { id: 'exp_period',  label: 'Period',           placeholder: 'e.g. Jan 2022 – Present',            type: 'text' },
-            { id: 'achievement', label: 'Key Achievement',  placeholder: 'e.g. Reduced load time by 40% by optimizing queries.', type: 'textarea' },
+            { id: 'job_title', label: 'Job Title', placeholder: 'e.g. Junior Developer', type: 'text' },
+            { id: 'company', label: 'Company', placeholder: 'e.g. Tech Corp Ltda.', type: 'text' },
+            { id: 'exp_period', label: 'Period', placeholder: 'e.g. Jan 2022 – Present', type: 'text' },
+            { id: 'achievement', label: 'Key Achievement', placeholder: 'e.g. Reduced load time by 40% by optimizing queries.', type: 'textarea' },
         ]
     },
     {
@@ -74,9 +74,9 @@ const RESUME_SECTIONS = [
         title: '🤝 Meetings & Communication',
         topic: 'meetings',
         fields: [
-            { id: 'comm_skill1',    label: 'Communication Skill 1',      placeholder: 'e.g. Active Listening',          type: 'text' },
-            { id: 'comm_skill2',    label: 'Communication Skill 2',      placeholder: 'e.g. Clear Written Communication',type: 'text' },
-            { id: 'meeting_phrase', label: 'Favourite Meeting Phrase',   placeholder: 'e.g. "Could you clarify that point?"', type: 'text' },
+            { id: 'comm_skill1', label: 'Communication Skill 1', placeholder: 'e.g. Active Listening', type: 'text' },
+            { id: 'comm_skill2', label: 'Communication Skill 2', placeholder: 'e.g. Clear Written Communication', type: 'text' },
+            { id: 'meeting_phrase', label: 'Favourite Meeting Phrase', placeholder: 'e.g. "Could you clarify that point?"', type: 'text' },
         ]
     },
     {
@@ -84,9 +84,9 @@ const RESUME_SECTIONS = [
         title: '❓ Classic Interview Answers',
         topic: 'classic_questions',
         fields: [
-            { id: 'why_hire',  label: '"Why should we hire you?"',   placeholder: 'e.g. Because I bring a strong mix of technical skills and soft skills that align with your needs.', type: 'textarea' },
-            { id: 'strength',  label: '"What is your greatest strength?"', placeholder: 'e.g. My ability to quickly learn new technologies.', type: 'textarea' },
-            { id: 'weakness',  label: '"What is your weakness?"',    placeholder: 'e.g. I sometimes focus too much on details, but I am working to balance thoroughness with speed.', type: 'textarea' },
+            { id: 'why_hire', label: '"Why should we hire you?"', placeholder: 'e.g. Because I bring a strong mix of technical skills and soft skills that align with your needs.', type: 'textarea' },
+            { id: 'strength', label: '"What is your greatest strength?"', placeholder: 'e.g. My ability to quickly learn new technologies.', type: 'textarea' },
+            { id: 'weakness', label: '"What is your weakness?"', placeholder: 'e.g. I sometimes focus too much on details, but I am working to balance thoroughness with speed.', type: 'textarea' },
         ]
     },
     {
@@ -94,8 +94,8 @@ const RESUME_SECTIONS = [
         title: '⭐ Soft Skills',
         topic: 'soft_skills',
         fields: [
-            { id: 'soft1', label: 'Top Soft Skill 1', placeholder: 'e.g. Leadership',      type: 'text' },
-            { id: 'soft2', label: 'Top Soft Skill 2', placeholder: 'e.g. Empathy',         type: 'text' },
+            { id: 'soft1', label: 'Top Soft Skill 1', placeholder: 'e.g. Leadership', type: 'text' },
+            { id: 'soft2', label: 'Top Soft Skill 2', placeholder: 'e.g. Empathy', type: 'text' },
             { id: 'soft3', label: 'Top Soft Skill 3', placeholder: 'e.g. Problem-solving', type: 'text' },
         ]
     },
@@ -104,8 +104,8 @@ const RESUME_SECTIONS = [
         title: '💰 Salary Expectation',
         topic: 'salary_negotiation',
         fields: [
-            { id: 'salary_range',   label: 'Expected Salary Range', placeholder: 'e.g. R$ 4,000 – R$ 6,000 / month', type: 'text' },
-            { id: 'salary_justify', label: 'Justification',         placeholder: 'e.g. Based on my experience and market research for this role in Belo Horizonte.', type: 'textarea' },
+            { id: 'salary_range', label: 'Expected Salary Range', placeholder: 'e.g. R$ 4,000 – R$ 6,000 / month', type: 'text' },
+            { id: 'salary_justify', label: 'Justification', placeholder: 'e.g. Based on my experience and market research for this role in Belo Horizonte.', type: 'textarea' },
         ]
     },
 ];
@@ -189,11 +189,11 @@ function buildResumePreviewHTML() {
         <div class="rdoc-personal-header">
             <div class="rdoc-name">${f('full_name', 'YOUR FULL NAME', 'tutorial_grammar')}</div>
             <div class="rdoc-contact">
-                ${f('email',   'your@email.com',             'tutorial_grammar')}
+                ${f('email', 'your@email.com', 'tutorial_grammar')}
                 <span class="rdoc-sep">·</span>
-                ${f('phone',   '+00 (00) 0 0000-0000',       'tutorial_grammar')}
+                ${f('phone', '+00 (00) 0 0000-0000', 'tutorial_grammar')}
                 <span class="rdoc-sep">·</span>
-                ${f('linkedin','linkedin.com/in/yourprofile', 'tutorial_grammar')}
+                ${f('linkedin', 'linkedin.com/in/yourprofile', 'tutorial_grammar')}
             </div>
         </div>
 
@@ -201,40 +201,40 @@ function buildResumePreviewHTML() {
         <div class="rdoc-section">
             <div class="rdoc-section-title">PROFESSIONAL SUMMARY</div>
             <p class="rdoc-text">
-                I am a ${f('summary_kw1','[keyword 1]','persona')},
-                ${f('summary_kw2','[keyword 2]','persona')} and
-                ${f('summary_kw3','[keyword 3]','persona')} professional.
+                I am a ${f('summary_kw1', '[keyword 1]', 'persona')},
+                ${f('summary_kw2', '[keyword 2]', 'persona')} and
+                ${f('summary_kw3', '[keyword 3]', 'persona')} professional.
             </p>
-            <p class="rdoc-text rdoc-mt">${f('summary_text','[Write your summary sentence here...]','persona')}</p>
+            <p class="rdoc-text rdoc-mt">${f('summary_text', '[Write your summary sentence here...]', 'persona')}</p>
         </div>
 
         <!-- Self-Introduction -->
         <div class="rdoc-section">
             <div class="rdoc-section-title">SELF-INTRODUCTION</div>
-            <p class="rdoc-text">${f('intro_paragraph','[Write a brief self-introduction in English (2–3 sentences)...]','introduction')}</p>
+            <p class="rdoc-text">${f('intro_paragraph', '[Write a brief self-introduction in English (2–3 sentences)...]', 'introduction')}</p>
         </div>
 
         <!-- Work Experience -->
         <div class="rdoc-section">
             <div class="rdoc-section-title">WORK EXPERIENCE</div>
             <div class="rdoc-exp-header">
-                <span class="rdoc-exp-title">${f('job_title','[Job Title]','experience')}</span>
+                <span class="rdoc-exp-title">${f('job_title', '[Job Title]', 'experience')}</span>
                 <span class="rdoc-sep">—</span>
-                ${f('company','[Company Name]','experience')}
-                <span class="rdoc-exp-period">${f('exp_period','[Period]','experience')}</span>
+                ${f('company', '[Company Name]', 'experience')}
+                <span class="rdoc-exp-period">${f('exp_period', '[Period]', 'experience')}</span>
             </div>
-            <p class="rdoc-text rdoc-mt">${f('achievement','[Describe your key achievement in this role...]','experience')}</p>
+            <p class="rdoc-text rdoc-mt">${f('achievement', '[Describe your key achievement in this role...]', 'experience')}</p>
         </div>
 
         <!-- Communication -->
         <div class="rdoc-section">
             <div class="rdoc-section-title">COMMUNICATION & MEETINGS</div>
             <div class="rdoc-skills-row">
-                ${f('comm_skill1','[Communication Skill 1]','meetings')}
+                ${f('comm_skill1', '[Communication Skill 1]', 'meetings')}
                 <span class="rdoc-sep">·</span>
-                ${f('comm_skill2','[Communication Skill 2]','meetings')}
+                ${f('comm_skill2', '[Communication Skill 2]', 'meetings')}
             </div>
-            <p class="rdoc-text rdoc-quote">"${f('meeting_phrase','[Your favourite meeting phrase...]','meetings')}"</p>
+            <p class="rdoc-text rdoc-quote">"${f('meeting_phrase', '[Your favourite meeting phrase...]', 'meetings')}"</p>
         </div>
 
         <!-- Interview Prep -->
@@ -242,15 +242,15 @@ function buildResumePreviewHTML() {
             <div class="rdoc-section-title">INTERVIEW PREPARATION</div>
             <div class="rdoc-qa-block">
                 <span class="rdoc-q">Why should we hire you?</span>
-                <p class="rdoc-text">${f('why_hire','[Your answer here...]','classic_questions')}</p>
+                <p class="rdoc-text">${f('why_hire', '[Your answer here...]', 'classic_questions')}</p>
             </div>
             <div class="rdoc-qa-block">
                 <span class="rdoc-q">Greatest strength?</span>
-                <p class="rdoc-text">${f('strength','[Your answer here...]','classic_questions')}</p>
+                <p class="rdoc-text">${f('strength', '[Your answer here...]', 'classic_questions')}</p>
             </div>
             <div class="rdoc-qa-block">
                 <span class="rdoc-q">Main weakness?</span>
-                <p class="rdoc-text">${f('weakness','[Your answer here...]','classic_questions')}</p>
+                <p class="rdoc-text">${f('weakness', '[Your answer here...]', 'classic_questions')}</p>
             </div>
         </div>
 
@@ -258,11 +258,11 @@ function buildResumePreviewHTML() {
         <div class="rdoc-section">
             <div class="rdoc-section-title">SOFT SKILLS</div>
             <div class="rdoc-skills-row rdoc-skills-pills">
-                ${f('soft1','[Skill 1]','soft_skills')}
+                ${f('soft1', '[Skill 1]', 'soft_skills')}
                 <span class="rdoc-sep">·</span>
-                ${f('soft2','[Skill 2]','soft_skills')}
+                ${f('soft2', '[Skill 2]', 'soft_skills')}
                 <span class="rdoc-sep">·</span>
-                ${f('soft3','[Skill 3]','soft_skills')}
+                ${f('soft3', '[Skill 3]', 'soft_skills')}
             </div>
         </div>
 
@@ -270,9 +270,9 @@ function buildResumePreviewHTML() {
         <div class="rdoc-section">
             <div class="rdoc-section-title">SALARY EXPECTATION</div>
             <p class="rdoc-text">
-                <span class="rdoc-salary-range">${f('salary_range','[Expected Salary Range]','salary_negotiation')}</span>
+                <span class="rdoc-salary-range">${f('salary_range', '[Expected Salary Range]', 'salary_negotiation')}</span>
             </p>
-            <p class="rdoc-text rdoc-mt">${f('salary_justify','[Justification for your salary expectation...]','salary_negotiation')}</p>
+            <p class="rdoc-text rdoc-mt">${f('salary_justify', '[Justification for your salary expectation...]', 'salary_negotiation')}</p>
         </div>
     `;
 }
@@ -313,8 +313,8 @@ function buildResumeModal() {
 
     // Progress bar
     const unlockedCount = RESUME_SECTIONS.filter(s => isTopicUnlocked(s.topic)).length;
-    const totalCount    = RESUME_SECTIONS.length;
-    const progressPct   = Math.round((unlockedCount / totalCount) * 100);
+    const totalCount = RESUME_SECTIONS.length;
+    const progressPct = Math.round((unlockedCount / totalCount) * 100);
 
     const progressWrap = document.createElement('div');
     progressWrap.className = 'resume-progress-wrap';
