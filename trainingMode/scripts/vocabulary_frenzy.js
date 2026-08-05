@@ -47,44 +47,55 @@ const game = {
 
         const topicId = getTopicId()
 
-        let wordList = []
+        // --- Load ALL vocabulary across every topic ---
+        const allWords = Object.values(data).flat()
+
+        // --- Determine the current topic's word list ---
+        let topicWords = []
 
         if (Array.isArray(data)) {
-            // Formato antigo (array plano) — compatibilidade
-            wordList = data
+            topicWords = data
         } else if (topicId && data[topicId]) {
-            // Tópico específico encontrado (novo formato por objeto)
-            wordList = data[topicId]
+            topicWords = data[topicId]
         } else {
-            // Sem tópico: mistura tudo
-            wordList = Object.values(data).flat()
+            topicWords = allWords
         }
 
-        // Agrupa por tipo
-        const groups = {}
-        wordList.forEach(item => {
-            if (!groups[item.type]) groups[item.type] = []
-            groups[item.type].push(item)
+        // --- Find the dominant type in this topic (= the theme) ---
+        const typeCounts = {}
+        topicWords.forEach(item => {
+            typeCounts[item.type] = (typeCounts[item.type] || 0) + 1
         })
+        const themeType = Object.entries(typeCounts)
+            .sort((a, b) => b[1] - a[1])[0][0]
 
-        const types = Object.keys(groups)
-
-        // Define o THEME para o jogo baseado nos tipos disponíveis
-        const themeType = types[Math.floor(Math.random() * types.length)]
         game.theme = {
             type: themeType,
             text: themeType.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
         }
 
-        const perTypeCount = Math.floor(totalCount / types.length)
+        // --- Pick correct words (from the theme type) ---
+        const correctPool = topicWords
+            .filter(item => item.type === themeType)
+            .sort(() => Math.random() - 0.5)
 
-        const selected = []
-        types.forEach(type => {
-            const shuffled = groups[type].sort(() => Math.random() - 0.5)
-            selected.push(...shuffled.slice(0, perTypeCount))
-        })
+        const minCorrect = Math.min(6, correctPool.length)
+        const maxCorrect = Math.min(Math.ceil(totalCount * 0.5), correctPool.length)
+        const correctCount = Math.floor(Math.random() * (maxCorrect - minCorrect + 1)) + minCorrect
+        const correctWords = correctPool.slice(0, correctCount)
 
-        game.vocabularyData = selected.sort(() => Math.random() - 0.5)
+        // --- Pick distractor words (from OTHER topics, NOT the theme type) ---
+        const correctVocabSet = new Set(correctWords.map(w => w.vocabulary))
+        const distractorPool = allWords
+            .filter(item => item.type !== themeType && !correctVocabSet.has(item.vocabulary))
+            .sort(() => Math.random() - 0.5)
+
+        const distractorCount = totalCount - correctCount
+        const distractors = distractorPool.slice(0, distractorCount)
+
+        // --- Combine and shuffle ---
+        game.vocabularyData = [...correctWords, ...distractors]
+            .sort(() => Math.random() - 0.5)
 
         return game.vocabularyData
     },

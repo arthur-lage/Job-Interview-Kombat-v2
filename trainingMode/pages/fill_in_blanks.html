@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill in the Blanks — Training Mode</title>
+    <link rel="icon" type="image/x-icon" href="../../JobInterviewKombat/assets/favicon/favicon.ico">
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/global.css">
+    <link rel="stylesheet" href="../styles/trainingMode.css">
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/fonts.css">
+    <link rel="stylesheet" href="../styles/common_questions.css">
+    <link rel="stylesheet" href="../styles/fill_in_blanks.css">
+</head>
+
+<body>
+    <div class="training-mode-background"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="../pages/minimap.html" id="back-btn" aria-label="Back to minimap">
+            <img src="../../JobInterviewKombat/assets/images/arrow-back.png" alt="Back" width="40">
+        </a>
+        <h1 id="lesson-module-title">Fill in the Blanks</h1>
+    </header>
+
+    <!-- Page Intro -->
+    <div class="page-intro">
+        <p class="page-subtitle">Let's practice the answers! Fill in the missing words to complete the sentences.</p>
+    </div>
+
+    <div class="card-viewer">
+        <div class="question-progress" id="question-progress"></div>
+        <h3 id="question-title"></h3>
+
+        <div class="mini-quiz">
+            <h4 id="instruction-title">Complete the Answer</h4>
+            <p>Click a word in the word bank to fill the first empty blank. Click a filled blank to return the word.</p>
+
+            <div id="fill-in-text" class="fill-in-text">
+                <!-- Text and blank slots will be generated here -->
+            </div>
+
+            <div id="word-bank" class="word-bank">
+                <!-- Clickable word chips will be generated here -->
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem; align-items: center;">
+                <button id="confirm-btn" class="lesson-done-btn">Confirm Answer</button>
+                <button id="next-btn" class="lesson-done-btn" style="display: none;">Next Question</button>
+                <span id="feedback-msg"
+                    style="font-family: 'PixelOperatorFont', monospace; font-size: 1.4rem; font-weight: bold;"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/progress.js"></script>
+    <script src="../scripts/resume.js"></script>
+    <script src="../scripts/fill_in_blanks.js"></script>
+</body>
+
+</html>

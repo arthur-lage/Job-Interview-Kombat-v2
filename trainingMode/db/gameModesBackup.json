@@ -1,0 +1,26 @@
+[
+    {
+        "id": "classic_vocab",
+        "name": "VOCABULARY",
+        "link": "vocabulary_frenzy.html?topic=classic_questions&submode=classic_vocab",
+        "icon_class": "hn hn-book-heart-solid"
+    },
+    {
+        "id": "classic_audio",
+        "name": "AUDIO QUIZ",
+        "link": "audio_quiz.html?topic=classic_questions&submode=classic_audio",
+        "icon_class": "hn hn-headphones-solid"
+    },
+    {
+        "id": "classic_quiz",
+        "name": "QUIZ",
+        "link": "quiz.html?topic=classic_questions&submode=classic_quiz",
+        "icon_class": "hn hn-question-circle-solid"
+    },
+    {
+        "id": "classic_interview",
+        "name": "INTERVIEW",
+        "link": "quiz.html?topic=classic_questions&mode=interview&submode=classic_interview",
+        "icon_class": "hn hn-comment-dots-solid"
+    }
+]

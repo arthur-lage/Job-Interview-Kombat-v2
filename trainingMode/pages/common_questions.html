@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Questions — Training Mode</title>
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/global.css">
+    <link rel="stylesheet" href="../styles/trainingMode.css">
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/fonts.css">
+    <link rel="stylesheet" href="../styles/common_questions.css">
+    <link rel="icon" type="image/x-icon" href="../../JobInterviewKombat/assets/favicon/favicon.ico">
+</head>
+
+<body>
+    <div class="training-mode-background"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="../pages/minimap.html" id="back-btn" aria-label="Back to minimap">
+            <img src="../../JobInterviewKombat/assets/images/arrow-back.png" alt="Back" width="40">
+        </a>
+        <h1 id="lesson-module-title">Common Questions</h1>
+    </header>
+
+    <!-- Page Intro -->
+    <div class="page-intro">
+        <p class="page-subtitle">How about we learn some of the most asked questions during job interviews and how to
+            answer them?</p>
+    </div>
+
+    <div class="card-viewer">
+        <div class="question-progress" id="question-progress"></div>
+        <h3 id="common-question"></h3>
+        <span>How to answer: <p id="how-to-answer"></p></span>
+
+        <div class="mini-quiz">
+            <p class="practice-label"
+                style="font-family: 'PixelOperatorFont', monospace; font-size: 1.4rem; color: #5cff5c; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; text-shadow: 0 0 5px rgba(92, 255, 92, 0.4);">
+                Now it's your turn to practice!</p>
+            <h4 id="mini-quiz_common-question"></h4>
+            <p>Which one of the three answers below is the correct one?</p>
+            <div class="mini-quiz_options" id="mini-quiz_options"
+                style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem;">
+            </div>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem; align-items: center;">
+                <button id="confirm-btn" class="lesson-done-btn">Confirm Answer</button>
+                <button id="next-btn" class="lesson-done-btn" style="display: none;">Next Question</button>
+                <span id="feedback-msg"
+                    style="font-family: 'PixelOperatorFont', monospace; font-size: 1.4rem; font-weight: bold;"></span>
+            </div>
+            <div id="explanation-msg"
+                style="display: none; margin-top: 1.5rem; padding: 1.5rem; background: rgba(0, 0, 0, 0.4); border-left: 4px solid #fdd201; border-radius: 8px; font-family: 'PixelOperatorFont', monospace; font-size: 1.3rem; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/progress.js"></script>
+    <script src="../scripts/resume.js"></script>
+    <script src="../scripts/common_questions.js"></script>
+</body>
+
+</html>

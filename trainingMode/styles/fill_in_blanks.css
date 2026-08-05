@@ -1,0 +1,121 @@
+/* =====================================================
+   fill_in_blanks.css — Fill in the Blanks Styling
+   ===================================================== */
+
+/* Text container styling */
+.fill-in-text {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 2;
+    margin-bottom: 2.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(200, 100, 255, 0.15);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+}
+
+/* Blank slots */
+.blank-slot {
+    display: inline-block;
+    min-width: 120px;
+    height: 35px;
+    border-bottom: 3px solid #c864ff;
+    margin: 0 0.5rem;
+    vertical-align: middle;
+    text-align: center;
+    color: #fdd201;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(200, 100, 255, 0.1);
+    border-radius: 4px 4px 0 0;
+    transition: all 0.2s ease;
+    padding: 0 0.5rem;
+    line-height: 35px;
+    /* box-shadow: inset 0 -5px 15px rgba(200, 100, 255, 0.1); */
+}
+
+.blank-slot.filled {
+    border-bottom-color: #fdd201;
+    background: rgba(253, 210, 1, 0.15);
+    /* box-shadow: inset 0 -5px 15px rgba(253, 210, 1, 0.1); */
+}
+
+.blank-slot:hover {
+    background: rgba(200, 100, 255, 0.25);
+}
+
+.blank-slot.filled:hover {
+    background: rgba(253, 210, 1, 0.25);
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* Correct and Wrong States for slots */
+.blank-slot.correct {
+    border-bottom-color: #5cff5c;
+    color: #5cff5c;
+    background: rgba(92, 255, 92, 0.15);
+    pointer-events: none;
+}
+
+.blank-slot.wrong {
+    border-bottom-color: #ff6b6b;
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.15);
+    pointer-events: none;
+}
+
+/* Word Bank container */
+.word-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px dashed rgba(200, 100, 255, 0.3);
+    border-radius: 12px;
+    min-height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Clickable Word Chips */
+.word-chip {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.3rem;
+    color: #fff;
+
+    border: 2px solid transparent;
+    border-bottom: 3px solid #c864ff;
+    background: rgba(200, 100, 255, 0.1);
+    border-radius: 4px 4px 0 0;
+
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.word-chip:hover {
+    transform: translateY(-3px);
+    background: rgba(200, 100, 255, 0.25);
+}
+
+.word-chip:active {
+    transform: translateY(1px);
+}
+
+.word-chip.hidden {
+    display: none;
+}
+
+#question-title {
+    color: white;
+    font-family: "PixelOperatorFont", monospace;
+    font-weight: 700;
+    font-size: 1.8rem;
+
+}
