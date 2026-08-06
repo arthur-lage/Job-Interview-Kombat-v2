@@ -1,0 +1,194 @@
+/* =====================================================
+   salary_tips.css — Salary Tips Page Styling
+   ===================================================== */
+
+/* Page Intro */
+
+body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    gap: 0;
+}
+
+header {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 2px solid rgba(200, 100, 255, 0.2);
+    background: rgba(18, 2, 43, 0.9);
+    z-index: 20;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+.page-intro {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+}
+
+.page-subtitle {
+    font-family: 'PixelOperatorFont', monospace;
+    color: rgba(230, 208, 255, 0.8);
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Main Card Container */
+.card-viewer {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    background: linear-gradient(160deg, rgba(50, 0, 90, 0.95), rgba(20, 0, 50, 0.98));
+    border: 2px solid rgba(200, 100, 255, 0.35);
+    border-radius: 16px;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+/* Tip Progress Indicator */
+#tip-progress {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.4rem;
+    color: rgba(230, 208, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+}
+
+/* Tip Title */
+#tip-title {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 2rem;
+    color: #fdd201;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+/* Tip Content Description */
+.tip-content {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    white-space: pre-line;
+}
+
+/* Do / Don't Sections */
+.tip-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.tip-section {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(200, 100, 255, 0.18);
+    border-radius: 10px;
+    padding: 1.4rem 1.6rem;
+}
+
+.tip-section-title {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.do-title {
+    color: #5cff5c;
+}
+
+.dont-title {
+    color: #ff6b6b;
+}
+
+.tip-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tip-section ul li {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.5rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.tip-section ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: rgba(200, 100, 255, 0.6);
+}
+
+/* Example Phrase Block */
+.tip-example {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(200, 100, 255, 0.2);
+}
+
+.tip-example blockquote {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.4);
+    border-left: 4px solid #fdd201;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 0.8rem 0 0 0;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* Action Buttons */
+.lesson-done-btn {
+    font-family: 'PixelOperatorFont', monospace;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #12022B;
+    background: linear-gradient(135deg, #fdd201, #e0b800);
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    transition: all 0.2s ease;
+}
+
+.lesson-done-btn:hover {
+    transform: scale(1.05);
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE                                         */
+/* -------------------------------------------------- */
+
+@media (max-width: 600px) {
+    .card-viewer {
+        padding: 1.8rem 1.4rem;
+        width: 95%;
+    }
+
+    #tip-title {
+        font-size: 1.8rem;
+    }
+
+    .tip-details {
+        gap: 1rem;
+    }
+}

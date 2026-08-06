@@ -205,28 +205,16 @@
             "unlocked": true,
             "subModes": [
                 {
-                    "id": "salary_vocab",
-                    "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=salary_negotiation&submode=salary_vocab",
-                    "icon_class": "hn hn-book-heart-solid"
+                    "id": "salary_tips",
+                    "name": "HOW TO",
+                    "link": "salary_tips.html",
+                    "icon_class": "hn hn-minds"
                 },
                 {
-                    "id": "salary_audio",
-                    "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=salary_negotiation&submode=salary_audio",
-                    "icon_class": "hn hn-headphones-solid"
-                },
-                {
-                    "id": "salary_quiz",
-                    "name": "QUIZ",
-                    "link": "quiz.html?topic=salary_negotiation&submode=salary_quiz",
-                    "icon_class": "hn hn-question-circle-solid"
-                },
-                {
-                    "id": "salary_interview",
-                    "name": "INTERVIEW",
-                    "link": "quiz.html?topic=salary_negotiation&mode=interview&submode=salary_interview",
-                    "icon_class": "hn hn-comment-dots-solid"
+                    "id": "salary_examples",
+                    "name": "NEGOTIATION EXAMPLES",
+                    "link": "salary_examples.html",
+                    "icon_class": "hn hn-copy-solid"
                 }
             ]
         },
