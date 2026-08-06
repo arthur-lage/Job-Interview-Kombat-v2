@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "question": "Tell me a little about yourself.",
+        "text": "I am 27 years old and I recently {blank} in Computer Science. I have a strong {blank} in web development and I am {blank} about creating efficient applications.",
+        "correctWords": ["graduated", "background", "passionate"],
+        "wordBank": ["graduated", "background", "passionate", "failed", "interest", "lazy"]
+    },
+    {
+        "id": 2,
+        "question": "Why do you want to work here?",
+        "text": "I've been following your company's recent expansion into renewable energy, and I'm very {blank} by your commitment to {blank}. My background {blank} perfectly with your goals.",
+        "correctWords": ["impressed", "sustainability", "aligns"],
+        "wordBank": ["impressed", "sustainability", "aligns", "bored", "money", "clashes", "profit"]
+    },
+    {
+        "id": 3,
+        "question": "What do you consider to be your weaknesses?",
+        "text": "Sometimes I can be hesitant in {blank} tasks because I like to ensure things are done a certain way. However, I've been taking management courses to {blank} my {blank} skills.",
+        "correctWords": ["delegating", "improve", "leadership"],
+        "wordBank": ["delegating", "improve", "leadership", "ignoring", "worsen", "cooking", "doing"]
+    },
+    {
+        "id": 4,
+        "question": "Where do you see yourself in five years?",
+        "text": "In five years, I hope to have {blank} my skills significantly. I see myself taking on more leadership {blank} and contributing to the strategic {blank} of the company.",
+        "correctWords": ["developed", "responsibilities", "goals"],
+        "wordBank": ["developed", "responsibilities", "goals", "forgotten", "vacations", "losses", "ignored"]
+    },
+    {
+        "id": 5,
+        "question": "What are your greatest strengths?",
+        "text": "I'd say my greatest strength is my {blank} ability. In my last role, I was able to identify the {blank} of a persistent bug and implemented a fix that reduced system {blank}.",
+        "correctWords": ["problem-solving", "root cause", "downtime"],
+        "wordBank": ["problem-solving", "root cause", "downtime", "laziness", "surface", "speed", "uptime"]
+    },
+    {
+        "id": 6,
+        "question": "Why should we hire you?",
+        "text": "Based on what we've discussed, my background in {blank} and my proven ability to lead {blank} teams align perfectly with the goals for this position. I can hit the ground {blank} and add immediate value.",
+        "correctWords": ["data analysis", "cross-functional", "running"],
+        "wordBank": ["data analysis", "cross-functional", "running", "nothing", "isolated", "walking", "sleeping"]
+    },
+    {
+        "id": 7,
+        "question": "Do you have any questions for us?",
+        "text": "Can you tell me more about the {blank} responsibilities of this role and how {blank} is measured here?",
+        "correctWords": ["day-to-day", "success"],
+        "wordBank": ["day-to-day", "success", "vacation", "failure", "salary", "lunch"]
+    },
+    {
+        "id": 8,
+        "question": "How do you handle stress/pressure?",
+        "text": "When faced with a tight {blank}, I break the project down into manageable tasks, {blank} them, and stay {blank} until it's done.",
+        "correctWords": ["deadline", "prioritize", "focused"],
+        "wordBank": ["deadline", "prioritize", "focused", "schedule", "ignore", "distracted", "asleep"]
+    },
+    {
+        "id": 9,
+        "question": "Describe a challenge or conflict you've faced at work, and how you dealt with it.",
+        "text": "A project I was leading was falling behind schedule due to a {blank} between departments. I organized a brief sync meeting, clarified {blank}, and we were able to get back on {blank}.",
+        "correctWords": ["miscommunication", "responsibilities", "track"],
+        "wordBank": ["miscommunication", "responsibilities", "track", "fight", "salaries", "vacation", "budget"]
+    },
+    {
+        "id": 10,
+        "question": "What do you consider to be your biggest professional achievement?",
+        "text": "My biggest achievement was completely {blank} our team's workflow process, which led to a 30% increase in {blank} over six {blank}.",
+        "correctWords": ["overhauling", "productivity", "months"],
+        "wordBank": ["overhauling", "productivity", "months", "destroying", "laziness", "days", "ignoring"]
+    },
+    {
+        "id": 11,
+        "question": "Why do you want to leave your current job?",
+        "text": "I've learned a lot in my current role, but I'm looking for a position that offers more {blank} to take on leadership responsibilities and grow my {blank} in a new {blank}.",
+        "correctWords": ["opportunities", "skill set", "industry"],
+        "wordBank": ["opportunities", "skill set", "industry", "money", "vacation", "excuses", "office"]
+    },
+    {
+        "id": 12,
+        "question": "How would your friends describe you?",
+        "text": "They would probably say I'm highly {blank}, dependable, and always willing to lend an {blank} when someone needs to talk through a {blank}.",
+        "correctWords": ["organized", "ear", "problem"],
+        "wordBank": ["organized", "ear", "problem", "messy", "hand", "joke", "lazy"]
+    }
+]
