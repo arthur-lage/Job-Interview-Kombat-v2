@@ -1,0 +1,151 @@
+[
+    {
+        "id": 1,
+        "title": "The Early Salary Trap",
+        "tipReference": "Timing matters",
+        "context": "You're in the first round of interviews for a marketing manager position. The interviewer suddenly asks about salary expectations before discussing the role in detail.",
+        "dialog": [
+            { "role": "interviewer", "text": "Thanks for coming in today. Before we dive into your background, let me ask — what kind of salary are you looking for?" },
+            { "role": "interviewee", "text": "Thank you for having me! I'm really excited about this opportunity." }
+        ],
+        "question": "The interviewer is asking about salary in the first round. What should you say next?",
+        "options": [
+            { "id": "a", "text": "I'm looking for at least $85,000. That's my minimum and I won't go below that." },
+            { "id": "b", "text": "I'd love to learn more about the role and its responsibilities first. I'm sure we can find a number that works for both of us once we've had a chance to discuss the full scope of the position." },
+            { "id": "c", "text": "I don't really have a number in mind. Whatever you think is fair works for me." }
+        ],
+        "correctOption": "b",
+        "explanation": "Tip: Timing matters. Bringing up a specific number too early can hurt your position. Option B deflects the question politely and delays the salary conversation to a point where the company has invested more in your candidacy. Option A is too aggressive for a first interview, and Option C is too passive — it signals you haven't done your research."
+    },
+    {
+        "id": 2,
+        "title": "Letting Them Anchor First",
+        "tipReference": "Let them say the number first",
+        "context": "You've made it to the second round for a software developer role. The hiring manager seems very interested in you and asks directly what salary you'd expect.",
+        "dialog": [
+            { "role": "interviewer", "text": "We're really impressed with your technical skills. You'd be a great fit for the team." },
+            { "role": "interviewee", "text": "Thank you, that means a lot! I've really enjoyed learning about the team and the projects." },
+            { "role": "interviewer", "text": "So, let's talk compensation. What salary number would make you happy?" }
+        ],
+        "question": "The interviewer wants you to name a number first. How should you respond?",
+        "options": [
+            { "id": "a", "text": "I'd love to hear more about the compensation range you have in mind for this position. I'm flexible and want to make sure we're aligned before I commit to a number." },
+            { "id": "b", "text": "I was thinking $120,000. That's what I need to make ends meet with my mortgage and car payments." },
+            { "id": "c", "text": "I honestly have no idea. How much do you usually pay people?" }
+        ],
+        "correctOption": "a",
+        "explanation": "Tip: Let them say the number first. When you name a number first, you risk underselling yourself or scaring them away. Option A elegantly redirects the question back to the interviewer so you can negotiate from a position of knowledge. Option B anchors on personal expenses (never do this), and Option C sounds unprepared."
+    },
+    {
+        "id": 3,
+        "title": "Countering a Low Offer",
+        "tipReference": "How to counter a low offer",
+        "context": "You've received a job offer for a data analyst position. Based on your research, the market rate is $72,000–$82,000, but the offer came in at $65,000.",
+        "dialog": [
+            { "role": "interviewer", "text": "We'd like to officially offer you the Data Analyst position! We're offering a base salary of $65,000 with standard benefits." },
+            { "role": "interviewee", "text": "Thank you so much, I'm really excited about this opportunity!" },
+            { "role": "interviewer", "text": "Great! We'd love to have your answer by the end of the week." }
+        ],
+        "question": "The offer is below market rate. How should you respond?",
+        "options": [
+            { "id": "a", "text": "That's way too low. I know people in this role make at least $80K. You need to do better than that." },
+            { "id": "b", "text": "Thank you for the offer — I'm genuinely excited about this role. Based on my experience and the market research I've done, I was hoping for something closer to $76,500. Is there room to discuss this further?" },
+            { "id": "c", "text": "Okay, $65,000 sounds fine. I don't want to seem greedy, so I'll take it." }
+        ],
+        "correctOption": "b",
+        "explanation": "Tip: How to counter a low offer. Option B shows gratitude, reaffirms interest, and opens a constructive conversation using a specific counter-number ($76,500 instead of a round $75K or $80K). Option A is aggressive and confrontational, while Option C leaves money on the table out of fear — most companies expect you to negotiate."
+    },
+    {
+        "id": 4,
+        "title": "The Current Salary Question",
+        "tipReference": "Dodge the \"current salary\" question",
+        "context": "During the final interview for a project manager role, the recruiter asks you about your current compensation. You're currently underpaid for your skill level.",
+        "dialog": [
+            { "role": "interviewer", "text": "We're moving forward with the offer process. Before that, can you share what your current salary is?" },
+            { "role": "interviewee", "text": "I appreciate you moving things forward!" }
+        ],
+        "question": "The recruiter is asking about your current salary. What's the smartest response?",
+        "options": [
+            { "id": "a", "text": "I'd prefer to focus on the value I can bring to this role and what the market rate is for this position. I'm looking for a salary in the range of $92,000 to $98,000 based on my skills and experience." },
+            { "id": "b", "text": "I'm currently making $62,000, but I know that's below market rate so please don't use that as a baseline." },
+            { "id": "c", "text": "I'd rather not say. It's none of your business, honestly." }
+        ],
+        "correctOption": "a",
+        "explanation": "Tip: Dodge the \"current salary\" question. If your current salary is low, sharing it anchors the new offer to that number. Option A redirects the conversation to your value and market rate. Option B shares the number and then tries to undo the damage — too late, the anchor is already set. Option C is rude and burns bridges."
+    },
+    {
+        "id": 5,
+        "title": "Negotiating Beyond the Base",
+        "tipReference": "Look beyond the base salary",
+        "context": "You've been offered a UX designer position at $78,000. The company says this is the maximum they can offer for the base salary, but you feel the total package could be improved.",
+        "dialog": [
+            { "role": "interviewer", "text": "Unfortunately, $78,000 is really the top of our budget for this level. I wish we could go higher, but that's the ceiling." },
+            { "role": "interviewee", "text": "I understand, and I appreciate your transparency about that." },
+            { "role": "interviewer", "text": "So, would you like to accept the offer as it stands?" }
+        ],
+        "question": "They can't increase the base salary. What's your best move?",
+        "options": [
+            { "id": "a", "text": "If the base salary is firm, I'm wondering if there's flexibility on other parts of the package. Would it be possible to discuss additional PTO days, a professional development budget, or the option to work remotely a couple of days per week?" },
+            { "id": "b", "text": "Fine, I'll take it. There's nothing else to discuss then." },
+            { "id": "c", "text": "That's not acceptable. If you can't raise the salary, then I'm going to have to walk away from this offer." }
+        ],
+        "correctOption": "a",
+        "explanation": "Tip: Look beyond the base salary. The total compensation package includes much more than just the paycheck. Option A strategically pivots to negotiating benefits like PTO, remote work, and professional development — things that can be just as valuable. Option B leaves potential value on the table, and Option C is an ultimatum that could cost you a good opportunity."
+    },
+    {
+        "id": 6,
+        "title": "Using Research to Your Advantage",
+        "tipReference": "Research the market",
+        "context": "You're interviewing for a financial analyst position. The interviewer asks you to justify the salary range you've mentioned.",
+        "dialog": [
+            { "role": "interviewer", "text": "You mentioned you're looking for something in the $85,000 range. Can you help me understand how you arrived at that number?" },
+            { "role": "interviewee", "text": "Absolutely, I'd be happy to walk you through my thinking." }
+        ],
+        "question": "The interviewer wants you to justify your salary expectation. What should you say?",
+        "options": [
+            { "id": "a", "text": "Based on my research on Glassdoor and Indeed, the average salary for a Financial Analyst in this area with 4 years of experience is between $82,000 and $90,000. Given my background in risk modeling and the CFA Level I certification I hold, I believe $85,400 is fair and competitive." },
+            { "id": "b", "text": "I just feel like I deserve that much. I've been working really hard for years and I think it's time I got paid properly." },
+            { "id": "c", "text": "That's what my friend who works in finance told me I should ask for. He's been in the industry for a while so I trust his opinion." }
+        ],
+        "correctOption": "a",
+        "explanation": "Tip: Research the market. Option A demonstrates thorough preparation — citing specific sources (Glassdoor, Indeed), relevant experience, and certifications, all while using a specific number ($85,400 instead of a round $85K). Option B relies on feelings rather than data, and Option C relies on hearsay with no personal research."
+    },
+    {
+        "id": 7,
+        "title": "Knowing When to Close",
+        "tipReference": "Know when to stop",
+        "context": "You've been negotiating back and forth for a product manager role. The company has already raised the offer twice, from $95K to $102K and now to $107K.",
+        "dialog": [
+            { "role": "interviewer", "text": "We've gone back to the team and pushed hard for you. We can offer $107,000 with a $5,000 signing bonus. This really is the best we can do at this level." },
+            { "role": "interviewee", "text": "I really appreciate you going back to the team for this." },
+            { "role": "interviewer", "text": "So, can we count on you to join us?" }
+        ],
+        "question": "The company has raised the offer twice and says this is their final number. What should you do?",
+        "options": [
+            { "id": "a", "text": "I think we can push a little more. How about $112,000? I know you said it's the best you can do, but it never hurts to ask one more time, right?" },
+            { "id": "b", "text": "I'll accept, but only because I have no other options right now. I'm not thrilled about it." },
+            { "id": "c", "text": "I really appreciate the effort you've put into this, and I'm happy with the package. I'd love to accept the offer and I'm excited to join the team!" }
+        ],
+        "correctOption": "c",
+        "explanation": "Tip: Know when to stop. The company has already raised the offer twice and clearly stated this is their ceiling. Option C accepts gracefully, expresses enthusiasm, and starts the relationship on a positive note. Option A pushes too hard and risks having the offer rescinded. Option B accepts with negativity, which sours the relationship before day one."
+    },
+    {
+        "id": 8,
+        "title": "Confident Delivery with Key Phrases",
+        "tipReference": "Key phrases for negotiating",
+        "context": "You've been offered a customer success manager position. The salary offered is $68,000, but based on your research and 5 years of experience, you believe you're worth more.",
+        "dialog": [
+            { "role": "interviewer", "text": "We're pleased to offer you the Customer Success Manager position at a salary of $68,000. We think it's a very competitive package." },
+            { "role": "interviewee", "text": "Thank you so much for the offer. I'm really excited about this role and the direction the company is heading." },
+            { "role": "interviewer", "text": "Wonderful! Should we go ahead and send over the paperwork?" }
+        ],
+        "question": "You want to negotiate but keep things professional and collaborative. What should you say?",
+        "options": [
+            { "id": "a", "text": "I need more money. $68K isn't going to cut it for me. I have bills to pay." },
+            { "id": "b", "text": "I really appreciate this offer, and I'm very excited about the opportunity. Based on my research and five years of experience in customer success, I was expecting something in the range of $74,500. Is there any flexibility on the base salary? I'd love to find a number that works for both of us." },
+            { "id": "c", "text": "Whatever you think is fair, I'm sure you know better than me. I don't want to make this awkward." }
+        ],
+        "correctOption": "b",
+        "explanation": "Tip: Key phrases for negotiating. Option B uses professional, collaborative language — expressing excitement, citing research and experience, using a specific number ($74,500), and asking about flexibility. Option A sounds demanding and unprofessional, while Option C is too passive and signals a lack of confidence in your own value."
+    }
+]

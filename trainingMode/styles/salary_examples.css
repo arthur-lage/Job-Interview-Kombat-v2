@@ -1,0 +1,488 @@
+/* =====================================================
+   salary_examples.css — Salary Examples Quiz Styling
+   ===================================================== */
+
+/* Page Intro */
+
+body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    gap: 0;
+}
+
+header {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 2px solid rgba(200, 100, 255, 0.2);
+    background: rgba(18, 2, 43, 0.9);
+    z-index: 20;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+.page-intro {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+}
+
+.page-subtitle {
+    font-family: 'PixelOperatorFont', monospace;
+    color: rgba(230, 208, 255, 0.8);
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Main Card Container */
+.card-viewer {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    background: linear-gradient(160deg, rgba(50, 0, 90, 0.95), rgba(20, 0, 50, 0.98));
+    border: 2px solid rgba(200, 100, 255, 0.35);
+    border-radius: 16px;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+/* Question Progress Indicator */
+.question-progress {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.4rem;
+    color: rgba(230, 208, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+}
+
+/* Scenario Title */
+#scenario-title {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 2rem;
+    color: #fdd201;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+/* Scenario Context Styling */
+span:has(> #scenario-context) {
+    display: block;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(200, 100, 255, 0.18);
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 2.5rem;
+    border-radius: 10px;
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.3rem;
+    color: #c864ff;
+}
+
+#scenario-context {
+    display: inline;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-left: 0.4rem;
+}
+
+/* =====================================================
+   Chat Dialog — Conversation Bubbles
+   ===================================================== */
+
+.chat-dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(200, 100, 255, 0.12);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative top line */
+.chat-dialog::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(200, 100, 255, 0.4), rgba(253, 210, 1, 0.4), transparent);
+}
+
+/* Single chat message row */
+.chat-msg {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%;
+    animation: chatFadeIn 0.4s ease-out both;
+}
+
+.chat-msg:nth-child(1) { animation-delay: 0.1s; }
+.chat-msg:nth-child(2) { animation-delay: 0.3s; }
+.chat-msg:nth-child(3) { animation-delay: 0.5s; }
+.chat-msg:nth-child(4) { animation-delay: 0.7s; }
+.chat-msg:nth-child(5) { animation-delay: 0.9s; }
+.chat-msg:nth-child(6) { animation-delay: 1.1s; }
+
+@keyframes chatFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Role label above bubble */
+.chat-role {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.3rem;
+    padding: 0 0.4rem;
+}
+
+/* Chat bubble */
+.chat-bubble {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.25rem;
+    line-height: 1.55;
+    padding: 1rem 1.4rem;
+    border-radius: 12px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+/* Interviewer — left-aligned, purple accent */
+.chat-msg.interviewer {
+    align-self: flex-start;
+}
+
+.chat-msg.interviewer .chat-role {
+    color: #c864ff;
+}
+
+.chat-msg.interviewer .chat-bubble {
+    background: linear-gradient(135deg, rgba(120, 50, 180, 0.25), rgba(80, 20, 140, 0.3));
+    border: 1px solid rgba(200, 100, 255, 0.3);
+    border-left: 3px solid #c864ff;
+    color: rgba(255, 255, 255, 0.92);
+    border-radius: 4px 12px 12px 12px;
+}
+
+/* Interviewee — right-aligned, gold/green accent */
+.chat-msg.interviewee {
+    align-self: flex-end;
+}
+
+.chat-msg.interviewee .chat-role {
+    color: #5cff5c;
+    text-align: right;
+}
+
+.chat-msg.interviewee .chat-bubble {
+    background: linear-gradient(135deg, rgba(40, 100, 60, 0.25), rgba(20, 70, 40, 0.3));
+    border: 1px solid rgba(92, 255, 92, 0.2);
+    border-right: 3px solid #5cff5c;
+    color: rgba(255, 255, 255, 0.92);
+    border-radius: 12px 4px 12px 12px;
+}
+
+/* Typing indicator — the "what should they say?" prompt */
+.chat-msg.pending {
+    align-self: flex-end;
+}
+
+.chat-msg.pending .chat-role {
+    color: #fdd201;
+    text-align: right;
+}
+
+.chat-msg.pending .chat-bubble {
+    background: rgba(253, 210, 1, 0.08);
+    border: 2px dashed rgba(253, 210, 1, 0.35);
+    border-right: 3px solid #fdd201;
+    color: #fdd201;
+    border-radius: 12px 4px 12px 12px;
+    font-style: italic;
+}
+
+.typing-dots {
+    display: inline-flex;
+    gap: 4px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.typing-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fdd201;
+    animation: dotPulse 1.4s ease-in-out infinite;
+    opacity: 0.4;
+}
+
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotPulse {
+    0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+    40% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Tip Reference Badge */
+.tip-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.15rem;
+    color: #fdd201;
+    background: rgba(253, 210, 1, 0.08);
+    border: 1px solid rgba(253, 210, 1, 0.25);
+    border-radius: 20px;
+    padding: 0.45rem 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.tip-badge::before {
+    content: '💡';
+    font-size: 1.2rem;
+}
+
+/* Chosen answer revealed in chat */
+.chat-msg.chosen .chat-bubble {
+    animation: revealAnswer 0.5s ease-out both;
+}
+
+@keyframes revealAnswer {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.chat-msg.chosen.correct-answer .chat-bubble {
+    background: linear-gradient(135deg, rgba(40, 120, 60, 0.35), rgba(20, 80, 40, 0.4));
+    border: 1px solid rgba(92, 255, 92, 0.4);
+    border-right: 3px solid #5cff5c;
+}
+
+.chat-msg.chosen.wrong-answer .chat-bubble {
+    background: linear-gradient(135deg, rgba(120, 40, 40, 0.35), rgba(80, 20, 20, 0.4));
+    border: 1px solid rgba(255, 107, 107, 0.4);
+    border-right: 3px solid #ff6b6b;
+}
+
+/* Container for the Quiz Area */
+.mini-quiz {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(200, 100, 255, 0.2);
+}
+
+.mini-quiz h4 {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+    letter-spacing: 0.05em;
+}
+
+.mini-quiz p {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+}
+
+/* Quiz Options Container */
+.mini-quiz_options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Individual Option Styling */
+.mini-quiz-option {
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.88);
+    background: rgba(235, 202, 252, 0.08);
+    border: 2px solid rgba(200, 100, 255, 0.5);
+    border-left: 4px solid rgba(200, 100, 255, 0.5);
+    border-radius: 6px;
+    padding: 1rem 3.5rem 1rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    line-height: 1.5;
+}
+
+/* Hover Effect */
+.mini-quiz-option:hover {
+    background: rgba(200, 100, 255, 0.15);
+    border-left-color: rgba(200, 100, 255, 0.8);
+    transform: translateX(4px);
+}
+
+/* Selected Option Styling */
+.mini-quiz-option.selected {
+    border-color: #fdd201;
+    border-left-width: 4px;
+    background: rgba(253, 210, 1, 0.1);
+    color: #fff;
+    transform: translateX(4px);
+}
+
+/* Micro-interaction on click */
+.mini-quiz-option:active {
+    transform: translateX(2px);
+}
+
+/* Selected checkmark indicator */
+.check-icon {
+    display: none;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    color: #fdd201;
+    text-shadow: 0 0 8px rgba(253, 210, 1, 0.6);
+}
+
+.mini-quiz-option.selected .check-icon {
+    display: block;
+    animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Feedback styling */
+.mini-quiz-option.correct {
+    border-color: #5cff5c;
+    background: rgba(92, 255, 92, 0.15);
+    color: #fff;
+    border-left-width: 4px;
+    border-left-color: #5cff5c;
+}
+
+.mini-quiz-option.correct .check-icon {
+    display: block;
+    color: #5cff5c;
+    text-shadow: 0 0 8px rgba(92, 255, 92, 0.6);
+}
+
+.mini-quiz-option.wrong {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.15);
+    color: #fff;
+    border-left-width: 4px;
+    border-left-color: #ff6b6b;
+}
+
+/* Container for buttons and feedback */
+.mini-quiz>div:last-child {
+    margin-top: 2rem !important;
+    padding-top: 1.5rem;
+    border-top: 1px dashed rgba(200, 100, 255, 0.15);
+}
+
+/* Action Buttons Styling */
+.mini-quiz .lesson-done-btn {
+    font-family: 'PixelOperatorFont', monospace;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #12022B;
+    background: linear-gradient(135deg, #fdd201, #e0b800);
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    transition: all 0.2s ease;
+}
+
+.mini-quiz .lesson-done-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Smooth fade in for feedback message */
+#feedback-msg {
+    animation: fadeMsg 0.3s ease-out;
+}
+
+@keyframes fadeMsg {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE                                         */
+/* -------------------------------------------------- */
+
+@media (max-width: 600px) {
+    .card-viewer {
+        padding: 1.8rem 1.4rem;
+        width: 95%;
+    }
+
+    #scenario-title {
+        font-size: 2rem;
+    }
+
+    .mini-quiz h4 {
+        font-size: 1.7rem;
+    }
+
+    .chat-dialog {
+        padding: 1rem;
+    }
+
+    .chat-msg {
+        max-width: 92%;
+    }
+
+    .chat-bubble {
+        font-size: 1.15rem;
+        padding: 0.85rem 1.1rem;
+    }
+
+    .chat-role {
+        font-size: 1rem;
+    }
+
+    .tip-badge {
+        font-size: 1.05rem;
+    }
+}

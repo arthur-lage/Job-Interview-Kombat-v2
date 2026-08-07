@@ -44,7 +44,7 @@ header h1 {
     width: 90%;
     max-width: 800px;
     margin: 0 auto 4rem auto;
-    background: linear-gradient(160deg, rgba(50, 0, 90, 0.95), rgba(20, 0, 50, 0.98));
+    background: rgba(50, 0, 90, 0.95);
     border: 2px solid rgba(200, 100, 255, 0.35);
     border-radius: 16px;
     padding: 3rem;
