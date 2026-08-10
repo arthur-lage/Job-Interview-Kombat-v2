@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAR ROOM CRISIS - Meetings Module</title>
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/global.css">
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/fonts.css">
+    <link rel="stylesheet" href="../styles/war_room.css">
+    <link rel="icon" type="image/x-icon" href="../../JobInterviewKombat/assets/favicon/favicon.ico">
+</head>
+
+<body>
+    <div class="war-room-bg" id="war-bg"></div>
+
+    <!-- Level Selection Screen Overlay -->
+    <div class="war-modal-overlay active" id="level-select-modal">
+        <div class="war-modal-card level-select-card">
+            <h2 class="war-modal-title">🚨 SELECT CRISIS LEVEL</h2>
+            <p class="level-select-subtitle">Choose an incident scenario to test your English under pressure</p>
+            <div class="level-grid" id="level-grid">
+                <!-- Level Cards injected by JS -->
+            </div>
+            <button class="war-modal-btn secondary-btn" onclick="window.location.href='minimap.html'">BACK TO MAP 🗺️</button>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div class="war-room-container">
+        <!-- Header Section -->
+        <header class="war-header">
+            <button class="back-btn-link" id="change-level-btn" title="Change Crisis Level" style="background:none;border:none;">
+                <img src="../../JobInterviewKombat/assets/images/arrow-back.png" alt="Back">
+            </button>
+
+            <div class="war-title-badge">
+                <span id="war-badge-title">🚨 WAR ROOM CRISIS</span>
+            </div>
+
+            <div class="timer-box" id="timer-box">
+                <span>⏱️</span>
+                <span id="timer-val">18s</span>
+            </div>
+        </header>
+
+        <!-- Chaos Level Meter -->
+        <section class="chaos-section">
+            <div class="chaos-info">
+                <span class="chaos-title">⚠️ MEETING CHAOS LEVEL</span>
+                <span class="chaos-val" id="chaos-val">50%</span>
+            </div>
+            <div class="chaos-bar-outer">
+                <div class="chaos-bar-inner" id="chaos-bar-inner"></div>
+            </div>
+        </section>
+
+        <!-- Scenario & Speaker Prompt Card -->
+        <main class="scenario-card">
+            <div class="scenario-header">
+                <span class="phase-tag" id="phase-tag">09:00 AM - ALERT</span>
+                <span class="speaker-tag" id="speaker-tag">👤 CTO</span>
+            </div>
+            <div class="scenario-prompt" id="scenario-prompt">
+                Select a crisis level to start...
+            </div>
+        </main>
+
+        <!-- Options / Responses -->
+        <div class="options-list" id="options-list">
+            <!-- Buttons injected dynamically by JS -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="war-footer">
+            <span>SCENARIO <span id="current-round">1</span> / <span id="total-rounds">6</span></span>
+            <span>MEETINGS MODULE - JOB INTERVIEW KOMBAT</span>
+        </footer>
+    </div>
+
+    <!-- Feedback Explanation Overlay -->
+    <div class="war-modal-overlay" id="feedback-modal">
+        <div class="war-modal-card">
+            <h2 class="war-modal-title" id="feedback-title">INCIDENT ANALYSIS</h2>
+            <div class="war-modal-body" id="feedback-text">
+                Explanation text...
+            </div>
+            <button class="war-modal-btn" id="feedback-next-btn">CONTINUE ▶</button>
+        </div>
+    </div>
+
+    <!-- Victory Overlay -->
+    <div class="war-modal-overlay" id="victory-modal">
+        <div class="war-modal-card victory-card">
+            <h2 class="war-modal-title">🏆 INCIDENT CONTAINED!</h2>
+            <div class="war-modal-body">
+                <p>System metrics returned to 100% normal.</p>
+                <p><strong>Final Chaos Level:</strong> <span id="final-chaos">30%</span></p>
+                <p><strong>Total Score:</strong> <span id="final-score">600 pts</span></p>
+            </div>
+            <div class="modal-btn-row">
+                <button class="war-modal-btn" id="victory-next-level-btn">NEXT LEVEL 🚀</button>
+                <button class="war-modal-btn secondary-btn" onclick="window.location.href='minimap.html'">MAP 🗺️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Defeat Overlay -->
+    <div class="war-modal-overlay" id="defeat-modal">
+        <div class="war-modal-card defeat-card">
+            <h2 class="war-modal-title">💥 SYSTEM COLLAPSE!</h2>
+            <div class="war-modal-body">
+                <p>Chaos level reached 100%! Panic broke meeting productivity.</p>
+                <p>Review workplace diplomacy and incident leadership vocabulary.</p>
+            </div>
+            <div class="modal-btn-row">
+                <button class="war-modal-btn" id="retry-level-btn">RETRY 🔄</button>
+                <button class="war-modal-btn secondary-btn" id="defeat-menu-btn">LEVELS 📋</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/progress.js"></script>
+    <script src="../scripts/resume.js"></script>
+    <script src="../scripts/war_room.js"></script>
+</body>
+
+</html>

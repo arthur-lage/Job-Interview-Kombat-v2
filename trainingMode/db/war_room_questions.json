@@ -1,0 +1,579 @@
+{
+  "title": "WAR ROOM CRISIS",
+  "description": "Navigate high-stakes emergency meetings, manage Chaos Levels, and practice incident response English under pressure.",
+  "levels": [
+    {
+      "id": "level_1",
+      "name": "CRISIS 1: SERVER DOWN!",
+      "icon": "💥",
+      "difficulty": "Standard",
+      "description": "A production API outage caused an 85% error rate surge during peak hours.",
+      "initialChaos": 50,
+      "timePerQuestion": 18,
+      "scenarios": [
+        {
+          "id": 1,
+          "phase": "09:00 AM - ALERT FIRED",
+          "speaker": "CTO (Chief Technology Officer)",
+          "prompt": "The API error rate surged to 85%. The CTO joins the emergency War Room and asks: \"Team, what is our current situation?\"",
+          "options": [
+            {
+              "text": "We've detected an 85% drop in API availability. The team is currently isolating the root cause between the database cluster and the latest build.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Flawless status report! Concise, factual, and action-oriented."
+            },
+            {
+              "text": "I think something broke after the last commit, but we are looking into it.",
+              "isCorrect": false,
+              "chaosDelta": 10,
+              "score": 50,
+              "feedback": "Vague statement. In crisis meetings, state clear metrics and active investigation steps."
+            },
+            {
+              "text": "Everything is broken! I told everyone not to deploy on Friday!",
+              "isCorrect": false,
+              "chaosDelta": 30,
+              "score": 0,
+              "feedback": "Panic & blame! This spikes the Chaos Level significantly."
+            }
+          ],
+          "explanation": "In emergency meetings, leaders require factual, calm status reports that state scope and action without assigning blame."
+        },
+        {
+          "id": 2,
+          "phase": "09:05 AM - TROUBLESHOOTING",
+          "speaker": "Database Engineer Lead",
+          "prompt": "High lock contention is reported on the database cluster. How do you coordinate next steps with Infrastructure?",
+          "options": [
+            {
+              "text": "Could Infrastructure check the active connection pool while Backend reviews recent slow queries?",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Excellent parallel task delegation using polite imperatives!"
+            },
+            {
+              "text": "Database team, just fix the locks so we can go back to work.",
+              "isCorrect": false,
+              "chaosDelta": 10,
+              "score": 50,
+              "feedback": "Dismissive tone. A collaborative approach gets better results."
+            },
+            {
+              "text": "Let's restart all production servers right now and see what happens!",
+              "isCorrect": false,
+              "chaosDelta": 30,
+              "score": 0,
+              "feedback": "Reckless proposal! Restarting without diagnosis can worsen outage time."
+            }
+          ],
+          "explanation": "Effective technical coordination uses parallel delegation ('Could [Team A] do X while [Team B] does Y?')."
+        },
+        {
+          "id": 3,
+          "phase": "09:12 AM - STAKEHOLDER INTERRUPTION",
+          "speaker": "Head of Sales (Interrupter)",
+          "prompt": "The Head of Sales interrupts: \"Acme Corp is losing $10k per minute! Why isn't this fixed yet?!\"",
+          "options": [
+            {
+              "text": "I understand the urgency. We are currently testing a fix and will provide a status update in 10 minutes.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Masterful diplomatic response! Acknowledges urgency and sets a clear timeframe."
+            },
+            {
+              "text": "Please stop interrupting us, we are trying to code!",
+              "isCorrect": false,
+              "chaosDelta": 15,
+              "score": 50,
+              "feedback": "Aggressive posture increases meeting friction."
+            },
+            {
+              "text": "It's not my fault! Talk to the DevOps team!",
+              "isCorrect": false,
+              "chaosDelta": 30,
+              "score": 0,
+              "feedback": "Shifting blame under pressure damages trust across teams."
+            }
+          ],
+          "explanation": "De-escalate panicked interruptions by acknowledging business impact and committing to timed status updates."
+        },
+        {
+          "id": 4,
+          "phase": "09:18 AM - DECISION TIME",
+          "speaker": "DevOps Lead",
+          "prompt": "DevOps wants to rollback to release v2.4, but Frontend wants to push a hotfix. You must pitch the safest strategy.",
+          "options": [
+            {
+              "text": "To minimize downtime, I recommend rolling back to v2.4 immediately while we test the hotfix in staging.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Strategic decision! Prioritizes system stability and risk mitigation."
+            },
+            {
+              "text": "Maybe we can try the hotfix, but if it fails we can rollback later?",
+              "isCorrect": false,
+              "chaosDelta": 10,
+              "score": 50,
+              "feedback": "Hesitant proposal. In critical incidents, clear recommendations inspire confidence."
+            },
+            {
+              "text": "Let's deploy both at the same time and hope one works!",
+              "isCorrect": false,
+              "chaosDelta": 30,
+              "score": 0,
+              "feedback": "Extreme risk! Dual deployments introduce unmanageable variables."
+            }
+          ],
+          "explanation": "Pitching incident solutions requires highlighting risk minimization ('To minimize downtime, I recommend...')."
+        },
+        {
+          "id": 5,
+          "phase": "09:25 AM - ASSIGNING ACTION ITEMS",
+          "speaker": "Meeting Facilitator",
+          "prompt": "The rollback succeeded and traffic is stabilizing. You must assign action items before concluding.",
+          "options": [
+            {
+              "text": "Alex, will you take ownership of patching the memory leak? Maria, could you monitor metrics during the rollout?",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Clear ownership and explicit task delegation!"
+            },
+            {
+              "text": "Someone needs to fix the memory leak and someone else needs to watch metrics.",
+              "isCorrect": false,
+              "chaosDelta": 10,
+              "score": 50,
+              "feedback": "Unassigned tasks lead to bystander apathy. Name individuals directly."
+            },
+            {
+              "text": "I guess whoever has free time can check the memory leak later today.",
+              "isCorrect": false,
+              "chaosDelta": 25,
+              "score": 0,
+              "feedback": "Lack of accountability after a critical incident invites future outages."
+            }
+          ],
+          "explanation": "Action items must have clear ownership ('[Name], will you take ownership of [Task]?')."
+        },
+        {
+          "id": 6,
+          "phase": "09:30 AM - INCIDENT WRAP-UP",
+          "speaker": "CTO",
+          "prompt": "All metrics are green (100% normal). How do you conclude the War Room meeting professionally?",
+          "options": [
+            {
+              "text": "Great teamwork everyone. I'll publish the incident post-mortem in Slack by 3 PM and schedule a root-cause review for tomorrow.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Professional closure! Praises team effort and sets post-mortem deliverables."
+            },
+            {
+              "text": "Okay, it seems fixed now. Let's just forget about this.",
+              "isCorrect": false,
+              "chaosDelta": 10,
+              "score": 50,
+              "feedback": "Ignoring post-mortems prevents team learning and continuous improvement."
+            },
+            {
+              "text": "Thank goodness that's over. I never want to see this code again!",
+              "isCorrect": false,
+              "chaosDelta": 25,
+              "score": 0,
+              "feedback": "Unprofessional conclusion."
+            }
+          ],
+          "explanation": "Conclude incident meetings by confirming post-mortem reports and root cause analysis schedules."
+        }
+      ]
+    },
+    {
+      "id": "level_2",
+      "name": "CRISIS 2: SECURITY BREACH!",
+      "icon": "🔐",
+      "difficulty": "Hard",
+      "description": "Unauthorized access was detected on production API keys. Security breach protocol activated.",
+      "initialChaos": 50,
+      "timePerQuestion": 15,
+      "scenarios": [
+        {
+          "id": 1,
+          "phase": "14:00 PM - BREACH DETECTED",
+          "speaker": "CISO (Chief Information Security Officer)",
+          "prompt": "An automated alert detected leaked admin API keys on GitHub. CISO asks: \"Has customer data been compromised?\"",
+          "options": [
+            {
+              "text": "We are actively auditing audit logs to determine exposure. I recommend revoking the compromised key immediately.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Clear containment strategy! Focuses on immediate mitigation and log auditing."
+            },
+            {
+              "text": "We aren't sure yet, maybe nobody noticed the key on GitHub.",
+              "isCorrect": false,
+              "chaosDelta": 15,
+              "score": 50,
+              "feedback": "Dangerous wishful thinking! Assume leaked keys are compromised instantly."
+            },
+            {
+              "text": "Who leaked the key?! We need to fire whoever did this right now!",
+              "isCorrect": false,
+              "chaosDelta": 30,
+              "score": 0,
+              "feedback": "Panic & witch-hunting! Resolving the security threat comes before investigation."
+            }
+          ],
+          "explanation": "During security incidents, focus immediately on key revocation and containment before assigning fault."
+        },
+        {
+          "id": 2,
+          "phase": "14:06 PM - CONTAINMENT & REVOCATION",
+          "speaker": "Lead Security Engineer",
+          "prompt": "Security wants to force global token revocation, but Product Manager worries it will disconnect 50,000 active users.",
+          "options": [
+            {
+              "text": "To secure customer data, we must revoke active tokens now and send an automated re-authentication notification to users.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Decisive security leadership! Prioritizes data security with clear user communication."
+            },
+            {
+              "text": "Let's wait until tonight so we don't annoy our active users.",
+              "isCorrect": false,
+              "chaosDelta": 20,
+              "score": 50,
+              "feedback": "Delaying token revocation during an active breach exposes user data to theft."
+            },
+            {
+              "text": "Let Product Manager decide, it's not a technical choice.",
+              "isCorrect": false,
+              "chaosDelta": 25,
+              "score": 0,
+              "feedback": "Abdicating security responsibility increases breach liability."
+            }
+          ],
+          "explanation": "Security breaches require decisive action ('We must revoke active tokens now and send...')."
+        },
+        {
+          "id": 3,
+          "phase": "14:15 PM - PR & LEGAL PRESSURE",
+          "speaker": "Head of Public Relations (Interrupter)",
+          "prompt": "PR Manager interrupts: \"TechCrunch is tweeting about a leak! What statement can I release to the press?\"",
+          "options": [
+            {
+              "text": "Please inform PR that we are preparing an official incident statement with Legal and will share it within 30 minutes.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Masterful media containment! Prevents uncoordinated press statements."
+            },
+            {
+              "text": "Just tell them it was a small glitch and everything is fine!",
+              "isCorrect": false,
+              "chaosDelta": 25,
+              "score": 50,
+              "feedback": "Downplaying breaches without legal review leads to severe regulatory fines."
+            },
+            {
+              "text": "No comment! Tell them to go away!",
+              "isCorrect": false,
+              "chaosDelta": 30,
+              "score": 0,
+              "feedback": "Hostile PR responses damage company reputation severely."
+            }
+          ],
+          "explanation": "Coordinate security statements through official channels ('...share an official incident statement with Legal')."
+        },
+        {
+          "id": 4,
+          "phase": "14:25 PM - HARDENING ARCHITECTURE",
+          "speaker": "DevOps Architect",
+          "prompt": "DevOps proposes implementing Vault secrets management immediately. How do you pitch this to the team?",
+          "options": [
+            {
+              "text": "To prevent future credential leaks, I propose migrating all secret keys to HashiCorp Vault during tonight's maintenance window.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Proactive security proposal with clear scheduling!"
+            },
+            {
+              "text": "We should probably use Vault, but it sounds like a lot of work.",
+              "isCorrect": false,
+              "chaosDelta": 10,
+              "score": 50,
+              "feedback": "Lack of conviction weakens architectural proposals."
+            },
+            {
+              "text": "Let's just tell developers to stop uploading keys to GitHub.",
+              "isCorrect": false,
+              "chaosDelta": 25,
+              "score": 0,
+              "feedback": "Relying on memory instead of automated secret scanning fails."
+            }
+          ],
+          "explanation": "Pitch security enhancements with rationale and timeframe ('To prevent X, I propose migrating Y during Z')."
+        },
+        {
+          "id": 5,
+          "phase": "14:35 PM - AUDIT DELEGATION",
+          "speaker": "Security Compliance Lead",
+          "prompt": "A forensic security audit must be conducted across all microservices. How do you assign responsibilities?",
+          "options": [
+            {
+              "text": "Carlos, please lead the audit on Payment Services. Sarah, could you scan the Auth service logs for suspicious IP addresses?",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Direct assignment of forensic audit tasks!"
+            },
+            {
+              "text": "Everyone check their own microservices when they have a chance.",
+              "isCorrect": false,
+              "chaosDelta": 15,
+              "score": 50,
+              "feedback": "Vague assignments mean critical microservices get overlooked."
+            },
+            {
+              "text": "I'll do the entire audit myself overnight.",
+              "isCorrect": false,
+              "chaosDelta": 20,
+              "score": 0,
+              "feedback": "Hero mentality creates bottlenecks and burnout during incidents."
+            }
+          ],
+          "explanation": "Delegate specialized tasks to specific engineers ('[Name], please lead the audit on [Component]')."
+        },
+        {
+          "id": 6,
+          "phase": "14:45 PM - EXECUTIVE BREACH DEBRIEF",
+          "speaker": "CISO",
+          "prompt": "Threat is neutralized and keys rotated. How do you report the final breach debrief to the executive board?",
+          "options": [
+            {
+              "text": "The threat has been fully contained, all keys rotated, and zero unauthorized data access was confirmed. A full compliance report will be delivered by 5 PM.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Executive-level summary! Clear containment, zero impact confirmation, and deliverable deadline."
+            },
+            {
+              "text": "We survived the breach! Let's hope it doesn't happen again.",
+              "isCorrect": false,
+              "chaosDelta": 15,
+              "score": 50,
+              "feedback": "Casual closure undermines executive confidence."
+            },
+            {
+              "text": "I'm still nervous about our servers, but I guess we can close the War Room.",
+              "isCorrect": false,
+              "chaosDelta": 25,
+              "score": 0,
+              "feedback": "Uncertainty at executive wrap-up prolongs crisis anxiety."
+            }
+          ],
+          "explanation": "Conclude security debriefs with definitive status ('The threat has been fully contained...')."
+        }
+      ]
+    },
+    {
+      "id": "level_3",
+      "name": "CRISIS 3: GLOBAL CLOUD MELTDOWN!",
+      "icon": "⚡",
+      "difficulty": "Extreme",
+      "description": "Primary AWS region US-EAST-1 went completely dark. Global failover required under extreme time pressure.",
+      "initialChaos": 60,
+      "timePerQuestion": 12,
+      "scenarios": [
+        {
+          "id": 1,
+          "phase": "18:00 PM - REGION DOWN",
+          "speaker": "VP of Engineering",
+          "prompt": "AWS US-EAST-1 is completely unreachable. VP asks: \"Can we initiate disaster recovery failover to EU-WEST immediately?\"",
+          "options": [
+            {
+              "text": "Yes, our Disaster Recovery playbook is ready. I recommend switching DNS routing to EU-WEST right now.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Fast, confident execution of Disaster Recovery plans!"
+            },
+            {
+              "text": "EU-WEST might be missing some recent user data, I'm scared to failover.",
+              "isCorrect": false,
+              "chaosDelta": 15,
+              "score": 50,
+              "feedback": "Hesitation during major cloud outages prolongs global downtime."
+            },
+            {
+              "text": "AWS promised 99.99% uptime! Let's wait for AWS engineers to fix it!",
+              "isCorrect": false,
+              "chaosDelta": 30,
+              "score": 0,
+              "feedback": "Passive reliance on third-party cloud providers spikes panic."
+            }
+          ],
+          "explanation": "In cloud outages, execute Disaster Recovery procedures immediately ('I recommend switching DNS routing to [Region]')."
+        },
+        {
+          "id": 2,
+          "phase": "18:08 PM - REPLICATION LAG CHECK",
+          "speaker": "Data Lead",
+          "prompt": "Database replica in EU-WEST has a 45-second replication lag. How do you manage potential data drift?",
+          "options": [
+            {
+              "text": "We will promote the EU replica to primary and log the 45-second gap for automated reconciliation once US-EAST recovers.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Pragmatic data engineering decision under pressure!"
+            },
+            {
+              "text": "Don't promote the replica until lag is zero, even if it takes hours!",
+              "isCorrect": false,
+              "chaosDelta": 20,
+              "score": 50,
+              "feedback": "Waiting for a dead region to sync replication lag is impossible."
+            },
+            {
+              "text": "Who cares about 45 seconds of data? Just wipe it!",
+              "isCorrect": false,
+              "chaosDelta": 25,
+              "score": 0,
+              "feedback": "Casual data destruction destroys customer trust."
+            }
+          ],
+          "explanation": "Handle replication lag by planning post-incident data reconciliation."
+        },
+        {
+          "id": 3,
+          "phase": "18:15 PM - VIP CLIENT ESCALATION",
+          "speaker": "CTO of Enterprise Client (Angry Interrupter)",
+          "prompt": "CTO of Enterprise Client calls directly: \"Our global operations are stalled! Give me a precise ETA!\"",
+          "options": [
+            {
+              "text": "We are currently redirecting traffic to our European data center. Failover will complete in under 8 minutes.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Clear ETA and active progress update calms VIP clients."
+            },
+            {
+              "text": "It's AWS's fault, call Amazon support!",
+              "isCorrect": false,
+              "chaosDelta": 25,
+              "score": 50,
+              "feedback": "Blaming cloud vendors to enterprise clients sounds unprofessional."
+            },
+            {
+              "text": "I can't give you an ETA, maybe an hour or two.",
+              "isCorrect": false,
+              "chaosDelta": 30,
+              "score": 0,
+              "feedback": "Vague ETAs provoke contract cancellations."
+            }
+          ],
+          "explanation": "Provide concrete ETAs based on active recovery steps ('Failover will complete in under X minutes')."
+        },
+        {
+          "id": 4,
+          "phase": "18:25 PM - MULTI-CLOUD BUDGET PITCH",
+          "speaker": "CFO (Chief Financial Officer)",
+          "prompt": "CFO joins asking why single-region setup failed. Pitch multi-cloud active-active redundancy for the future.",
+          "options": [
+            {
+              "text": "To guarantee 99.99% availability, I propose investing in an Active-Active multi-cloud architecture starting next quarter.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Strategic architectural proposal aligned with business ROI!"
+            },
+            {
+              "text": "Single region is cheap, that's why it failed.",
+              "isCorrect": false,
+              "chaosDelta": 15,
+              "score": 50,
+              "feedback": "Passive complaint instead of a constructive proposal."
+            },
+            {
+              "text": "We need millions of dollars right now or servers will keep crashing!",
+              "isCorrect": false,
+              "chaosDelta": 30,
+              "score": 0,
+              "feedback": "Alarmist financial demands destroy credibility with executive leadership."
+            }
+          ],
+          "explanation": "Pitch high-availability architecture as business ROI ('To guarantee 99.99% availability, I propose investing in...')."
+        },
+        {
+          "id": 5,
+          "phase": "18:35 PM - DISASTER RECOVERY TASKFORCE",
+          "speaker": "DevOps Lead",
+          "prompt": "DNS failover is complete. How do you delegate health verification across team leads?",
+          "options": [
+            {
+              "text": "Frontend team, verify edge CDN routing. Database team, monitor connection metrics on EU-WEST.",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Structured cross-team verification directives!"
+            },
+            {
+              "text": "Can someone check if the site loads on their phone?",
+              "isCorrect": false,
+              "chaosDelta": 15,
+              "score": 50,
+              "feedback": "Informal testing is insufficient for enterprise disaster recovery."
+            },
+            {
+              "text": "Let's assume everything works if nobody complains.",
+              "isCorrect": false,
+              "chaosDelta": 25,
+              "score": 0,
+              "feedback": "Assuming stability without verification leads to hidden outages."
+            }
+          ],
+          "explanation": "Direct specialized teams to verify domain-specific health metrics."
+        },
+        {
+          "id": 6,
+          "phase": "18:45 PM - GLOBAL INCIDENT CLOSEOUT",
+          "speaker": "VP of Engineering",
+          "prompt": "Global traffic is 100% restored via EU-WEST. Conclude the multi-cloud emergency War Room.",
+          "options": [
+            {
+              "text": "Global failover is complete and system status is 100% operational. Outstanding work under pressure, team!",
+              "isCorrect": true,
+              "chaosDelta": -20,
+              "score": 100,
+              "feedback": "Inspirational leadership and professional incident closure!"
+            },
+            {
+              "text": "That was horrible. Let's go home.",
+              "isCorrect": false,
+              "chaosDelta": 10,
+              "score": 50,
+              "feedback": "Negative sentiment spoils team achievement."
+            },
+            {
+              "text": "We got lucky this time, next outage will be worse.",
+              "isCorrect": false,
+              "chaosDelta": 25,
+              "score": 0,
+              "feedback": "Defeatist remarks demoralize incident response teams."
+            }
+          ],
+          "explanation": "Conclude disaster recovery incidents with victory acknowledgment and operational confirmation."
+        }
+      ]
+    }
+  ]
+}

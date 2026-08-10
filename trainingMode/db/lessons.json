@@ -247,5 +247,77 @@
                 }
             ]
         }
+    ],
+    "meetings": [
+        {
+            "id": "mt_lesson_001",
+            "title": "Workplace Meetings Essentials",
+            "subtitle": "How to communicate effectively in tech meetings",
+            "category": "Meeting Fundamentals",
+            "icon": "🗣️",
+            "content": "English meetings in tech companies follow specific etiquette. Expressing your status, interrupting politely, and pitching ideas clearly prevents misunderstandings and boosts team velocity.",
+            "sections": [
+                {
+                    "heading": "Agile Standups & Status Reports",
+                    "text": "Keep your updates concise and focus on blockers.",
+                    "examples": [
+                        "\"I finished refactoring the auth API yesterday.\"",
+                        "\"Today I am focusing on writing unit tests for the worker pool.\"",
+                        "\"My main blocker is waiting for the design tokens from frontend.\""
+                    ],
+                    "tip": "Avoid long explanations in standups. Offer to 'take it offline' if a topic needs deep discussion."
+                },
+                {
+                    "heading": "Polite Interruptions & Redirects",
+                    "text": "How to jump in without sounding rude.",
+                    "examples": [
+                        "\"Sorry to interrupt, but could I just clarify one point?\"",
+                        "\"May I jump in here for a quick second?\"",
+                        "\"To get back to the main topic...\"",
+                        "\"Let's take that topic offline so we stay on schedule.\""
+                    ],
+                    "tip": "Always acknowledge the current speaker before transitioning."
+                },
+                {
+                    "heading": "Diplomatic Disagreement",
+                    "text": "Disagree with ideas, not people.",
+                    "examples": [
+                        "\"I see your point, however, I am concerned about scalability.\"",
+                        "\"That is a valid approach, but have we considered the latency impact?\"",
+                        "\"I recommend rolling back to v2.4 while we test the patch in staging.\""
+                    ],
+                    "tip": "Use 'however' or 'have we considered' instead of 'No' or 'That is wrong'."
+                }
+            ]
+        },
+        {
+            "id": "mt_lesson_002",
+            "title": "War Room & Crisis Management",
+            "subtitle": "Rules and strategy for the War Room submode",
+            "category": "Emergency Response",
+            "icon": "🚨",
+            "content": "In emergency outages, panic increases meeting chaos. The War Room Crisis mode tests your ability to maintain composure, state facts, and delegate tasks under time pressure.",
+            "sections": [
+                {
+                    "heading": "Chaos Meter Mechanics",
+                    "text": "Your objective is to keep Chaos Level below 100%.",
+                    "examples": [
+                        "Optimal English choices reduce Chaos by 20%.",
+                        "Vague or aggressive answers increase Chaos by 10% - 15%.",
+                        "Panicked blame or time expirations spike Chaos by 30%!"
+                    ],
+                    "tip": "Focus on factual status updates and risk mitigation choices."
+                },
+                {
+                    "heading": "Assigning Action Items",
+                    "text": "Never leave tasks unassigned in a crisis.",
+                    "examples": [
+                        "❌ 'Someone should check the logs.' (Vague)",
+                        "✅ 'Alex, will you take ownership of checking the DB connection pool?' (Direct)"
+                    ],
+                    "tip": "Directly address team members and ask for explicit ownership."
+                }
+            ]
+        }
     ]
 }

@@ -93,28 +93,16 @@
             "unlocked": true,
             "subModes": [
                 {
-                    "id": "meetings_vocab",
-                    "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=meetings&submode=meetings_vocab",
-                    "icon_class": "hn hn-book-heart-solid"
+                    "id": "meetings_tutorial",
+                    "name": "TUTORIAL & BASICS",
+                    "link": "lesson.html?topic=meetings&submode=meetings_tutorial",
+                    "icon_class": "hn hn-graduation-cap-solid"
                 },
                 {
-                    "id": "meetings_audio",
-                    "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=meetings&submode=meetings_audio",
-                    "icon_class": "hn hn-headphones-solid"
-                },
-                {
-                    "id": "meetings_quiz",
-                    "name": "QUIZ",
-                    "link": "quiz.html?topic=meetings&submode=meetings_quiz",
-                    "icon_class": "hn hn-question-circle-solid"
-                },
-                {
-                    "id": "meetings_interview",
-                    "name": "INTERVIEW",
-                    "link": "quiz.html?topic=meetings&mode=interview&submode=meetings_interview",
-                    "icon_class": "hn hn-comment-dots-solid"
+                    "id": "meetings_war_room",
+                    "name": "WAR ROOM CRISIS",
+                    "link": "war_room.html?topic=meetings&submode=meetings_war_room",
+                    "icon_class": "hn hn-fire-solid"
                 }
             ]
         },
