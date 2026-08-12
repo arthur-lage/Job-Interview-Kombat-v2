@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // --- DOM References ---
     const overallProgressLabel = document.getElementById('overall-progress-label');
     const overallProgressFill = document.getElementById('overall-progress-fill');
-    
+
     const dropdownToggle = document.getElementById('dropdown-toggle');
     const dropdownArrow = document.getElementById('dropdown-arrow');
     const dropdownMenu = document.getElementById('dropdown-menu');
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (typeof Progress === 'undefined' || !gameModes.length) return;
         const { completed, total } = Progress.getOverallProgress(gameModes);
         const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
-        
+
         overallProgressLabel.textContent = `PROGRESS: ${completed}/${total} (${percent}%)`;
         overallProgressFill.style.width = `${percent}%`;
     }
@@ -190,16 +190,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     function renderWorldMap() {
         mapNodesContainer.innerHTML = '';
 
-        const DEFAULT_EMOJIS = {
-            tutorial_grammar: '🎓',
-            introduction: '👋',
-            experience: '💼',
-            meetings: '🚨',
-            classic_questions: '❓',
-            soft_skills: '💖',
-            hard_skills: '💻',
-            salary_negotiation: '💰',
-            profile: '👤'
+        const MINIMAP_ICONS = {
+            tutorial_grammar: 'hn hn-question-solid',
+            introduction: 'hn hn-face-grin-solid',
+            experience: 'hn hn-product-management',
+            meetings: 'hn hn-management',
+            classic_questions: 'hn hn-business',
+            soft_skills: 'hn hn-handshake-solid',
+            hard_skills: 'hn hn-programming',
+            salary_negotiation: 'hn hn-dollar',
+            profile: 'hn hn-users-solid'
         };
 
         // Re-order nodes for serpentine winding layout:
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         gameModes.forEach((mode, idx) => {
             const unlocked = isGameModeUnlocked(idx);
             const subModeIds = mode.subModes.map(s => s.id);
-            
+
             let completedCount = 0;
             let totalCount = subModeIds.length;
             if (typeof Progress !== 'undefined') {
@@ -221,7 +221,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
             const isFullyComplete = completedCount === totalCount && totalCount > 0;
-            const modeEmoji = mode.icon_emoji || DEFAULT_EMOJIS[mode.id] || '🎮';
+            const isInProgress = completedCount > 0 && !isFullyComplete;
+            const modeIconClass = MINIMAP_ICONS[mode.id] || 'hn hn-gamepad-solid';
 
             const node = document.createElement('div');
             node.className = `map-mode-node mode-${mode.id}`;
@@ -246,6 +247,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             if (isFullyComplete) {
                 node.classList.add('completed');
+            } else if (isInProgress) {
+                node.classList.add('in-progress');
             }
 
             // Optional or Complete Badge
@@ -256,7 +259,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             node.innerHTML = `
                 ${badgeHtml}
                 <div class="node-icon-wrapper">
-                    ${unlocked ? `<span class="node-emoji">${modeEmoji}</span>` : `<i class="hn hn-lock"></i>`}
+                    ${unlocked ? `<i class="${modeIconClass}"></i>` : `<i class="hn hn-lock"></i>`}
                     ${unlocked ? `<span class="node-index">${idx + 1}</span>` : ''}
                 </div>
                 <div class="node-info">
@@ -316,10 +319,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
             path.setAttribute('d', `M ${from.x} ${from.y} Q ${midX} ${midY}, ${to.x} ${to.y}`);
-            
+
             const isPathUnlocked = from.unlocked && to.unlocked;
             path.setAttribute('class', isPathUnlocked ? 'map-path-line' : 'map-path-line locked');
-            
+
             mapPathSvg.appendChild(path);
         }
     }
@@ -330,20 +333,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         const modeIndex = gameModes.findIndex(m => m.id === mode.id);
 
         // Header info
-        const DEFAULT_EMOJIS = {
-            tutorial_grammar: '🎓',
-            introduction: '👋',
-            experience: '💼',
-            meetings: '🚨',
-            classic_questions: '❓',
-            soft_skills: '💖',
-            hard_skills: '💻',
-            salary_negotiation: '💰',
-            profile: '👤'
+        const MODAL_ICONS = {
+            tutorial_grammar: 'hn hn-question-solid',
+            introduction: 'hn hn-face-grin',
+            experience: 'hn hn-product-management',
+            meetings: 'hn hn-management',
+            classic_questions: 'hn hn-business',
+            soft_skills: 'hn hn-handshake-solid',
+            hard_skills: 'hn hn-programming',
+            salary_negotiation: 'hn hn-dollar',
+            profile: 'hn hn-users-solid'
         };
 
-        const modeEmoji = mode.icon_emoji || DEFAULT_EMOJIS[mode.id] || '🎮';
-        zoneModalIcon.innerHTML = `<span class="node-emoji">${modeEmoji}</span>`;
+        const modalIconClass = MODAL_ICONS[mode.id] || 'hn hn-gamepad-solid';
+        zoneModalIcon.innerHTML = `<i class="${modalIconClass}"></i>`;
         zoneModalCategory.textContent = mode.optional ? 'OPTIONAL TUTORIAL' : `CAMPAIGN ZONE ${modeIndex + 1}`;
         zoneModalTitle.textContent = mode.name;
         zoneModalDesc.textContent = mode.description || `Master all interview scenarios in the ${mode.name} campaign.`;

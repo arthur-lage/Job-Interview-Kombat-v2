@@ -87,6 +87,7 @@ header h1 {
     0% {
         text-shadow: 3px 3px 0px #c93ed8, 0 0 15px rgba(253, 210, 1, 0.3);
     }
+
     100% {
         text-shadow: 4px 4px 0px #ff3ebd, 0 0 30px rgba(253, 210, 1, 0.7);
     }
@@ -117,17 +118,29 @@ header h1 {
     width: 140px;
     height: 12px;
     background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(253, 210, 1, 0.4);
-    border-radius: 6px;
+    border: none;
+    border-radius: 0;
     overflow: hidden;
+    box-shadow:
+        /* top edge */
+        2px 0 0 0 rgba(253, 210, 1, 0.5),
+        -2px 0 0 0 rgba(253, 210, 1, 0.5),
+        0 2px 0 0 rgba(253, 210, 1, 0.5),
+        0 -2px 0 0 rgba(253, 210, 1, 0.5),
+        /* corner pixels */
+        2px 2px 0 0 rgba(253, 210, 1, 0.3),
+        -2px 2px 0 0 rgba(253, 210, 1, 0.3),
+        2px -2px 0 0 rgba(253, 210, 1, 0.3),
+        -2px -2px 0 0 rgba(253, 210, 1, 0.3);
 }
 
 .progress-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #ff2b7c, #fdd201, #00e676);
-    border-radius: 6px;
+    background: #fdd201;
+    border-radius: 0;
     transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 0 8px rgba(253, 210, 1, 0.6);
+    -webkit-mask-image: linear-gradient(90deg, #000 80%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.4) 85%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0.15) 95%, transparent 95%);
+    mask-image: linear-gradient(90deg, #000 80%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.4) 85%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0.15) 95%, transparent 95%);
 }
 
 /* --- Quick Mode Select Dropdown --- */
@@ -151,7 +164,7 @@ header h1 {
     border-radius: 6px;
     color: #fdd201;
     font-family: MortalKombat1Font, monospace;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 700;
     cursor: pointer;
     letter-spacing: 0.08em;
@@ -321,58 +334,14 @@ header h1 {
     cursor: pointer;
 }
 
-/* Mode-Specific Custom Icon Themes */
-.mode-tutorial_grammar .node-icon-wrapper {
-    background: linear-gradient(145deg, #7c2fff, #5a1ecc);
-    border-color: #d1b3ff;
-}
-
-.mode-introduction .node-icon-wrapper {
-    background: linear-gradient(145deg, #00b4d8, #0077b6);
-    border-color: #90e0ef;
-}
-
-.mode-experience .node-icon-wrapper {
-    background: linear-gradient(145deg, #ff9e00, #ff6d00);
-    border-color: #ffe6a7;
-}
-
-.mode-meetings .node-icon-wrapper {
-    background: linear-gradient(145deg, #ff1744, #d50000);
-    border-color: #ff8a80;
-}
-
-.mode-classic_questions .node-icon-wrapper {
-    background: linear-gradient(145deg, #fdd201, #c9a401);
-    border-color: #ffecb3;
-}
-
-.mode-soft_skills .node-icon-wrapper {
-    background: linear-gradient(145deg, #c93ed8, #9a2ba6);
-    border-color: #f8bbd0;
-}
-
-.mode-hard_skills .node-icon-wrapper {
-    background: linear-gradient(145deg, #29b6f6, #0288d1);
-    border-color: #b3e5fc;
-}
-
-.mode-salary_negotiation .node-icon-wrapper {
-    background: linear-gradient(145deg, #00e676, #00a152);
-    border-color: #b9f6ca;
-}
-
-.mode-profile .node-icon-wrapper {
-    background: linear-gradient(145deg, #651fff, #3d5afe);
-    border-color: #d1c4e9;
-}
+/* Mode-Specific Custom Icon Themes — REMOVED (colors now driven by progress state) */
 
 /* Optional or Complete Badge */
 .node-badge {
     position: absolute;
     top: -12px;
     right: 0;
-    font-size: 0.65rem;
+    font-size: .9rem;
     font-weight: 900;
     padding: 2px 8px;
     border-radius: 4px;
@@ -392,25 +361,31 @@ header h1 {
     color: #12022B;
 }
 
-/* Node Circular Stage Pin Wrapper */
+/* Node Square Stage Pin Wrapper — default: new (0% complete) */
 .node-icon-wrapper {
     position: relative;
     width: 88px;
     height: 88px;
-    border-radius: 50%;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 4px solid #fdd201;
-    box-shadow: 0 0 22px rgba(253, 210, 1, 0.35), 0 8px 0 #0d041e;
+    background: #5486d6;
+    border: 4px solid #3e6ab8;
+    box-shadow: 0 8px 0 #0d041e;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.node-emoji {
-    font-size: 2.6rem;
-    line-height: 1;
-    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6));
-    transition: transform 0.3s ease;
+/* In-progress state (1%-99%) */
+.map-mode-node.in-progress .node-icon-wrapper {
+    background: #6b35bd;
+    border-color: #5428a0;
+}
+
+/* Completed state (100%) */
+.map-mode-node.completed .node-icon-wrapper {
+    background: #41d96c;
+    border-color: #2fb856;
 }
 
 .node-icon-wrapper i {
@@ -430,7 +405,7 @@ header h1 {
     font-family: MortalKombat1Font, monospace;
     font-size: 0.85rem;
     font-weight: 900;
-    border-radius: 50%;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -440,6 +415,8 @@ header h1 {
 
 /* Node Info Text Below Pin */
 .node-info {
+    position: relative;
+    z-index: 20;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -470,27 +447,15 @@ header h1 {
 }
 
 .map-mode-node.unlocked:hover .node-icon-wrapper {
-    transform: scale(1.18) rotate(-4deg);
-    border-color: #ffffff;
-    box-shadow: 0 0 35px rgba(253, 210, 1, 0.85), 0 10px 0 #0d041e;
-}
-
-.map-mode-node.unlocked:hover .node-emoji {
-    transform: scale(1.15);
+    transform: scale(1.1);
+    box-shadow: 0 10px 0 #0d041e;
 }
 
 .map-mode-node.unlocked:hover .node-title {
     color: #fdd201;
-    text-shadow: 0 0 12px rgba(253, 210, 1, 0.6);
 }
 
-/* Node Completed */
-.map-mode-node.completed .node-icon-wrapper {
-    background: linear-gradient(145deg, #00c853, #008137) !important;
-    border-color: #00e676 !important;
-    box-shadow: 0 0 25px rgba(0, 230, 118, 0.5), 0 8px 0 #0d041e;
-}
-
+/* Node Completed — already handled by .node-icon-wrapper state above */
 .map-mode-node.completed .node-title {
     color: #b8ffb8;
 }
@@ -526,11 +491,27 @@ header h1 {
 }
 
 @keyframes shakeAnim {
-    0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-8px); }
-    40% { transform: translateX(8px); }
-    60% { transform: translateX(-5px); }
-    80% { transform: translateX(5px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-8px);
+    }
+
+    40% {
+        transform: translateX(8px);
+    }
+
+    60% {
+        transform: translateX(-5px);
+    }
+
+    80% {
+        transform: translateX(5px);
+    }
 }
 
 /* --- Zone Detail Modal --- */
@@ -675,7 +656,8 @@ header h1 {
 
 .zone-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #c93ed8, #00e676);
+    /* background: linear-gradient(90deg, #c93ed8, #00e676); */
+    background: #fdd201;
     border-radius: 5px;
     transition: width 0.5s ease;
 }
