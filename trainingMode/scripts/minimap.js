@@ -5,6 +5,18 @@
  * Clicking a node opens a Zone Detail modal to select and launch submodes (phases).
  */
 
+const ICONS = {
+    tutorial_grammar: 'hn hn-question-solid',
+    introduction: 'hn hn-face-grin-solid',
+    experience: 'hn hn-product-management',
+    meetings: 'hn hn-management',
+    classic_questions: 'hn hn-business',
+    soft_skills: 'hn hn-handshake-solid',
+    hard_skills: 'hn hn-programming',
+    salary_negotiation: 'hn hn-dollar',
+    profile: 'hn hn-users-solid'
+};
+
 document.addEventListener('DOMContentLoaded', async () => {
     // --- DOM References ---
     const overallProgressLabel = document.getElementById('overall-progress-label');
@@ -156,7 +168,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             if (unlocked) {
                 item.innerHTML = isComplete
-                    ? `<span class="dropdown-complete-icon">✓</span> ${mode.name}`
+                    ? `<span class="dropdown-complete-icon"><i class="hn hn-badge-check-solid"></i></span> ${mode.name}`
                     : `${mode.name}`;
                 if (isComplete) item.classList.add('dropdown-complete');
 
@@ -190,17 +202,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     function renderWorldMap() {
         mapNodesContainer.innerHTML = '';
 
-        const MINIMAP_ICONS = {
-            tutorial_grammar: 'hn hn-question-solid',
-            introduction: 'hn hn-face-grin-solid',
-            experience: 'hn hn-product-management',
-            meetings: 'hn hn-management',
-            classic_questions: 'hn hn-business',
-            soft_skills: 'hn hn-handshake-solid',
-            hard_skills: 'hn hn-programming',
-            salary_negotiation: 'hn hn-dollar',
-            profile: 'hn hn-users-solid'
-        };
+
 
         // Re-order nodes for serpentine winding layout:
         // Row 1: [0, 1, 2] (Left -> Right)
@@ -222,7 +224,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             const isFullyComplete = completedCount === totalCount && totalCount > 0;
             const isInProgress = completedCount > 0 && !isFullyComplete;
-            const modeIconClass = MINIMAP_ICONS[mode.id] || 'hn hn-gamepad-solid';
+            const modeIconClass = ICONS[mode.id] || 'hn hn-gamepad-solid';
 
             const node = document.createElement('div');
             node.className = `map-mode-node mode-${mode.id}`;
@@ -254,7 +256,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Optional or Complete Badge
             const badgeHtml = mode.optional
                 ? `<span class="node-badge optional">TUTORIAL</span>`
-                : (isFullyComplete ? `<span class="node-badge complete">✓ 100%</span>` : '');
+                : (isFullyComplete ? `<span class="node-badge complete"><i class="hn hn-badge-check-solid"></i> 100%</span>` : '');
 
             node.innerHTML = `
                 ${badgeHtml}
@@ -332,20 +334,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         selectedMode = mode;
         const modeIndex = gameModes.findIndex(m => m.id === mode.id);
 
-        // Header info
-        const MODAL_ICONS = {
-            tutorial_grammar: 'hn hn-question-solid',
-            introduction: 'hn hn-face-grin',
-            experience: 'hn hn-product-management',
-            meetings: 'hn hn-management',
-            classic_questions: 'hn hn-business',
-            soft_skills: 'hn hn-handshake-solid',
-            hard_skills: 'hn hn-programming',
-            salary_negotiation: 'hn hn-dollar',
-            profile: 'hn hn-users-solid'
-        };
 
-        const modalIconClass = MODAL_ICONS[mode.id] || 'hn hn-gamepad-solid';
+
+        const modalIconClass = ICONS[mode.id] || 'hn hn-gamepad-solid';
         zoneModalIcon.innerHTML = `<i class="${modalIconClass}"></i>`;
         zoneModalCategory.textContent = mode.optional ? 'OPTIONAL TUTORIAL' : `CAMPAIGN ZONE ${modeIndex + 1}`;
         zoneModalTitle.textContent = mode.name;
@@ -378,7 +369,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
             const iconClass = unlocked ? (sub.icon_class || 'hn hn-gamepad-solid') : 'hn hn-lock';
-            const statusLabel = complete ? '✓ COMPLETED' : (unlocked ? 'AVAILABLE' : '🔒 LOCKED');
+            const statusLabel = complete ? '<i class="hn hn-badge-check-solid"></i> COMPLETED' : (unlocked ? 'AVAILABLE' : '<i class="hn hn-lock"></i> LOCKED');
 
             phaseCard.innerHTML = `
                 <div class="phase-card-header">

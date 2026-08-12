@@ -5,7 +5,7 @@
             "title": "Verb Tenses in Interviews",
             "subtitle": "When to use each tense",
             "category": "Grammar Essentials",
-            "icon": "🕐",
+            "icon": "<i class='hn hn-clock-solid'></i>",
             "content": "Choosing the right verb tense tells the interviewer WHERE in time your experience happened. Using the wrong tense creates confusion and makes you sound unprepared.",
             "sections": [
                 {
@@ -45,17 +45,17 @@
             "title": "Formal vs. Informal Language",
             "subtitle": "Sound professional, not casual",
             "category": "Grammar Essentials",
-            "icon": "🎩",
+            "icon": "<i class='hn hn-graduation-cap'></i>",
             "content": "Interviews are formal contexts. Using casual language signals a lack of professionalism. Small word choices make a big difference in how you are perceived.",
             "sections": [
                 {
                     "heading": "Word Choices",
                     "text": "Replace casual words with professional equivalents.",
                     "examples": [
-                        "❌ I did some stuff with Python → ✅ I developed data pipelines using Python.",
-                        "❌ My boss told me to fix it → ✅ My manager requested a solution.",
-                        "❌ It was pretty good → ✅ The outcome was highly effective.",
-                        "❌ I worked on a lot of things → ✅ I managed multiple concurrent responsibilities."
+                        "[WRONG] I did some stuff with Python → [CHECK] I developed data pipelines using Python.",
+                        "[WRONG] My boss told me to fix it → [CHECK] My manager requested a solution.",
+                        "[WRONG] It was pretty good → [CHECK] The outcome was highly effective.",
+                        "[WRONG] I worked on a lot of things → [CHECK] I managed multiple concurrent responsibilities."
                     ],
                     "tip": "Avoid: stuff, things, a lot, pretty, basically, kind of."
                 },
@@ -63,8 +63,8 @@
                     "heading": "Contractions",
                     "text": "In formal speech, avoiding contractions sounds more polished.",
                     "examples": [
-                        "❌ I don't have experience with X, but I'm a fast learner.",
-                        "✅ I do not have direct experience with X, but I am a quick learner."
+                        "[WRONG] I don't have experience with X, but I'm a fast learner.",
+                        "[CHECK] I do not have direct experience with X, but I am a quick learner."
                     ],
                     "tip": "In interviews, natural speech with some contractions is fine — the key is avoiding slang."
                 },
@@ -72,8 +72,8 @@
                     "heading": "Filler Words",
                     "text": "Filler words make you sound uncertain and unprepared.",
                     "examples": [
-                        "❌ So, um... I was like, basically working on this thing...",
-                        "✅ [pause] In my previous role, I was responsible for..."
+                        "[WRONG] So, um... I was like, basically working on this thing...",
+                        "[CHECK] [pause] In my previous role, I was responsible for..."
                     ],
                     "tip": "A confident pause is better than 'um', 'uh', 'like', or 'you know'."
                 }
@@ -84,7 +84,7 @@
             "title": "Quantifying Achievements",
             "subtitle": "Turn vague answers into powerful ones",
             "category": "Impact Language",
-            "icon": "📊",
+            "icon": "<i class='hn hn-trending'></i>",
             "content": "Numbers make your answers concrete and credible. An answer with data is always more persuasive than one without. This is one of the highest-impact skills for English interviews.",
             "sections": [
                 {
@@ -102,10 +102,10 @@
                     "heading": "Strong Action Verbs",
                     "text": "Start your achievements with powerful verbs — not weak ones.",
                     "examples": [
-                        "❌ Helped with → ✅ Led / Spearheaded / Orchestrated",
-                        "❌ Worked on → ✅ Developed / Built / Implemented / Engineered",
-                        "❌ Was responsible for → ✅ Managed / Owned / Oversaw / Directed",
-                        "❌ Did some improvements → ✅ Optimized / Streamlined / Refactored / Reduced"
+                        "[WRONG] Helped with → [CHECK] Led / Spearheaded / Orchestrated",
+                        "[WRONG] Worked on → [CHECK] Developed / Built / Implemented / Engineered",
+                        "[WRONG] Was responsible for → [CHECK] Managed / Owned / Oversaw / Directed",
+                        "[WRONG] Did some improvements → [CHECK] Optimized / Streamlined / Refactored / Reduced"
                     ],
                     "tip": "Your resume and interview answers should start sentences with strong past-tense verbs."
                 }
@@ -116,7 +116,7 @@
             "title": "The STAR Method",
             "subtitle": "How to structure behavioral answers",
             "category": "Answer Structure",
-            "icon": "⭐",
+            "icon": "<i class='hn hn-star-solid'></i>",
             "content": "STAR is the most effective structure for answering behavioral interview questions ('Tell me about a time when...'). It turns rambling answers into clear, compelling stories.",
             "sections": [
                 {
@@ -158,7 +158,7 @@
             "title": "Professional Phrases Toolkit",
             "subtitle": "Ready-made phrases for any interview moment",
             "category": "Interview Toolkit",
-            "icon": "🛠️",
+            "icon": "<i class='hn hn-cog-solid'></i>",
             "content": "Having a set of professional phrases ready helps you buy time, sound confident, and pivot gracefully in any interview situation.",
             "sections": [
                 {
@@ -209,7 +209,7 @@
             "title": "Pronunciation & Clarity",
             "subtitle": "Being understood is as important as what you say",
             "category": "Spoken English",
-            "icon": "🎙️",
+            "icon": "<i class='hn hn-user-headset'></i>",
             "content": "In a professional English interview, clarity of speech matters enormously. Even with accent, a clear, paced, and confident delivery is respected worldwide.",
             "sections": [
                 {
@@ -254,7 +254,7 @@
             "title": "Workplace Meetings Essentials",
             "subtitle": "How to communicate effectively in tech meetings",
             "category": "Meeting Fundamentals",
-            "icon": "🗣️",
+            "icon": "<i class='hn hn-user-headset'></i>",
             "content": "English meetings in tech companies follow specific etiquette. Expressing your status, interrupting politely, and pitching ideas clearly prevents misunderstandings and boosts team velocity.",
             "sections": [
                 {
@@ -295,7 +295,7 @@
             "title": "War Room & Crisis Management",
             "subtitle": "Rules and strategy for the War Room submode",
             "category": "Emergency Response",
-            "icon": "🚨",
+            "icon": "<i class='hn hn-bell-exclaimation-solid'></i>",
             "content": "In emergency outages, panic increases meeting chaos. The War Room Crisis mode tests your ability to maintain composure, state facts, and delegate tasks under time pressure.",
             "sections": [
                 {
@@ -312,8 +312,8 @@
                     "heading": "Assigning Action Items",
                     "text": "Never leave tasks unassigned in a crisis.",
                     "examples": [
-                        "❌ 'Someone should check the logs.' (Vague)",
-                        "✅ 'Alex, will you take ownership of checking the DB connection pool?' (Direct)"
+                        "[WRONG] 'Someone should check the logs.' (Vague)",
+                        "[CHECK] 'Alex, will you take ownership of checking the DB connection pool?' (Direct)"
                     ],
                     "tip": "Directly address team members and ask for explicit ownership."
                 }

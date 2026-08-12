@@ -127,7 +127,7 @@ function renderTopics() {
             }
 
             btn.innerHTML = isComplete
-                ? `<span class="mode-complete-icon">✓</span> ${mode.name}`
+                ? `<span class="mode-complete-icon"><i class="hn hn-badge-check-solid"></i></span> ${mode.name}`
                 : mode.name;
 
             if (isComplete) btn.classList.add("mode-complete");
@@ -177,7 +177,7 @@ function renderSubModes(mode) {
         }
 
         if (isComplete) {
-            link.innerHTML = `<span class="submode-complete-icon">✓</span> ${sub.name}`;
+            link.innerHTML = `<span class="submode-complete-icon"><i class="hn hn-badge-check-solid"></i></span> ${sub.name}`;
             link.classList.add("submode-complete");
         } else {
             link.textContent = sub.name;

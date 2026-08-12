@@ -238,17 +238,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showFeedback(selectedOpt, scenario) {
         if (selectedOpt.isCorrect) {
-            feedbackTitle.textContent = "✅ OPTIMAL RESPONSE!";
+            feedbackTitle.innerHTML = '<i class="hn hn-badge-check-solid" style="color:#00e676"></i> OPTIMAL RESPONSE!';
             feedbackTitle.style.color = "#00e676";
         } else {
-            feedbackTitle.textContent = "⚠️ SUB-OPTIMAL INCIDENT RESPONSE";
+            feedbackTitle.innerHTML = '<i class="hn hn-exclamation-triangle-solid" style="color:#ff1a40"></i> SUB-OPTIMAL INCIDENT RESPONSE';
             feedbackTitle.style.color = "#ff1a40";
         }
 
         feedbackText.innerHTML = `
             <p><strong>${selectedOpt.feedback}</strong></p>
             <hr style="border: 0; border-top: 1px dashed #5a2a78; margin: 10px 0;">
-            <p>💡 <em>${scenario.explanation}</em></p>
+            <p><i class="hn hn-star-solid" style="color:#fdd201"></i> <em>${scenario.explanation}</em></p>
         `;
 
         feedbackModal.classList.add("active");

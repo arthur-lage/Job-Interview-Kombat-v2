@@ -403,7 +403,7 @@ function buildResumeModal() {
             sectionEl.innerHTML = `
                 <div class="resume-section-header">
                     <span class="resume-section-title">${section.title}</span>
-                    <span class="resume-unlocked-badge">✅ UNLOCKED</span>
+                    <span class="resume-unlocked-badge"><i class="hn hn-badge-check-solid"></i> UNLOCKED</span>
                 </div>
                 <div class="resume-fields">
                     ${fieldsHTML}
