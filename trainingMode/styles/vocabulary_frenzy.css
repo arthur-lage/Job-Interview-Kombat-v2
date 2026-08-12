@@ -82,7 +82,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.2rem;
+    gap: 0.8rem;
     flex-direction: column;
 
     background: url('../assets/images/vocab_frenzy_frame.png');
@@ -90,14 +90,16 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 
-    padding: clamp(2.5rem, 4.5vw, 4.5rem) clamp(2rem, 4vw, 4rem);
+    padding: 3.5rem 4rem 3rem 4rem;
     color: white;
     border-radius: 1.2rem;
 
-    width: 85vw;
-    max-width: 820px;
+    width: 90vw;
+    max-width: 800px;
+    height: auto;
     max-height: 90vh;
-    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    overflow-x: hidden;
 
     text-align: center;
     box-shadow: 
@@ -114,7 +116,7 @@ body {
 
 .mode-description h1 {
     font-family: 'MortalKombat1Font', "PixelOperatorFont", monospace;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-size: clamp(2rem, 3.5vw, 2.7rem);
     color: #fff0d4;
     letter-spacing: 3px;
     text-shadow: 
@@ -124,19 +126,19 @@ body {
         -2px -2px 0px #000,
         2px -2px 0px #000,
         -2px 2px 0px #000;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }
 
 .mode-description p {
-    font-size: 1.35rem;
-    max-width: 80%;
-    line-height: 1.4;
+    font-size: 1.25rem;
+    max-width: 85%;
+    line-height: 1.35;
     color: #e2e8f0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .mode-description #description-time {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: #ffd166;
     font-weight: bold;
     text-shadow: 0 0 8px rgba(255, 209, 102, 0.6);
@@ -144,7 +146,7 @@ body {
 
 .mode-description #description-theme {
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #ff9d5c;
     font-weight: bold;
     background: rgba(255, 134, 78, 0.15);
@@ -157,7 +159,7 @@ body {
 }
 
 .mode-description .attention-text {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: #efcb68;
     background: rgba(239, 203, 104, 0.1);
     border: 1px solid rgba(239, 203, 104, 0.3);
@@ -173,21 +175,21 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
     width: 100%;
 }
 
 #description-back {
     font-family: 'MortalKombat1Font', "PixelOperatorFont", monospace;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: bold;
     color: #e2e8f0;
     letter-spacing: 2px;
     background: linear-gradient(180deg, rgba(40, 50, 70, 0.85) 0%, rgba(20, 25, 40, 0.95) 100%);
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
-    padding: 6px 24px;
-    height: 52px;
+    padding: 4px 22px;
+    height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,7 +217,7 @@ body {
 
 #description-go {
     font-family: 'MortalKombat1Font', "PixelOperatorFont", monospace;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: bold;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 134, 78, 0.5);
@@ -226,7 +228,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 
-    width: 200px;
+    width: 190px;
     aspect-ratio: 12 / 5;
 
     display: flex;
@@ -251,139 +253,244 @@ body {
 }
 
 /* ==========================================================================
-   GAME BOARD & CONTAINER
+   GAME BOARD & CONTAINER (GAMEPLAY MODE)
    ========================================================================== */
 .game-container {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    transform: scale(0.97);
 
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    overflow-x: hidden;
 }
 
 .game-container.active {
     opacity: 1;
     pointer-events: auto;
+    transform: scale(1);
 }
 
+/* ---- Game Header HUD ---- */
+.game-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 950px;
+    background: linear-gradient(180deg, rgba(16, 22, 36, 0.9) 0%, rgba(8, 12, 22, 0.95) 100%);
+    border: 2px solid rgba(255, 134, 78, 0.35);
+    border-radius: 12px;
+    padding: 0.8rem 1.8rem;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.6), 
+        inset 0 0 15px rgba(255, 134, 78, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-family: "PixelOperatorFont", monospace;
+    color: white;
+    margin-top: 1rem;
+}
+
+.game-header > span:first-child {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#game-theme {
+    font-family: 'MortalKombat1Font', "PixelOperatorFont", monospace;
+    font-size: 1.5rem;
+    color: #ff9d5c;
+    font-weight: bold;
+    background: rgba(255, 134, 78, 0.15);
+    border: 1px solid rgba(255, 134, 78, 0.4);
+    border-radius: 6px;
+    padding: 2px 14px;
+    text-shadow: 0 0 8px rgba(255, 157, 92, 0.6);
+    letter-spacing: 1px;
+}
+
+#timer {
+    font-family: 'MortalKombat1Font', "PixelOperatorFont", monospace;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #ffd166;
+    text-shadow: 0 0 12px rgba(255, 209, 102, 0.7);
+    background: rgba(0, 0, 0, 0.45);
+    border: 2px solid rgba(255, 209, 102, 0.4);
+    padding: 2px 22px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease, border-color 0.3s ease, text-shadow 0.3s ease;
+}
+
+@keyframes timer-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 71, 114, 0.4);
+    }
+    100% {
+        transform: scale(1.06);
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 71, 114, 0.9);
+    }
+}
+
+#timer.urgent {
+    color: #ff4772;
+    border-color: #ff4772;
+    text-shadow: 0 0 15px rgba(255, 71, 114, 0.9);
+    animation: timer-pulse 0.6s ease-in-out infinite alternate;
+}
+
+#done-btn {
+    font-family: 'MortalKombat1Font', "PixelOperatorFont", monospace;
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
+    border: 2px solid #ff7675;
+    border-radius: 8px;
+    padding: 8px 22px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+#done-btn:hover {
+    transform: scale(1.06);
+    filter: brightness(1.15);
+    box-shadow: 0 0 18px rgba(231, 76, 60, 0.7);
+}
+
+#done-btn:active {
+    transform: scale(0.96);
+}
+
+#done-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    filter: grayscale(0.8);
+}
+
+/* ---- Game Cards Grid ---- */
 .game-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 90px;
-    gap: 1.5rem;
-    width: 80vw;
+    grid-auto-rows: minmax(85px, auto);
+    gap: 1.2rem;
+    width: 90%;
+    max-width: 950px;
 }
 
 @keyframes card-pop {
     0% {
-        transform: scale(0.4);
+        transform: scale(0.5) translateY(15px);
         opacity: 0;
     }
     60% {
-        transform: scale(1.08);
+        transform: scale(1.05) translateY(-3px);
         opacity: 1;
     }
-    80% {
-        transform: scale(0.96);
-    }
     100% {
-        transform: scale(1);
+        transform: scale(1) translateY(0);
         opacity: 1;
     }
 }
 
 .game-card {
-    transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+    position: relative;
     font-family: "PixelOperatorFont", monospace;
-    color: white;
-    font-size: 2rem;
+    color: #f1f5f9;
+    font-size: clamp(1.3rem, 2.1vw, 1.85rem);
+    font-weight: bold;
+    letter-spacing: 0.5px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(139, 151, 165);
-    border-radius: .4rem;
-    border: 4px solid rgb(25, 55, 81);
+    
+    background: linear-gradient(145deg, rgba(30, 42, 62, 0.92) 0%, rgba(15, 23, 38, 0.96) 100%);
+    border-radius: 10px;
+    border: 2px solid rgba(80, 110, 150, 0.45);
+    box-shadow: 
+        0 6px 16px rgba(0, 0, 0, 0.5), 
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
     cursor: pointer;
     text-transform: uppercase;
-    padding: .5rem 1rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    padding: 0.8rem 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
     overflow: hidden;
+
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                background 0.2s ease, 
+                border-color 0.2s ease, 
+                box-shadow 0.2s ease,
+                color 0.2s ease;
 
     animation: card-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
 }
 
-.game-card.selected {
-    transform: scale(1.05);
-    background: #6441a5;
-    border-color: #a272fc;
-    box-shadow: 0 0 15px rgba(100, 65, 165, 0.6);
+.game-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
 }
 
 .game-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-4px) scale(1.03);
+    border-color: #ff9d5c;
+    color: #ffffff;
+    box-shadow: 
+        0 10px 25px rgba(255, 134, 78, 0.35), 
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.game-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    color: white;
-
-    font-family: "PixelOperatorFont", monospace;
-    font-size: 2.2rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    margin-top: 3rem;
+.game-card.selected {
+    transform: scale(1.04) translateY(-2px);
+    background: linear-gradient(135deg, #7b2cbf 0%, #3a0ca3 100%);
+    border-color: #e0aaff;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(224, 170, 255, 0.8), 1px 1px 3px #000;
+    box-shadow: 
+        0 0 25px rgba(181, 23, 158, 0.75), 
+        inset 0 0 12px rgba(224, 170, 255, 0.4);
 }
 
-#game-theme {
-    color: rgb(255, 134, 78);
-    font-weight: bold;
-}
-
-#timer {
-    font-size: 2.8rem;
-    color: rgb(255, 134, 78);
-    font-weight: bold;
-    text-shadow: 0 0 10px rgba(255, 134, 78, 0.5), 1px 1px 3px rgba(0, 0, 0, 0.6);
-}
-
-#done-btn {
-    font-family: "PixelOperatorFont", monospace;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: white;
-    background: #c0392b;
-    border: 3px solid #e74c3c;
-    border-radius: 6px;
-    padding: 6px 20px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-#done-btn:hover {
-    transform: scale(1.08);
-    background: #e74c3c;
-    box-shadow: 0 0 12px rgba(231, 76, 60, 0.6);
-}
-
-#done-btn:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
+.game-card.selected::before {
+    content: '✓';
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-size: 1.1rem;
+    color: #e0aaff;
+    text-shadow: 0 0 6px rgba(224, 170, 255, 0.9);
 }
 
 /* ==========================================================================
-   RESULT MODAL (.result-container)
+   RESULT / FEEDBACK MODAL (.result-container)
    ========================================================================== */
 .result-container {
     opacity: 0;
@@ -392,7 +499,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
 
     font-family: "PixelOperatorFont", monospace;
     color: white;
@@ -410,11 +517,13 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 
-    padding: clamp(2.2rem, 3.5vw, 3.8rem) clamp(2rem, 4vw, 4rem);
-    width: 85vw;
-    max-width: 850px;
+    padding: 3.5rem 4rem 3rem 4rem;
+    width: 90vw;
+    max-width: 820px;
+    height: auto;
     max-height: 90vh;
-    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    overflow-x: hidden;
 
     box-shadow: 
         0 0 40px rgba(255, 107, 43, 0.22),
@@ -430,7 +539,7 @@ body {
 
 .result-title {
     font-family: 'MortalKombat1Font', "PixelOperatorFont", monospace;
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
     color: #ffd166;
     letter-spacing: 3px;
     text-shadow: 
@@ -440,15 +549,15 @@ body {
         -2px -2px 0px #000,
         2px -2px 0px #000,
         -2px 2px 0px #000;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0;
 }
 
 .result-theme {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
 }
 
 #result-theme {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     color: rgb(255, 134, 78);
     font-weight: bold;
     text-shadow: 0 0 8px rgba(255, 134, 78, 0.5);
@@ -463,9 +572,9 @@ body {
     border: 2px solid rgba(255, 134, 78, 0.35);
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 134, 78, 0.08);
-    padding: 0.3rem 0;
+    padding: 0.2rem 0;
     width: 85%;
-    max-width: 580px;
+    max-width: 520px;
 }
 
 .stat-block {
@@ -473,7 +582,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0.1rem;
-    padding: 0.4rem 1.2rem;
+    padding: 0.25rem 0.8rem;
     transition: transform 0.2s ease;
 }
 
@@ -483,7 +592,7 @@ body {
 
 .stat-value {
     font-family: 'MortalKombat1Font', "PixelOperatorFont", monospace;
-    font-size: 2.3rem;
+    font-size: 1.95rem;
     font-weight: bold;
     color: rgb(255, 134, 78);
     line-height: 1;
@@ -492,7 +601,7 @@ body {
 
 .stat-label {
     font-family: "PixelOperatorFont", monospace;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
     letter-spacing: 1.2px;
@@ -510,7 +619,7 @@ body {
 
 .stat-divider {
     width: 2px;
-    height: 42px;
+    height: 34px;
     background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,134,78,0.4) 50%, rgba(255,255,255,0.05) 100%);
     flex-shrink: 0;
 }
@@ -520,15 +629,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.2rem;
     width: 100%;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-align: center;
+    overflow-x: hidden;
 }
 
 .result-picks .label {
     color: #efcb68;
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
@@ -536,16 +646,18 @@ body {
 .picks-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: 0.3rem;
     justify-content: center;
-    max-width: 85%;
-    max-height: 110px;
+    width: 85%;
+    max-width: 600px;
+    max-height: 80px;
     overflow-y: auto;
-    padding: 0.3rem 0.5rem;
+    overflow-x: hidden;
+    padding: 0.2rem 0.4rem;
 }
 
 .picks-empty {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.55);
     font-style: italic;
 }
@@ -560,19 +672,20 @@ body {
     display: inline-flex;
     align-items: center;
     font-family: "PixelOperatorFont", monospace;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
-    padding: 3px 12px;
+    padding: 2px 10px;
     border-radius: 6px;
     font-weight: bold;
     letter-spacing: 0.5px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
     animation: chip-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
 }
 
 .pick-chip:hover {
-    transform: translateY(-2px) scale(1.05);
+    transform: translateY(-2px) scale(1.04);
 }
 
 .pick-chip:nth-child(1)  { animation-delay: 0ms; }
@@ -614,39 +727,44 @@ body {
 
 /* ---- Result: Words Left Out ---- */
 .result-left-words {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.2rem;
     width: 85%;
+    max-width: 600px;
     text-align: center;
+    overflow-x: hidden;
 }
 
 .result-left-words .label {
     color: #efcb68;
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .result-left-words .word-list {
     width: 100%;
-    max-height: 75px;
+    max-height: 55px;
     overflow-y: auto;
-    padding: 0.4rem 0.8rem;
+    overflow-x: hidden;
+    word-break: break-word;
+    padding: 0.3rem 0.6rem;
     background: rgba(0, 0, 0, 0.35);
     border: 1px solid rgba(239, 203, 104, 0.3);
     border-radius: 6px;
     color: #e2e8f0;
-    font-size: 1.25rem;
-    line-height: 1.4;
+    font-size: 1.15rem;
+    line-height: 1.35;
     box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
+    display: block;
 }
 
 /* ---- Result Footer & Button ---- */
 .result-footer {
-    margin-top: 0.3rem;
+    margin-top: 0.1rem;
 }
 
 .finish-button {
@@ -655,7 +773,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 
-    width: 210px;
+    width: 180px;
     aspect-ratio: 12 / 5;
 
     display: flex;
@@ -669,7 +787,7 @@ body {
     transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
                 filter 0.2s ease;
 
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: white;
     font-family: 'MortalKombat1Font', "PixelOperatorFont", monospace;
     font-weight: bold;
@@ -686,10 +804,11 @@ body {
     transform: scale(0.96);
 }
 
-/* ---- Custom Scrollbars ---- */
+/* ---- Custom Scrollbars (Only Vertical) ---- */
 .picks-list::-webkit-scrollbar,
 .word-list::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
+    height: 0px;
 }
 
 .picks-list::-webkit-scrollbar-track,
@@ -707,4 +826,14 @@ body {
 .picks-list::-webkit-scrollbar-thumb:hover,
 .word-list::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 134, 78, 0.85);
+}
+
+@media (max-width: 768px) {
+    .game-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .game-header {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
 }

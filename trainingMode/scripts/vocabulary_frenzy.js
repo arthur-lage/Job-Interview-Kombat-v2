@@ -134,6 +134,7 @@ const game = {
 
     startTimer: () => {
         const timerDisplay = document.querySelector("#timer")
+        timerDisplay.classList.remove("urgent")
 
         game.timer.current = game.timer.default
         timerDisplay.textContent = game.timer.current + "s"
@@ -141,6 +142,10 @@ const game = {
         game.timerInterval = setInterval(() => {
             game.timer.current--
             timerDisplay.textContent = game.timer.current + "s"
+
+            if (game.timer.current <= 10) {
+                timerDisplay.classList.add("urgent")
+            }
 
             if (game.timer.current <= 0) {
                 clearInterval(game.timerInterval)
