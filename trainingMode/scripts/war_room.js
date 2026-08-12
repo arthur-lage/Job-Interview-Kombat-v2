@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let chaosLevel = 50;
     let totalScore = 0;
     let timerInterval = null;
-    let timeLeft = 18;
+    let timeLeft = 26;
 
     // UI Elements
     const warBg = document.getElementById("war-bg");
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function startTimer() {
         clearInterval(timerInterval);
         const lvlData = gameData.levels[currentLevelIndex];
-        timeLeft = lvlData.timePerQuestion || 18;
+        timeLeft = lvlData.timePerQuestion || 26;
         timerVal.textContent = `${timeLeft}s`;
         timerBox.classList.remove("timer-warning");
 

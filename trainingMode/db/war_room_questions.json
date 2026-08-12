@@ -9,7 +9,7 @@
       "difficulty": "Standard",
       "description": "A production API outage caused an 85% error rate surge during peak hours.",
       "initialChaos": 50,
-      "timePerQuestion": 18,
+      "timePerQuestion": 26,
       "scenarios": [
         {
           "id": 1,
@@ -200,7 +200,7 @@
       "difficulty": "Hard",
       "description": "Unauthorized access was detected on production API keys. Security breach protocol activated.",
       "initialChaos": 50,
-      "timePerQuestion": 15,
+      "timePerQuestion": 23,
       "scenarios": [
         {
           "id": 1,
@@ -391,7 +391,7 @@
       "difficulty": "Extreme",
       "description": "Primary AWS region US-EAST-1 went completely dark. Global failover required under extreme time pressure.",
       "initialChaos": 60,
-      "timePerQuestion": 12,
+      "timePerQuestion": 20,
       "scenarios": [
         {
           "id": 1,
