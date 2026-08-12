@@ -14,16 +14,21 @@
 <body>
     <div class="background"></div>
 
+    <a href="../pages/minimap.html" id="back-btn" aria-label="Back to minimap">
+        <img src="../../JobInterviewKombat/assets/images/arrow-back.png" alt="Back" width="40">
+    </a>
+
     <div class="mode-description">
         <h1>VOCABULARY FRENZY</h1>
         <p>You will have <span id="description-time">45</span> seconds to select as many vocabulary related to the
             theme!</p>
         <p>The theme is: <span id="description-theme">SOFT SKILLS</span></p>
-        <p style="font-size: 1.2rem; color: #efcb68">ATTENTION! The time starts running right after you click
+        <p class="attention-text">ATTENTION! The time starts running right after you click
             the 'GO!' button.</p>
 
-        <div class="button">
-            <button id="description-go">GO!</button>
+        <div class="modal-buttons">
+            <button id="description-back" class="btn-back">BACK</button>
+            <button id="description-go" class="btn-go">GO!</button>
         </div>
     </div>
 

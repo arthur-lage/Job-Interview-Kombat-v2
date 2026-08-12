@@ -13,9 +13,16 @@ function getTopicId() {
 }
 
 const descriptionGoButton = document.querySelector("#description-go")
+const descriptionBackButton = document.querySelector("#description-back")
 const descriptionMenu = document.querySelector(".mode-description")
 const descriptionMenuTimer = document.querySelector("#description-time")
 const descriptionMenuTheme = document.querySelector("#description-theme")
+
+if (descriptionBackButton) {
+    descriptionBackButton.addEventListener("click", () => {
+        document.location.href = "../pages/minimap.html"
+    })
+}
 
 const gameContainer = document.querySelector(".game-container")
 const gameCards = document.querySelector(".game-cards")
