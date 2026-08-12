@@ -6,7 +6,20 @@
     --modal-bg: #312a5c;
 }
 
-html, body {
+.quiz-bg {
+    position: absolute;
+    background-image: url(../assets/images/background.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    filter: brightness(0.45);
+    z-index: -1;
+}
+
+html,
+body {
     height: 100%;
     overflow: hidden;
 }
@@ -20,13 +33,13 @@ html, body {
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    gap: 0.4rem;
+    gap: 1.5rem;
     padding: 0.5rem 1rem;
     box-sizing: border-box;
 }
 
 .quiz-title {
-    font-size: clamp(1rem, 2vh, 1.6rem);
+    font-size: clamp(1.5rem, 2vh, 2rem);
     font-family: 'PixelOperatorFont', monospace;
     color: white;
     text-transform: uppercase;
@@ -41,7 +54,7 @@ html, body {
     margin-top: 0.3rem;
     display: flex;
     flex-direction: column;
-    gap: clamp(6px, 1.2vh, 14px);
+    gap: 1.5rem;
     align-items: center;
     width: 100%;
     max-width: 900px;
@@ -50,7 +63,7 @@ html, body {
 }
 
 .question-number {
-    font-size: clamp(1rem, 2vh, 1.6rem);
+    font-size: clamp(1.4rem, 2vh, 1.8rem);
     text-transform: uppercase;
     color: black;
     font-family: "PixelOperatorFont", monospace;
@@ -59,7 +72,7 @@ html, body {
     background-image: url("../assets/images/faixa-question.png");
     background-size: cover;
     text-align: center;
-    width: 320px;
+    width: 340px;
     height: 36px;
     display: flex;
     align-items: center;
@@ -70,7 +83,7 @@ html, body {
 }
 
 .question-text {
-    font-size: clamp(1.2rem, 2vh, 1.8rem);
+    font-size: clamp(1.5rem, 2vh, 2rem);
     background: url("../assets/images/question-box.png");
     padding: 10px 24px;
     width: min(1000px, 95vw);
@@ -95,11 +108,11 @@ html, body {
 }
 
 .option {
-    font-size: clamp(1rem, 1.8vh, 1.6rem);
+    font-size: clamp(1.4rem, 1.8vh, 1.6rem);
     background-color: transparent;
-    padding: 4px 14px;
+    padding: 10px 33px;
     height: auto;
-    min-height: clamp(48px, 8vh, 70px);
+    min-height: 70px;
     width: min(900px, 95vw);
     max-width: 95vw;
     font-family: "PixelOperatorFont", monospace;
@@ -119,15 +132,25 @@ html, body {
 }
 
 .option.wrong {
-    background: var(--question-wrong-bg);
+    background-image: url("../assets/images/button_red.png");
 }
 
 .option.correct {
-    background: var(--question-correct-bg);
+    background-image: url("../assets/images/button_green.png");
 }
 
 .option:hover {
     transform: scale(1.05);
+}
+
+.options-container.answered .option:not(.correct):not(.wrong) {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.options-container.answered .option {
+    pointer-events: none;
 }
 
 .quiz-footer {

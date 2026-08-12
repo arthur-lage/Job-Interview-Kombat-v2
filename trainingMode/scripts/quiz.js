@@ -51,7 +51,8 @@ function createSession(bank, { softSkills = 5, hardSkills = 2 } = {}) {
 const game = {
     hp: null, // calculado após createSession
     session: null, // preenchido após o fetch
-    score: 0
+    score: 0,
+    answered: false
 };
 
 game.hasQuestions = function () {
@@ -119,7 +120,14 @@ function nextQuestion() {
 }
 
 function validateAnswer(e, letter) {
-    if (!game.hasQuestions()) return
+    if (!game.hasQuestions() || game.answered) return;
+    game.answered = true;
+
+    const optionsContainer = document.querySelector(".options-container");
+    if (optionsContainer) {
+        optionsContainer.classList.add("answered");
+    }
+
     const correct = game.session.questions[game.session.currentIndex].correctOption;
     if (letter === correct) {
         e.target.classList.add("correct");
@@ -134,6 +142,7 @@ function validateAnswer(e, letter) {
 }
 
 function loadQuestion() {
+    game.answered = false;
     const { questions, currentIndex } = game.session;
     const question = questions[currentIndex];
 
@@ -151,6 +160,7 @@ function loadQuestion() {
 
     const optionsContainer = document.querySelector(".options-container");
     optionsContainer.innerHTML = "";
+    optionsContainer.classList.remove("answered");
 
     // Hide post-answer bar when loading new question
     const bar = document.getElementById('post-answer-bar');
