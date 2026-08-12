@@ -3,6 +3,8 @@
         {
             "id": "tutorial_grammar",
             "name": "GRAMMAR",
+            "icon_class": "hn hn-graduation-cap-solid",
+            "icon_emoji": "🎓",
             "optional": true,
             "subModes": [
                 {
@@ -28,6 +30,8 @@
         {
             "id": "introduction",
             "name": "INTRODUCTION",
+            "icon_class": "hn hn-comment-dots-solid",
+            "icon_emoji": "👋",
             "unlocked": true,
             "subModes": [
                 {
@@ -59,6 +63,8 @@
         {
             "id": "experience",
             "name": "EXPERIENCE",
+            "icon_class": "hn hn-minds",
+            "icon_emoji": "💼",
             "unlocked": true,
             "subModes": [
                 {
@@ -90,6 +96,8 @@
         {
             "id": "meetings",
             "name": "MEETINGS",
+            "icon_class": "hn hn-fire-solid",
+            "icon_emoji": "🚨",
             "unlocked": true,
             "subModes": [
                 {
@@ -109,6 +117,8 @@
         {
             "id": "classic_questions",
             "name": "CLASSIC QUESTIONS",
+            "icon_class": "hn hn-question-circle-solid",
+            "icon_emoji": "❓",
             "unlocked": true,
             "subModes": [
                 {
@@ -128,6 +138,8 @@
         {
             "id": "soft_skills",
             "name": "SOFT SKILLS",
+            "icon_class": "hn hn-book-heart-solid",
+            "icon_emoji": "💖",
             "unlocked": true,
             "subModes": [
                 {
@@ -159,6 +171,8 @@
         {
             "id": "hard_skills",
             "name": "HARD SKILLS",
+            "icon_class": "hn hn-edit",
+            "icon_emoji": "💻",
             "unlocked": true,
             "subModes": [
                 {
@@ -190,6 +204,8 @@
         {
             "id": "salary_negotiation",
             "name": "SALARY NEGOTIATION",
+            "icon_class": "hn hn-copy-solid",
+            "icon_emoji": "💰",
             "unlocked": true,
             "subModes": [
                 {
@@ -209,6 +225,8 @@
         {
             "id": "profile",
             "name": "PROFILE",
+            "icon_class": "hn hn-headphones-solid",
+            "icon_emoji": "👤",
             "unlocked": true,
             "subModes": [
                 {

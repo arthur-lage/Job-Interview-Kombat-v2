@@ -20,45 +20,81 @@
 </head>
 
 <body>
-    <!-- Decorative BG triangles (same as other pages) -->
+    <!-- Decorative BG triangles -->
     <img src="../assets/images/bg_triangulo_l.png" class="bg-triangle-left" alt="">
     <img src="../assets/images/bg_triangulo_r.png" class="bg-triangle-right" alt="">
 
     <!-- Header -->
     <header>
-        <a href="../../index.html" id="back-btn">
+        <a href="../../index.html" id="back-btn" aria-label="Voltar para o Menu Principal">
             <img src="../../JobInterviewKombat/assets/images/arrow-back.png" alt="Voltar">
         </a>
-        <h1>World Map</h1>
+        <div class="header-title-container">
+            <h1>WORLD MAP</h1>
+            <div class="overall-progress-bar-container" title="Overall Campaign Completion">
+                <span class="progress-bar-label" id="overall-progress-label">PROGRESS: 0%</span>
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="overall-progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- Game Mode Dropdown -->
-    <div class="dropdown-container" id="dropdown-container">
-        <button class="dropdown-toggle" id="dropdown-toggle">
-            <span class="dropdown-label" id="dropdown-label">SELECT GAME MODE</span>
+    <!-- Quick Mode Selector (Dropdown) -->
+    <div class="quick-select-container">
+        <button class="quick-select-toggle" id="dropdown-toggle">
+            <span id="dropdown-label">⚡ QUICK MODE SELECT</span>
             <span class="dropdown-arrow" id="dropdown-arrow">▼</span>
         </button>
         <div class="dropdown-menu" id="dropdown-menu">
-            <!-- Filled by JS -->
+            <!-- Filled dynamically by JS -->
         </div>
     </div>
 
-    <!-- Phases Map (submodes as phases) -->
-    <main class="phases-container" id="phases-container">
-        <!-- Placeholder when no mode selected -->
-        <div class="phases-placeholder" id="phases-placeholder">
-            <span class="placeholder-icon">🗺️</span>
-            <p class="placeholder-text">SELECT A GAME MODE TO VIEW THE MAP</p>
-        </div>
-
-        <!-- Phase nodes (filled by JS) -->
-        <div class="phases-map" id="phases-map" style="display:none;">
-            <svg class="path-layer" id="path-svg"></svg>
-            <div class="phases-nodes" id="phases-nodes">
-                <!-- Filled by JS -->
+    <!-- Main World Map Board -->
+    <main class="world-map-main">
+        <div class="map-viewport" id="map-viewport">
+            <svg class="map-svg-layer" id="map-path-svg"></svg>
+            <div class="map-nodes-container" id="map-nodes-container">
+                <!-- Game Mode Nodes filled dynamically by JS -->
             </div>
         </div>
     </main>
+
+    <!-- Zone Detail Modal (Opens when clicking a Game Mode node) -->
+    <div class="zone-modal-overlay" id="zone-modal-overlay">
+        <div class="zone-modal-card" id="zone-modal-card">
+            <button class="zone-modal-close" id="zone-modal-close" aria-label="Close Zone Details">&times;</button>
+            
+            <div class="zone-header">
+                <div class="zone-icon-box" id="zone-modal-icon">
+                    <i class="hn hn-gamepad-solid"></i>
+                </div>
+                <div class="zone-header-info">
+                    <span class="zone-category" id="zone-modal-category">GAME MODE</span>
+                    <h2 class="zone-title" id="zone-modal-title">MODE TITLE</h2>
+                    <p class="zone-description" id="zone-modal-desc">Mode description goes here.</p>
+                </div>
+            </div>
+
+            <div class="zone-progress-box">
+                <div class="zone-progress-text">
+                    <span>ZONE PROGRESS</span>
+                    <span id="zone-modal-progress-count">0 / 0 COMPLETED</span>
+                </div>
+                <div class="zone-progress-track">
+                    <div class="zone-progress-fill" id="zone-modal-progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <div class="zone-phases-section">
+                <h3 class="zone-phases-heading">SELECT PHASE / SUBMODE</h3>
+                <div class="zone-phases-grid" id="zone-phases-grid">
+                    <!-- Phase cards dynamically inserted by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Resume FAB -->
     <button class="resume-fab" id="resume-fab" title="Open My Resume">
@@ -71,8 +107,6 @@
     <footer>
         <span>2026 @ CEFET-MG</span>
     </footer>
-
-    <!-- CRT scanlines applied via CSS -->
 </body>
 
 </html>

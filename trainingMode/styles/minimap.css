@@ -1,138 +1,181 @@
-/* ===========================
-   MINIMAP – Consistent with project style
-   =========================== */
+/* ==========================================================================
+   MINIMAP – Interactive Arcade World Map Styling (Job Interview Kombat v2)
+   ========================================================================== */
 
-/* --- Base & Reset --- */
+/* --- Global & Body --- */
 body {
-    overflow: hidden;
-    background: #12022B;
+    overflow-x: hidden;
+    background: radial-gradient(circle at 50% 30%, #250854 0%, #12022B 75%);
     display: flex;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
     font-family: 'PixelOperatorFont', monospace;
     position: relative;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
-/* --- BG Triangles (same as trainingMode) --- */
+/* Background Triangles */
 .bg-triangle-left {
-    z-index: 2;
-    position: absolute;
+    z-index: 1;
+    position: fixed;
     left: 0;
     top: 50%;
     pointer-events: none;
     transform: translateY(-50%);
+    opacity: 0.7;
 }
 
 .bg-triangle-right {
-    z-index: 2;
-    position: absolute;
+    z-index: 1;
+    position: fixed;
     right: 0;
     top: 50%;
     pointer-events: none;
     transform: translateY(-50%);
+    opacity: 0.7;
 }
 
-/* --- Header (same as trainingMode) --- */
+/* --- Header Layout --- */
 header {
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1.5rem 2rem 0.5rem;
     width: 100%;
     z-index: 10;
+    position: relative;
+    box-sizing: border-box;
 }
 
-header a {
-    transition: .3s ease;
+header #back-btn {
+    transition: transform 0.3s ease;
     display: block;
     z-index: 15;
     pointer-events: auto;
     position: absolute;
     top: 1.5rem;
-    left: 1.5rem;
+    left: 2rem;
 }
 
-header a:hover {
-    transform: scale(1.1);
+header #back-btn:hover {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.header-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 header h1 {
     color: #fdd201;
     font-family: MortalKombat1Font, monospace;
     font-weight: 700;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     text-align: center;
-    text-shadow: 3px 3px 1px #c93ed8;
-    letter-spacing: .1em;
-    animation: titlePulse 3s ease-in-out infinite;
+    text-shadow: 3px 3px 0px #c93ed8, 0 0 20px rgba(253, 210, 1, 0.4);
+    letter-spacing: 0.12em;
+    margin: 0;
+    animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
-@keyframes titlePulse {
-
-    0%,
+@keyframes titleGlow {
+    0% {
+        text-shadow: 3px 3px 0px #c93ed8, 0 0 15px rgba(253, 210, 1, 0.3);
+    }
     100% {
-        text-shadow: 3px 3px 1px #c93ed8;
-        transform: scale(1);
-    }
-
-    50% {
-        text-shadow: 4px 4px 4px #ff6cfb;
-        transform: scale(1.03);
+        text-shadow: 4px 4px 0px #ff3ebd, 0 0 30px rgba(253, 210, 1, 0.7);
     }
 }
 
-/* ===============================
-   DROPDOWN – Squared, bold border
-   =============================== */
-.dropdown-container {
+/* Overall Campaign Progress Bar */
+.overall-progress-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(26, 10, 62, 0.85);
+    border: 2px solid rgba(253, 210, 1, 0.5);
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+.progress-bar-label {
+    font-family: MortalKombat1Font, monospace;
+    font-size: 0.95rem;
+    color: #fdd201;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+.progress-bar-track {
+    width: 140px;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(253, 210, 1, 0.4);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff2b7c, #fdd201, #00e676);
+    border-radius: 6px;
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 8px rgba(253, 210, 1, 0.6);
+}
+
+/* --- Quick Mode Select Dropdown --- */
+.quick-select-container {
     position: relative;
     z-index: 50;
-    width: 460px;
+    width: 340px;
     max-width: 90vw;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
 }
 
-.dropdown-toggle {
+.quick-select-toggle {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.5rem;
+    padding: 0.6rem 1.2rem;
     background: #1a0a3e;
-    border: 3px solid #fdd201;
-    border-radius: 4px;
+    border: 2px solid #fdd201;
+    border-radius: 6px;
     color: #fdd201;
     font-family: MortalKombat1Font, monospace;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-shadow: 2px 2px 1px #c93ed8;
     transition: all 0.2s ease;
-    box-shadow: 0 0 15px rgba(253, 210, 1, 0.15),
-        0 4px 0 #c9a401;
+    box-shadow: 0 0 12px rgba(253, 210, 1, 0.15), 0 3px 0 #8a7200;
 }
 
-.dropdown-toggle:hover {
-    background: #230e52;
-    box-shadow: 0 0 25px rgba(253, 210, 1, 0.3),
-        0 4px 0 #c9a401;
+.quick-select-toggle:hover {
+    background: #270f5e;
+    box-shadow: 0 0 20px rgba(253, 210, 1, 0.35), 0 3px 0 #8a7200;
 }
 
-.dropdown-toggle.open {
+.quick-select-toggle.open {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    border-bottom-color: rgba(253, 210, 1, 0.3);
-    box-shadow: 0 0 25px rgba(253, 210, 1, 0.3);
 }
 
 .dropdown-arrow {
-    font-size: 1rem;
+    font-size: 0.85rem;
     transition: transform 0.3s ease;
-    display: inline-block;
 }
 
-.dropdown-toggle.open .dropdown-arrow {
+.quick-select-toggle.open .dropdown-arrow {
     transform: rotate(180deg);
 }
 
@@ -142,672 +185,675 @@ header h1 {
     left: 0;
     right: 0;
     background: #12022B;
-    border: 3px solid #fdd201;
+    border: 2px solid #fdd201;
     border-top: none;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 6px 6px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-        opacity 0.25s ease;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
     opacity: 0;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
 }
 
 .dropdown-menu.open {
-    max-height: 400px;
+    max-height: 320px;
     opacity: 1;
     overflow-y: auto;
-}
-
-/* Custom scrollbar for dropdown */
-.dropdown-menu::-webkit-scrollbar {
-    width: 6px;
-}
-
-.dropdown-menu::-webkit-scrollbar-track {
-    background: rgba(253, 210, 1, 0.05);
-}
-
-.dropdown-menu::-webkit-scrollbar-thumb {
-    background: rgba(253, 210, 1, 0.3);
-    border-radius: 2px;
 }
 
 .dropdown-item {
     display: block;
     width: 100%;
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem 1.2rem;
     background: transparent;
     border: none;
     border-bottom: 1px solid rgba(253, 210, 1, 0.1);
     color: white;
     font-family: MortalKombat1Font, monospace;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
     text-align: left;
-    letter-spacing: 0.1em;
-    text-shadow: 2px 2px 1px #d87add;
     transition: all 0.15s ease;
-    position: relative;
-}
-
-.dropdown-item::before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    opacity: 0;
-    transition: opacity 0.15s ease;
-    background-image: url('../../JobInterviewKombat/assets/images/star-hover.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 10px;
-    vertical-align: middle;
 }
 
 .dropdown-item:hover {
     color: #fdd201;
-    background: linear-gradient(90deg, rgba(253, 210, 1, 0.1) 0%, transparent 100%);
-    transform: translateX(4px);
+    background: rgba(253, 210, 1, 0.12);
+    padding-left: 1.5rem;
 }
 
-.dropdown-item:hover::before {
-    opacity: 1;
-    animation: cursorPulse 0.4s infinite alternate;
+.dropdown-item.dropdown-locked {
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
-.dropdown-item:last-child {
-    border-bottom: none;
+.dropdown-complete-icon {
+    color: #00e676;
+    margin-right: 0.4rem;
 }
 
-.dropdown-item.selected {
-    color: #fdd201;
-    background: rgba(253, 210, 1, 0.08);
-}
-
-/* ===============================
-   PHASES CONTAINER (Main area)
-   =============================== */
-.phases-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 10;
+/* --- World Map Main Canvas --- */
+.world-map-main {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
     flex: 1;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem 2rem;
-    position: relative;
-}
-
-/* Placeholder */
-.phases-placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.2rem;
-    animation: fadeInUp 0.6s ease forwards;
+    justify-content: center;
+    padding: 1rem 2rem 5rem;
+    z-index: 5;
+    box-sizing: border-box;
 }
 
-.placeholder-icon {
-    font-size: 4rem;
-    animation: floatBounce 2.5s ease-in-out infinite;
-}
-
-@keyframes floatBounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-.placeholder-text {
-    font-family: MortalKombat1Font, monospace;
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.4);
-    text-shadow: 2px 2px 1px rgba(201, 62, 216, 0.3);
-    letter-spacing: 0.1em;
-    text-align: center;
-}
-
-/* ===============================
-   PHASES MAP (submodes as phases)
-   =============================== */
-.phases-map {
+.map-viewport {
     position: relative;
     width: 100%;
-    max-width: 900px;
-    min-height: 300px;
+    min-height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
 }
 
-/* SVG path lines */
-.path-layer {
+/* SVG Connecting Lines Layer */
+.map-svg-layer {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
 }
 
-.path-line {
-    stroke: rgba(253, 210, 1, 0.35);
-    stroke-width: 3;
+.map-path-line {
+    stroke: #fdd201;
+    stroke-width: 4;
     stroke-dasharray: 10 8;
     stroke-linecap: round;
     fill: none;
-    filter: drop-shadow(0 0 4px rgba(253, 210, 1, 0.25));
-    animation: pathMarch 1.5s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(253, 210, 1, 0.5));
+    animation: marchDashes 1.5s linear infinite;
 }
 
-@keyframes pathMarch {
+.map-path-line.locked {
+    stroke: rgba(255, 255, 255, 0.12);
+    filter: none;
+    animation: none;
+    stroke-dasharray: 4 8;
+}
+
+@keyframes marchDashes {
     to {
         stroke-dashoffset: -18;
     }
 }
 
-/* ===============================
-   PHASE NODES – Squared buttons
-   =============================== */
-.phases-nodes {
+/* Map Nodes Container */
+.map-nodes-container {
     position: relative;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    gap: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem 2rem;
     width: 100%;
-    justify-content: space-around;
-    padding: 2rem 1rem;
+    max-width: 950px;
+    justify-items: center;
+    align-items: center;
 }
 
-.phase-node {
+/* Game Mode Stage Pin Nodes */
+.map-mode-node {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
+    gap: 0.7rem;
+    width: 160px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* Mode-Specific Custom Icon Themes */
+.mode-tutorial_grammar .node-icon-wrapper {
+    background: linear-gradient(145deg, #7c2fff, #5a1ecc);
+    border-color: #d1b3ff;
+}
+
+.mode-introduction .node-icon-wrapper {
+    background: linear-gradient(145deg, #00b4d8, #0077b6);
+    border-color: #90e0ef;
+}
+
+.mode-experience .node-icon-wrapper {
+    background: linear-gradient(145deg, #ff9e00, #ff6d00);
+    border-color: #ffe6a7;
+}
+
+.mode-meetings .node-icon-wrapper {
+    background: linear-gradient(145deg, #ff1744, #d50000);
+    border-color: #ff8a80;
+}
+
+.mode-classic_questions .node-icon-wrapper {
+    background: linear-gradient(145deg, #fdd201, #c9a401);
+    border-color: #ffecb3;
+}
+
+.mode-soft_skills .node-icon-wrapper {
+    background: linear-gradient(145deg, #c93ed8, #9a2ba6);
+    border-color: #f8bbd0;
+}
+
+.mode-hard_skills .node-icon-wrapper {
+    background: linear-gradient(145deg, #29b6f6, #0288d1);
+    border-color: #b3e5fc;
+}
+
+.mode-salary_negotiation .node-icon-wrapper {
+    background: linear-gradient(145deg, #00e676, #00a152);
+    border-color: #b9f6ca;
+}
+
+.mode-profile .node-icon-wrapper {
+    background: linear-gradient(145deg, #651fff, #3d5afe);
+    border-color: #d1c4e9;
+}
+
+/* Optional or Complete Badge */
+.node-badge {
+    position: absolute;
+    top: -12px;
+    right: 0;
+    font-size: 0.65rem;
+    font-weight: 900;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    border: 1px solid #12022B;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
     z-index: 5;
-    text-decoration: none;
-    opacity: 0;
-    animation: nodeEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.phase-node:nth-child(1) {
-    animation-delay: 0.1s;
+.node-badge.optional {
+    background: #c93ed8;
+    color: #ffffff;
 }
 
-.phase-node:nth-child(2) {
-    animation-delay: 0.2s;
+.node-badge.complete {
+    background: #00e676;
+    color: #12022B;
 }
 
-.phase-node:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.phase-node:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.phase-node:nth-child(5) {
-    animation-delay: 0.5s;
-}
-
-.phase-node:nth-child(6) {
-    animation-delay: 0.6s;
-}
-
-.phase-node:hover {
-    transform: scale(1.15);
-}
-
-.phase-node:hover .phase-icon {
-    border-color: #fdd201;
-    box-shadow:
-        0 0 0 2px #fdd201,
-        0 0 20px rgba(253, 210, 1, 0.5),
-        0 6px 0 var(--btn-shadow);
-}
-
-.phase-node:hover .phase-label {
-    color: #fdd201;
-    text-shadow: 0 0 10px rgba(253, 210, 1, 0.6);
-}
-
-/* Phase icon – SQUARED button with pixel-icon inside */
-.phase-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 6px;
+/* Node Circular Stage Pin Wrapper */
+.node-icon-wrapper {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.2rem;
-    border: 3px solid rgba(255, 255, 255, 0.25);
-    transition: all 0.3s ease;
-    position: relative;
-    box-shadow:
-        0 6px 0 var(--btn-shadow),
-        0 8px 15px rgba(0, 0, 0, 0.5);
+    border: 4px solid #fdd201;
+    box-shadow: 0 0 22px rgba(253, 210, 1, 0.35), 0 8px 0 #0d041e;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Icon inside the phase button */
-.phase-icon i {
-    font-size: 2rem;
-    color: #ffffff;
-    filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.5));
+.node-emoji {
+    font-size: 2.6rem;
+    line-height: 1;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6));
     transition: transform 0.3s ease;
 }
 
-.phase-node:hover .phase-icon i {
-    transform: scale(1.15);
+.node-icon-wrapper i {
+    font-size: 2.2rem;
+    color: #ffffff;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
-/* Color per phase – theme-consistent purple/pink/gold tones */
-.phase-node:nth-child(1) .phase-icon {
-    background: linear-gradient(145deg, #7c2fff, #5a1ecc);
-    --btn-shadow: #3d1488;
-}
-
-.phase-node:nth-child(1) .phase-icon i {
-    color: #e8d4ff;
-}
-
-.phase-node:nth-child(2) .phase-icon {
-    background: linear-gradient(145deg, #c93ed8, #9a2ba6);
-    --btn-shadow: #6e1d78;
-}
-
-.phase-node:nth-child(2) .phase-icon i {
-    color: #ffe8fc;
-}
-
-.phase-node:nth-child(3) .phase-icon {
-    background: linear-gradient(145deg, #ff2b7c, #cc1f62);
-    --btn-shadow: #8c1544;
-}
-
-.phase-node:nth-child(3) .phase-icon i {
-    color: #ffd4e5;
-}
-
-.phase-node:nth-child(4) .phase-icon {
-    background: linear-gradient(145deg, #fdd201, #c9a401);
-    --btn-shadow: #8a7200;
-}
-
-.phase-node:nth-child(4) .phase-icon i {
-    color: #12022B;
-}
-
-.phase-node:nth-child(5) .phase-icon {
-    background: linear-gradient(145deg, #3498db, #2074b0);
-    --btn-shadow: #165080;
-}
-
-.phase-node:nth-child(5) .phase-icon i {
-    color: #d4edff;
-}
-
-.phase-node:nth-child(6) .phase-icon {
-    background: linear-gradient(145deg, #e91e63, #b81650);
-    --btn-shadow: #7d0f37;
-}
-
-.phase-node:nth-child(6) .phase-icon i {
-    color: #ffd4e3;
-}
-
-/* Phase number badge */
-.phase-num {
+.node-index {
     position: absolute;
-    top: -8px;
-    right: -8px;
+    bottom: -6px;
+    left: -6px;
     width: 24px;
     height: 24px;
-    border-radius: 4px;
     background: #fdd201;
     color: #12022B;
-    font-family: 'PixelOperatorFont', monospace;
-    font-size: 0.75rem;
+    font-family: MortalKombat1Font, monospace;
+    font-size: 0.85rem;
     font-weight: 900;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid #12022B;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.phase-label {
-    margin-top: 12px;
+/* Node Info Text Below Pin */
+.node-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.node-title {
     font-family: MortalKombat1Font, monospace;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: #ffffff;
-    text-shadow: 2px 2px 1px #d87add;
-    text-align: center;
-    max-width: 120px;
-    line-height: 1.2;
+    text-shadow: 2px 2px 1px #c93ed8, 0 0 10px rgba(0, 0, 0, 0.8);
     letter-spacing: 0.08em;
-    transition: all 0.3s ease;
+    line-height: 1.2;
 }
 
-.phase-tag {
-    font-family: 'PixelOperatorFont', monospace;
-    font-size: 0.7rem;
-    color: rgba(196, 158, 227, 0.7);
-    margin-top: 4px;
-    letter-spacing: 0.1em;
+.node-progress {
+    font-size: 0.75rem;
+    color: rgba(253, 210, 1, 0.9);
+    margin-top: 2px;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* --- Selected mode title in map --- */
-.map-mode-title {
-    font-family: MortalKombat1Font, monospace;
-    font-size: 2rem;
+/* Node Hover States */
+.map-mode-node.unlocked:hover {
+    transform: translateY(-8px);
+}
+
+.map-mode-node.unlocked:hover .node-icon-wrapper {
+    transform: scale(1.18) rotate(-4deg);
+    border-color: #ffffff;
+    box-shadow: 0 0 35px rgba(253, 210, 1, 0.85), 0 10px 0 #0d041e;
+}
+
+.map-mode-node.unlocked:hover .node-emoji {
+    transform: scale(1.15);
+}
+
+.map-mode-node.unlocked:hover .node-title {
     color: #fdd201;
-    text-shadow: 3px 3px 1px #c93ed8;
-    letter-spacing: 0.1em;
-    text-align: center;
-    margin-bottom: 1rem;
-    animation: fadeInUp 0.4s ease forwards;
+    text-shadow: 0 0 12px rgba(253, 210, 1, 0.6);
 }
 
-/* --- Footer (same as trainingMode) --- */
-footer {
+/* Node Completed */
+.map-mode-node.completed .node-icon-wrapper {
+    background: linear-gradient(145deg, #00c853, #008137) !important;
+    border-color: #00e676 !important;
+    box-shadow: 0 0 25px rgba(0, 230, 118, 0.5), 0 8px 0 #0d041e;
+}
+
+.map-mode-node.completed .node-title {
+    color: #b8ffb8;
+}
+
+/* Node Locked */
+.map-mode-node.locked {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.map-mode-node.locked .node-icon-wrapper {
+    background: #1e1136 !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 4px 0 #070210;
+}
+
+.map-mode-node.locked .node-icon-wrapper i {
+    color: #ff5252;
+}
+
+.map-mode-node.locked .node-title {
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: none;
+}
+
+.map-mode-node.locked .node-progress {
+    color: #ff5252;
+}
+
+/* Locked Shake animation */
+.map-mode-node.shake {
+    animation: shakeAnim 0.4s ease-in-out;
+}
+
+@keyframes shakeAnim {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+}
+
+/* --- Zone Detail Modal --- */
+.zone-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(10, 2, 25, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.zone-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.zone-modal-card {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    background: #1a0a3e;
+    border: 3px solid #fdd201;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 0 35px rgba(253, 210, 1, 0.3), 0 15px 40px rgba(0, 0, 0, 0.9);
+    transform: scale(0.85) translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.zone-modal-overlay.active .zone-modal-card {
+    transform: scale(1) translateY(0);
+}
+
+.zone-modal-close {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    padding-bottom: 1rem;
-    padding-right: 1rem;
+    top: 1rem;
+    right: 1.2rem;
+    background: transparent;
+    border: none;
+    color: #fdd201;
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    line-height: 1;
+}
+
+.zone-modal-close:hover {
+    color: #ff3ebd;
+    transform: scale(1.2) rotate(90deg);
+}
+
+/* Zone Modal Header */
+.zone-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.zone-icon-box {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(145deg, #7c2fff, #4d15b0);
+    border: 3px solid #fdd201;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(253, 210, 1, 0.3);
+    flex-shrink: 0;
+}
+
+.zone-icon-box i {
+    font-size: 2.4rem;
+    color: #ffffff;
+}
+
+.zone-header-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.zone-category {
+    font-size: 0.75rem;
+    color: #c93ed8;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+
+.zone-title {
+    font-family: MortalKombat1Font, monospace;
+    font-size: 1.8rem;
+    color: #fdd201;
+    text-shadow: 2px 2px 1px #c93ed8;
+    margin: 2px 0 4px;
+    letter-spacing: 0.08em;
+}
+
+.zone-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Zone Modal Progress Bar */
+.zone-progress-box {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(253, 210, 1, 0.2);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.zone-progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #fdd201;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.zone-progress-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.zone-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #c93ed8, #00e676);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+/* Zone Phases Section */
+.zone-phases-heading {
+    font-family: MortalKombat1Font, monospace;
+    font-size: 1.1rem;
+    color: #fdd201;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.zone-phases-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+/* Phase Cards */
+.phase-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: rgba(35, 15, 75, 0.8);
+    border: 2px solid rgba(253, 210, 1, 0.3);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.phase-card.unlocked:hover {
+    background: linear-gradient(90deg, rgba(253, 210, 1, 0.15), rgba(201, 62, 216, 0.15));
+    border-color: #fdd201;
+    transform: translateX(6px);
+    box-shadow: 0 4px 15px rgba(253, 210, 1, 0.2);
+}
+
+.phase-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.phase-card-num {
+    font-size: 0.75rem;
+    color: rgba(253, 210, 1, 0.8);
+    font-weight: 700;
+}
+
+.phase-card-status {
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: #00e676;
+}
+
+.phase-card.complete .phase-card-status {
+    color: #00e676;
+}
+
+.phase-card.locked .phase-card-status {
+    color: #ff5252;
+}
+
+.phase-card-body {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.phase-card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    background: #2d135c;
+    border: 1px solid rgba(253, 210, 1, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.phase-card-icon i {
+    font-size: 1.4rem;
+    color: #fdd201;
+}
+
+.phase-card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.phase-card-title {
+    font-family: MortalKombat1Font, monospace;
+    font-size: 1.15rem;
+    color: #ffffff;
+    letter-spacing: 0.06em;
+}
+
+.phase-card-action {
+    font-size: 0.75rem;
+    color: #c93ed8;
+    margin-top: 2px;
+}
+
+.phase-card.locked {
+    opacity: 0.45;
+    cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.phase-card.locked .phase-card-icon i {
+    color: #ff5252;
+}
+
+/* --- Footer --- */
+footer {
+    position: fixed;
+    bottom: 0.8rem;
+    right: 1.2rem;
     z-index: 10;
 }
 
 footer span {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 500;
-    color: rgb(196, 158, 227);
+    color: rgba(196, 158, 227, 0.7);
     font-family: MortalKombat1Font, monospace;
 }
 
-/* --- CRT Monitor Scanlines Effect (same as all pages) --- */
-body::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom,
-            rgba(255, 255, 255, 0) 50%,
-            rgba(0, 0, 0, 0.25) 50%);
-    background-size: 100% 4px;
-    z-index: 9999;
-    pointer-events: none;
-}
-
-/* --- Animations --- */
-@keyframes cursorPulse {
-    0% {
-        transform: scale(0.9);
-    }
-
-    100% {
-        transform: scale(1.1);
-    }
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        translate: 0 30px;
-    }
-
-    100% {
-        opacity: 1;
-        translate: 0 0;
-    }
-}
-
-@keyframes nodeEnter {
-    0% {
-        opacity: 0;
-        transform: scale(0.5) translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-/* Map container entrance */
-.phases-map.entering {
-    animation: fadeInUp 0.5s ease forwards;
-}
-
-/* ===============================
-   LOCKED PHASES
-   =============================== */
-.phase-node.phase-locked {
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.phase-node.phase-locked .phase-icon {
-    background: linear-gradient(145deg, #2a1a3e, #1a0e2e) !important;
-    border-color: rgba(255, 255, 255, 0.08) !important;
-    box-shadow:
-        0 6px 0 #0d0618,
-        0 8px 15px rgba(0, 0, 0, 0.5) !important;
-    opacity: 0.5;
-}
-
-.phase-node.phase-locked .phase-icon i {
-    color: rgba(255, 107, 107, 0.7) !important;
-    animation: lockPulse 2s ease-in-out infinite;
-}
-
-.phase-node.phase-locked .phase-label {
-    color: rgba(255, 255, 255, 0.25);
-    text-shadow: none;
-}
-
-.phase-node.phase-locked .phase-tag {
-    color: rgba(255, 107, 107, 0.5);
-    font-weight: 700;
-}
-
-.phase-node.phase-locked .phase-num {
-    background: #444;
-    color: #888;
-    border-color: #1a0e2e;
-}
-
-.phase-node.phase-locked:hover {
-    transform: none;
-}
-
-.phase-node.phase-locked:hover .phase-icon {
-    border-color: rgba(255, 255, 255, 0.08) !important;
-    box-shadow:
-        0 6px 0 #0d0618,
-        0 8px 15px rgba(0, 0, 0, 0.5) !important;
-}
-
-@keyframes lockPulse {
-
-    0%,
-    100% {
-        opacity: 0.4;
-    }
-
-    50% {
-        opacity: 0.9;
-    }
-}
-
-/* ===============================
-   COMPLETED PHASES
-   =============================== */
-.phase-node.phase-completed .phase-icon {
-    border-color: rgba(92, 255, 92, 0.4) !important;
-}
-
-.phase-complete-badge {
-    position: absolute;
-    bottom: -6px;
-    right: -6px;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: #2ecc40;
-    color: #fff;
-    font-size: 0.7rem;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #12022B;
-    box-shadow: 0 0 8px rgba(46, 204, 64, 0.5);
-    z-index: 10;
-}
-
-.phase-node.phase-completed .phase-label {
-    color: #b8ffb8;
-}
-
-.phase-node.phase-completed .phase-tag {
-    color: rgba(92, 255, 92, 0.6);
-}
-
-/* ===============================
-   LOCKED PATH LINES
-   =============================== */
-.path-line-locked {
-    stroke: rgba(255, 255, 255, 0.08) !important;
-    filter: none !important;
-    animation: none !important;
-    stroke-dasharray: 6 10 !important;
-}
-
-/* ===============================
-   LOCKED DROPDOWN ITEMS
-   =============================== */
-.dropdown-item.dropdown-locked {
-    opacity: 0.3;
-    cursor: not-allowed;
-    pointer-events: none;
-    filter: grayscale(0.6);
-}
-
-.dropdown-item.dropdown-locked:hover {
-    color: white;
-    background: transparent;
-    transform: none;
-}
-
-.dropdown-lock-icon {
-    font-size: 0.9rem;
-    margin-right: 0.4rem;
-    color: #ff6b6b;
-    vertical-align: middle;
-}
-
-/* ===============================
-   COMPLETED DROPDOWN ITEMS
-   =============================== */
-.dropdown-complete-icon {
-    color: #5cff5c;
-    font-weight: 900;
-    margin-right: 0.3rem;
-    text-shadow: 0 0 6px rgba(92, 255, 92, 0.5);
-}
-
-.dropdown-item.dropdown-complete {
-    color: #b8ffb8;
-}
-
-/* ===============================
-   RESPONSIVE
-   =============================== */
+/* --- Responsive --- */
 @media (max-width: 900px) {
-    .dropdown-container {
-        width: 360px;
-    }
-
-    .dropdown-toggle {
-        font-size: 1.2rem;
-        padding: 0.8rem 1.2rem;
-    }
-
-    .dropdown-item {
-        font-size: 1rem;
-        padding: 0.7rem 1.2rem;
-    }
-
     header h1 {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 
-    .phases-nodes {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        padding: 1.5rem;
+    .map-nodes-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 1.5rem;
     }
 
-    .phase-icon {
-        width: 65px;
-        height: 65px;
-    }
-
-    .phase-icon i {
-        font-size: 1.6rem;
-    }
-
-    .phase-label {
-        font-size: 0.9rem;
-        max-width: 90px;
-    }
-
-    .map-mode-title {
-        font-size: 1.5rem;
+    .map-mode-node {
+        width: 100%;
+        max-width: 240px;
     }
 }
 
-@media (max-width: 500px) {
-    .dropdown-container {
-        width: 90vw;
-    }
-
-    .dropdown-toggle {
-        font-size: 1rem;
-        padding: 0.7rem 1rem;
-    }
-
+@media (max-width: 600px) {
     header h1 {
         font-size: 1.8rem;
     }
 
-    .phases-nodes {
-        gap: 1.5rem;
+    header #back-btn {
+        left: 1rem;
+        top: 1.2rem;
     }
 
-    .phase-icon {
-        width: 55px;
-        height: 55px;
+    .overall-progress-bar-container {
+        padding: 0.3rem 0.8rem;
     }
 
-    .phase-icon i {
-        font-size: 1.3rem;
+    .progress-bar-track {
+        width: 90px;
     }
 
-    .phase-label {
-        font-size: 0.8rem;
+    .map-nodes-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .zone-modal-card {
+        padding: 1.2rem;
+    }
+
+    .zone-title {
+        font-size: 1.4rem;
     }
 }
