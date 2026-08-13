@@ -139,8 +139,8 @@ header h1 {
     background: #fdd201;
     border-radius: 0;
     transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    -webkit-mask-image: linear-gradient(90deg, #000 80%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.4) 85%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0.15) 95%, transparent 95%);
-    mask-image: linear-gradient(90deg, #000 80%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.4) 85%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0.15) 95%, transparent 95%);
+    -webkit-mask-image: linear-gradient(90deg, #000 80%, rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.7) 85%, rgba(0, 0, 0, 0.4) 85%, rgba(0, 0, 0, 0.4) 90%, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 95%, transparent 95%);
+    mask-image: linear-gradient(90deg, #000 80%, rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.7) 85%, rgba(0, 0, 0, 0.4) 85%, rgba(0, 0, 0, 0.4) 90%, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 95%, transparent 95%);
 }
 
 /* --- Quick Mode Select Dropdown --- */
@@ -276,7 +276,8 @@ header h1 {
 /* SVG Connecting Lines Layer */
 .map-svg-layer {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
     z-index: 2;
     pointer-events: none;
 }
@@ -332,6 +333,7 @@ header h1 {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     box-sizing: border-box;
     cursor: pointer;
+    order: var(--order-3col);
 }
 
 /* Mode-Specific Custom Icon Themes — REMOVED (colors now driven by progress state) */
@@ -805,6 +807,13 @@ footer span {
     .map-mode-node {
         width: 100%;
         max-width: 240px;
+        order: var(--order-2col);
+    }
+}
+
+@media (max-width: 750px) {
+    header #back-btn img {
+        width: 60px;
     }
 }
 
@@ -828,7 +837,15 @@ footer span {
 
     .map-nodes-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .map-mode-node {
+        width: 100%;
+        max-width: 160px;
+        order: var(--order-1col);
     }
 
     .zone-modal-card {

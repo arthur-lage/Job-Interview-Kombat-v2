@@ -231,15 +231,26 @@ document.addEventListener('DOMContentLoaded', async () => {
             node.id = `node-${mode.id}`;
             node.setAttribute('data-index', idx);
 
-            // Assign grid order based on serpentine sequence
-            // Row 1: idx 0,1,2 -> order 1,2,3
-            // Row 2: idx 3,4,5 -> order 6,5,4
-            // Row 3: idx 6,7,8 -> order 7,8,9
-            let gridOrder = idx + 1;
-            if (idx === 3) gridOrder = 6;
-            if (idx === 4) gridOrder = 5;
-            if (idx === 5) gridOrder = 4;
-            node.style.order = gridOrder;
+            // Set dynamic order values for different responsive layouts using CSS variables
+            // 3-column serpentine layout order
+            let order3Col = idx + 1;
+            if (idx === 3) order3Col = 6;
+            if (idx === 4) order3Col = 5;
+            if (idx === 5) order3Col = 4;
+
+            // 2-column serpentine layout order
+            let order2Col = idx + 1;
+            if (idx === 2) order2Col = 4;
+            if (idx === 3) order2Col = 3;
+            if (idx === 6) order2Col = 8;
+            if (idx === 7) order2Col = 7;
+
+            // 1-column / horizontal layout order (linear)
+            let order1Col = idx + 1;
+
+            node.style.setProperty('--order-3col', order3Col);
+            node.style.setProperty('--order-2col', order2Col);
+            node.style.setProperty('--order-1col', order1Col);
 
             if (unlocked) {
                 node.classList.add('unlocked');
@@ -291,20 +302,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     /** Draw SVG connecting paths between sequential nodes */
     function drawMapPaths() {
         mapPathSvg.innerHTML = '';
+        
+        // Reset SVG sizes temporarily to prevent layout feedback loops during resize/draw
+        mapPathSvg.style.width = '0px';
+        mapPathSvg.style.height = '0px';
+
         const nodeEls = mapNodesContainer.querySelectorAll('.map-mode-node');
         if (nodeEls.length < 2) return;
 
         const viewportRect = mapViewport.getBoundingClientRect();
-        mapPathSvg.setAttribute('viewBox', `0 0 ${viewportRect.width} ${viewportRect.height}`);
-        mapPathSvg.style.width = viewportRect.width + 'px';
-        mapPathSvg.style.height = viewportRect.height + 'px';
+        const scrollWidth = mapViewport.scrollWidth;
+        const scrollHeight = mapViewport.scrollHeight;
+
+        mapPathSvg.setAttribute('viewBox', `0 0 ${scrollWidth} ${scrollHeight}`);
+        mapPathSvg.style.width = scrollWidth + 'px';
+        mapPathSvg.style.height = scrollHeight + 'px';
 
         const centers = Array.from(nodeEls).map((node, i) => {
             const iconWrapper = node.querySelector('.node-icon-wrapper');
             const rect = iconWrapper.getBoundingClientRect();
             return {
-                x: rect.left + rect.width / 2 - viewportRect.left,
-                y: rect.top + rect.height / 2 - viewportRect.top,
+                x: rect.left + rect.width / 2 - viewportRect.left + mapViewport.scrollLeft,
+                y: rect.top + rect.height / 2 - viewportRect.top + mapViewport.scrollTop,
                 unlocked: isGameModeUnlocked(i)
             };
         });

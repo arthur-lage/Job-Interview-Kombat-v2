@@ -10,12 +10,14 @@
   z-index: 99999;
   opacity: 1;
   pointer-events: none;
-  transition: opacity 0.7s cubic-bezier(.7,.2,.3,1);
+  transition: opacity 0.7s cubic-bezier(.7, .2, .3, 1);
 }
+
 .game-fade-in.hide {
   opacity: 0;
   pointer-events: none;
 }
+
 /* Layout diagonal para tela de julgamento */
 .diagonal-layout {
   width: 100vw;
@@ -27,6 +29,7 @@
   justify-content: stretch;
   pointer-events: none;
 }
+
 .diagonal-team1 {
   position: absolute;
   top: 20vh;
@@ -37,6 +40,7 @@
   z-index: 2;
   pointer-events: auto;
 }
+
 .diagonal-team2 {
   position: absolute;
   bottom: 25vh;
@@ -47,18 +51,23 @@
   z-index: 2;
   pointer-events: auto;
 }
+
 .diagonal-team1 .judging-banner {
   margin-bottom: 8px;
 }
+
 .diagonal-team2 .judging-banner {
   margin-bottom: 8px;
 }
+
 .diagonal-team1 .judging-life-bar-wrapper {
   margin-left: 12px;
 }
+
 .diagonal-team2 .judging-life-bar-wrapper {
   margin-right: 12px;
 }
+
 .diagonal-vs {
   font-family: MortalKombat1Font, monospace;
   position: absolute;
@@ -71,6 +80,7 @@
   text-align: center;
   text-shadow: 2px 2px 0 #ff2b7c, 0 0 8px #fff;
 }
+
 .diagonal-strike-row {
   position: absolute;
   left: 50%;
@@ -84,6 +94,7 @@
   z-index: 10;
   pointer-events: auto;
 }
+
 /* Cronômetro no topo da Judge Time */
 .judging-top-timer {
   position: absolute;
@@ -93,6 +104,7 @@
   z-index: 12;
   pointer-events: none;
 }
+
 .judging-joystick {
   width: 160px;
   height: 90px;
@@ -101,12 +113,15 @@
   image-rendering: pixelated;
   z-index: 11;
 }
+
 .diagonal-strike-row .judging-strike-btn.team1 {
   margin-right: 0;
 }
+
 .diagonal-strike-row .judging-strike-btn.team2 {
   margin-left: 0;
 }
+
 .diagonal-strike-row .judging-strike-btn {
   min-width: 260px;
   min-height: 70px;
@@ -116,18 +131,23 @@
   border-width: 4px;
   pointer-events: auto;
 }
+
 .diagonal-team1 .judging-life-bar-wrapper {
   margin-top: 0;
 }
+
 .diagonal-team2 .judging-life-bar-wrapper {
   margin-top: 0;
 }
+
 .judging-banner.team1 {
   justify-content: flex-start;
 }
+
 .judging-banner.team2 {
   justify-content: flex-end;
 }
+
 .judging-banner-label {
   font-family: 'Press Start 2P', monospace;
   font-size: 2.1rem;
@@ -137,14 +157,17 @@
   margin-right: 48px;
   text-shadow: 2px 2px 0 #ff2b7c;
 }
+
 .judging-banner-label.team2 {
   margin-left: 48px;
   margin-right: 80px;
 }
+
 .judging-banner-label.team1 {
   margin-left: 80px;
   margin-right: 48px;
 }
+
 .judging-time-overlay {
   position: fixed;
   top: 0;
@@ -162,8 +185,9 @@
   font-family: MortalKombat1Font, 'Press Start 2P', monospace;
   text-shadow: 1px 1px 0 #ff2b7c;
 
-  
+
 }
+
 .judging-content {
   width: 100vw;
   height: 100vh;
@@ -173,6 +197,7 @@
   justify-content: center;
   gap: 0;
 }
+
 .judging-banners-row {
   display: flex;
   flex-direction: row;
@@ -182,6 +207,7 @@
   margin-bottom: 0;
   gap: 0;
 }
+
 .judging-team {
   display: flex;
   flex-direction: column;
@@ -190,6 +216,7 @@
   max-width: 480px;
   margin: 0 0.5vw;
 }
+
 .judging-banner {
   width: 600px;
   height: 100px;
@@ -202,6 +229,7 @@
   margin-top: 0;
   position: relative;
 }
+
 .judging-banner-img {
   max-width: 320px;
   max-height: 80px;
@@ -211,13 +239,16 @@
   margin: 0 auto;
   image-rendering: pixelated;
 }
+
 .judging-banner.team1 {
   background-image: url('../assets/images/game/faixa_diagnonal_esquerda.png');
 }
+
 .judging-banner.team2 {
   background-image: url('../assets/images/game/faixa_diagnonal_direita.png');
   justify-content: flex-end;
 }
+
 .judging-banner-label {
   font-family: 'Press Start 2P', monospace;
   font-size: 2.1rem;
@@ -227,14 +258,17 @@
   margin-right: 48px;
   text-shadow: 2px 2px 0 #ff2b7c;
 }
+
 .judging-banner-label.team2 {
   margin-left: 48px;
   margin-right: 80px;
 }
+
 .judging-banner-label.team1 {
   margin-left: 80px;
   margin-right: 48px;
 }
+
 .judging-life-bar-wrapper {
   display: flex;
   align-items: center;
@@ -245,14 +279,17 @@
   position: relative;
   z-index: 10;
 }
+
 .judging-life-bar-wrapper.team1 {
   flex-direction: row;
   justify-content: flex-start;
 }
+
 .judging-life-bar-wrapper.team2 {
   flex-direction: row;
   justify-content: flex-end;
 }
+
 .judging-life-bar.team1 {
   width: 200px;
   height: 33px;
@@ -267,6 +304,7 @@
   direction: ltr;
   display: block;
 }
+
 .judging-life-bar.team2 {
   width: 200px;
   height: 33px;
@@ -281,6 +319,7 @@
   direction: rtl;
   display: block;
 }
+
 .judging-life-heart {
   width: 65px;
   height: 65px;
@@ -298,10 +337,11 @@
   height: 100%;
   width: 100%;
   transition: width 0.5s steps(8);
-  background: linear-gradient(90deg,#ff9bd8,#ff2b7c 60%,#ff9bd8);
+  background: linear-gradient(90deg, #ff9bd8, #ff2b7c 60%, #ff9bd8);
   border-radius: 0 12px 12px 0;
   z-index: 1;
 }
+
 .judging-life-bar-fill.team2 {
   position: absolute;
   right: 0;
@@ -311,10 +351,11 @@
   height: 100%;
   width: 100%;
   transition: width 0.5s steps(8);
-  background: linear-gradient(90deg,#9bd9ff,#3a87ad 60%,#9bd9ff);
+  background: linear-gradient(90deg, #9bd9ff, #3a87ad 60%, #9bd9ff);
   border-radius: 12px 0 0 12px;
   z-index: 1;
 }
+
 .judging-vs {
   font-family: MortalKombat1Font, 'Press Start 2P', monospace;
   font-size: 2.6rem;
@@ -323,14 +364,16 @@
   margin: 0 2vw;
   margin-top: 32px;
 }
+
 .judging-timer-center {
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 32px 0 32px 0;
   font-family: MortalKombat1Font, 'Press Start 2P', monospace;
 }
+
 .judging-timer-circle {
   width: 120px;
   height: 120px;
@@ -347,6 +390,7 @@
   box-shadow: 0 0 0 6px #3a87ad;
   text-shadow: 2px 2px 0 #ff2b7c;
 }
+
 .judging-strike-row {
   display: flex;
   flex-direction: row;
@@ -355,6 +399,7 @@
   gap: 64px;
   margin-top: 32px;
 }
+
 .judging-strike-btn {
   font-family: MortalKombat1Font, 'Press Start 2P', monospace;
   font-size: 2rem;
@@ -364,7 +409,7 @@
   box-shadow: 4px 4px 0 #000;
   cursor: pointer;
   image-rendering: pixelated;
-  transition: filter 0.2s, opacity 0.2s, transform 0.15s cubic-bezier(.4,2,.6,.8);
+  transition: filter 0.2s, opacity 0.2s, transform 0.15s cubic-bezier(.4, 2, .6, .8);
   outline: none;
 }
 
@@ -373,21 +418,25 @@
   box-shadow: 8px 12px 0 #000;
   filter: brightness(1.1) drop-shadow(0 0 8px #fff6);
 }
+
 .judging-strike-btn.team1 {
   background: #ff9bd8;
   color: #2a1747;
   text-shadow: 2px 2px 0 #fff;
 }
+
 .judging-strike-btn.team2 {
   background: #9bd9ff;
   color: #2a1747;
   text-shadow: 2px 2px 0 #fff;
 }
+
 .judging-strike-btn.inactive {
   filter: grayscale(1) brightness(0.7);
   opacity: 0.5;
   pointer-events: none;
 }
+
 /* Overlay para a tela dos juízes */
 .judges-will-decide-overlay {
   position: fixed;
@@ -403,11 +452,13 @@
   opacity: 0;
   transition: opacity 0.5s;
 }
+
 .judges-will-decide-img {
   max-width: 60vw;
   max-height: 60vh;
   image-rendering: pixelated;
 }
+
 .life-bar-wrapper.inactive,
 .life-bar.inactive,
 .life-heart.inactive {
@@ -415,6 +466,7 @@
   opacity: 0.5;
   transition: filter 0.3s, opacity 0.3s;
 }
+
 /* FIGHT sobreposto aos turnos */
 .fight-overlay {
   position: relative;
@@ -443,7 +495,8 @@
   font-size: clamp(0.9rem, 1.3vw, 1.2rem);
   padding: 10px 18px;
   color: #2a1747;
-  background: linear-gradient(180deg, #b6e1ff 0%, #3a87ad 100%); /* default: azul */
+  background: linear-gradient(180deg, #b6e1ff 0%, #3a87ad 100%);
+  /* default: azul */
   border: 4px solid #000;
   border-radius: 10px;
   box-shadow: 4px 4px 0 #000;
@@ -476,6 +529,7 @@
   filter: grayscale(0.3);
   cursor: default;
 }
+
 /* Turnos fixos no topo estilo pixel art */
 .turns-top-row {
   display: flex;
@@ -487,6 +541,7 @@
   position: relative;
   z-index: 2;
 }
+
 /* Bloco de turno contendo banner + barra de vida */
 .turn-block {
   display: flex;
@@ -494,6 +549,7 @@
   align-items: left;
   gap: 6px;
 }
+
 /* Barra de vida */
 .life-bar-wrapper {
   display: flex;
@@ -501,20 +557,24 @@
   gap: 5px;
   min-width: 160px;
   margin-top: -50px;
-  margin-left: 24px; /* Added margin-left for team1 */
+  margin-left: 24px;
+  /* Added margin-left for team1 */
   position: relative;
   z-index: 10;
 }
+
 .life-bar-wrapper.team1 {
   margin-left: 24px;
   flex-direction: row;
   justify-content: flex-start;
 }
+
 .life-bar-wrapper.team2 {
   margin-right: 24px;
   flex-direction: row;
   justify-content: flex-end;
 }
+
 .life-bar.team1 {
   width: 200px;
   height: 33px;
@@ -529,6 +589,7 @@
   direction: ltr;
   display: block;
 }
+
 .life-bar.team2 {
   width: 200px;
   height: 33px;
@@ -543,6 +604,7 @@
   direction: rtl;
   display: block;
 }
+
 .life-heart {
   width: 65px;
   height: 65px;
@@ -552,6 +614,7 @@
   margin-right: -8px;
   margin-left: -8px;
 }
+
 .life-bar-fill.team1 {
   position: absolute;
   left: 0;
@@ -559,10 +622,11 @@
   height: 100%;
   width: 100%;
   transition: width 0.5s steps(8);
-  background: linear-gradient(90deg,#ff9bd8,#ff2b7c 60%,#ff9bd8);
+  background: linear-gradient(90deg, #ff9bd8, #ff2b7c 60%, #ff9bd8);
   border-radius: 0 12px 12px 0;
   z-index: 1;
 }
+
 .life-bar-fill.team2 {
   position: absolute;
   right: 0;
@@ -572,41 +636,76 @@
   height: 100%;
   width: 100%;
   transition: width 0.5s steps(8);
-  background: linear-gradient(90deg,#9bd9ff,#3a87ad 60%,#9bd9ff);
+  background: linear-gradient(90deg, #9bd9ff, #3a87ad 60%, #9bd9ff);
   border-radius: 12px 0 0 12px;
   z-index: 1;
 }
 
 /* ===== PULSE ANIMATIONS FOR ACTIVE TEAM (sync with banners) ===== */
 @keyframes heartbeat {
-  0% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(255,255,255,0)); }
-  50% { transform: scale(1.08); filter: drop-shadow(0 0 8px rgba(255,255,255,0.35)); }
-  100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(255,255,255,0)); }
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+  }
+
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.35));
+  }
+
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+  }
 }
 
 @keyframes pulseGlowPink {
-  0% { box-shadow: 0 0 0 0 rgba(255,43,124,0.0), inset 0 0 0 0 rgba(255,255,255,0); }
-  50% { box-shadow: 0 0 14px 4px rgba(255,43,124,0.5), inset 0 0 6px 0 rgba(255,255,255,0.35); }
-  100% { box-shadow: 0 0 0 0 rgba(255,43,124,0.0), inset 0 0 0 0 rgba(255,255,255,0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 43, 124, 0.0), inset 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 14px 4px rgba(255, 43, 124, 0.5), inset 0 0 6px 0 rgba(255, 255, 255, 0.35);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 43, 124, 0.0), inset 0 0 0 0 rgba(255, 255, 255, 0);
+  }
 }
 
 @keyframes pulseGlowBlue {
-  0% { box-shadow: 0 0 0 0 rgba(58,135,173,0.0), inset 0 0 0 0 rgba(255,255,255,0); }
-  50% { box-shadow: 0 0 14px 4px rgba(58,135,173,0.5), inset 0 0 6px 0 rgba(255,255,255,0.35); }
-  100% { box-shadow: 0 0 0 0 rgba(58,135,173,0.0), inset 0 0 0 0 rgba(255,255,255,0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(58, 135, 173, 0.0), inset 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 14px 4px rgba(58, 135, 173, 0.5), inset 0 0 6px 0 rgba(255, 255, 255, 0.35);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(58, 135, 173, 0.0), inset 0 0 0 0 rgba(255, 255, 255, 0);
+  }
 }
 
 /* Pulso real na espessura da barra (não altera a largura/percentual) */
 @keyframes throbBar {
-  0%   { transform: scaleY(1); }
-  50%  { transform: scaleY(1.12); }
-  100% { transform: scaleY(1); }
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(1.12);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 /* Aplica o pulso somente ao time ATIVO (wrapper sem .inactive) */
 .life-bar-wrapper:not(.inactive) .life-heart {
   animation: heartbeat 1.8s ease-in-out infinite;
-  transform-origin: center; 
+  transform-origin: center;
   will-change: transform, filter;
 }
 
@@ -621,6 +720,7 @@
   will-change: transform, box-shadow;
   animation: throbBar 1.2s ease-in-out infinite;
 }
+
 .turn-label {
   font-family: MortalKombat1Font, 'Press Start 2P', monospace;
   font-size: 3.1rem;
@@ -644,22 +744,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  text-shadow: 0 3px 0 #f859f8 !important; /* Sombra sólida apenas em baixo */
+  text-shadow: 0 3px 0 #f859f8 !important;
+  /* Sombra sólida apenas em baixo */
 
-  }
+}
 
 /* Banner rosa para TEAM 1 */
 #turn-team1.turn-label {
   background-image: url('../assets/images/game/marquise_rosa.png');
 }
+
 #turn-team2.turn-label {
   background-image: url('../assets/images/game/marquise_azul.png');
 }
+
 .turn-label:last-child {
   text-align: right;
   padding-left: 48px;
   padding-right: 80px;
 }
+
 .inactive-turn-label {
   filter: grayscale(1) brightness(0.7);
   opacity: 0.5;
@@ -667,12 +771,14 @@
   text-shadow: none;
   outline: 4px solid #888;
 }
+
 .active-turn-label {
   filter: none;
   opacity: 1;
   box-shadow: 0 0 24px 4px #fff, 0 0 8px 2px #ff2b7c;
   z-index: 2;
 }
+
 .timer-center-only {
   display: flex;
   align-items: center;
@@ -681,8 +787,9 @@
   margin: 0 0 0 0;
   transform: translateY(-65px);
   font-family: MortalKombat1Font, 'Press Start 2P', monospace;
-  
+
 }
+
 /* Destaque de turno no placar do topo */
 .team-score.active-turn {
   filter: none;
@@ -691,6 +798,7 @@
   z-index: 2;
   transition: filter 0.3s, opacity 0.3s, box-shadow 0.3s;
 }
+
 .team-score.inactive-turn {
   filter: grayscale(1) brightness(0.7);
   opacity: 0.5;
@@ -706,16 +814,16 @@
   min-width: 120px;
   margin: 48px 0 32px 0;
   font-family: MortalKombat1Font, 'Press Start 2P', monospace;
-  
+
 
 }
 
 /* Labels de turno */
 .turn-label {
-  transition: 
-    filter 0.5s ease, 
-    opacity 0.5s ease, 
-    box-shadow 0.5s ease, 
+  transition:
+    filter 0.5s ease,
+    opacity 0.5s ease,
+    box-shadow 0.5s ease,
     transform 0.5s ease;
 }
 
@@ -741,16 +849,21 @@
 
 /* Pulsar suave quando ativo */
 @keyframes pulseActive {
-  from { transform: scale(1.1); }
-  to   { transform: scale(1.05); }
+  from {
+    transform: scale(1.1);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
 }
 
 /* Destaque no placar */
 .team-score {
-  transition: 
-    filter 0.4s ease, 
-    opacity 0.4s ease, 
-    box-shadow 0.4s ease, 
+  transition:
+    filter 0.4s ease,
+    opacity 0.4s ease,
+    box-shadow 0.4s ease,
     transform 0.4s ease;
 }
 
@@ -779,6 +892,7 @@
   margin-top: 32px;
   margin-bottom: 32px;
 }
+
 .team-banner {
   display: flex;
   flex-direction: column;
@@ -788,14 +902,17 @@
   border-radius: 12px;
   transition: filter 0.3s, opacity 0.3s;
 }
+
 .team-banner.active {
   filter: none;
   opacity: 1;
 }
+
 .team-banner.inactive {
   filter: grayscale(1) brightness(0.7);
   opacity: 0.5;
 }
+
 .team-label {
   font-family: 'Press Start 2P', monospace;
   font-size: 1.2rem;
@@ -809,6 +926,7 @@
   border: 2px solid #fff;
   text-shadow: 2px 2px 0 #2a1747;
 }
+
 .team-banner.inactive .team-label {
   background: #888;
   color: #ccc;
@@ -816,12 +934,14 @@
   border: 2px solid #888;
   text-shadow: none;
 }
+
 .team-icon {
   width: 48px;
   height: 48px;
   margin-top: 4px;
   image-rendering: pixelated;
 }
+
 .timer-center {
   display: flex;
   align-items: center;
@@ -830,6 +950,7 @@
   font-family: MortalKombat1Font, 'Press Start 2P', monospace;
 
 }
+
 /* FIGHT SCREEN */
 .fight-screen {
   display: flex;
@@ -886,6 +1007,7 @@ body {
   z-index: 0;
   pointer-events: none;
 }
+
 .choose-job-bg-triangle-left {
   position: absolute;
   top: 50%;
@@ -898,6 +1020,7 @@ body {
   pointer-events: none;
   transform: translateY(-50%);
 }
+
 .choose-job-bg-triangle-right {
   position: absolute;
   top: 50%;
@@ -910,6 +1033,7 @@ body {
   pointer-events: none;
   transform: translateY(-50%);
 }
+
 .choose-job-bg-copas {
   position: absolute;
   top: 3.5rem;
@@ -921,6 +1045,7 @@ body {
   z-index: 1;
   pointer-events: none;
 }
+
 .choose-job-bg-espadas {
   position: absolute;
   bottom: 3.5rem;
@@ -932,6 +1057,7 @@ body {
   z-index: 1;
   pointer-events: none;
 }
+
 .choose-job-bg-ouros {
   position: absolute;
   top: 3.5rem;
@@ -943,6 +1069,7 @@ body {
   z-index: 1;
   pointer-events: none;
 }
+
 .choose-job-bg-paus {
   position: absolute;
   bottom: 3.5rem;
@@ -1002,6 +1129,7 @@ body {
   overflow: hidden;
   pointer-events: none;
 }
+
 .overlay-bg-triangle-left {
   position: absolute;
   top: 50%;
@@ -1014,6 +1142,7 @@ body {
   pointer-events: none;
   transform: translateY(-50%);
 }
+
 .overlay-bg-triangle-right {
   position: absolute;
   top: 50%;
@@ -1026,6 +1155,7 @@ body {
   pointer-events: none;
   transform: translateY(-50%);
 }
+
 .overlay-bg-copas {
   position: absolute;
   top: 3.5rem;
@@ -1037,6 +1167,7 @@ body {
   z-index: 2;
   pointer-events: none;
 }
+
 .overlay-bg-espadas {
   position: absolute;
   bottom: 3.5rem;
@@ -1048,6 +1179,7 @@ body {
   z-index: 2;
   pointer-events: none;
 }
+
 .overlay-bg-ouros {
   position: absolute;
   top: 3.5rem;
@@ -1059,6 +1191,7 @@ body {
   z-index: 2;
   pointer-events: none;
 }
+
 .overlay-bg-paus {
   position: absolute;
   bottom: 3.5rem;
@@ -1095,29 +1228,59 @@ body {
   filter: drop-shadow(0 0 32px #fff8) drop-shadow(0 0 8px #ff2b7c);
   opacity: 0;
   transform: scale(0.7);
-  animation: anticipationIn var(--anticipation-in, 1.2s) cubic-bezier(.25,.8,.25,1) forwards;
+  animation: anticipationIn var(--anticipation-in, 1.2s) cubic-bezier(.25, .8, .25, 1) forwards;
 }
+
 #overlay-content .anticipation-img[src*="../assets/images/game/antecipation.png"] {
   width: 170%;
   height: 170%;
   max-width: none;
   max-height: none;
 }
+
 #overlay-content .anticipation-img.show {
   opacity: 1;
   transform: scale(1.08);
-  animation: anticipationShow var(--anticipation-exit, 1.2s) cubic-bezier(.25,.8,.25,1) forwards;
+  animation: anticipationShow var(--anticipation-exit, 1.2s) cubic-bezier(.25, .8, .25, 1) forwards;
 }
+
 @keyframes anticipationIn {
-  0%   { opacity: 0; transform: scale(0.7); }
-  60%  { opacity: 1; transform: scale(1.12); }
-  80%  { opacity: 1; transform: scale(1.0); }
-  100% { opacity: 0.95; transform: scale(0.98); }
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+
+  100% {
+    opacity: 0.95;
+    transform: scale(0.98);
+  }
 }
+
 @keyframes anticipationShow {
-  0%   { opacity: 0.95; transform: scale(0.98); }
-  60%  { opacity: 1; transform: scale(1.08); }
-  100% { opacity: 0; transform: scale(0.7); }
+  0% {
+    opacity: 0.95;
+    transform: scale(0.98);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
 }
 
 /* Contagem regressiva (countdown) */
@@ -1134,6 +1297,7 @@ body {
   margin: 0 auto;
   pointer-events: none;
 }
+
 #overlay-content .countdown-number img {
   width: 100%;
   height: 100%;
@@ -1142,29 +1306,59 @@ body {
   filter: drop-shadow(0 0 32px #fff8) drop-shadow(0 0 8px #9b184a);
   opacity: 0;
   transform: scale(0.7);
-  animation: countdownNumberIn 1s cubic-bezier(.25,.8,.25,1) forwards;
+  animation: countdownNumberIn 1s cubic-bezier(.25, .8, .25, 1) forwards;
 }
+
 #overlay-content .countdown-number img.show {
   opacity: 1;
   transform: scale(1.08);
-  animation: countdownNumberShow 1s cubic-bezier(.25,.8,.25,1) forwards;
+  animation: countdownNumberShow 1s cubic-bezier(.25, .8, .25, 1) forwards;
 }
+
 #overlay-content .countdown-number img[src*="ready.png"] {
   width: 240%;
   height: 240%;
   max-width: none;
   max-height: none;
 }
+
 @keyframes countdownNumberIn {
-  0%   { opacity: 0; transform: scale(0.7); }
-  60%  { opacity: 1; transform: scale(1.12); }
-  80%  { opacity: 1; transform: scale(1.0); }
-  100% { opacity: 0.95; transform: scale(0.98); }
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+
+  100% {
+    opacity: 0.95;
+    transform: scale(0.98);
+  }
 }
+
 @keyframes countdownNumberShow {
-  0%   { opacity: 0.95; transform: scale(0.98); }
-  60%  { opacity: 1; transform: scale(1.08); }
-  100% { opacity: 0; transform: scale(0.7); }
+  0% {
+    opacity: 0.95;
+    transform: scale(0.98);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
 }
 
 @media (max-width: 600px) {
@@ -1172,6 +1366,7 @@ body {
     width: 220px;
     height: 220px;
   }
+
   .overlay-bg-copas,
   .overlay-bg-espadas,
   .overlay-bg-ouros,
@@ -1179,6 +1374,7 @@ body {
     width: 80px;
     height: 80px;
   }
+
   #overlay-content .countdown-number {
     width: 220px;
     height: 220px;
@@ -1190,46 +1386,47 @@ body {
 
 
 body {
-    background-color: #1a0033;
-    font-family: 'Press Start 2P', cursive;
-    color: white;
-    text-align: center;
-    padding: 30px;
+  background-color: #1a0033;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  text-align: center;
+  padding: 30px;
 }
 
 #game-container {
-    display: none;
+  display: none;
 }
 
 #job-title {
-    font-family: MortalKombat1Font, monospace;
-    color: #ffccff;
-    margin-bottom: 20px;
-    font-size: 16px;
+  font-family: MortalKombat1Font, monospace;
+  color: #ffccff;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
 #questions-container p {
-    display: inline-flex;
-    padding: 30px 50px;
-    min-width: 400px;
-    max-width: 90vw;
-    font-family: MortalKombat1Font;
-    text-transform: uppercase;
-    min-height: 150px;
-    max-height: 300px;
-    overflow: hidden; /* evita texto estourar */
-    font-size: clamp(1.4rem, 2vw, 2.6rem);
-    line-height: 1.4;
-    text-align: center;
-    background: url('../assets/images/game/small_question.png') center center no-repeat;
-    background-size: 100% 100%;
-    color: #2a1747;
-    text-shadow: 2px 2px 0 #ca2bff89;
-    image-rendering: pixelated;
-    margin: 40px auto;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+  display: inline-flex;
+  padding: 30px 50px;
+  min-width: 400px;
+  max-width: 90vw;
+  font-family: MortalKombat1Font;
+  text-transform: uppercase;
+  min-height: 150px;
+  max-height: 300px;
+  overflow: hidden;
+  /* evita texto estourar */
+  font-size: clamp(1.4rem, 2vw, 2.6rem);
+  line-height: 1.4;
+  text-align: center;
+  background: url('../assets/images/game/small_question.png') center center no-repeat;
+  background-size: 100% 100%;
+  color: #2a1747;
+  text-shadow: 2px 2px 0 #ca2bff89;
+  image-rendering: pixelated;
+  margin: 40px auto;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 /* Ações da pergunta (ex.: Skip thinking time) */
@@ -1284,8 +1481,15 @@ body {
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Revelar fight overlay com fade/scale sutis */
@@ -1294,6 +1498,7 @@ body {
   transform: scale(0.98);
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
+
 .fight-overlay.show {
   opacity: 1;
   transform: scale(1);
@@ -1337,23 +1542,25 @@ body {
 }
 
 #team1bar {
-  background-color: #3a87ad; /* Azul */
+  background-color: #3a87ad;
+  /* Azul */
   border-radius: 12px 0 0 12px;
 }
 
 #team2bar {
-  background-color: #e37ea3; /* Rosa */
+  background-color: #e37ea3;
+  /* Rosa */
   border-radius: 12px 0 0 12px;
 }
 
 
 .timer-circle::before {
-    content: '';
-    position: absolute;
-    inset: 10px;
-    background-color: #1a0033;
-    border-radius: 50%;
-    font-family: MortalKombat1Font, 'Press Start 2P', monospace;
+  content: '';
+  position: absolute;
+  inset: 10px;
+  background-color: #1a0033;
+  border-radius: 50%;
+  font-family: MortalKombat1Font, 'Press Start 2P', monospace;
 
 }
 
@@ -1440,81 +1647,84 @@ body {
 }
 
 #scoreboard {
-    display: flex;
-    justify-content: space-around;
-    margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
 }
 
 .team-score {
-    text-align: center;
-    width: 40%;
+  text-align: center;
+  width: 40%;
 }
 
 .team-name {
-    font-weight: bold;
-    font-size: 18px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .score-bar {
-    width: 100%;
-    height: 20px;
-    background: #333;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 5px 0;
+  width: 100%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 5px 0;
 }
 
 .score-fill {
-    height: 100%;
-    width: 0%;
-    background: #4caf50;
-    transition: width 0.5s ease;
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.5s ease;
 }
 
 #questions-container {
-    margin-top: 20px;
-    font-size: 20px;
+  margin-top: 20px;
+  font-size: 20px;
 }
 
 
 .team-timer {
-    font-size: 22px;
-    margin-top: 20px;
-    font-family: MortalKombat1Font, 'Press Start 2P', monospace;
+  font-size: 22px;
+  margin-top: 20px;
+  font-family: MortalKombat1Font, 'Press Start 2P', monospace;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 #judgmentOverlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.judgment-screen, .result-screen {
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
+.judgment-screen,
+.result-screen {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.vote-btn, .continue-btn {
-    background: #f69ac1;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+.vote-btn,
+.continue-btn {
+  background: #f69ac1;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.vote-btn:hover, .continue-btn:hover {
-    background: #a5dfff;
+.vote-btn:hover,
+.continue-btn:hover {
+  background: #a5dfff;
 }
 
 
@@ -1620,6 +1830,7 @@ body {
   left: 5vw;
   bottom: 2vh;
 }
+
 .tutorial-overlay {
   opacity: 0;
   transition: .5s ease-out;
@@ -1632,7 +1843,8 @@ body {
   right: 0;
   z-index: 999;
   backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px); /* Safari support */
+  -webkit-backdrop-filter: blur(5px);
+  /* Safari support */
 }
 
 .tutorial-overlay.active {

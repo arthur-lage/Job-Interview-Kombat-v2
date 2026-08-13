@@ -649,3 +649,9 @@
     border: 1px solid rgba(28, 28, 46, 0.15);
     cursor: default;
 }
+
+@media (max-width: 450px) {
+    .resume-fab {
+        padding: 6px 10px;
+    }
+}
