@@ -14,7 +14,7 @@ function toSentenceCase(str) {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
-function createSession(bank, { softSkills = 5, hardSkills = 2 } = {}) {
+function createSession(bank, { softSkills = 5, hardSkills = 2, totalQuestions = 7 } = {}) {
     const topicId = getTopicId();
 
     let topicBank = null;
@@ -29,13 +29,35 @@ function createSession(bank, { softSkills = 5, hardSkills = 2 } = {}) {
         // Sem tópico: mistura questões de todos os tópicos
         const allSoft = Object.values(bank).flatMap(t => t.softSkills || []);
         const allHard = Object.values(bank).flatMap(t => t.hardSkills || []);
-        topicBank = { softSkills: allSoft, hardSkills: allHard };
+        const allQuestions = Object.values(bank).flatMap(t => t.questions || []);
+        topicBank = { softSkills: allSoft, hardSkills: allHard, questions: allQuestions };
     }
 
-    const selected = [
-        ...pickRandom(topicBank.softSkills || [], softSkills),
-        ...pickRandom(topicBank.hardSkills || [], hardSkills)
-    ].sort(() => Math.random() - 0.5);
+    let selected = [];
+    
+    if (topicBank.questions && !topicBank.softSkills && !topicBank.hardSkills) {
+        // Formato unificado (sem soft/hard skills)
+        selected = pickRandom(topicBank.questions, totalQuestions);
+    } else {
+        // Formato original com soft/hard skills, somado com as unificadas se for modo geral
+        const unified = pickRandom(topicBank.questions || [], totalQuestions);
+        if (unified.length > 0 && !topicId) {
+            // Se estamos no modo geral sem topico, pega misturado
+            const mixed = [
+                ...pickRandom(topicBank.softSkills || [], 3),
+                ...pickRandom(topicBank.hardSkills || [], 2),
+                ...pickRandom(topicBank.questions || [], 2)
+            ];
+            selected = pickRandom(mixed, totalQuestions);
+        } else {
+            selected = [
+                ...pickRandom(topicBank.softSkills || [], softSkills),
+                ...pickRandom(topicBank.hardSkills || [], hardSkills)
+            ];
+        }
+    }
+    
+    selected = selected.sort(() => Math.random() - 0.5);
 
     return {
         questions: selected,

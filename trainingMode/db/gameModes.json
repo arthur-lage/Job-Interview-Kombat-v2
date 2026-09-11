@@ -14,12 +14,6 @@
                     "icon_class": "hn hn-graduation-cap-solid"
                 },
                 {
-                    "id": "tutorial_vocab",
-                    "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=tutorial_grammar&submode=tutorial_vocab",
-                    "icon_class": "hn hn-book-heart-solid"
-                },
-                {
                     "id": "tutorial_quiz",
                     "name": "QUIZ",
                     "link": "quiz.html?topic=tutorial_grammar&submode=tutorial_quiz",
@@ -35,28 +29,16 @@
             "unlocked": true,
             "subModes": [
                 {
-                    "id": "intro_vocab",
-                    "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=introduction&submode=intro_vocab",
-                    "icon_class": "hn hn-book-heart-solid"
-                },
-                {
-                    "id": "intro_audio",
-                    "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=introduction&submode=intro_audio",
-                    "icon_class": "hn hn-headphones-solid"
+                    "id": "intro_lesson",
+                    "name": "LESSONS",
+                    "link": "intro_tips.html",
+                    "icon_class": "hn hn-graduation-cap-solid"
                 },
                 {
                     "id": "intro_quiz",
                     "name": "QUIZ",
                     "link": "quiz.html?topic=introduction&submode=intro_quiz",
                     "icon_class": "hn hn-question-circle-solid"
-                },
-                {
-                    "id": "intro_interview",
-                    "name": "INTERVIEW",
-                    "link": "quiz.html?topic=introduction&mode=interview&submode=intro_interview",
-                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },
@@ -68,28 +50,16 @@
             "unlocked": true,
             "subModes": [
                 {
-                    "id": "exp_vocab",
-                    "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=experience&submode=exp_vocab",
-                    "icon_class": "hn hn-book-heart-solid"
-                },
-                {
-                    "id": "exp_audio",
-                    "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=experience&submode=exp_audio",
-                    "icon_class": "hn hn-headphones-solid"
+                    "id": "exp_lesson",
+                    "name": "LESSONS",
+                    "link": "exp_tips.html",
+                    "icon_class": "hn hn-graduation-cap-solid"
                 },
                 {
                     "id": "exp_quiz",
                     "name": "QUIZ",
                     "link": "quiz.html?topic=experience&submode=exp_quiz",
                     "icon_class": "hn hn-question-circle-solid"
-                },
-                {
-                    "id": "exp_interview",
-                    "name": "INTERVIEW",
-                    "link": "quiz.html?topic=experience&mode=interview&submode=exp_interview",
-                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },

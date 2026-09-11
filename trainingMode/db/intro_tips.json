@@ -1,0 +1,132 @@
+[
+    {
+        "id": 1,
+        "title": "Start with a Greeting and Your Name",
+        "description": "Always start your introduction by greeting the interviewers politely. It sets a professional tone. State your full name clearly so they know exactly who you are right away.",
+        "question": "Which of these is the most professional way to start your introduction?",
+        "options": [
+            { "id": "a", "text": "Yo, what's up? I'm John." },
+            { "id": "b", "text": "Good morning, thank you for having me. My name is John Doe." },
+            { "id": "c", "text": "Hey everyone. John here." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is polite, professional, and sets a respectful tone for the interview."
+    },
+    {
+        "id": 2,
+        "title": "Mention Your Current Status",
+        "description": "After your name, briefly mention your current professional status or your most recent educational achievement. This gives them immediate context about where you are in your career.",
+        "question": "How should you state your current professional status?",
+        "options": [
+            { "id": "a", "text": "I am currently working as a Junior Developer at TechCorp." },
+            { "id": "b", "text": "I'm just doing some stuff right now to pay the bills." },
+            { "id": "c", "text": "I hate my current job, but I work at TechCorp." }
+        ],
+        "correctOption": "a",
+        "explanation": "Option A clearly and professionally states your current role. Complaining about your current job is highly unprofessional."
+    },
+    {
+        "id": 3,
+        "title": "Highlight Relevant Experience",
+        "description": "Don't recite your entire resume. Pick one or two past experiences that are highly relevant to the role you are applying for and mention them briefly.",
+        "question": "When talking about your experience, what should you focus on?",
+        "options": [
+            { "id": "a", "text": "Every single job I've had since I was 16." },
+            { "id": "b", "text": "Only the experiences that align with the requirements of this position." },
+            { "id": "c", "text": "My hobbies and what I like to do on weekends." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. Time is limited, so focusing on relevant experience keeps the interviewer engaged and shows you are a good fit."
+    },
+    {
+        "id": 4,
+        "title": "Showcase a Key Achievement",
+        "description": "Include a brief highlight of a specific achievement or a successful project you contributed to. This proves your value through concrete results.",
+        "question": "Which is the best way to mention an achievement?",
+        "options": [
+            { "id": "a", "text": "I was part of a team that increased sales by 15% last quarter." },
+            { "id": "b", "text": "I am a very hard worker and everyone likes me." },
+            { "id": "c", "text": "I did some good things at my last job, I guess." }
+        ],
+        "correctOption": "a",
+        "explanation": "Option A is specific and measurable. It gives concrete evidence of your capabilities."
+    },
+    {
+        "id": 5,
+        "title": "Explain Why You Are Here",
+        "description": "Wrap up your introduction by explaining why you are interested in this specific role and company. Connect your background to their needs.",
+        "question": "How should you conclude your introduction?",
+        "options": [
+            { "id": "a", "text": "So, yeah, that's pretty much it. Do you have any questions?" },
+            { "id": "b", "text": "I need a new job, and this one seemed okay." },
+            { "id": "c", "text": "I'm really excited about this role because it aligns with my passion for data analysis and your company's innovative projects." }
+        ],
+        "correctOption": "c",
+        "explanation": "Option C shows enthusiasm, links your skills to the role, and demonstrates that you researched the company."
+    },
+    {
+        "id": 6,
+        "title": "Keep it Concise (The Elevator Pitch)",
+        "description": "Your introduction should not be a monologue. Aim for about 60 to 90 seconds. Keeping it concise ensures you hold their attention and leave room for questions.",
+        "question": "What is the ideal length for a self-introduction?",
+        "options": [
+            { "id": "a", "text": "Around 1 to 2 minutes." },
+            { "id": "b", "text": "At least 5 minutes, so I don't miss any details." },
+            { "id": "c", "text": "10 seconds. Just say your name and wait for questions." }
+        ],
+        "correctOption": "a",
+        "explanation": "Option A is correct. 1 to 2 minutes is enough time to cover the essentials without losing the listener's interest."
+    },
+    {
+        "id": 7,
+        "title": "Maintain Good Body Language",
+        "description": "Even if it's an online interview, sit up straight, make eye contact (look at the camera), and smile. Good body language projects confidence.",
+        "question": "What should you do with your body language during the introduction?",
+        "options": [
+            { "id": "a", "text": "Slouch in my chair to look relaxed." },
+            { "id": "b", "text": "Look directly at the camera, smile, and maintain an open posture." },
+            { "id": "c", "text": "Look down at my notes the entire time so I don't forget anything." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. Eye contact and a smile build connection and show confidence."
+    },
+    {
+        "id": 8,
+        "title": "Tailor Your Tone",
+        "description": "Match the tone of the company. A startup might appreciate a slightly more energetic and casual introduction, while a traditional bank will expect a more formal approach.",
+        "question": "If you are interviewing at a highly traditional law firm, how should your tone be?",
+        "options": [
+            { "id": "a", "text": "Very casual, using lots of slang to show I'm cool." },
+            { "id": "b", "text": "Professional, formal, and respectful." },
+            { "id": "c", "text": "Overly enthusiastic and loud." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. Adapting to the company culture shows you are a good fit for their environment."
+    },
+    {
+        "id": 9,
+        "title": "Avoid Personal Over-sharing",
+        "description": "Keep the focus on your professional life. Unless it's highly relevant to the job, avoid spending too much time talking about your family, pets, or unrelated hobbies.",
+        "question": "Which of these details is usually unnecessary in a professional introduction?",
+        "options": [
+            { "id": "a", "text": "My recent certification in AWS." },
+            { "id": "b", "text": "The fact that I have three cats and love baking on weekends." },
+            { "id": "c", "text": "My previous role as a project manager." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. While nice, personal hobbies rarely add value to a professional self-introduction."
+    },
+    {
+        "id": 10,
+        "title": "Practice, Don't Memorize",
+        "description": "You should practice your introduction many times, but avoid memorizing it word-for-word. You want to sound natural and conversational, not like a robot reading a script.",
+        "question": "What is the best way to prepare your introduction?",
+        "options": [
+            { "id": "a", "text": "Memorize every single word and panic if I forget one." },
+            { "id": "b", "text": "Don't prepare at all, just improvise." },
+            { "id": "c", "text": "Outline the key points and practice delivering them naturally." }
+        ],
+        "correctOption": "c",
+        "explanation": "Option C is correct. Knowing your bullet points allows you to be flexible and sound authentic."
+    }
+]
