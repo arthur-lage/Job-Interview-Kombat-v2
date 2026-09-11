@@ -14,14 +14,14 @@
 // (deve espelhar gameModes.json)
 // ---------------------------------------------------------------------------
 const TOPIC_SUBMODES = {
-    tutorial_grammar: ['tutorial_vocab', 'tutorial_audio', 'tutorial_quiz', 'tutorial_interview'],
-    profile: ['profile_vocab', 'profile_audio', 'profile_quiz', 'profile_interview'],
-    introduction: ['intro_vocab', 'intro_audio', 'intro_quiz', 'intro_interview'],
-    experience: ['exp_vocab', 'exp_audio', 'exp_quiz', 'exp_interview'],
-    meetings: ['meetings_vocab', 'meetings_audio', 'meetings_quiz', 'meetings_interview'],
-    classic_questions: ['classic_vocab', 'classic_audio', 'classic_quiz', 'classic_interview'],
+    tutorial_grammar: ['tutorial_lessons', 'tutorial_quiz'],
+    profile: ['profile_tips', 'profile_quiz'],
+    introduction: ['intro_lesson', 'intro_quiz'],
+    experience: ['exp_lesson', 'exp_quiz'],
+    meetings: ['meetings_tutorial', 'meetings_war_room'],
+    classic_questions: ['common_questions', 'fill_in_blanks'],
     soft_skills: ['soft_vocab', 'soft_audio', 'soft_quiz', 'soft_interview'],
-    salary_negotiation: ['salary_vocab', 'salary_audio', 'salary_quiz', 'salary_interview'],
+    salary_negotiation: ['salary_tips', 'salary_examples'],
 };
 
 // ---------------------------------------------------------------------------
@@ -42,7 +42,7 @@ const RESUME_SECTIONS = [
     {
         id: 'professional_summary',
         title: '🎯 Professional Summary',
-        topic: 'persona',
+        topic: 'profile',
         fields: [
             { id: 'summary_kw1', label: 'Keyword 1', placeholder: 'e.g. proactive', type: 'text' },
             { id: 'summary_kw2', label: 'Keyword 2', placeholder: 'e.g. collaborative', type: 'text' },
@@ -146,7 +146,12 @@ function markSubModeWon(subModeId) {
 function isTopicUnlocked(topicId) {
     const wins = getWins();
     const submodes = TOPIC_SUBMODES[topicId] || [];
-    return submodes.length > 0 && submodes.every(id => wins[id] === true);
+    const hasProgress = typeof Progress !== 'undefined';
+    return submodes.length > 0 && submodes.every(id => {
+        if (wins[id] === true) return true;
+        if (hasProgress && Progress.isSubModeComplete(topicId, id)) return true;
+        return false;
+    });
 }
 
 // ---------------------------------------------------------------------------
@@ -201,11 +206,11 @@ function buildResumePreviewHTML() {
         <div class="rdoc-section">
             <div class="rdoc-section-title">PROFESSIONAL SUMMARY</div>
             <p class="rdoc-text">
-                I am a ${f('summary_kw1', '[keyword 1]', 'persona')},
-                ${f('summary_kw2', '[keyword 2]', 'persona')} and
-                ${f('summary_kw3', '[keyword 3]', 'persona')} professional.
+                I am a ${f('summary_kw1', '[keyword 1]', 'profile')},
+                ${f('summary_kw2', '[keyword 2]', 'profile')} and
+                ${f('summary_kw3', '[keyword 3]', 'profile')} professional.
             </p>
-            <p class="rdoc-text rdoc-mt">${f('summary_text', '[Write your summary sentence here...]', 'persona')}</p>
+            <p class="rdoc-text rdoc-mt">${f('summary_text', '[Write your summary sentence here...]', 'profile')}</p>
         </div>
 
         <!-- Self-Introduction -->
@@ -345,14 +350,29 @@ function buildResumeModal() {
         if (!unlocked) {
             const wins = getWins();
             const submodes = TOPIC_SUBMODES[section.topic] || [];
-            const missing = submodes.filter(id => !wins[id]);
+            const hasProgress = typeof Progress !== 'undefined';
+            const missing = submodes.filter(id => {
+                if (wins[id]) return false;
+                if (hasProgress && Progress.isSubModeComplete(section.topic, id)) return false;
+                return true;
+            });
             const modeLabels = {
-                '_vocab': 'Vocabulary', '_audio': 'Audio Quiz',
-                '_quiz': 'Quiz', '_interview': 'Interview',
+                '_vocab': 'Vocabulary',
+                '_audio': 'Audio Quiz',
+                '_quiz': 'Quiz',
+                '_interview': 'Interview',
+                '_lesson': 'Lessons',
+                '_lessons': 'Lessons',
+                '_tips': 'Tips',
+                '_examples': 'Examples',
+                '_tutorial': 'Tutorial',
+                '_war_room': 'War Room Crisis',
+                'common_questions': 'Common Questions',
+                'fill_in_blanks': 'Fill in Blanks',
             };
             const missingLabels = missing.map(id => {
-                for (const [suffix, label] of Object.entries(modeLabels)) {
-                    if (id.endsWith(suffix)) return label;
+                for (const [key, label] of Object.entries(modeLabels)) {
+                    if (id.endsWith(key) || id === key) return label;
                 }
                 return id;
             });

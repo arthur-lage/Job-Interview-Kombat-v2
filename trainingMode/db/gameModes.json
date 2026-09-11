@@ -200,28 +200,16 @@
             "unlocked": true,
             "subModes": [
                 {
-                    "id": "profile_vocab",
-                    "name": "VOCABULARY",
-                    "link": "vocabulary_frenzy.html?topic=profile&submode=profile_vocab",
-                    "icon_class": "hn hn-book-heart-solid"
-                },
-                {
-                    "id": "profile_audio",
-                    "name": "AUDIO QUIZ",
-                    "link": "audio_quiz.html?topic=profile&submode=profile_audio",
-                    "icon_class": "hn hn-headphones-solid"
+                    "id": "profile_tips",
+                    "name": "LESSONS",
+                    "link": "profile_tips.html",
+                    "icon_class": "hn hn-minds"
                 },
                 {
                     "id": "profile_quiz",
                     "name": "QUIZ",
                     "link": "quiz.html?topic=profile&submode=profile_quiz",
                     "icon_class": "hn hn-question-circle-solid"
-                },
-                {
-                    "id": "profile_interview",
-                    "name": "INTERVIEW",
-                    "link": "quiz.html?topic=profile&mode=interview&submode=profile_interview",
-                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },

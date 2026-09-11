@@ -977,109 +977,109 @@
         "softSkills": [
             {
                 "id": "per_ss_001",
-                "category": "Personal Brand",
-                "question": "What is a 'personal brand' in a professional context?",
+                "category": "Audience Adaptation",
+                "question": "When communicating with executive leadership compared to team peers, what is the fundamental difference in approach?",
                 "options": {
-                    "a": "A logo you design for your personal business cards.",
-                    "b": "The consistent, authentic image, reputation, and value you project to the professional world through your actions, communication, and presence.",
-                    "c": "Your LinkedIn profile picture.",
-                    "d": "The name you use on social media."
+                    "a": "Executives require low-level technical step-by-step logs, while peers only want high-level financial summaries.",
+                    "b": "Executives prioritize high-level business impact, ROI, and key risks (BLUF), while peers need technical depth, implementation details, and collaborative problem-solving.",
+                    "c": "You should always use the exact same casual tone and emojis with all audiences regardless of role.",
+                    "d": "You should never share bad news with executives, but tell peers everything."
                 },
                 "correctOption": "b",
-                "explanation": "A personal brand is the intersection of who you are, what you stand for, and how others perceive you professionally. It is built over time through consistent communication, your online presence, the work you produce, and how you interact with others."
+                "explanation": "Effective communicators adapt their profile to the audience's priorities. Executives need Bottom Line Up Front (outcomes, costs, timelines), whereas peers need detailed technical context to execute and review code."
             },
             {
                 "id": "per_ss_002",
-                "category": "Personal Brand",
-                "question": "An interviewer asks 'How would your colleagues describe you?' What is the BEST approach?",
+                "category": "Upward Communication",
+                "question": "You discover that a key deliverable will miss its deadline by two days due to an unexpected vendor outage. What is the most professional way to inform your manager?",
                 "options": {
-                    "a": "Say you don't know, as you've never asked.",
-                    "b": "Give generic adjectives like 'nice' and 'hardworking'.",
-                    "c": "Share specific traits backed by concrete examples or genuine feedback you have received, showing self-awareness.",
-                    "d": "Say your colleagues think you are the best on the team."
+                    "a": "Wait until the sprint retrospective so you can discuss it after the fact.",
+                    "b": "Send a message immediately stating the issue, its impact, and two proposed mitigation plans to recover the lost time.",
+                    "c": "Blame the vendor in the team channel and let your manager discover the missed deadline on their own.",
+                    "d": "Work 24 hours non-stop in secret without communicating the risk."
                 },
-                "correctOption": "c",
-                "explanation": "This question tests self-awareness and how you are perceived. The strongest answers are specific ('My colleagues often say I'm the go-to person for unblocking complex problems') and ideally grounded in real feedback you've received, which demonstrates a growth mindset."
+                "correctOption": "b",
+                "explanation": "Proactive upward communication means 'no surprises'. Flagging risks early accompanied by concrete mitigation options allows managers to adjust expectations and support you."
             },
             {
                 "id": "per_ss_003",
-                "category": "Personal Brand",
-                "question": "What does 'cultural fit' mean when a company says they are evaluating it?",
+                "category": "Peer Communication",
+                "question": "During a peer code review, a fellow engineer leaves a comment challenging your design choice. What is the best way to respond?",
                 "options": {
-                    "a": "Whether you speak the same language as the team.",
-                    "b": "How well your values, work style, and behaviors align with the company's culture and the team dynamics.",
-                    "c": "Whether your educational background matches their requirements.",
-                    "d": "Whether you live close to the office."
+                    "a": "Take it personally and reject their pull request in retaliation.",
+                    "b": "Schedule a brief sync or reply politely to understand their reasoning, explain your trade-offs with data, and find the best solution for the codebase.",
+                    "c": "Escalate immediately to the Director of Engineering to overrule them.",
+                    "d": "Ignore their comment and merge the pull request anyway."
                 },
                 "correctOption": "b",
-                "explanation": "Cultural fit is about alignment between your professional values, communication style, work ethic, and the company's established culture. It goes beyond hard skills \u2014 companies know skills can be taught, but someone who conflicts with the team culture can disrupt the entire group."
+                "explanation": "Lateral communication thrives on psychological safety and objective discussion. Treating peer feedback as an opportunity to evaluate architectural trade-offs together strengthens the team."
             },
             {
                 "id": "per_ss_004",
-                "category": "Personal Brand",
-                "question": "When should you send a 'thank you' note after a job interview?",
+                "category": "Cross-Functional",
+                "question": "When explaining a technical blocker to a non-technical Product Owner or Marketing partner, what should you focus on?",
                 "options": {
-                    "a": "Only after you receive a job offer.",
-                    "b": "Within 24 hours of the interview, thanking the interviewer and briefly reinforcing your enthusiasm for the role.",
-                    "c": "Never \u2014 it can seem desperate.",
-                    "d": "One week later, after they've had time to decide."
+                    "a": "Explaining the precise memory allocation and pointer arithmetic in C++.",
+                    "b": "Translating the technical issue into user impact, delivery timeline, and business risk, avoiding unnecessary jargon.",
+                    "c": "Telling them that it is too complicated for them to understand.",
+                    "d": "Asking them to read the raw Git commit logs."
                 },
                 "correctOption": "b",
-                "explanation": "A timely thank-you note (email within 24 hours) is a professional courtesy that differentiates you from other candidates. It reinforces your enthusiasm, gives you a chance to mention something you forgot to say, and demonstrates attention to follow-through."
+                "explanation": "Cross-functional communication requires translating engineering challenges into business reality: how does this affect users, timelines, or conversions? Jargon confuses partners and breaks alignment."
             },
             {
                 "id": "per_ss_005",
-                "category": "Personal Brand",
-                "question": "Which of the following BEST defines 'professional integrity' in the workplace?",
+                "category": "Client & External",
+                "question": "In a high-stakes meeting with an external enterprise client, the client asks whether your software meets a specific regional data compliance standard that you are unsure about. How should you answer?",
                 "options": {
-                    "a": "Always agreeing with your manager to maintain a smooth relationship.",
-                    "b": "Consistently acting in alignment with your values \u2014 being honest, keeping commitments, and taking responsibility.",
-                    "c": "Never making mistakes at work.",
-                    "d": "Working the maximum number of hours possible."
+                    "a": "Confidently say 'Yes, 100%' and hope someone else handles it later.",
+                    "b": "Acknowledge the importance of the question, explain that you want to provide verified technical specifications, and commit to following up with written confirmation by the end of the day.",
+                    "c": "Tell the client that compliance is boring and doesn't really matter.",
+                    "d": "Point to your coworker on the call and tell the client it's their fault if it doesn't work."
                 },
                 "correctOption": "b",
-                "explanation": "Professional integrity is the alignment between what you say and what you do. It means being honest even when it's inconvenient, keeping your commitments, and taking responsibility for your actions. It is the foundation of trust and long-term career reputation."
+                "explanation": "In external communications, guessing damages trust and exposes the company to liability. Acknowledging the requirement and committing to a concrete verification deadline shows thoroughness and accountability."
             }
         ],
         "hardSkills": [
             {
                 "id": "per_hs_001",
-                "category": "Personal Brand",
-                "question": "What makes a strong GitHub profile for a software developer job seeker?",
+                "category": "Communication Frameworks",
+                "question": "What is the primary structure of the BLUF (Bottom Line Up Front) communication framework often used in executive briefings?",
                 "options": {
-                    "a": "Having thousands of repositories with a single commit each.",
-                    "b": "A pinned set of quality projects with clear READMEs, consistent commit history, and evidence of real problem-solving.",
-                    "c": "Forking popular repositories without contributing.",
-                    "d": "Only having private repositories."
+                    "a": "Presenting historical background first, followed by methodology, and ending with the recommendation on the final slide.",
+                    "b": "Stating the core conclusion, recommendation, or decision required first, followed by concise supporting rationale and data.",
+                    "c": "Listing every team member's daily activities in chronological order.",
+                    "d": "Writing lengthy narrative paragraphs without headings or bullet points."
                 },
                 "correctOption": "b",
-                "explanation": "A strong GitHub profile tells the story of you as a developer. Pinned, well-documented projects (with clear READMEs explaining the problem, solution, and tech stack) demonstrate engineering quality. A consistent commit history shows steady practice and commitment."
+                "explanation": "BLUF is designed for high-velocity decision-making. By front-loading the conclusion or decision needed, stakeholders grasp the critical information immediately and can decide where to drill deeper."
             },
             {
                 "id": "per_hs_002",
-                "category": "Personal Brand",
-                "question": "What is the PRIMARY benefit of contributing to open-source projects for career development?",
+                "category": "Communication Frameworks",
+                "question": "Which of the following examples BEST illustrates the Situation-Behavior-Impact (SBI) model when giving lateral feedback to a peer?",
                 "options": {
-                    "a": "You get paid directly for every contribution.",
-                    "b": "It demonstrates real-world collaboration skills, code quality, and community engagement \u2014 all visible to potential employers.",
-                    "c": "It guarantees a job at the company that owns the project.",
-                    "d": "It replaces the need for a formal education."
+                    "a": "'You are always careless with deployments and nobody likes your attitude.'",
+                    "b": "'In yesterday's client demo (Situation), you interrupted the client twice while they were describing their pain points (Behavior), which caused them to become visibly defensive and ended the meeting early (Impact).'",
+                    "c": "'Everyone thinks you should do better in meetings.'",
+                    "d": "'Good job overall, keep it up!'"
                 },
                 "correctOption": "b",
-                "explanation": "Open-source contributions are powerful for career building: they demonstrate you can collaborate asynchronously with global teams, navigate codebases you didn't write, write code that meets community standards, and communicate effectively through pull requests and issues."
+                "explanation": "The SBI framework grounds feedback in an objective, specific context (Situation), an observable action (Behavior), and the concrete outcome (Impact), removing subjective personality attacks."
             },
             {
                 "id": "per_hs_003",
-                "category": "Personal Brand",
-                "question": "What does a strong technical portfolio for a developer typically include?",
+                "category": "Communication Frameworks",
+                "question": "When crafting an asynchronous update (such as in Slack or email) to multiple cross-functional leads, which formatting practice is MOST effective?",
                 "options": {
-                    "a": "A list of technologies you wish to learn someday.",
-                    "b": "Live or deployed projects, source code, descriptions of the problems solved, technologies used, and your role in building them.",
-                    "c": "Screenshots of code from your university assignments.",
-                    "d": "A PDF of your university transcript."
+                    "a": "Sending a single 800-word uninterrupted block of plain text.",
+                    "b": "Using clear subject tags (e.g., [FYI], [Action Required]), bold summaries, bulleted items, and explicit owners with deadlines.",
+                    "c": "Sending ten consecutive one-word messages to trigger multiple notifications.",
+                    "d": "Including inside jokes and informal abbreviations without explaining the context."
                 },
                 "correctOption": "b",
-                "explanation": "A technical portfolio is concrete evidence of your abilities. Employers want to see projects that solve real problems, with working demos or deployed links, clean source code, and context about the challenges you faced. It transforms your resume claims into verifiable proof."
+                "explanation": "Effective async communication respects readers' time by making messages easily scannable. Subject tags, bullet points, and clear action items with explicit deadlines ensure accountability across diverse profiles."
             }
         ]
     }

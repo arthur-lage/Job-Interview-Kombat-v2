@@ -1,0 +1,132 @@
+[
+    {
+        "id": 1,
+        "title": "Know Your Audience & Adapt Your Profile",
+        "description": "In a professional environment, communication is never one-size-fits-all. Different audiences have distinct priorities, constraints, and expectations. Adapting your communication style (your 'profile') means tailoring your level of detail, tone, and format to match the person you are addressing — whether they are an executive, a direct manager, a peer coworker, or an external client.",
+        "question": "Why is it essential to adapt your communication style based on who you are speaking with?",
+        "options": [
+            { "id": "a", "text": "To impress people with complex corporate buzzwords and technical jargon." },
+            { "id": "b", "text": "Because different stakeholders care about different outcomes: managers need solutions and status, while peers need technical collaboration." },
+            { "id": "c", "text": "To hide project mistakes from managers while boasting to teammates." }
+        ],
+        "correctOption": "b",
+        "explanation": "Effective communicators assess what their listener needs to know and how they process information. Tailoring your message ensures clarity, builds credibility, and respects everyone's time."
+    },
+    {
+        "id": 2,
+        "title": "Speaking to Your Manager: Bring Solutions, Not Just Problems",
+        "description": "Your direct manager is responsible for team delivery, removing obstacles, and reporting progress up the chain. When raising an issue or a blocker, never present an open-ended complaint without at least one or two proposed solutions. Always outline trade-offs and clarify what decision or support you need from them.",
+        "question": "You encounter a blocking issue that will delay your sprint deliverable by two days. How should you inform your manager?",
+        "options": [
+            { "id": "a", "text": "'Hey, the third-party API is broken and nothing works. Let me know when it's fixed.'" },
+            { "id": "b", "text": "'We hit an unexpected schema issue with the external API that delays the module. I have two proposed paths: deploy a fallback cache by 2 PM or mock the service until tomorrow. Which do you recommend?'" },
+            { "id": "c", "text": "Wait until the sprint retrospective at the end of next week to bring it up." }
+        ],
+        "correctOption": "b",
+        "explanation": "Great professionals bring solutions, not just problems. Option B communicates the blocker early, quantifies the impact, and provides actionable paths forward with a clear request for guidance."
+    },
+    {
+        "id": 3,
+        "title": "Speaking to Executives: The BLUF (Bottom Line Up Front) Principle",
+        "description": "Executives and Directors operate under extreme time pressure and focus on strategic business outcomes: revenue, timeline risks, resource allocation, and ROI. Use the BLUF (Bottom Line Up Front) framework: state your conclusion or key metric in the first 15 seconds. Avoid walking leadership through an exhaustive chronological backstory before getting to the point.",
+        "question": "You are presenting quarterly infrastructure progress to the VP of Engineering. What is the most effective opening?",
+        "options": [
+            { "id": "a", "text": "'This quarter we reduced cloud infrastructure costs by 22% while maintaining 99.99% uptime, coming in $15k under budget.'" },
+            { "id": "b", "text": "'Back in January, our team had a retrospective meeting where we looked at AWS EC2 instances and debated server configurations...'" },
+            { "id": "c", "text": "'Here are 45 slides detailing every single Git commit and Docker container deployed by the team.'" }
+        ],
+        "correctOption": "a",
+        "explanation": "Executives need the high-level business impact immediately (BLUF). Option A leads with the exact cost savings, uptime reliability, and budget status before offering deeper data if requested."
+    },
+    {
+        "id": 4,
+        "title": "Speaking to Peers & Coworkers: Empathy & Psychological Safety",
+        "description": "When collaborating with teammates, focus on mutual respect, psychological safety, and shared ownership. Avoid authoritarian language or unilateral decisions. Use inclusive, collaborative phrasing ('How might we...', 'What are your thoughts on...', 'Let's explore...') and celebrate your peers' contributions generously.",
+        "question": "During a peer code review, you notice a teammate wrote a nested loop that will perform poorly with large datasets. What is the most constructive comment?",
+        "options": [
+            { "id": "a", "text": "'This code is terrible and will crash production. Please rewrite it from scratch.'" },
+            { "id": "b", "text": "'Great job handling the edge cases here! For this loop, what do you think about using a hash map to reduce the time complexity from O(n²) to O(n)?'" },
+            { "id": "c", "text": "Approve the pull request silently to avoid hurting their feelings." }
+        ],
+        "correctOption": "b",
+        "explanation": "Constructive lateral communication acknowledges positive aspects, targets the code rather than the author, and invites collaborative problem-solving through curious questioning."
+    },
+    {
+        "id": 5,
+        "title": "Cross-Functional Communication: Tech to Non-Tech Partners",
+        "description": "When interacting with Product Managers, Marketing, Sales, or HR, strip away technical jargon such as 'race condition', 'distributed lock', or 'database sharding'. Translate technical realities into business impact: customer experience, reliability, security, and delivery timelines. Use real-world analogies to make complex concepts intuitive.",
+        "question": "A Product Manager asks why an apparently simple button change will take three days to implement. How do you explain this professionally?",
+        "options": [
+            { "id": "a", "text": "'Because the async microservice event bus broker requires schema migration and Kafka consumer lag recalculation.'" },
+            { "id": "b", "text": "'You wouldn't understand; coding is much more complicated than clicking a button.'" },
+            { "id": "c", "text": "'While the button itself is quick to place, it connects directly to our payment processing system. We need dedicated time to test edge cases so customers are never double-charged.'" }
+        ],
+        "correctOption": "c",
+        "explanation": "Option C translates the technical effort into user trust and financial risk, helping the Product Manager understand the necessity of testing without feeling alienated by technical jargon."
+    },
+    {
+        "id": 6,
+        "title": "Client & External Facing: Diplomacy & Composure",
+        "description": "When speaking with external clients or partners, you represent your entire organization. Maintain a calm, diplomatic, and confident posture. Never blame colleagues, internal tools, or company leadership in front of a client. If you don't know the answer to a question, admit it gracefully and provide a firm follow-up commitment.",
+        "question": "During a live client meeting, the client asks if your software integrates with a specific CRM tool you are not familiar with. What should you say?",
+        "options": [
+            { "id": "a", "text": "'Yes, absolutely! It can do anything you want!' (without knowing if it's true)" },
+            { "id": "b", "text": "'I don't know, our backend team never tells me what tools we support.'" },
+            { "id": "c", "text": "'We support several CRM integrations. Let me verify the exact compatibility specifications for that tool with our integration team and email you confirmation by tomorrow noon.'" }
+        ],
+        "correctOption": "c",
+        "explanation": "Overpromising damages credibility, while blaming teammates is unprofessional. Acknowledging the question and setting a clear follow-up commitment demonstrates competence and reliability."
+    },
+    {
+        "id": 7,
+        "title": "Constructive Upward Feedback: Managing Up with Diplomacy",
+        "description": "Delivering feedback to your manager requires tact, preparation, and empathy. Anchor your observations in shared goals and objective facts rather than emotion. Use the Situation-Behavior-Impact (SBI) framework in a private 1-on-1, and focus on collaborative solutions to help the team succeed.",
+        "question": "Your manager frequently changes priority tasks mid-sprint, causing team fatigue. How should you bring this up in your 1-on-1?",
+        "options": [
+            { "id": "a", "text": "'You are an unorganized manager and everyone on the team is burning out because of you.'" },
+            { "id": "b", "text": "'In the last two sprints, shifting priorities mid-week resulted in three incomplete features and overtime for the team. Could we establish a clearer sprint freeze policy together?'" },
+            { "id": "c", "text": "Post an anonymous complaint on social media or in a general chat channel." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B uses concrete data (last two sprints, three incomplete features), describes the observable impact on the team, and invites the manager to solve the workflow issue together."
+    },
+    {
+        "id": 8,
+        "title": "Asynchronous Communication: Structure & Clarity by Channel",
+        "description": "Different communication channels demand different profiles. Quick queries belong in chat; formal requests, strategic decisions, and cross-team alignments belong in documented threads, tickets, or emails. When writing to leadership or busy teammates, use clear subject tags (e.g., '[Action Required]', '[FYI]'), scannable bullet points, and explicit deadlines.",
+        "question": "You need your director to sign off on a cloud budget increase before Friday. What is the best asynchronous message format?",
+        "options": [
+            { "id": "a", "text": "'Hey, need to talk to you about money whenever you have a minute.'" },
+            { "id": "b", "text": "'[Action Required by Thursday 4 PM] Cloud Budget Increase ($5k): Summary of traffic surge, cost breakdown attached, and approval link ready for signature.'" },
+            { "id": "c", "text": "Send a 10-page PDF attachment with no subject line or summary." }
+        ],
+        "correctOption": "b",
+        "explanation": "Action-oriented tags, clear deadlines, concise justification, and direct links eliminate ambiguity and make it effortless for busy leaders to review and approve requests."
+    },
+    {
+        "id": 9,
+        "title": "Reading the Room & Calibrating Emotional Tone",
+        "description": "Communication isn't just about what you say, but when and how you say it. Assess the room's emotional climate before speaking. If leadership is managing a major production outage, match the gravity of the situation with concise, factual updates. Save jokes, casual discussions, or low-priority ideas for calmer moments.",
+        "question": "You join an emergency incident call where an outage is impacting thousands of active users. What is the appropriate behavior?",
+        "options": [
+            { "id": "a", "text": "Crack jokes to ease the tension and ask people about their weekend plans." },
+            { "id": "b", "text": "Listen actively, keep contributions strictly focused on triage, diagnostics, and verified facts, and minimize speculation." },
+            { "id": "c", "text": "Debate with a colleague about unrelated code formatting preferences." }
+        ],
+        "correctOption": "b",
+        "explanation": "High emotional intelligence involves matching the urgency of the moment. Incident response calls require calm, laser-focused discipline to triage and resolve the root issue."
+    },
+    {
+        "id": 10,
+        "title": "The 'Disagree and Commit' Principle in Team Dynamics",
+        "description": "Healthy teams embrace vigorous, data-backed debate before decisions are finalized. When discussing an initiative with your manager or peers, voice your perspective honestly. However, once leadership makes a final decision, rally 100% behind execution without resentment, foot-dragging, or 'I told you so' attitudes.",
+        "question": "You recommended Database A, but the team and lead decided to adopt Database B. How should you proceed?",
+        "options": [
+            { "id": "a", "text": "Refuse to work on Database B tasks and complain to colleagues about management." },
+            { "id": "b", "text": "Comply reluctantly while secretly hoping Database B fails so you can prove you were right." },
+            { "id": "c", "text": "Commit completely to implementing Database B successfully, sharing your technical knowledge to make the launch smooth." }
+        ],
+        "correctOption": "c",
+        "explanation": "'Disagree and commit' is a pillar of high-performing teams. Energetic debate is welcome during planning, but once a decision is made, cohesive and committed execution is essential for collective success."
+    }
+]
