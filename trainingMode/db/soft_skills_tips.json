@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "title": "What Are Soft Skills?",
+        "description": "Soft skills are non-technical skills that relate to how you work. They include interpersonal skills, communication, listening, time management, empathy, and leadership. They are often harder to quantify but are crucial for career success.",
+        "question": "Which of the following is considered a soft skill?",
+        "options": [
+            { "id": "a", "text": "Proficiency in Python programming." },
+            { "id": "b", "text": "Effective team communication and conflict resolution." },
+            { "id": "c", "text": "Typing 80 words per minute." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. Communication and conflict resolution relate to how you interact with others, which defines a soft skill."
+    },
+    {
+        "id": 2,
+        "title": "Show, Don't Just Tell",
+        "description": "Instead of simply stating 'I am a great leader' or 'I am a good communicator', provide a real-life example of a time you demonstrated these skills in action.",
+        "question": "How should you demonstrate your problem-solving skills?",
+        "options": [
+            { "id": "a", "text": "Say 'I am an excellent problem solver' and move to the next question." },
+            { "id": "b", "text": "Tell a brief story about a specific challenge at your last job and the steps you took to resolve it." },
+            { "id": "c", "text": "List 'Problem Solving' as a bullet point on your resume." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. Telling a story provides evidence and context, making your claim much more believable."
+    },
+    {
+        "id": 3,
+        "title": "The STAR Method",
+        "description": "When answering behavioral questions related to soft skills, use the STAR method: Situation, Task, Action, and Result. This structure keeps your answer focused and impactful.",
+        "question": "What does the 'R' in the STAR method stand for?",
+        "options": [
+            { "id": "a", "text": "Reaction" },
+            { "id": "b", "text": "Reason" },
+            { "id": "c", "text": "Result" }
+        ],
+        "correctOption": "c",
+        "explanation": "Option C is correct. You should always conclude your story by sharing the positive Result of your actions."
+    },
+    {
+        "id": 4,
+        "title": "Cultural Fit and Adaptability",
+        "description": "Companies look for soft skills to determine if you will fit into their culture. Demonstrating adaptability and a positive attitude shows you can handle change and work well with diverse teams.",
+        "question": "Why do employers care about cultural fit?",
+        "options": [
+            { "id": "a", "text": "To make sure you like the same sports teams." },
+            { "id": "b", "text": "To ensure you can collaborate effectively with the existing team and share the company's core values." },
+            { "id": "c", "text": "Because it's a legal requirement." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. A good cultural fit means you will work harmoniously with the team and contribute to a positive environment."
+    },
+    {
+        "id": 5,
+        "title": "Body Language as a Soft Skill",
+        "description": "Your non-verbal communication is a soft skill in itself. Active listening, maintaining eye contact, and nodding show that you are engaged, respectful, and communicative.",
+        "question": "How can you demonstrate active listening during an interview?",
+        "options": [
+            { "id": "a", "text": "Look at your phone occasionally to show you can multitask." },
+            { "id": "b", "text": "Interrupt the interviewer to show enthusiasm." },
+            { "id": "c", "text": "Maintain eye contact, nod occasionally, and wait for them to finish speaking before answering." }
+        ],
+        "correctOption": "c",
+        "explanation": "Option C is correct. These non-verbal cues show respect and that you are fully engaged in the conversation."
+    }
+]

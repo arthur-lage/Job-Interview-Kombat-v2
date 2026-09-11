@@ -182,3 +182,84 @@
     overflow: hidden;
     z-index: -1;
 }
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .aq-player-wrapper {
+        padding: 6px 14px;
+        gap: 8px;
+    }
+
+    .aq-play-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+
+    .aq-replay-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .aq-time {
+        font-size: 1rem;
+    }
+
+    .question-text {
+        font-size: 1.1rem;
+        padding: 8px 30px;
+        min-height: 70px;
+    }
+
+    .option {
+        min-height: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .aq-player-wrapper {
+        padding: 4px 10px;
+        gap: 6px;
+    }
+
+    .aq-play-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .aq-replay-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+
+    .question-text {
+        font-size: 1rem;
+        padding: 6px 20px;
+        min-height: 60px;
+    }
+
+    .option {
+        min-height: 48px;
+    }
+}
+
+@media (max-height: 650px) {
+    .question-text {
+        min-height: 55px;
+        padding: 5px 20px;
+    }
+
+    .option {
+        min-height: 45px;
+    }
+    
+    .aq-player-wrapper {
+        margin: 0.1rem 0;
+    }
+}

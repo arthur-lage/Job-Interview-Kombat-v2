@@ -113,6 +113,12 @@
             "unlocked": true,
             "subModes": [
                 {
+                    "id": "soft_lesson",
+                    "name": "LESSONS",
+                    "link": "soft_skills_tips.html",
+                    "icon_class": "hn hn-graduation-cap-solid"
+                },
+                {
                     "id": "soft_vocab",
                     "name": "VOCABULARY",
                     "link": "vocabulary_frenzy.html?topic=soft_skills&submode=soft_vocab",
@@ -122,19 +128,14 @@
                     "id": "soft_audio",
                     "name": "AUDIO QUIZ",
                     "link": "audio_quiz.html?topic=soft_skills&submode=soft_audio",
-                    "icon_class": "hn hn-headphones-solid"
+                    "icon_class": "hn hn-headphones-solid",
+                    "inDevelopment": true
                 },
                 {
                     "id": "soft_quiz",
                     "name": "QUIZ",
                     "link": "quiz.html?topic=soft_skills&submode=soft_quiz",
                     "icon_class": "hn hn-question-circle-solid"
-                },
-                {
-                    "id": "soft_interview",
-                    "name": "INTERVIEW",
-                    "link": "quiz.html?topic=soft_skills&mode=interview&submode=soft_interview",
-                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },
@@ -146,6 +147,12 @@
             "unlocked": true,
             "subModes": [
                 {
+                    "id": "hard_lesson",
+                    "name": "LESSONS",
+                    "link": "hard_skills_tips.html",
+                    "icon_class": "hn hn-graduation-cap-solid"
+                },
+                {
                     "id": "hard_vocab",
                     "name": "VOCABULARY",
                     "link": "vocabulary_frenzy.html?topic=hard_skills&submode=hard_vocab",
@@ -155,19 +162,14 @@
                     "id": "hard_audio",
                     "name": "AUDIO QUIZ",
                     "link": "audio_quiz.html?topic=hard_skills&submode=hard_audio",
-                    "icon_class": "hn hn-headphones-solid"
+                    "icon_class": "hn hn-headphones-solid",
+                    "inDevelopment": true
                 },
                 {
                     "id": "hard_quiz",
                     "name": "QUIZ",
                     "link": "quiz.html?topic=hard_skills&submode=hard_quiz",
                     "icon_class": "hn hn-question-circle-solid"
-                },
-                {
-                    "id": "hard_interview",
-                    "name": "INTERVIEW",
-                    "link": "quiz.html?topic=hard_skills&mode=interview&submode=hard_interview",
-                    "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
         },

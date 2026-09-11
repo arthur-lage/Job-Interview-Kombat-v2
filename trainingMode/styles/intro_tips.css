@@ -216,9 +216,21 @@ header h1 {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 1rem;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.3rem;
+    }
+
     .card-viewer {
-        padding: 1.8rem 1.4rem;
+        padding: 2rem 1.5rem;
         width: 95%;
     }
 
@@ -226,7 +238,75 @@ header h1 {
         font-size: 1.8rem;
     }
 
+    .tip-content {
+        font-size: 1.15rem;
+    }
+
     .mini-quiz h4 {
         font-size: 1.7rem;
+    }
+
+    .mini-quiz p {
+        font-size: 1.15rem;
+    }
+
+    .mini-quiz-option {
+        font-size: 1.15rem;
+        padding: 0.8rem 2.5rem 0.8rem 1rem;
+    }
+
+    .lesson-done-btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+        margin-left: 20px;
+    }
+
+    .page-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .card-viewer {
+        padding: 1.5rem 1rem;
+    }
+
+    #tip-title {
+        font-size: 1.5rem;
+    }
+
+    .tip-content {
+        font-size: 1rem;
+    }
+
+    .mini-quiz h4 {
+        font-size: 1.5rem;
+    }
+
+    .mini-quiz p {
+        font-size: 1rem;
+    }
+
+    .mini-quiz-option {
+        font-size: 1rem;
+        padding: 0.6rem 2rem 0.6rem 0.8rem;
+    }
+
+    .lesson-done-btn {
+        font-size: 1.1rem;
+        padding: 0.5rem 1.2rem;
+    }
+    
+    #explanation-msg {
+        font-size: 1.1rem !important;
+        padding: 1rem !important;
+    }
+
+    .practice-label {
+        font-size: 1.1rem !important;
     }
 }

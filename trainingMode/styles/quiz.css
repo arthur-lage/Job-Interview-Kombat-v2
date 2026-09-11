@@ -431,3 +431,152 @@ body {
     transform: scale(1.08);
     background: #4a4380;
 }
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .quiz-container {
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    .hp {
+        width: 60px;
+        height: 60px;
+    }
+
+    .question-number {
+        width: 280px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
+
+    .question-text {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+        min-height: 70px;
+    }
+
+    .option {
+        font-size: 1.1rem;
+        padding: 8px 20px;
+        min-height: 55px;
+    }
+
+    .options-container {
+        gap: 0.8rem;
+    }
+
+    .result-modal {
+        padding: 20px 30px;
+        min-width: 280px;
+        width: 90vw;
+        max-width: 400px;
+    }
+
+    .result-modal-title {
+        font-size: 1.8rem;
+    }
+
+    .result-score {
+        font-size: 3rem;
+    }
+
+    .answer-modal {
+        padding: 15px 20px;
+        width: 90vw;
+        max-width: 400px;
+    }
+
+    .answer-body p:first-child,
+    .answer-body p:nth-child(2) {
+        font-size: 1.5rem;
+    }
+
+    .answer-body span {
+        font-size: 1.2rem;
+    }
+
+    .quiz-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-container {
+        gap: 0.5rem;
+    }
+
+    .hp {
+        width: 48px;
+        height: 48px;
+    }
+
+    .question-number {
+        width: 240px;
+        height: 26px;
+        font-size: 1rem;
+    }
+
+    .question-text {
+        font-size: 1rem;
+        padding: 6px 12px;
+        min-height: 60px;
+    }
+
+    .option {
+        font-size: 1rem;
+        padding: 6px 16px;
+        min-height: 48px;
+    }
+
+    .options-container {
+        gap: 0.5rem;
+    }
+
+    .quiz-title {
+        font-size: 1rem;
+        padding: 2px 8px;
+    }
+
+    .quiz-footer {
+        font-size: 1.2rem;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .show-feedback-btn,
+    .skip-feedback-btn {
+        font-size: 1.2rem;
+        padding: 4px 12px;
+    }
+}
+
+@media (max-height: 650px) {
+    .quiz-container {
+        gap: 0.5rem;
+    }
+
+    .question-text {
+        min-height: 60px;
+        padding: 5px 15px;
+        font-size: clamp(1rem, 3vh, 1.5rem);
+    }
+
+    .option {
+        min-height: 45px;
+        padding: 5px 20px;
+        font-size: clamp(0.9rem, 2.5vh, 1.2rem);
+    }
+
+    .options-container {
+        gap: 0.5rem;
+    }
+
+    .question-number {
+        margin: 0.1rem 0;
+        height: 28px;
+    }
+}

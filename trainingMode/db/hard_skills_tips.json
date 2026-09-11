@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "title": "What Are Hard Skills?",
+        "description": "Hard skills are specific, teachable abilities or knowledge sets that are easily measurable. Examples include proficiency in a foreign language, coding in Java, accounting, or operating heavy machinery.",
+        "question": "Which of the following is considered a hard skill?",
+        "options": [
+            { "id": "a", "text": "Being a good listener." },
+            { "id": "b", "text": "Writing complex SQL queries." },
+            { "id": "c", "text": "Adapting quickly to new environments." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. SQL is a specific, technical skill that can be measured and tested, making it a hard skill."
+    },
+    {
+        "id": 2,
+        "title": "Quantify Your Hard Skills",
+        "description": "When describing your hard skills on a resume or in an interview, be specific. Instead of saying 'I know Excel', say 'I am highly proficient in Excel, specifically in writing complex macros and VLOOKUPs'.",
+        "question": "Which is the best way to describe a hard skill?",
+        "options": [
+            { "id": "a", "text": "I am good at using design software." },
+            { "id": "b", "text": "I have 4 years of professional experience using Adobe Photoshop and Illustrator to create marketing materials." },
+            { "id": "c", "text": "I can use computers very well." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. It quantifies the experience, names the specific tools, and explains how they were applied."
+    },
+    {
+        "id": 3,
+        "title": "Provide Proof",
+        "description": "Hard skills are best supported by evidence. Mention any relevant certifications, degrees, portfolios, or technical tests you have passed to validate your proficiency.",
+        "question": "How can you prove you have a specific hard skill?",
+        "options": [
+            { "id": "a", "text": "Just promise the interviewer that you are really good at it." },
+            { "id": "b", "text": "Reference a recognized certification you earned or share a link to your portfolio." },
+            { "id": "c", "text": "Tell them your mom thinks you're very smart." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. Certifications and portfolios provide objective evidence of your capabilities."
+    },
+    {
+        "id": 4,
+        "title": "Be Honest About Your Level",
+        "description": "Never lie or exaggerate about a technical skill. If you are tested on it and fail, it ruins your credibility. It is better to admit you are a beginner but eager to learn.",
+        "question": "What should you do if asked about a software tool you only used once?",
+        "options": [
+            { "id": "a", "text": "Say you are an expert and hope they don't test you." },
+            { "id": "b", "text": "Admit you have basic familiarity but express a strong willingness and ability to learn it quickly." },
+            { "id": "c", "text": "Pretend you didn't hear the question." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. Honesty builds trust, and showing a willingness to learn turns a weakness into a display of a positive attitude."
+    },
+    {
+        "id": 5,
+        "title": "Continuous Learning",
+        "description": "Technology and methodologies change rapidly. Showing that you actively keep your hard skills updated through courses, reading, or personal projects is highly attractive to employers.",
+        "question": "Why is it important to keep learning new hard skills?",
+        "options": [
+            { "id": "a", "text": "Because industries evolve and keeping your skills sharp ensures you remain competitive and valuable." },
+            { "id": "b", "text": "So you can brag about it to your friends." },
+            { "id": "c", "text": "It isn't. Once you learn something, you never need to update it." }
+        ],
+        "correctOption": "a",
+        "explanation": "Option A is correct. Continuous learning shows you are proactive and adaptable to industry changes."
+    }
+]

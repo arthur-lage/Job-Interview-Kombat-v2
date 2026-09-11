@@ -392,18 +392,34 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Render phases
         zonePhasesGrid.innerHTML = '';
         mode.subModes.forEach((sub, pIdx) => {
+            const isDev = sub.inDevelopment === true;
             const unlocked = isPhaseUnlocked(mode, pIdx);
             const complete = isPhaseComplete(mode, sub.id);
 
-            const phaseCard = document.createElement(unlocked ? 'a' : 'div');
-            phaseCard.className = `phase-card ${unlocked ? 'unlocked' : 'locked'} ${complete ? 'complete' : ''}`;
+            const isClickable = unlocked && !isDev;
 
-            if (unlocked) {
+            const phaseCard = document.createElement(isClickable ? 'a' : 'div');
+            phaseCard.className = `phase-card ${isClickable ? 'unlocked' : 'locked'} ${complete ? 'complete' : ''} ${isDev ? 'in-development' : ''}`;
+
+            if (isClickable) {
                 phaseCard.href = sub.link;
             }
 
-            const iconClass = unlocked ? (sub.icon_class || 'hn hn-gamepad-solid') : 'hn hn-lock';
-            const statusLabel = complete ? '<i class="hn hn-badge-check-solid"></i> COMPLETED' : (unlocked ? 'AVAILABLE' : '<i class="hn hn-lock"></i> LOCKED');
+            let iconClass;
+            if (isDev) iconClass = 'hn hn-wrench-solid';
+            else if (unlocked) iconClass = sub.icon_class || 'hn hn-gamepad-solid';
+            else iconClass = 'hn hn-lock';
+
+            let statusLabel;
+            if (isDev) statusLabel = '<i class="hn hn-wrench-solid"></i> IN DEV';
+            else if (complete) statusLabel = '<i class="hn hn-badge-check-solid"></i> COMPLETED';
+            else if (unlocked) statusLabel = 'AVAILABLE';
+            else statusLabel = '<i class="hn hn-lock"></i> LOCKED';
+            
+            let actionText;
+            if (isDev) actionText = 'Coming soon...';
+            else if (unlocked) actionText = 'START CHALLENGE ➔';
+            else actionText = 'Complete previous phase';
 
             phaseCard.innerHTML = `
                 <div class="phase-card-header">
@@ -416,7 +432,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     </div>
                     <div class="phase-card-text">
                         <span class="phase-card-title">${sub.name}</span>
-                        <span class="phase-card-action">${unlocked ? 'START CHALLENGE ➔' : 'Complete previous phase'}</span>
+                        <span class="phase-card-action">${actionText}</span>
                     </div>
                 </div>
             `;
