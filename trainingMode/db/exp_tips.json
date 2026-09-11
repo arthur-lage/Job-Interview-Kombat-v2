@@ -1,0 +1,132 @@
+[
+    {
+        "id": 1,
+        "title": "Use the STAR Method",
+        "description": "When describing your past experience, use the STAR method: Situation, Task, Action, Result. This structures your answer logically and ensures you highlight your specific contributions.",
+        "question": "What does the 'R' in the STAR method stand for?",
+        "options": [
+            { "id": "a", "text": "Reaction: How people felt about the project." },
+            { "id": "b", "text": "Result: The outcome and impact of your actions." },
+            { "id": "c", "text": "Reason: Why you were hired in the first place." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. The Result is the most crucial part because it proves the value you delivered."
+    },
+    {
+        "id": 2,
+        "title": "Focus on 'I', Not Just 'We'",
+        "description": "While teamwork is important, interviewers want to know what YOU specifically did. Instead of saying 'We built a feature', say 'I developed the backend for the feature while collaborating with the frontend team'.",
+        "question": "Which statement best highlights your individual contribution?",
+        "options": [
+            { "id": "a", "text": "Our team successfully launched the app." },
+            { "id": "b", "text": "We worked really hard on the database migration." },
+            { "id": "c", "text": "I led the database migration, which improved query speeds by 20%." }
+        ],
+        "correctOption": "c",
+        "explanation": "Option C clearly states what YOU did and the positive result it had, rather than hiding behind the team."
+    },
+    {
+        "id": 3,
+        "title": "Quantify Your Achievements",
+        "description": "Numbers speak louder than words. Whenever possible, use metrics, percentages, and dollar amounts to quantify your success. It provides concrete evidence of your skills.",
+        "question": "Which of these is the strongest way to describe an achievement?",
+        "options": [
+            { "id": "a", "text": "I made the website much faster." },
+            { "id": "b", "text": "I reduced page load time by 40%, increasing user retention by 15%." },
+            { "id": "c", "text": "I did a lot of performance optimization." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct because it uses specific numbers to demonstrate the exact impact of your work."
+    },
+    {
+        "id": 4,
+        "title": "Tailor to the Job Description",
+        "description": "Read the job description carefully and choose to highlight the experiences that directly map to the skills they are asking for. Ignore experiences that aren't relevant to the new role.",
+        "question": "If you are applying for a Frontend Developer role, what should you focus on?",
+        "options": [
+            { "id": "a", "text": "My extensive experience managing SQL databases." },
+            { "id": "b", "text": "My work building responsive UIs in React and optimizing web accessibility." },
+            { "id": "c", "text": "The time I spent as a customer service representative." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. It directly addresses the skills needed for a frontend position."
+    },
+    {
+        "id": 5,
+        "title": "Be Honest About Mistakes",
+        "description": "If asked about a time you failed, be honest but focus on the recovery. Explain what went wrong, take responsibility, and most importantly, describe what you learned and how you fixed it.",
+        "question": "How should you respond to a question about a past failure?",
+        "options": [
+            { "id": "a", "text": "Blame my coworkers; it wasn't really my fault." },
+            { "id": "b", "text": "Say I have never failed at anything." },
+            { "id": "c", "text": "Describe the mistake, explain how I corrected it, and share the lesson I learned." }
+        ],
+        "correctOption": "c",
+        "explanation": "Option C shows accountability, maturity, and a growth mindset."
+    },
+    {
+        "id": 6,
+        "title": "Show Progression",
+        "description": "When walking through your resume, emphasize how you've grown. Highlight promotions, increased responsibilities, or transitioning into more complex projects to show career momentum.",
+        "question": "What is a good way to show career progression?",
+        "options": [
+            { "id": "a", "text": "Explain how I started as a Junior and was promoted to Mid-level after leading a key project." },
+            { "id": "b", "text": "Just list the dates I worked at each company." },
+            { "id": "c", "text": "Complain that I never got promoted because my boss didn't like me." }
+        ],
+        "correctOption": "a",
+        "explanation": "Option A is correct. It shows growth, recognition, and an increase in capability over time."
+    },
+    {
+        "id": 7,
+        "title": "Don't Badmouth Former Employers",
+        "description": "Never speak negatively about a past manager, team, or company. It makes you look unprofessional and difficult to work with. Always frame your reasons for leaving positively.",
+        "question": "If asked why you left your last job, what should you say?",
+        "options": [
+            { "id": "a", "text": "My manager was terrible and the company was a mess." },
+            { "id": "b", "text": "I am looking for new challenges and an opportunity to grow in a more senior role." },
+            { "id": "c", "text": "I hated the work and wanted more money." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. It's positive, professional, and focuses on your future goals rather than past grievances."
+    },
+    {
+        "id": 8,
+        "title": "Use Action Verbs",
+        "description": "Start your sentences with strong action verbs (e.g., spearheaded, developed, optimized, managed) rather than passive phrases (e.g., 'was responsible for'). It makes your experience sound more impactful.",
+        "question": "Which sentence uses the strongest action verb?",
+        "options": [
+            { "id": "a", "text": "I was responsible for the marketing budget." },
+            { "id": "b", "text": "I had to do the marketing budget." },
+            { "id": "c", "text": "I managed and optimized a $50,000 marketing budget." }
+        ],
+        "correctOption": "c",
+        "explanation": "Option C is correct. 'Managed and optimized' are strong action verbs that convey leadership and capability."
+    },
+    {
+        "id": 9,
+        "title": "Keep Technical Details Accessible",
+        "description": "If you are speaking to an HR recruiter, avoid overly dense technical jargon. Explain your technical achievements in a way that anyone can understand the business value.",
+        "question": "How should you explain a technical achievement to a non-technical recruiter?",
+        "options": [
+            { "id": "a", "text": "I refactored the legacy monolith into microservices using Docker and Kubernetes to reduce latency." },
+            { "id": "b", "text": "I modernized our software architecture, which made our application run 30% faster for our users." },
+            { "id": "c", "text": "Use every acronym possible to sound smart." }
+        ],
+        "correctOption": "b",
+        "explanation": "Option B is correct. It translates the technical work into a clear business benefit (faster application for users)."
+    },
+    {
+        "id": 10,
+        "title": "Connect Experience to Their Problems",
+        "description": "The ultimate goal is to show how your past experience makes you the perfect person to solve the problems the company is facing right now. Connect the dots for them.",
+        "question": "What is the best way to conclude a story about your past experience?",
+        "options": [
+            { "id": "a", "text": "So that's what I did. Next question?" },
+            { "id": "b", "text": "I'm hoping to never have to do that kind of work again." },
+            { "id": "c", "text": "Because I successfully managed that migration, I am confident I can help your team handle the upcoming transition smoothly." }
+        ],
+        "correctOption": "c",
+        "explanation": "Option C is correct. It explicitly connects your past success to the company's current needs."
+    }
+]
