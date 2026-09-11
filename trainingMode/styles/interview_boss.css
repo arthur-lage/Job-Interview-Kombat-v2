@@ -1,0 +1,1319 @@
+/* ==========================================================================
+   THE INTERVIEW - FINAL BOSS STAGE STYLES
+   Job Interview Kombat v2
+   ========================================================================== */
+
+:root {
+    --bg-dark: #070913;
+    --boss-crimson: #ff1e56;
+    --boss-crimson-dark: #8b0021;
+    --boss-gold: #ffc837;
+    --player-cyan: #00f2fe;
+    --player-green: #00e676;
+    --player-blue: #4facfe;
+    --glass-bg: rgba(13, 17, 34, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --hud-glow: rgba(0, 242, 254, 0.3);
+    --boss-glow: rgba(255, 30, 86, 0.4);
+    --font-kombat: 'MortalKombat1Font', 'Impact', sans-serif;
+    --font-pixel: 'PixelOperatorFont', monospace, sans-serif;
+    --font-body: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.boss-fight-body {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-family: var(--font-body);
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+    user-select: none;
+}
+
+/* ==========================================================================
+   STAGE BACKGROUND & ATMOSPHERE
+   ========================================================================== */
+.boardroom-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    background: url('../assets/images/boss_boardroom.jpg') center/cover no-repeat, url('../assets/images/background.png') center/cover no-repeat;
+    background-color: #0b0f19;
+}
+
+.rain-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8, 12, 28, 0.7) 0%, rgba(5, 7, 18, 0.9) 100%);
+    pointer-events: none;
+}
+
+.vignette-overlay {
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 160px rgba(0, 0, 0, 0.95);
+    pointer-events: none;
+}
+
+.lightning-flash {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.08s ease;
+}
+
+.lightning-flash.flash {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   TOP COMBAT HUD (FIGHTING GAME LIFE BARS)
+   ========================================================================== */
+.boss-hud {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: linear-gradient(180deg, rgba(5, 8, 20, 0.96) 0%, rgba(5, 8, 20, 0.75) 85%, transparent 100%);
+    padding: 0.75rem 1.5rem 1rem 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr;
+    align-items: center;
+    gap: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.hud-back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.hud-back-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.08);
+    box-shadow: 0 0 12px var(--player-cyan);
+}
+
+.hud-back-btn img {
+    width: 22px;
+    height: 22px;
+}
+
+/* Meters */
+.fighter-meter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.meter-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.fighter-name {
+    font-family: var(--font-pixel);
+    font-size: 1.15rem;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+}
+
+.fighter-status {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: rgba(0, 230, 118, 0.2);
+    color: var(--player-green);
+    border: 1px solid rgba(0, 230, 118, 0.4);
+    text-transform: uppercase;
+}
+
+.fighter-status.boss-status {
+    background: rgba(255, 30, 86, 0.2);
+    color: var(--boss-crimson);
+    border-color: rgba(255, 30, 86, 0.4);
+}
+
+.name-status {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.name-status.right-align {
+    flex-direction: row-reverse;
+}
+
+.hp-numeric {
+    font-family: var(--font-kombat);
+    font-size: 1.3rem;
+    color: var(--boss-gold);
+    text-shadow: 0 0 8px rgba(255, 200, 55, 0.5);
+}
+
+/* Life Bar Tracks */
+.meter-bar-track {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background: #111422;
+    border: 2px solid #2a2f45;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.meter-bar-fill {
+    height: 100%;
+    transition: width 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    position: relative;
+    z-index: 2;
+}
+
+.player-fill {
+    background: linear-gradient(90deg, #00f2fe 0%, #00e676 100%);
+    box-shadow: 0 0 14px rgba(0, 242, 254, 0.8);
+}
+
+.boss-fill {
+    background: linear-gradient(270deg, #ff1e56 0%, #ff793f 100%);
+    box-shadow: 0 0 14px rgba(255, 30, 86, 0.8);
+    float: right;
+}
+
+.boss-subtext {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: right;
+}
+
+/* Momentum Bar */
+.momentum-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+}
+
+.momentum-label {
+    font-size: 0.65rem;
+    color: var(--boss-gold);
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.momentum-track {
+    flex: 1;
+    height: 6px;
+    background: #151829;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 200, 55, 0.3);
+    overflow: hidden;
+}
+
+.momentum-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ffc837, #ff8008);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px #ffc837;
+}
+
+/* Center Emblem */
+.hud-center-emblem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    min-width: 170px;
+}
+
+.fight-logo-badge {
+    text-align: center;
+}
+
+.badge-prefix {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--boss-crimson);
+    font-weight: 900;
+}
+
+.badge-title {
+    font-family: var(--font-kombat);
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--boss-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(255, 200, 55, 0.3);
+}
+
+.phase-display-badge {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.turn-timer-box {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(255, 30, 86, 0.2);
+    border: 1px solid var(--boss-crimson);
+    padding: 0.15rem 0.6rem;
+    border-radius: 6px;
+    font-family: var(--font-pixel);
+    font-size: 1.1rem;
+    color: #ffffff;
+    animation: pulseTimer 1s infinite alternate;
+}
+
+@keyframes pulseTimer {
+    from {
+        box-shadow: 0 0 4px var(--boss-crimson);
+        transform: scale(1);
+    }
+    to {
+        box-shadow: 0 0 14px var(--boss-crimson);
+        transform: scale(1.05);
+    }
+}
+
+/* ==========================================================================
+   MAIN ARENA STAGE
+   ========================================================================== */
+.boss-arena-stage {
+    max-width: 1200px;
+    margin: 1.25rem auto 2.5rem auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Boss Showcase Section */
+.boss-showcase {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.75rem;
+    align-items: center;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+}
+
+.boss-showcase::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--boss-crimson), var(--boss-gold), transparent);
+}
+
+.boss-avatar-frame {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    border-radius: 14px;
+    border: 3px solid rgba(255, 30, 86, 0.5);
+    background: radial-gradient(circle at center, #1b2038 0%, #0c0f1c 100%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 30, 86, 0.25);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.boss-sprite-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    image-rendering: pixelated;
+    padding: 0.5rem 0.5rem 2rem 0.5rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.boss-sprite-selector {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+}
+
+.sprite-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #cbd5e1;
+    font-family: var(--font-pixel);
+    font-size: 0.85rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sprite-btn:hover,
+.sprite-btn.active {
+    background: rgba(255, 200, 55, 0.2);
+    border-color: var(--boss-gold);
+    color: var(--boss-gold);
+    box-shadow: 0 0 8px rgba(255, 200, 55, 0.4);
+}
+
+.boss-sprite-img.shake {
+    animation: bossShake 0.45s cubic-bezier(.36, .07, .19, .97) both;
+    filter: brightness(1.5) drop-shadow(0 0 15px var(--boss-crimson));
+}
+
+@keyframes bossShake {
+    10%, 90% { transform: translate3d(-3px, 0, 0); }
+    20%, 80% { transform: translate3d(5px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+    40%, 60% { transform: translate3d(6px, 0, 0); }
+}
+
+.boss-floating-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(5, 7, 15, 0.95) 40%, #05070f 100%);
+    padding: 0.6rem 0.5rem 0.4rem 0.5rem;
+    text-align: center;
+}
+
+.boss-tag-title {
+    display: block;
+    font-family: var(--font-pixel);
+    font-size: 1.1rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.boss-tag-sub {
+    font-size: 0.65rem;
+    color: var(--boss-gold);
+    letter-spacing: 0.8px;
+}
+
+/* Boss Dialogue Card */
+.boss-dialogue-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.dialogue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 0.6rem;
+}
+
+.dialogue-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.live-pill {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--boss-crimson);
+    background: rgba(255, 30, 86, 0.15);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.curriculum-tag {
+    font-size: 0.75rem;
+    color: var(--player-cyan);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.round-counter-text {
+    font-family: var(--font-pixel);
+    font-size: 1.15rem;
+    color: var(--boss-gold);
+}
+
+.boss-quote-text {
+    font-size: 1.25rem;
+    line-height: 1.55;
+    color: #f0f4ff;
+    font-weight: 500;
+    font-style: italic;
+    position: relative;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--boss-gold);
+}
+
+.boss-reaction-bar {
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 200, 55, 0.3);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    display: flex;
+    gap: 0.5rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.reaction-speaker {
+    color: var(--boss-gold);
+    font-weight: 700;
+}
+
+.reaction-content {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   TACTICAL DECK SECTION (RESPONSE OPTIONS)
+   ========================================================================== */
+.tactical-deck-section {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.deck-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 0.75rem;
+}
+
+.deck-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #ffffff;
+}
+
+.deck-title-group i {
+    color: var(--player-cyan);
+    font-size: 1.2rem;
+}
+
+.deck-title-group h2 {
+    font-family: var(--font-pixel);
+    font-size: 1.35rem;
+    letter-spacing: 1px;
+}
+
+/* Power Move Button */
+.power-move-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #2a2215 0%, #3d2f10 100%);
+    border: 1px solid rgba(255, 200, 55, 0.4);
+    color: #c9aa60;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-family: var(--font-pixel);
+    font-size: 1rem;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+}
+
+.power-move-btn.ready {
+    background: linear-gradient(135deg, #ffc837 0%, #ff8008 100%);
+    color: #0b0f19;
+    border-color: #ffffff;
+    box-shadow: 0 0 18px rgba(255, 200, 55, 0.8);
+    cursor: pointer;
+    animation: pulseGlow 1.2s infinite alternate;
+}
+
+.power-move-btn.ready .power-ready-badge {
+    background: #000;
+    color: #ffc837;
+}
+
+.power-ready-badge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #aaa;
+}
+
+@keyframes pulseGlow {
+    from { transform: scale(1); box-shadow: 0 0 10px rgba(255, 200, 55, 0.6); }
+    to { transform: scale(1.04); box-shadow: 0 0 24px rgba(255, 200, 55, 1); }
+}
+
+/* Response Cards Grid */
+.response-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.response-card {
+    background: rgba(20, 26, 48, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.15rem 1.35rem;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.response-card:hover {
+    background: rgba(30, 40, 75, 0.9);
+    border-color: var(--player-cyan);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 242, 254, 0.25);
+}
+
+.response-card:active {
+    transform: translateY(0);
+}
+
+.response-card.selected-correct {
+    background: rgba(0, 230, 118, 0.18);
+    border-color: var(--player-green);
+    box-shadow: 0 0 22px rgba(0, 230, 118, 0.4);
+}
+
+.response-card.selected-wrong {
+    background: rgba(255, 30, 86, 0.2);
+    border-color: var(--boss-crimson);
+    box-shadow: 0 0 22px rgba(255, 30, 86, 0.4);
+}
+
+.response-card-badge {
+    display: inline-block;
+    font-family: var(--font-pixel);
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background: rgba(0, 242, 254, 0.15);
+    color: var(--player-cyan);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    margin-bottom: 0.6rem;
+}
+
+.response-card-text {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #e8ecf8;
+}
+
+/* ==========================================================================
+   MODAL OVERLAYS (FEEDBACK, PHASE SPLASH, VICTORY, DEFEAT)
+   ========================================================================== */
+.boss-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 7, 18, 0.88);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.boss-modal-overlay.active {
+    display: flex;
+    animation: fadeIn 0.25s ease;
+}
+
+.boss-modal-card {
+    background: #0e1326;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 18px;
+    max-width: 600px;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 242, 254, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    animation: popIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Feedback Card */
+.modal-header-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.modal-badge-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--player-green);
+}
+
+.modal-banner-title {
+    font-family: var(--font-kombat);
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+
+.damage-summary-box {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--boss-gold);
+}
+
+.damage-stat {
+    font-family: var(--font-pixel);
+    font-size: 1.25rem;
+    color: var(--boss-gold);
+}
+
+.feedback-pedagogy-box {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    padding: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feedback-pedagogy-box h3 {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    color: var(--player-cyan);
+}
+
+.feedback-pedagogy-box p {
+    font-size: 1rem;
+    line-height: 1.55;
+    color: #dce3f5;
+}
+
+/* Buttons */
+.boss-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.6rem;
+    font-family: var(--font-pixel);
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.boss-action-btn.primary,
+.boss-action-btn.next-turn-btn,
+.boss-action-btn.start-phase-btn {
+    background: linear-gradient(135deg, var(--boss-gold) 0%, #ff8008 100%);
+    color: #0b0f19;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 200, 55, 0.4);
+}
+
+.boss-action-btn.primary:hover,
+.boss-action-btn.next-turn-btn:hover,
+.boss-action-btn.start-phase-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 200, 55, 0.7);
+}
+
+.boss-action-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.boss-action-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-buttons-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.modal-buttons-row .boss-action-btn {
+    flex: 1;
+}
+
+/* Phase Splash Card */
+.phase-splash-card {
+    text-align: center;
+    align-items: center;
+    border-color: var(--boss-crimson);
+    box-shadow: 0 0 50px rgba(255, 30, 86, 0.35);
+}
+
+.splash-alert-icon {
+    font-size: 3rem;
+}
+
+.splash-phase-title {
+    font-family: var(--font-kombat);
+    font-size: 2.75rem;
+    color: var(--boss-crimson);
+    letter-spacing: 2px;
+}
+
+.splash-phase-sub {
+    font-family: var(--font-pixel);
+    font-size: 1.6rem;
+    color: var(--boss-gold);
+    letter-spacing: 1.5px;
+}
+
+.splash-phase-desc {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #d0d7ee;
+    margin: 0.5rem 0;
+}
+
+/* Victory Screen Card */
+.victory-card {
+    text-align: center;
+    border-color: var(--boss-gold);
+    box-shadow: 0 0 60px rgba(255, 200, 55, 0.45);
+}
+
+.victory-header-crown {
+    font-size: 3.5rem;
+    animation: bounceCrown 1.5s infinite;
+}
+
+@keyframes bounceCrown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.victory-kombat-title {
+    font-family: var(--font-kombat);
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--boss-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.victory-headline {
+    font-family: var(--font-pixel);
+    font-size: 1.4rem;
+    color: var(--player-green);
+    letter-spacing: 1px;
+}
+
+.victory-quote {
+    font-style: italic;
+    color: #ced6eb;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contract-showcase-box {
+    background: rgba(18, 23, 43, 0.95);
+    border: 2px dashed rgba(255, 200, 55, 0.6);
+    border-radius: 12px;
+    padding: 1.25rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0.5rem 0;
+}
+
+.contract-seal {
+    position: absolute;
+    top: -12px;
+    right: 16px;
+    background: var(--player-green);
+    color: #0b0f19;
+    font-family: var(--font-kombat);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    transform: rotate(5deg);
+    box-shadow: 0 2px 8px rgba(0, 230, 118, 0.6);
+}
+
+.contract-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 0.35rem;
+}
+
+.contract-label {
+    color: #8fa0c5;
+    font-weight: 600;
+}
+
+.contract-value {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Defeat Screen Card */
+.defeat-card {
+    text-align: center;
+    border-color: var(--boss-crimson);
+    box-shadow: 0 0 50px rgba(255, 30, 86, 0.4);
+}
+
+.defeat-header-icon {
+    font-size: 3.5rem;
+}
+
+.defeat-kombat-title {
+    font-family: var(--font-kombat);
+    font-size: 2.5rem;
+    color: var(--boss-crimson);
+    letter-spacing: 2px;
+}
+
+.defeat-headline {
+    font-family: var(--font-pixel);
+    font-size: 1.35rem;
+    color: #ff8080;
+}
+
+.defeat-quote {
+    font-style: italic;
+    color: #cfd6ea;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.defeat-stats-box {
+    background: rgba(255, 30, 86, 0.1);
+    border: 1px solid rgba(255, 30, 86, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Toast Banner */
+.combat-toast-banner {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: linear-gradient(135deg, var(--boss-gold) 0%, #ff8008 100%);
+    color: #0b0f19;
+    font-family: var(--font-pixel);
+    font-size: 1.25rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    box-shadow: 0 8px 24px rgba(255, 200, 55, 0.8);
+    z-index: 2000;
+    transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    pointer-events: none;
+}
+
+.combat-toast-banner.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Screen Shake Effect on Player Damage */
+body.shake-screen {
+    animation: screenShake 0.45s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes screenShake {
+    10%, 90% { transform: translate3d(-4px, 0, 0); }
+    20%, 80% { transform: translate3d(6px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-8px, 0, 0); }
+    40%, 60% { transform: translate3d(8px, 0, 0); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 900px) {
+    .boss-hud {
+        grid-template-columns: auto 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.75rem;
+    }
+
+    .hud-center-emblem {
+        grid-column: 1 / -1;
+        order: -1;
+        min-width: unset;
+    }
+
+    .boss-showcase {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .boss-avatar-frame {
+        width: 220px;
+        height: 220px;
+    }
+
+    .boss-quote-text {
+        padding-left: 0;
+        border-left: none;
+        border-top: 2px solid var(--boss-gold);
+        padding-top: 0.75rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .boss-hud {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .fighter-name {
+        font-size: 0.95rem;
+    }
+
+    .hp-numeric {
+        font-size: 1.1rem;
+    }
+
+    .boss-arena-stage {
+        padding: 0 0.75rem;
+    }
+
+    .tactical-deck-section {
+        padding: 1rem;
+    }
+
+    .deck-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .power-move-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   BOSS SELECTION ROSTER SCREEN
+   ========================================================================== */
+.hud-left-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.hud-switch-boss-btn {
+    background: rgba(255, 200, 55, 0.15);
+    border: 1px solid var(--boss-gold);
+    color: var(--boss-gold);
+    font-family: var(--font-pixel);
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.hud-switch-boss-btn:hover {
+    background: rgba(255, 200, 55, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 200, 55, 0.5);
+}
+
+.boss-select-card {
+    max-width: 1050px;
+    width: 95vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem 2.5rem;
+    border: 2px solid var(--boss-crimson);
+    box-shadow: 0 0 50px rgba(255, 30, 86, 0.35), 0 20px 40px rgba(0, 0, 0, 0.9);
+}
+
+.select-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.select-kombat-tag {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--boss-crimson);
+    font-weight: 900;
+}
+
+.select-title {
+    font-family: var(--font-kombat);
+    font-size: 2.3rem;
+    letter-spacing: 1.5px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--boss-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0.2rem 0;
+}
+
+.select-subtitle {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+.boss-roster-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.boss-roster-card {
+    background: rgba(18, 23, 43, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.85rem;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.boss-roster-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
+    transition: background 0.25s ease;
+}
+
+.boss-roster-card[data-boss="pm"]:hover {
+    border-color: #ffd166;
+    box-shadow: 0 10px 25px rgba(255, 209, 102, 0.3);
+    transform: translateY(-6px);
+}
+.boss-roster-card[data-boss="pm"]::before { background: #ffd166; }
+
+.boss-roster-card[data-boss="qa"]:hover {
+    border-color: #ff758f;
+    box-shadow: 0 10px 25px rgba(255, 117, 143, 0.3);
+    transform: translateY(-6px);
+}
+.boss-roster-card[data-boss="qa"]::before { background: #ff758f; }
+
+.boss-roster-card[data-boss="tech_lead"]:hover {
+    border-color: #4facfe;
+    box-shadow: 0 10px 25px rgba(79, 172, 254, 0.3);
+    transform: translateY(-6px);
+}
+.boss-roster-card[data-boss="tech_lead"]::before { background: #4facfe; }
+
+.roster-avatar-box {
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, #252b48 0%, #121528 100%);
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.roster-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    transition: transform 0.2s ease;
+}
+
+.boss-roster-card:hover .roster-avatar-img {
+    transform: scale(1.1);
+}
+
+.roster-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    width: 100%;
+}
+
+.roster-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.roster-badge.pm-badge { background: rgba(255, 209, 102, 0.2); color: #ffd166; border: 1px solid rgba(255, 209, 102, 0.4); }
+.roster-badge.qa-badge { background: rgba(255, 117, 143, 0.2); color: #ff758f; border: 1px solid rgba(255, 117, 143, 0.4); }
+.roster-badge.tech-badge { background: rgba(79, 172, 254, 0.2); color: #4facfe; border: 1px solid rgba(79, 172, 254, 0.4); }
+
+.roster-name {
+    font-family: var(--font-kombat);
+    font-size: 1.45rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.roster-title {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.roster-desc {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #cbd5e1;
+    margin: 0.4rem 0 0.8rem 0;
+    min-height: 52px;
+}
+
+.roster-select-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--boss-gold) 0%, #ff8008 100%);
+    border: none;
+    color: #0b0f19;
+    font-family: var(--font-pixel);
+    font-size: 1.05rem;
+    font-weight: 800;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(255, 200, 55, 0.35);
+}
+
+.roster-select-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 200, 55, 0.6);
+}
+
+.select-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 850px) {
+    .boss-roster-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .boss-roster-card {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+    }
+
+    .roster-avatar-box {
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+    }
+
+    .roster-info {
+        align-items: flex-start;
+    }
+
+    .roster-desc {
+        min-height: unset;
+    }
+}
+

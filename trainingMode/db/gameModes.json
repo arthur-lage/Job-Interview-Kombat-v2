@@ -254,6 +254,34 @@
                     "icon_class": "hn hn-comment-dots-solid"
                 }
             ]
+        },
+        {
+            "id": "final_interview",
+            "name": "THE INTERVIEW (BOSS)",
+            "icon_class": "hn hn-trophy-solid",
+            "icon_emoji": "👑",
+            "unlocked": true,
+            "description": "Face Mr. Sterling in the executive boardroom showdown. Synthesize every concept learned across all modules!",
+            "subModes": [
+                {
+                    "id": "boss_pm",
+                    "name": "PM BOSS (PRODUCT & BUSINESS)",
+                    "link": "interview_boss.html?boss=pm",
+                    "icon_class": "hn hn-management"
+                },
+                {
+                    "id": "boss_qa",
+                    "name": "QA BOSS (QUALITY & COMPLIANCE)",
+                    "link": "interview_boss.html?boss=qa",
+                    "icon_class": "hn hn-badge-check-solid"
+                },
+                {
+                    "id": "boss_tech_lead",
+                    "name": "TECH LEAD BOSS (SYSTEM ARCHITECT)",
+                    "link": "interview_boss.html?boss=tech_lead",
+                    "icon_class": "hn hn-programming"
+                }
+            ]
         }
     ]
 }

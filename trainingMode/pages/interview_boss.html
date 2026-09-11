@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE INTERVIEW - Final Boss Showdown | Job Interview Kombat</title>
+    <meta name="description"
+        content="Face Mr. Sterling, Managing Partner, in the ultimate Final Boss Job Interview. Test all your skills from every module in high-stakes combat.">
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/global.css">
+    <link rel="stylesheet" href="../../JobInterviewKombat/styles/fonts.css">
+    <link rel="stylesheet" href="../styles/interview_boss.css">
+    <link rel="icon" type="image/x-icon" href="../../JobInterviewKombat/assets/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackernoon/pixel-icon-library/fonts/iconfont.css">
+    <script defer src="../scripts/progress.js"></script>
+    <script defer src="../scripts/interview_boss.js"></script>
+</head>
+
+<body class="boss-fight-body">
+    <!-- Boardroom Arena Background -->
+    <div class="boardroom-bg" id="boardroom-bg">
+        <div class="rain-overlay"></div>
+        <div class="vignette-overlay"></div>
+        <div class="lightning-flash" id="lightning-flash"></div>
+    </div>
+
+    <!-- Top Combat HUD -->
+    <header class="boss-hud">
+        <div class="hud-left-actions">
+            <!-- Back Button -->
+            <a href="minimap.html" class="hud-back-btn" id="hud-back-btn" title="Exit to Map">
+                <img src="../../JobInterviewKombat/assets/images/arrow-back.png" alt="Back">
+            </a>
+            <!-- Switch Boss Button -->
+            <button type="button" class="hud-switch-boss-btn" id="hud-change-boss-btn" title="Choose Another Boss">
+                🔄 SWITCH BOSS
+            </button>
+        </div>
+
+        <!-- Player Life Bar -->
+        <div class="fighter-meter player-meter">
+            <div class="meter-info">
+                <div class="name-status">
+                    <span class="fighter-name">CANDIDATE</span>
+                    <span class="fighter-status" id="player-status-badge">COMPOSED</span>
+                </div>
+                <span class="hp-numeric" id="player-hp-text">100%</span>
+            </div>
+            <div class="meter-bar-track">
+                <div class="meter-bar-fill player-fill" id="player-hp-bar" style="width: 100%;"></div>
+                <div class="meter-bar-damage-trail" id="player-damage-trail"></div>
+            </div>
+            <div class="momentum-container" title="Momentum charges with great answers">
+                <div class="momentum-label">POWER MOVE MOMENTUM</div>
+                <div class="momentum-track">
+                    <div class="momentum-fill" id="momentum-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center Combat Emblem & Phase Timer -->
+        <div class="hud-center-emblem">
+            <div class="fight-logo-badge">
+                <span class="badge-prefix">FINAL BOSS</span>
+                <span class="badge-title">THE INTERVIEW</span>
+            </div>
+            <div class="phase-display-badge" id="phase-badge">
+                <span id="phase-badge-text">PHASE 1: THE PITCH</span>
+            </div>
+            <div class="turn-timer-box" id="turn-timer-box" style="display: none;">
+                <span class="timer-icon">⏱️</span>
+                <span class="timer-seconds" id="turn-timer-val">22s</span>
+            </div>
+        </div>
+
+        <!-- Boss Life Bar -->
+        <div class="fighter-meter boss-meter">
+            <div class="meter-info">
+                <span class="hp-numeric" id="boss-hp-text">100%</span>
+                <div class="name-status right-align">
+                    <span class="fighter-name" id="boss-display-name">MARCUS VANCE</span>
+                    <span class="fighter-status boss-status" id="boss-status-badge">SKEPTICAL</span>
+                </div>
+            </div>
+            <div class="meter-bar-track">
+                <div class="meter-bar-fill boss-fill" id="boss-hp-bar" style="width: 100%;"></div>
+                <div class="meter-bar-damage-trail" id="boss-damage-trail"></div>
+            </div>
+            <div class="boss-subtext" id="boss-subtext-title">EXECUTIVE RESOLVE / SKEPTICISM</div>
+        </div>
+    </header>
+
+    <!-- Main Combat Arena -->
+    <main class="boss-arena-stage">
+        <!-- Boss Presentation Box -->
+        <section class="boss-showcase" id="boss-showcase">
+            <div class="boss-avatar-wrapper">
+                <div class="boss-avatar-frame" id="boss-avatar-frame">
+                    <div class="boss-glow-aura" id="boss-glow-aura"></div>
+                    <img src="../../JobInterviewKombat/assets/images/jobs/pm-icon.png"
+                        alt="Mr. Sterling - The Executive Boss" class="boss-sprite-img" id="boss-sprite-img">
+                    <div class="boss-floating-tag">
+                        <span class="boss-tag-title" id="boss-tag-name">MARCUS VANCE</span>
+                        <span class="boss-tag-sub" id="boss-tag-sub">HEAD OF PRODUCT</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boss Speech Bubble -->
+            <div class="boss-dialogue-card" id="boss-dialogue-card">
+                <div class="dialogue-header">
+                    <div class="dialogue-meta">
+                        <span class="live-pill"><i class="hn hn-circle-solid"></i> QUESTION IN PROGRESS</span>
+                        <span class="curriculum-tag" id="curriculum-tag">MODULE: PRODUCT VISION</span>
+                    </div>
+                    <span class="round-counter-text" id="round-counter-text">ROUND 1 / 9</span>
+                </div>
+                <div class="dialogue-body">
+                    <p class="boss-quote-text" id="boss-quote-text">
+                        "I've reviewed twenty resumes today with identical buzzwords. Cut the fluff. In sixty seconds: Who are you, and what concrete value do you bring to our high-stakes engineering division?"
+                    </p>
+                </div>
+                <div class="boss-reaction-bar" id="boss-reaction-bar" style="display: none;">
+                    <span class="reaction-speaker">MR. STERLING:</span>
+                    <span class="reaction-content" id="boss-reaction-text">"Direct and quantified. Exactly what we need."</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Player Action Tactical Deck -->
+        <section class="tactical-deck-section">
+            <div class="deck-header">
+                <div class="deck-title-group">
+                    <i class="hn hn-shield-solid"></i>
+                    <h2>SELECT YOUR INTERVIEW RESPONSE</h2>
+                </div>
+                <!-- Special Move Button -->
+                <button class="power-move-btn" id="power-move-btn" disabled>
+                    <span class="power-icon">⚡</span>
+                    <span class="power-text">STRATEGIC COUNTER-QUESTION</span>
+                    <span class="power-ready-badge">LOCKED</span>
+                </button>
+            </div>
+
+            <!-- Response Options Cards -->
+            <div class="response-cards-grid" id="response-cards-grid">
+                <!-- Injected dynamically by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Boss Selection Screen Overlay -->
+    <div class="boss-modal-overlay active" id="boss-select-modal">
+        <div class="boss-modal-card boss-select-card">
+            <div class="select-header">
+                <span class="select-kombat-tag">CHOOSE YOUR CHALLENGER</span>
+                <h1 class="select-title">SELECT INTERVIEWER BOSS</h1>
+                <p class="select-subtitle">Each executive brings unique professional scrutiny, industry questions, and crisis protocols!</p>
+            </div>
+            
+            <div class="boss-roster-grid" id="boss-roster-grid">
+                <!-- PM BOSS CARD -->
+                <div class="boss-roster-card" data-boss="pm">
+                    <div class="roster-avatar-box">
+                        <img src="../../JobInterviewKombat/assets/images/jobs/pm-icon.png" alt="Marcus Vance" class="roster-avatar-img">
+                    </div>
+                    <div class="roster-info">
+                        <span class="roster-badge pm-badge">👔 PRODUCT & BUSINESS</span>
+                        <h2 class="roster-name">MARCUS VANCE</h2>
+                        <span class="roster-title">Head of Product & Partner</span>
+                        <p class="roster-desc">Tests Product Discovery, Business KPIs, Prioritization frameworks, and Cross-functional negotiation.</p>
+                        <button type="button" class="roster-select-btn" data-boss="pm">CHALLENGE BOSS ➔</button>
+                    </div>
+                </div>
+
+                <!-- QA BOSS CARD -->
+                <div class="boss-roster-card" data-boss="qa">
+                    <div class="roster-avatar-box">
+                        <img src="../../JobInterviewKombat/assets/images/jobs/qa-icon.png" alt="Valerie Stone" class="roster-avatar-img">
+                    </div>
+                    <div class="roster-info">
+                        <span class="roster-badge qa-badge">📋 QA & COMPLIANCE</span>
+                        <h2 class="roster-name">VALERIE STONE</h2>
+                        <span class="roster-title">Director of Quality & Compliance</span>
+                        <p class="roster-desc">Demands Test Pyramid rigor, RCA 5-Whys, Security CVE triage, and Zero-Defect governance.</p>
+                        <button type="button" class="roster-select-btn" data-boss="qa">CHALLENGE BOSS ➔</button>
+                    </div>
+                </div>
+
+                <!-- TECH LEAD BOSS CARD -->
+                <div class="boss-roster-card" data-boss="tech_lead">
+                    <div class="roster-avatar-box">
+                        <img src="../../JobInterviewKombat/assets/images/jobs/dev-icon.png" alt="Julian Thorne" class="roster-avatar-img">
+                    </div>
+                    <div class="roster-info">
+                        <span class="roster-badge tech-badge">💻 TECH LEAD & ARCHITECT</span>
+                        <h2 class="roster-name">JULIAN THORNE</h2>
+                        <span class="roster-title">VP of Engineering & Principal Architect</span>
+                        <p class="roster-desc">Scrutinizes Distributed Caching, Memory Leaks, DB Saturation, and Senior Staff Architecture.</p>
+                        <button type="button" class="roster-select-btn" data-boss="tech_lead">CHALLENGE BOSS ➔</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="select-footer">
+                <a href="minimap.html" class="boss-action-btn secondary">BACK TO WORLD MAP 🗺️</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Turn Feedback Modal Overlay -->
+    <div class="boss-modal-overlay" id="feedback-modal-overlay">
+        <div class="boss-modal-card feedback-card" id="feedback-card">
+            <div class="modal-header-banner" id="feedback-banner">
+                <span class="modal-badge-tag" id="feedback-badge-tag">EXCELLENT RESPONSE</span>
+                <h2 class="modal-banner-title" id="feedback-title">CRITICAL STRIKE!</h2>
+            </div>
+            <div class="modal-body-content">
+                <div class="damage-summary-box" id="damage-summary-box">
+                    <span class="damage-stat" id="damage-stat-text">💥 Boss Skepticism -34%</span>
+                </div>
+                <div class="feedback-pedagogy-box">
+                    <h3>EXECUTIVE DEBRIEF:</h3>
+                    <p id="feedback-explanation-text">
+                        Outstanding! A powerful executive pitch uses the 'Present-Past-Future' framework with hard numbers and clear business value.
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer-action">
+                <button class="boss-action-btn next-turn-btn" id="next-turn-btn">
+                    NEXT QUESTION <i class="hn hn-angle-right-solid"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phase Transition Splash Modal -->
+    <div class="boss-modal-overlay" id="phase-splash-overlay">
+        <div class="boss-modal-card phase-splash-card">
+            <div class="splash-alert-icon">⚠️</div>
+            <h1 class="splash-phase-title" id="splash-phase-title">PHASE 2</h1>
+            <h2 class="splash-phase-sub" id="splash-phase-sub">THE PRESSURE COOKER</h2>
+            <p class="splash-phase-desc" id="splash-phase-desc">
+                High-stakes War Room Crisis incoming! You have 22 seconds per question. Think fast, stay calm, and don't let your composure drop!
+            </p>
+            <button class="boss-action-btn start-phase-btn" id="start-phase-btn">
+                ENGAGE PHASE ➔
+            </button>
+        </div>
+    </div>
+
+    <!-- Victory Screen Modal Overlay -->
+    <div class="boss-modal-overlay" id="victory-modal-overlay">
+        <div class="boss-modal-card victory-card">
+            <div class="victory-header-crown">🏆</div>
+            <span class="victory-kombat-title">OFFER EXTENDED!</span>
+            <h2 class="victory-headline">FLAWLESS INTERVIEW!</h2>
+            <p class="victory-quote">
+                "Mr. Sterling nods with genuine respect and slides the signed executive offer contract across the boardroom table. You conquered every module of Job Interview Kombat!"
+            </p>
+
+            <div class="contract-showcase-box">
+                <div class="contract-seal">APPROVED</div>
+                <div class="contract-row">
+                    <span class="contract-label">CANDIDATE:</span>
+                    <span class="contract-value">LEAD ENGINEERING CANDIDATE</span>
+                </div>
+                <div class="contract-row">
+                    <span class="contract-label">COMPENSATION:</span>
+                    <span class="contract-value">$110,000 + EQUITY & BONUS</span>
+                </div>
+                <div class="contract-row">
+                    <span class="contract-label">FINAL SCORE:</span>
+                    <span class="contract-value" id="victory-final-score">1000 PTS</span>
+                </div>
+                <div class="contract-row">
+                    <span class="contract-label">COMPOSURE REMAINING:</span>
+                    <span class="contract-value" id="victory-final-hp">100%</span>
+                </div>
+            </div>
+
+            <div class="modal-buttons-row">
+                <button class="boss-action-btn primary" onclick="window.location.href='minimap.html'">
+                    RETURN TO MAP 🗺️
+                </button>
+                <button class="boss-action-btn secondary" id="victory-replay-btn">
+                    REPLAY BOSS ⚔️
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Defeat Screen Modal Overlay -->
+    <div class="boss-modal-overlay" id="defeat-modal-overlay">
+        <div class="boss-modal-card defeat-card">
+            <div class="defeat-header-icon">❌</div>
+            <span class="defeat-kombat-title">APPLICATION REJECTED</span>
+            <h2 class="defeat-headline">YOUR COMPOSURE BROKE!</h2>
+            <p class="defeat-quote" id="defeat-quote-text">
+                "Mr. Sterling closes his notebook with a cold sigh. 'You have potential, but under executive pressure your arguments lacked structure and confidence.'"
+            </p>
+
+            <div class="defeat-stats-box">
+                <p><strong>Boss Resolve Remaining:</strong> <span id="defeat-boss-hp">45%</span></p>
+                <p>Review previous modules to strengthen your STAR method, crisis triage, and salary negotiation skills!</p>
+            </div>
+
+            <div class="modal-buttons-row">
+                <button class="boss-action-btn primary" id="retry-boss-btn">
+                    TRY AGAIN 🔄
+                </button>
+                <button class="boss-action-btn secondary" onclick="window.location.href='minimap.html'">
+                    TRAIN IN MAP 🗺️
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sound & Combat Notification Pill -->
+    <div class="combat-toast-banner" id="combat-toast">
+        <span id="toast-text">MOMENTUM READY!</span>
+    </div>
+
+</body>
+
+</html>

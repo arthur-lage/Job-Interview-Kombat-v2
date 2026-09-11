@@ -14,7 +14,8 @@ const ICONS = {
     soft_skills: 'hn hn-handshake-solid',
     hard_skills: 'hn hn-programming',
     salary_negotiation: 'hn hn-dollar',
-    profile: 'hn hn-users-solid'
+    profile: 'hn hn-users-solid',
+    final_interview: 'hn hn-trophy-solid'
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -237,6 +238,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (idx === 3) order3Col = 6;
             if (idx === 4) order3Col = 5;
             if (idx === 5) order3Col = 4;
+            if (idx === 9) order3Col = 11; // Centered in Row 4
 
             // 2-column serpentine layout order
             let order2Col = idx + 1;
@@ -244,6 +246,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (idx === 3) order2Col = 3;
             if (idx === 6) order2Col = 8;
             if (idx === 7) order2Col = 7;
+            if (idx === 8) order2Col = 10;
+            if (idx === 9) order2Col = 9;
 
             // 1-column / horizontal layout order (linear)
             let order1Col = idx + 1;
@@ -251,6 +255,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             node.style.setProperty('--order-3col', order3Col);
             node.style.setProperty('--order-2col', order2Col);
             node.style.setProperty('--order-1col', order1Col);
+
+            if (mode.id === 'final_interview') {
+                node.classList.add('final-boss-node');
+            }
 
             if (unlocked) {
                 node.classList.add('unlocked');
@@ -265,9 +273,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
             // Optional or Complete Badge
-            const badgeHtml = mode.optional
-                ? `<span class="node-badge optional">TUTORIAL</span>`
-                : (isFullyComplete ? `<span class="node-badge complete"><i class="hn hn-badge-check-solid"></i> 100%</span>` : '');
+            let badgeHtml = '';
+            if (mode.id === 'final_interview') {
+                badgeHtml = isFullyComplete
+                    ? `<span class="node-badge boss-badge complete"><i class="hn hn-trophy-solid"></i> HIRED!</span>`
+                    : `<span class="node-badge boss-badge">👑 FINAL BOSS</span>`;
+            } else if (mode.optional) {
+                badgeHtml = `<span class="node-badge optional">TUTORIAL</span>`;
+            } else if (isFullyComplete) {
+                badgeHtml = `<span class="node-badge complete"><i class="hn hn-badge-check-solid"></i> 100%</span>`;
+            }
 
             node.innerHTML = `
                 ${badgeHtml}

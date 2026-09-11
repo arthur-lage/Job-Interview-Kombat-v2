@@ -1,0 +1,1063 @@
+{
+  "bosses": {
+    "pm": {
+      "id": "pm",
+      "name": "Marcus Vance",
+      "title": "Head of Product & Hiring Partner",
+      "company": "Apex Global Solutions",
+      "sprite": "../../JobInterviewKombat/assets/images/jobs/pm-icon.png",
+      "badge": "👔 PRODUCT & BUSINESS",
+      "focus": "Product Vision, Metrics, Prioritization & Stakeholders",
+      "phases": [
+        {
+          "phaseId": 1,
+          "title": "PHASE 1: PRODUCT STRATEGY & VISION",
+          "subtitle": "Elevator Pitch, User Empathy & Business Metrics",
+          "timed": false,
+          "timeLimit": 0,
+          "questions": [
+            {
+              "id": "pm_p1_q1",
+              "roundNumber": 1,
+              "bossPrompt": "We have 50 engineering applicants who can write code. As Head of Product, I need someone who understands product impact. How do you measure whether a feature you built was actually successful?",
+              "context": "Focus: Product Discovery & Business KPIs",
+              "options": [
+                {
+                  "badge": "DATA-DRIVEN PRODUCT THINKING",
+                  "text": "Code deployed is not success; business outcome is. I establish baseline telemetry before launch and track leading adoption metrics (activation rate, DAU/MAU) alongside lagging retention and revenue impact, iterating based on qualitative user feedback.",
+                  "isCorrect": true,
+                  "bossDamage": 34,
+                  "playerDamage": 0,
+                  "bossReaction": "Music to my ears. You focus on user outcomes, not just output.",
+                  "feedback": "Product managers love engineers who connect code delivery directly to business KPIs and user telemetry."
+                },
+                {
+                  "badge": "DEVELOPER SILO",
+                  "text": "Success means the code passes all unit tests, has zero compiler warnings, and was merged to the main branch on time. Measuring user behavior is marketing's job, not mine.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "If you don't care whether users actually find value in your software, you're building shelfware.",
+                  "feedback": "Modern tech companies require engineers with product sense who care about customer adoption."
+                },
+                {
+                  "badge": "VAGUE GUESSWORK",
+                  "text": "I usually ask my coworkers if they like the new UI and if nobody complains on Twitter, I consider it a successful feature release.",
+                  "isCorrect": false,
+                  "bossDamage": 5,
+                  "playerDamage": 25,
+                  "bossReaction": "Anecdotes are not product telemetry. We operate on data, not hunches.",
+                  "feedback": "Always define structured quantitative metrics (analytics, retention rates) rather than relying on gut feelings."
+                }
+              ]
+            },
+            {
+              "id": "pm_p1_q2",
+              "roundNumber": 2,
+              "bossPrompt": "Our sales team promises a major enterprise client a custom integration by next Friday to close a $500k deal, but it threatens to derail our current roadmap sprint. How do you handle this scope clash?",
+              "context": "Focus: Scope Management & Cross-Functional Negotiation",
+              "options": [
+                {
+                  "badge": "PRAGMATIC VALUE TRIAGE",
+                  "text": "I set up a fast alignment sync with Sales and Product. I investigate if we can ship a slimmed-down MVP hook by Friday using standard webhooks, while scheduling full integration for the next sprint, transparently showing the trade-off costs to our existing roadmap.",
+                  "isCorrect": true,
+                  "bossDamage": 33,
+                  "playerDamage": 0,
+                  "bossReaction": "A collaborative compromise that protects the $500k contract without blowing up engineering sanity.",
+                  "feedback": "Great PM collaboration: explore technical MVP compromises and communicate clear opportunity costs."
+                },
+                {
+                  "badge": "AGGRESSIVE REFUSAL",
+                  "text": "I tell Sales that they violated sprint rules and that developers refuse to be interrupted by salespeople who make unrealistic promises.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Sales brings the revenue that pays engineering salaries. An adversarial attitude destroys companies.",
+                  "feedback": "Never create hostile department warfare. Frame technical limitations as collaborative problem-solving."
+                },
+                {
+                  "badge": "UNSUSTAINABLE HEROICS",
+                  "text": "I'll just work 16 hours a day including the entire weekend with no sleep to cram both the client feature and our roadmap into production.",
+                  "isCorrect": false,
+                  "bossDamage": 5,
+                  "playerDamage": 30,
+                  "bossReaction": "Heroics cause burnout and sloppy production bugs. We need predictable sustainable delivery.",
+                  "feedback": "Sustainable pacing and transparent scoping are far more valuable than hero-syndrome burnout."
+                }
+              ]
+            },
+            {
+              "id": "pm_p1_q3",
+              "roundNumber": 3,
+              "bossPrompt": "When prioritizing our backlog, everyone claims their feature is 'P0 top priority'. How do you objectively help product managers prioritize engineering effort?",
+              "context": "Focus: Prioritization Frameworks (RICE / MoSCoW)",
+              "options": [
+                {
+                  "badge": "RICE FRAMEWORK MASTERY",
+                  "text": "I champion the RICE scoring model: Reach x Impact x Confidence divided by Effort. On the engineering side, I provide clear confidence intervals and effort estimates to help Product contrast high-leverage quick wins against low-ROI complex features.",
+                  "isCorrect": true,
+                  "bossDamage": 33,
+                  "playerDamage": 0,
+                  "bossReaction": "RICE scoring brings sanity to chaotic backlogs. You speak our exact PM language.",
+                  "feedback": "Using recognized prioritization frameworks (RICE, MoSCoW) shows seasoned cross-functional leadership."
+                },
+                {
+                  "badge": "HIPPO SUBMISSION",
+                  "text": "I just wait for the highest-paid executive in the company to tell us what they want, and we build whatever they say first.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 30,
+                  "bossReaction": "Building blindly based on the HiPPO (Highest Paid Person's Opinion) without data creates failed products.",
+                  "feedback": "Product leaders want engineers who respectfully challenge assumptions with user data and technical feasibility."
+                },
+                {
+                  "badge": "DEVELOPER PREFERENCE",
+                  "text": "I prioritize whatever feature uses the newest and coolest programming framework so the engineering team doesn't get bored.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "We are a commercial business solving user pain points, not a playground for tech fads.",
+                  "feedback": "Features must solve customer needs; technical tools should serve the business mission."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "phaseId": 2,
+          "title": "PHASE 2: PRODUCT CRISIS & LAUNCH PRESSURE",
+          "subtitle": "Feature Rollout Flaws, Retention Drop & War Room Triage",
+          "timed": true,
+          "timeLimit": 22,
+          "questions": [
+            {
+              "id": "pm_p2_q1",
+              "roundNumber": 4,
+              "bossPrompt": "ALERT: We just rolled out our redesigned onboarding flow. Customer drop-off at step 2 jumped from 8% to 46%! User reviews are plummeting. What is your immediate crisis action?",
+              "context": "Focus: Rapid Rollback & Telemetry Investigation (TIMED)",
+              "options": [
+                {
+                  "badge": "FEATURE-FLAG ROLLBACK",
+                  "text": "Immediate action: Flip the feature flag to roll back 100% of traffic to the legacy onboarding flow to halt churn. Concurrently, pull session recordings and frontend error logs at step 2 to isolate the UX blocker or validation bug before redeploying.",
+                  "isCorrect": true,
+                  "bossDamage": 35,
+                  "playerDamage": 0,
+                  "bossReaction": "Instant damage control with feature flags, followed by empirical investigation. Spot on.",
+                  "feedback": "Protect customer retention first using feature flags or rollbacks, then investigate the telemetry."
+                },
+                {
+                  "badge": "DENIAL & BLAME",
+                  "text": "Users just hate change. Let's wait a month and see if they get used to it before making any hasty decisions.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "A 46% drop-off is an existential hemorrhage! Waiting a month would destroy our quarterly revenue.",
+                  "feedback": "Never ignore alarming conversion drops; swift mitigation prevents irreversible customer churn."
+                },
+                {
+                  "badge": "UNTESTED HOTFIX",
+                  "text": "Let me quickly rewrite the step 2 form validation directly in the production environment without testing!",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Hasty untested production edits during a panic always create secondary disasters.",
+                  "feedback": "Always follow rollback discipline rather than hacking live code under stress."
+                }
+              ]
+            },
+            {
+              "id": "pm_p2_q2",
+              "roundNumber": 5,
+              "bossPrompt": "We have an A/B test running where Variant B improves conversion by 5% but increases backend server costs by 30%. How do you advise the executive team?",
+              "context": "Focus: Unit Economics & Net Lifetime Value (LTV)",
+              "options": [
+                {
+                  "badge": "UNIT ECONOMICS ANALYSIS",
+                  "text": "I calculate net customer lifetime value (LTV) versus incremental compute cost. If the 5% conversion uplift generates $100k in recurring gross margin and server overhead is only $8k, it's a net win. Then we optimize the backend in the next sprint to reduce compute cost.",
+                  "isCorrect": true,
+                  "bossDamage": 35,
+                  "playerDamage": 0,
+                  "bossReaction": "You calculated net contribution margin instead of looking at raw cost in a vacuum. Brilliant.",
+                  "feedback": "High-performing engineers evaluate technical trade-offs through the lens of business unit economics."
+                },
+                {
+                  "badge": "PURE COST PARALYSIS",
+                  "text": "Reject Variant B immediately. Any increase in server hosting cost is unacceptable for engineering.",
+                  "isCorrect": false,
+                  "bossDamage": 5,
+                  "playerDamage": 30,
+                  "bossReaction": "Penny-wise, pound-foolish. Rejecting $100k in revenue to save $8k in server cost is terrible business.",
+                  "feedback": "Never evaluate infrastructure costs in isolation from the revenue they generate."
+                },
+                {
+                  "badge": "BLIND CELEBRATION",
+                  "text": "Ship it immediately! Conversion is up so who cares about server bills? That's accounting's problem.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 30,
+                  "bossReaction": "Uncontrolled cloud spending without unit-margin tracking has bankrupted dozens of tech startups.",
+                  "feedback": "Always monitor margin erosion when scaling high-traffic features."
+                }
+              ]
+            },
+            {
+              "id": "pm_p2_q3",
+              "roundNumber": 6,
+              "bossPrompt": "Our team has been in analysis-paralysis for 3 weeks trying to design the 'perfect' recommendation algorithm. We've shipped zero customer value. How do you break this logjam?",
+              "context": "Focus: Lean MVP & Rapid Hypothesis Testing",
+              "options": [
+                {
+                  "badge": "LEAN MVP EXPERIMENTATION",
+                  "text": "I advocate for a Wizard of Oz or heuristic-based MVP: ship a simple rule-based recommendation engine in 3 days behind a 10% feature flag. Measure user click-through rate to validate demand before investing 3 months in complex machine learning models.",
+                  "isCorrect": true,
+                  "bossDamage": 35,
+                  "playerDamage": 0,
+                  "bossReaction": "Fast validation over academic over-engineering. You save us quarters of wasted R&D.",
+                  "feedback": "Validate customer desirability with simple prototypes before building complex architectures."
+                },
+                {
+                  "badge": "PERFECTIONIST STALLING",
+                  "text": "We should continue researching algorithms for another month until we achieve 99.9% theoretical mathematical perfection.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Perfection is the enemy of progress. While we deliberate, competitors capture our market share.",
+                  "feedback": "Speed to market and real user feedback beat theoretical perfection every time."
+                },
+                {
+                  "badge": "RANDOM IMPLEMENTATION",
+                  "text": "Just put random items on the screen and tell management that the AI algorithm is learning.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Deceiving leadership and degrading customer trust is a fireable offense.",
+                  "feedback": "Integrity and transparency are paramount in high-stakes engineering leadership."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "phaseId": 3,
+          "title": "PHASE 3: PM SALARY & ROADMAP NEGOTIATION",
+          "subtitle": "Strategic Alignment, Bonus Tiers & Value Defense",
+          "timed": false,
+          "timeLimit": 0,
+          "questions": [
+            {
+              "id": "pm_p3_q1",
+              "roundNumber": 7,
+              "bossPrompt": "You clearly understand product impact. But our hiring committee has budgeted $90k for this role. How do you justify our upper band of $115k from a product perspective?",
+              "context": "Focus: Commercial ROI Framing",
+              "options": [
+                {
+                  "badge": "PRODUCT ROI JUSTIFICATION",
+                  "text": "At $115k, you are hiring someone who bridges engineering and product. By reducing roadmap rework by 30% and optimizing feature time-to-market, I accelerate delivery of revenue milestones worth hundreds of thousands of dollars. The incremental $25k investment delivers a 10x ROI.",
+                  "isCorrect": true,
+                  "bossDamage": 40,
+                  "playerDamage": 0,
+                  "bossReaction": "You proved your salary is an investment generating positive return rather than a payroll overhead.",
+                  "feedback": "Tying your compensation to time-to-market and rework reduction gives hiring managers ironclad budget justification."
+                },
+                {
+                  "badge": "PASSIVE ACCEPTANCE",
+                  "text": "I guess $90k is okay. Product management is tough so whatever you offer is fine with me.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "If you negotiate this weakly for yourself, how will you defend our product deadlines with aggressive clients?",
+                  "feedback": "Failing to defend your value signals lack of conviction to executive interviewers."
+                },
+                {
+                  "badge": "PERSONAL ENTITLEMENT",
+                  "text": "I need $115k because I have a mortgage and I want to buy a new car this year.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Personal expenses are irrelevant to corporate compensation bands.",
+                  "feedback": "Always anchor on business value, market benchmarks, and ROI."
+                }
+              ]
+            },
+            {
+              "id": "pm_p3_q2",
+              "roundNumber": 8,
+              "bossPrompt": "If the board caps our base salary at $100k, what performance-based incentives would you structure to reach your target compensation?",
+              "context": "Focus: Milestone-Based Incentive Structuring",
+              "options": [
+                {
+                  "badge": "KPI-TIED BONUS PACKAGING",
+                  "text": "I am confident in my delivery: let's lock base at $100k and add an incentive bonus tied to measurable milestones — such as shipping our core v2 platform on schedule and meeting our quarterly 20% user retention goal, plus early stock option vesting.",
+                  "isCorrect": true,
+                  "bossDamage": 40,
+                  "playerDamage": 0,
+                  "bossReaction": "Skin in the game! You're willing to tie your upside directly to company success. The board loves that.",
+                  "feedback": "Offering milestone-tied bonuses demonstrates ultimate confidence in your own delivery capabilities."
+                },
+                {
+                  "badge": "ALL-OR-NOTHING THREAT",
+                  "text": "I refuse performance bonuses. Give me guaranteed cash upfront or I'm taking another offer.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Inflexibility when budgets are constrained terminates negotiations instantly.",
+                  "feedback": "Creative total-compensation structuring wins where rigid demands fail."
+                },
+                {
+                  "badge": "SKEPTICAL WITHDRAWAL",
+                  "text": "Performance bonuses are always scams and companies never pay them anyway.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Cynicism before you even start reveals poor trust and cultural incompatibility.",
+                  "feedback": "Frame bonus milestones objectively with transparent contractual KPIs instead of showing cynicism."
+                }
+              ]
+            },
+            {
+              "id": "pm_p3_q3",
+              "roundNumber": 9,
+              "bossPrompt": "Final question: What strategic question do you have for me regarding our product roadmap over the next 18 months?",
+              "context": "Focus: Executive Reverse Interview",
+              "options": [
+                {
+                  "badge": "STRATEGIC PRODUCT INQUIRY",
+                  "text": "'Marcus, as we scale into enterprise tiers: what is the single biggest bottleneck preventing the product team from doubling release velocity today — is it technical debt, market validation, or cross-team alignment?'",
+                  "isCorrect": true,
+                  "bossDamage": 50,
+                  "playerDamage": 0,
+                  "bossReaction": "Incredible question. It touches our exact pain point. Welcome to the team — you're hired!",
+                  "feedback": "A strategic reverse interview question proves you are already thinking like a senior leader on day one."
+                },
+                {
+                  "badge": "PERFUNCTORY QUERY",
+                  "text": "What are your standard office working hours and do we get free snacks in the break room?",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 30,
+                  "bossReaction": "Your closing question in a leadership interview is about free snacks? Disappointing.",
+                  "feedback": "Save administrative perks for HR; use your closing questions to exhibit executive foresight."
+                },
+                {
+                  "badge": "NO INITIATIVE",
+                  "text": "I have no questions. You explained everything well.",
+                  "isCorrect": false,
+                  "bossDamage": 5,
+                  "playerDamage": 25,
+                  "bossReaction": "No questions signals lack of strategic curiosity about our company's future.",
+                  "feedback": "Never finish an interview with 'no questions'."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "qa": {
+      "id": "qa",
+      "name": "Valerie Stone",
+      "title": "Director of Quality & Compliance",
+      "company": "Apex Global Solutions",
+      "sprite": "../../JobInterviewKombat/assets/images/jobs/qa-icon.png",
+      "badge": "📋 QA & COMPLIANCE",
+      "focus": "Test Automation, Zero-Defects, CI/CD & Incident RCA",
+      "phases": [
+        {
+          "phaseId": 1,
+          "title": "PHASE 1: THE QUALITY GATEWAY",
+          "subtitle": "Testing Philosophy, Test Pyramid & Edge Case Rigor",
+          "timed": false,
+          "timeLimit": 0,
+          "questions": [
+            {
+              "id": "qa_p1_q1",
+              "roundNumber": 1,
+              "bossPrompt": "Many developers think testing is just writing a few happy-path unit tests before rushing code to production. In my department, quality is an ironclad culture. What is your philosophy on the Testing Pyramid?",
+              "context": "Focus: Test Pyramid (Unit, Integration, E2E) & Flakiness",
+              "options": [
+                {
+                  "badge": "TEST PYRAMID MASTERY",
+                  "text": "A robust test strategy relies on a broad base of fast, isolated unit tests, a focused layer of integration tests for contracts and databases, and a lean suite of critical-path E2E tests. I actively isolate flaky tests to maintain CI pipeline trust and sub-10-minute build times.",
+                  "isCorrect": true,
+                  "bossDamage": 34,
+                  "playerDamage": 0,
+                  "bossReaction": "Precise, disciplined, and mindful of test execution speed. Exactly the standard I demand.",
+                  "feedback": "Understanding test execution speed, pyramid ratios, and zero-tolerance for flaky tests is essential for QA leaders."
+                },
+                {
+                  "badge": "ICE CREAM CONE ANTI-PATTERN",
+                  "text": "I don't write unit tests because they take too long. I just write 500 slow Cypress E2E tests that test everything through the browser on every commit.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "That's the infamous Ice Cream Cone anti-pattern! Your builds will take 3 hours and fail randomly.",
+                  "feedback": "Heavy E2E test suites with zero unit tests create brittle, slow, and expensive CI/CD pipelines."
+                },
+                {
+                  "badge": "BLIND RELIANCE",
+                  "text": "I just manually click around the app for 5 minutes after deploying. If nothing crashes, it's good enough.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Manual ad-hoc clicking is not quality assurance. That leads to catastrophic customer regressions.",
+                  "feedback": "Automated regression testing is mandatory in high-reliability enterprise systems."
+                }
+              ]
+            },
+            {
+              "id": "qa_p1_q2",
+              "roundNumber": 2,
+              "bossPrompt": "A critical bug slips into production that causes transaction values with commas to be truncated, losing $40k. How do you conduct the post-mortem and Root Cause Analysis (RCA)?",
+              "context": "Focus: Blameless Post-Mortem & 5 Whys Methodology",
+              "options": [
+                {
+                  "badge": "BLAMELESS 5 WHYS RCA",
+                  "text": "I lead a blameless post-mortem using the 5 Whys technique. We focus on systemic safeguards rather than individual fault: why didn't our locale-formatting tests catch comma separators? We introduce automated boundary-value regression tests and input validation schemas.",
+                  "isCorrect": true,
+                  "bossDamage": 33,
+                  "playerDamage": 0,
+                  "bossReaction": "Blameless analysis targeting root systemic causes instead of scapegoating. True quality leadership.",
+                  "feedback": "Blameless post-mortems and the 5 Whys method transform production incidents into long-term defensive resilience."
+                },
+                {
+                  "badge": "PUNITIVE WITCH HUNT",
+                  "text": "I look at git blame to find the developer who wrote the bug and demand they be formally reprimanded in front of the team.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Blame culture causes engineers to hide bugs and fear shipping code. That is deeply toxic.",
+                  "feedback": "Never punish individuals for systemic oversights; build automated safety nets that prevent human error."
+                },
+                {
+                  "badge": "SUPERFICIAL BRUSH-OFF",
+                  "text": "Just patch the comma with an if-statement and tell the client it was a rare cosmic ray glitch.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Deceptive and sloppy. Without boundary tests, the same flaw will resurface next week.",
+                  "feedback": "Quick patches without regression tests guarantee recurring defects."
+                }
+              ]
+            },
+            {
+              "id": "qa_p1_q3",
+              "roundNumber": 3,
+              "bossPrompt": "Engineering wants to bypass QA testing gates this Friday afternoon to push an emergency marketing feature. As QA lead, what do you do?",
+              "context": "Focus: Risk Assessment & Deployment Governance",
+              "options": [
+                {
+                  "badge": "GOVERNANCE & RISK MATRIX",
+                  "text": "I hold the line on Friday deploys. I assess the risk: if business stakes require Friday deployment, it must pass automated smoke and regression gates in staging, have a documented 5-minute rollback plan, and on-call engineering sign-off. Otherwise, we release Monday morning.",
+                  "isCorrect": true,
+                  "bossDamage": 33,
+                  "playerDamage": 0,
+                  "bossReaction": "Fierce guardianship of system stability paired with pragmatic risk management. Well done.",
+                  "feedback": "Senior QA leaders protect production stability while collaborating on risk-mitigated exception criteria."
+                },
+                {
+                  "badge": "TOTAL CAPITULATION",
+                  "text": "Sure, whatever they want. Marketing is important so I'll just disable the testing pipeline.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Disabling testing gates on Friday is inviting a weekend disaster. You failed your primary mandate.",
+                  "feedback": "QA exists to enforce standards, not rubber-stamp risky deployments."
+                },
+                {
+                  "badge": "BUREAUCRATIC OBSTRUCTION",
+                  "text": "I lock everyone out of GitHub and refuse to speak to anyone until Monday at 9 AM.",
+                  "isCorrect": false,
+                  "bossDamage": 5,
+                  "playerDamage": 30,
+                  "bossReaction": "Unilateral silent obstruction breeds hostility between engineering and quality.",
+                  "feedback": "Governance requires clear communication and risk analysis, not authoritarian stonewalling."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "phaseId": 2,
+          "title": "PHASE 2: ZERO-DAY SECURITY & REGRESSION CRISIS",
+          "subtitle": "Security CVE Breach, Flaky Suite & Hotfix Triage",
+          "timed": true,
+          "timeLimit": 22,
+          "questions": [
+            {
+              "id": "qa_p2_q1",
+              "roundNumber": 4,
+              "bossPrompt": "SECURITY EMERGENCY: A critical remote code execution vulnerability (CVE 9.8) is detected in one of our open-source dependencies in production. What is your immediate triage response?",
+              "context": "Focus: Dependency Patching & CI/CD Security Gates (TIMED)",
+              "options": [
+                {
+                  "badge": "ZERO-DAY INCIDENT TRIAGE",
+                  "text": "1. Verify exposure: check if vulnerable functions are reachable in our runtime code. 2. Lock dependency versions, test patched upstream library in staging via automated security regression suite. 3. Deploy hotfix with zero downtime and publish CVE verification report.",
+                  "isCorrect": true,
+                  "bossDamage": 35,
+                  "playerDamage": 0,
+                  "bossReaction": "Methodical, swift, and verifying reachability before blind panic. Elite security protocol.",
+                  "feedback": "In security CVEs, verify exploitability, test patched libraries against regression gates, and deploy deterministically."
+                },
+                {
+                  "badge": "PANIC REMOVAL",
+                  "text": "Delete the entire dependency from production immediately without checking if the backend still compiles!",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "You took down the entire platform for all users worldwide without verifying reachability.",
+                  "feedback": "Never blindly rip out dependencies without assessing blast radius and staging compilation."
+                },
+                {
+                  "badge": "INDIFFERENCE",
+                  "text": "Hackers probably won't notice our servers anyway, let's schedule this for next month's sprint.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 45,
+                  "bossReaction": "Automated botnets scan and exploit CVE 9.8 vulnerabilities within minutes. Unacceptable negligence.",
+                  "feedback": "Critical CVEs require immediate same-day mitigation."
+                }
+              ]
+            },
+            {
+              "id": "qa_p2_q2",
+              "roundNumber": 5,
+              "bossPrompt": "Our main CI test suite has become a nightmare: 18% of tests fail intermittently due to network timeouts and async race conditions. Developers are ignoring test failures. How do you fix this?",
+              "context": "Focus: Flaky Test Quarantine & Deterministic Mocking",
+              "options": [
+                {
+                  "badge": "TEST QUARANTINE & STABILIZATION",
+                  "text": "Flaky tests destroy testing culture. I immediately quarantine intermittent tests into a non-blocking diagnostic build to restore green-build trust on main. Then we refactor quarantined tests: replace real network calls with deterministic mocks and eliminate arbitrary sleep() timers.",
+                  "isCorrect": true,
+                  "bossDamage": 35,
+                  "playerDamage": 0,
+                  "bossReaction": "Quarantine the flakiness to restore pipeline confidence, then fix root async causes. Masterclass.",
+                  "feedback": "A flaky test is worse than no test. Quarantine flakiness immediately and replace race conditions with deterministic mocks."
+                },
+                {
+                  "badge": "RETRY HAMMER ANTI-PATTERN",
+                  "text": "Just add retry(5) to every test so it runs 5 times until it accidentally passes.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Retrying hides real race conditions, slows CI to a crawl, and guarantees production bugs.",
+                  "feedback": "Blind retries mask genuine concurrency bugs and inflate CI runtimes."
+                },
+                {
+                  "badge": "COMPLETE DELETION",
+                  "text": "Delete all tests that fail so the build is always green 100% of the time.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Deleting tests to get a fake green build is gross professional malpractice.",
+                  "feedback": "Green builds with no real assertions provide zero safety."
+                }
+              ]
+            },
+            {
+              "id": "qa_p2_q3",
+              "roundNumber": 6,
+              "bossPrompt": "We have 10,000 legacy manual test cases in spreadsheets and only 2 QA engineers. Releases take 3 weeks of manual regression. How do you transform this QA pipeline?",
+              "context": "Focus: Risk-Based Test Automation Strategy",
+              "options": [
+                {
+                  "badge": "RISK-BASED AUTOMATION ROADMAP",
+                  "text": "We cannot automate 10,000 tests at once. I conduct a risk matrix: identify the top 20% high-frequency, high-revenue user journeys (auth, checkout, billing) that account for 80% of business risk. We automate those into CI first, reducing regression cycle from 3 weeks to 2 hours.",
+                  "isCorrect": true,
+                  "bossDamage": 35,
+                  "playerDamage": 0,
+                  "bossReaction": "Applying the Pareto 80/20 principle to test automation. You just saved this company months of overhead.",
+                  "feedback": "Prioritizing high-risk core paths over exhaustive coverage delivers immediate ROI."
+                },
+                {
+                  "badge": "UNREALISTIC FULL AUTOMATION",
+                  "text": "Pause all company releases for 6 months while we try to write automated code for all 10,000 legacy spreadsheets.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "No commercial company can freeze revenue releases for half a year.",
+                  "feedback": "Incremental risk-based automation is the only viable real-world migration strategy."
+                },
+                {
+                  "badge": "OUTSOURCING CHAOS",
+                  "text": "Hire 50 cheap offshore clickers to manually test the spreadsheets day and night forever.",
+                  "isCorrect": false,
+                  "bossDamage": 5,
+                  "playerDamage": 30,
+                  "bossReaction": "Expensive, error-prone, and doesn't scale as our product expands.",
+                  "feedback": "Manual regression does not scale; automation is essential for CI/CD velocity."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "phaseId": 3,
+          "title": "PHASE 3: QA LEADERSHIP & SALARY NEGOTIATION",
+          "subtitle": "Quantifying Defect Prevention, Audit Compliance & Offer Close",
+          "timed": false,
+          "timeLimit": 0,
+          "questions": [
+            {
+              "id": "qa_p3_q1",
+              "roundNumber": 7,
+              "bossPrompt": "Companies often treat QA as a cost center rather than a revenue generator. We offered $92k base. Convince me why a Director of Quality deserves $115k.",
+              "context": "Focus: Cost of Poor Quality (COPQ) & Downtime Prevention",
+              "options": [
+                {
+                  "badge": "COPQ & RISK MITIGATION ROI",
+                  "text": "QA is not a cost center; it is insurance on corporate valuation. An hour of outage costs this company $60k in refunds and reputation damage. By implementing shift-left testing and automated compliance gates, I prevent multi-million dollar compliance fines and protect enterprise client SLA renewals.",
+                  "isCorrect": true,
+                  "bossDamage": 40,
+                  "playerDamage": 0,
+                  "bossReaction": "You framed Quality in terms of Cost of Poor Quality (COPQ) and SLA protection. Very persuasive.",
+                  "feedback": "Defending QA compensation by quantifying prevented downtime and SLA breach liabilities is the most effective executive strategy."
+                },
+                {
+                  "badge": "VICTIM MENTALITY",
+                  "text": "QA engineers always get paid less than backend developers and it's completely unfair and makes me sad.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Complaining about fairness without articulating business value shows lack of executive maturity.",
+                  "feedback": "Never use grievance-based arguments; justify pay through hard business impact and risk mitigation."
+                },
+                {
+                  "badge": "PASSIVE SURRENDER",
+                  "text": "If $92k is your standard budget, that's fine. I'll just do less automation work.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Admitting you will slack off if not paid top dollar eliminates you from consideration.",
+                  "feedback": "Threatening poor quality work is an immediate disqualifier."
+                }
+              ]
+            },
+            {
+              "id": "qa_p3_q2",
+              "roundNumber": 8,
+              "bossPrompt": "If base salary is capped at $100k by internal HR equity bands, how do you propose we structure performance bonuses around Quality metrics?",
+              "context": "Focus: Meaningful Quality KPIs (MTTR, Defect Escape Rate)",
+              "options": [
+                {
+                  "badge": "STRATEGIC QUALITY INCENTIVES",
+                  "text": "I welcome performance incentives tied to objective metrics: Defect Escape Rate below 0.2%, Mean Time to Detect & Resolve (MTTR) under 15 minutes, and 99.95% staging test suite reliability, coupled with an annual equity grant review.",
+                  "isCorrect": true,
+                  "bossDamage": 40,
+                  "playerDamage": 0,
+                  "bossReaction": "Tying incentives to Defect Escape Rate and MTTR aligns your wallet directly with corporate stability.",
+                  "feedback": "Using industry-standard reliability metrics (MTTR, Defect Escape Rate) proves senior domain mastery."
+                },
+                {
+                  "badge": "PERVERSE INCENTIVE TRAP",
+                  "text": "Pay me $50 for every individual bug I find in Jira!",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 45,
+                  "bossReaction": "Bounty per bug creates toxic perverse incentives where QA logs trivial spelling mistakes to inflate bonuses.",
+                  "feedback": "Paying per bug is a classic anti-pattern that encourages trivial bug logging and ruins engineering morale."
+                },
+                {
+                  "badge": "VAGUE REFUSAL",
+                  "text": "I don't believe in quality metrics because software testing cannot be measured.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "If you can't measure it, you can't manage it. Especially in quality assurance.",
+                  "feedback": "Executive QA roles must be grounded in measurable quality KPIs."
+                }
+              ]
+            },
+            {
+              "id": "qa_p3_q3",
+              "roundNumber": 9,
+              "bossPrompt": "What is your closing question for me as Director of Quality & Compliance?",
+              "context": "Focus: Quality Culture & Executive Sponsorship",
+              "options": [
+                {
+                  "badge": "EXECUTIVE QUALITY SPONSORSHIP",
+                  "text": "'Valerie, when push comes to shove between an aggressive marketing deadline and an unverified security gate: does executive leadership genuinely empower QA to halt deployment, or is QA expected to yield to business pressure?'",
+                  "isCorrect": true,
+                  "bossDamage": 50,
+                  "playerDamage": 0,
+                  "bossReaction": "The ultimate test of a company's engineering integrity. Yes, we empower QA. You have the job!",
+                  "feedback": "Asking whether leadership truly backs QA authority during crunch time is the pinnacle question for QA leaders."
+                },
+                {
+                  "badge": "TRIVIAL QUESTION",
+                  "text": "Do you use Jira or Trello, and do we have to fill out daily timesheets?",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 30,
+                  "bossReaction": "A low-level tactical question that misses the entire cultural picture.",
+                  "feedback": "Focus closing questions on culture, leadership empowerment, and vision."
+                },
+                {
+                  "badge": "NO QUESTIONS",
+                  "text": "Everything is crystal clear, no questions.",
+                  "isCorrect": false,
+                  "bossDamage": 5,
+                  "playerDamage": 25,
+                  "bossReaction": "A senior QA director without questions suggests a passive mindset.",
+                  "feedback": "Always ask penetrating questions about organizational quality standards."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "tech_lead": {
+      "id": "tech_lead",
+      "name": "Julian Thorne",
+      "title": "VP of Engineering & Principal Architect",
+      "company": "Apex Global Solutions",
+      "sprite": "../../JobInterviewKombat/assets/images/jobs/dev-icon.png",
+      "badge": "💻 TECH LEAD & ARCHITECT",
+      "focus": "System Architecture, Scalability, Concurrency & Trade-offs",
+      "phases": [
+        {
+          "phaseId": 1,
+          "title": "PHASE 1: ARCHITECTURAL FOUNDATIONS",
+          "subtitle": "Distributed Systems, System Design & Clean Abstractions",
+          "timed": false,
+          "timeLimit": 0,
+          "questions": [
+            {
+              "id": "tech_p1_q1",
+              "roundNumber": 1,
+              "bossPrompt": "Let's get straight to architectural rigor. Our core API handles 50,000 requests per second with high read-to-write ratios. How do you design a caching strategy that prevents cache stampede and stale data?",
+              "context": "Focus: Distributed Caching, Cache-Aside & Stampede Mitigation",
+              "options": [
+                {
+                  "badge": "SYSTEM DESIGN MASTERY",
+                  "text": "I implement a multi-tier Cache-Aside pattern using Redis with probabilistic early expiration (XFetch) or distributed mutex locks to prevent cache stampedes on hot keys. For stale data, we use event-driven cache invalidation via Kafka change-data-capture (CDC) rather than relying solely on arbitrary TTLs.",
+                  "isCorrect": true,
+                  "bossDamage": 34,
+                  "playerDamage": 0,
+                  "bossReaction": "Probabilistic early expiration and CDC invalidation. You know distributed systems at an elite level.",
+                  "feedback": "Demonstrating deep knowledge of cache stampede prevention (mutex/XFetch) and CDC invalidation shows senior architectural depth."
+                },
+                {
+                  "badge": "NAIVE IN-MEMORY CACHE",
+                  "text": "I'll just declare a global JavaScript object in memory and store every single database query in it with no eviction policy or expiry.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "That will crash our server with an out-of-memory heap leak within 20 minutes under production load.",
+                  "feedback": "Global unbounded memory caches without eviction policies cause fatal heap memory crashes."
+                },
+                {
+                  "badge": "CACHE-LESS RELIANCE",
+                  "text": "Caching is unnecessary. Just scale our PostgreSQL database to a bigger AWS machine every time traffic spikes.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Vertical scaling hits hard physical limits and bankrupts the company. Architecture requires horizontal design.",
+                  "feedback": "Vertical database scaling has severe cost and hardware concurrency limits."
+                }
+              ]
+            },
+            {
+              "id": "tech_p1_q2",
+              "roundNumber": 2,
+              "bossPrompt": "A junior engineer submits a 2,000-line Pull Request that works functionally, but tightly couples domain logic to third-party database drivers and contains no abstractions. How do you mentor and review this PR?",
+              "context": "Focus: Clean Architecture, Decoupling & Mentorship",
+              "options": [
+                {
+                  "badge": "CLEAN CODE MENTORSHIP",
+                  "text": "I don't just reject the PR. I schedule a 20-min pairing session. I explain the Dependency Inversion Principle (DIP) and Hexagonal Architecture: we define repository interfaces in the domain layer so the business logic remains decoupled. We break the 2,000-line PR into 3 incremental reviews.",
+                  "isCorrect": true,
+                  "bossDamage": 33,
+                  "playerDamage": 0,
+                  "bossReaction": "Empathetic leadership that upskills the junior engineer while rigorously safeguarding architectural integrity.",
+                  "feedback": "Great tech leads teach architectural principles (DIP, Ports & Adapters) while breaking huge PRs into reviewable chunks."
+                },
+                {
+                  "badge": "TOXIC GATEKEEPING",
+                  "text": "I leave a comment saying 'This is terrible code, delete it all and rewrite from scratch', close the PR, and ignore them.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Arrogant gatekeeping destroys psychological safety. A senior engineer must be a force multiplier, not a bully.",
+                  "feedback": "Hostile PR reviews demotivate team members and stifle collaborative learning."
+                },
+                {
+                  "badge": "LAZY RUBBER-STAMP",
+                  "text": "If the tests pass, I just click 'Merge' without reading the code because 2,000 lines is too much to read.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Rubber-stamping bad abstractions introduces technical debt that cripples the team for years.",
+                  "feedback": "Code review is the frontline defense for long-term codebase maintainability."
+                }
+              ]
+            },
+            {
+              "id": "tech_p1_q3",
+              "roundNumber": 3,
+              "bossPrompt": "Monolith vs Microservices: When would you actively argue AGAINST breaking our modular monolith into microservices?",
+              "context": "Focus: Pragmatic Architecture & Distributed Overhead",
+              "options": [
+                {
+                  "badge": "PRAGMATIC ARCHITECTURE",
+                  "text": "Microservices are an organizational scaling tool, not a performance silver bullet. If our domain boundaries are still shifting, our team is under 25 engineers, or network latency and distributed transactions (Saga pattern) outweigh our organizational scaling pain, I defend a clean modular monolith.",
+                  "isCorrect": true,
+                  "bossDamage": 33,
+                  "playerDamage": 0,
+                  "bossReaction": "Recognizing that microservices solve team communication overhead rather than code speed. Rare wisdom.",
+                  "feedback": "Understanding the operational taxes of distributed systems (networking, observability, distributed transactions) proves architectural maturity."
+                },
+                {
+                  "badge": "HYPE-DRIVEN RESUME DEVELOPMENT",
+                  "text": "Never. Everything must always be microservices with Kubernetes, service mesh, and 40 containers even for a 3-page CRUD app.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Resume-driven development. You'll spend 90% of your time debugging network meshes instead of delivering business value.",
+                  "feedback": "Over-engineering simple products with microservices kills startup velocity."
+                },
+                {
+                  "badge": "DOGMATIC MONOLITH",
+                  "text": "Microservices are a complete myth invented by consultants; nobody should ever split any codebase ever.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 30,
+                  "bossReaction": "Dogmatism in either direction is dangerous. Multi-thousand-person companies cannot deploy through a single repo.",
+                  "feedback": "Architecture is about context and trade-offs, never dogmatic absolutes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "phaseId": 2,
+          "title": "PHASE 2: INFRASTRUCTURE MELTDOWN",
+          "subtitle": "Database Deadlocks, OOM Heap Leaks & Incident Response",
+          "timed": true,
+          "timeLimit": 22,
+          "questions": [
+            {
+              "id": "tech_p2_q1",
+              "roundNumber": 4,
+              "bossPrompt": "CRITICAL INCIDENT: Our primary Postgres DB CPU is pegged at 100%. Connection pool is exhausted, queries are timing out, and write latency is spiking exponentially. What are your immediate 3 steps?",
+              "context": "Focus: Database Incident Triage & Connection Pool Starvation (TIMED)",
+              "options": [
+                {
+                  "badge": "SYSTEMIC DB TRIAGE",
+                  "text": "1. Query pg_stat_activity to identify long-running blocking transactions and kill delinquent unindexed queries immediately. 2. Enable read-replica traffic shedding for analytical queries. 3. Temporarily rate-limit non-essential background batch workers to restore connection headroom for checkout traffic.",
+                  "isCorrect": true,
+                  "bossDamage": 35,
+                  "playerDamage": 0,
+                  "bossReaction": "Killing blocking locks, routing reads to replicas, and shedding non-critical batch jobs. Calibrated and effective.",
+                  "feedback": "In database saturation, identify locking transactions, offload reads to replicas, and sheds non-critical load."
+                },
+                {
+                  "badge": "BLIND RESTART",
+                  "text": "Hard reboot the main production database server immediately without checking if active transactions will corrupt!",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 45,
+                  "bossReaction": "Hard rebooting under peak write volume risks database transaction log corruption and extended downtime.",
+                  "feedback": "Never hard-reboot saturated database nodes without checking WAL logs and lock states."
+                },
+                {
+                  "badge": "INFLATED POOLING",
+                  "text": "Just increase the max connection limit from 500 to 50,000 in config and restart the API servers.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Postgres uses process-per-connection. 50,000 connections will trigger kernel OOM killer instantly.",
+                  "feedback": "Increasing connection pools on saturated databases causes catastrophic context-switching breakdown."
+                }
+              ]
+            },
+            {
+              "id": "tech_p2_q2",
+              "roundNumber": 5,
+              "bossPrompt": "A critical payment microservice is intermittently dropping events under heavy traffic spikes. How do you guarantee at-least-once message processing without creating duplicate charges?",
+              "context": "Focus: Idempotency Keys & Transactional Outbox Pattern",
+              "options": [
+                {
+                  "badge": "TRANSACTIONAL OUTBOX & IDEMPOTENCY",
+                  "text": "We combine the Transactional Outbox pattern with strict Idempotency Keys. The payment event is written into an outbox table in the same atomic database transaction as the business entity. Downstream payment processors deduplicate via unique idempotency keys in Redis.",
+                  "isCorrect": true,
+                  "bossDamage": 35,
+                  "playerDamage": 0,
+                  "bossReaction": "Transactional Outbox + Idempotency keys. You just eliminated double-billing and data loss forever.",
+                  "feedback": "The Transactional Outbox pattern guarantees reliable event publishing, while Idempotency Keys prevent duplicate financial side-effects."
+                },
+                {
+                  "badge": "FIRE AND FORGET",
+                  "text": "Just fire an HTTP POST request in a background thread and don't check if it succeeded or returned an error.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Fire-and-forget financial calls result in dropped payments and furious customers.",
+                  "feedback": "Financial and state transactions require verifiable persistence and idempotency."
+                },
+                {
+                  "badge": "INFINITE RETRY",
+                  "text": "If a payment request fails, immediately retry sending the charge every 100 milliseconds forever.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 45,
+                  "bossReaction": "You will charge the customer's credit card 50 times in 5 seconds and trigger credit card fraud locks.",
+                  "feedback": "Retrying without idempotency leads to severe duplicate charges."
+                }
+              ]
+            },
+            {
+              "id": "tech_p2_q3",
+              "roundNumber": 6,
+              "bossPrompt": "A massive memory leak in our Node.js/Go backend causes pods to crash every 4 hours under heavy load. How do you systematically profile and locate the leak?",
+              "context": "Focus: Memory Profiling, Heap Dumps & Flame Graphs",
+              "options": [
+                {
+                  "badge": "HEAP PROFILING RIGOR",
+                  "text": "I capture isolated heap snapshots at 3 intervals (baseline, 50% memory, and right before OOM threshold) using pprof or v8-profiler in staging under synthetic load. I compare allocation retaining trees to identify unbounded event listeners, unclosed streams, or global cache leaks.",
+                  "isCorrect": true,
+                  "bossDamage": 35,
+                  "playerDamage": 0,
+                  "bossReaction": "Differential heap dump analysis and retaining tree inspection. That is true systems diagnosis.",
+                  "feedback": "Differential heap analysis with pprof/heap snapshots exposes retaining trees and memory retention root causes."
+                },
+                {
+                  "badge": "CRONBAND-AID",
+                  "text": "Just write a cron script that restarts the servers every 3 hours so they restart before they crash.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "Restarting cron jobs masks leaks, drops active user websockets, and solves zero root causes.",
+                  "feedback": "Automated restarts are temporary crutches, not engineering solutions."
+                },
+                {
+                  "badge": "GUESSWORK REFACTOR",
+                  "text": "Start randomly deleting code and rewriting functions until memory seems to go down.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Blind guessing without profiling telemetry wastes engineering cycles and introduces regressions.",
+                  "feedback": "Profile first with telemetry; never refactor blind."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "phaseId": 3,
+          "title": "PHASE 3: TECH LEAD SALARY & EQUITY NEGOTIATION",
+          "subtitle": "Architectural Valuation, Staff Bands & Long-Term Equity",
+          "timed": false,
+          "timeLimit": 0,
+          "questions": [
+            {
+              "id": "tech_p3_q1",
+              "roundNumber": 7,
+              "bossPrompt": "You have world-class technical chops. But our HR salary grid lists this Staff/Tech Lead level at $105k base. Convince me why I should fight the board to approve $130k base plus equity.",
+              "context": "Focus: Technical Force Multiplier ROI",
+              "options": [
+                {
+                  "badge": "FORCE MULTIPLIER VALUATION",
+                  "text": "A senior tech lead is not an individual contributor; I am a 10x engineering force multiplier. By designing resilient cloud architectures, I eliminate costly AWS over-provisioning (saving $80k/yr) and elevate the velocity and code quality of 12 squad engineers. The $25k differential is recovered in infrastructure savings alone.",
+                  "isCorrect": true,
+                  "bossDamage": 40,
+                  "playerDamage": 0,
+                  "bossReaction": "You proved your compensation pays for itself in direct cloud infrastructure savings and squad velocity.",
+                  "feedback": "Senior tech leads negotiate as force multipliers: quantify cloud savings, mentoring leverage, and prevented architectural blunders."
+                },
+                {
+                  "badge": "CONCEITED ARROGANCE",
+                  "text": "I am smarter than everyone currently working at this company, so paying me less than $130k is an insult to my genius.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 45,
+                  "bossReaction": "Arrogance destroys engineering culture. No amount of technical skill compensates for a toxic ego.",
+                  "feedback": "Humility and team empowerment are essential leadership traits; arrogance triggers immediate rejection."
+                },
+                {
+                  "badge": "WEAK SURRENDER",
+                  "text": "If $105k is the grid maximum, I understand. I won't push back.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 35,
+                  "bossReaction": "If you won't defend your architectural value, you won't defend our technical roadmap against budget cuts.",
+                  "feedback": "Back up your worth with concrete business leverage and technical savings."
+                }
+              ]
+            },
+            {
+              "id": "tech_p3_q2",
+              "roundNumber": 8,
+              "bossPrompt": "If the base salary is hard-capped at $115k due to corporate governance, how would you structure stock options, sign-on equity, or performance bonuses to bridge the gap?",
+              "context": "Focus: Equity Vesting & Accelerated Milestone Structuring",
+              "options": [
+                {
+                  "badge": "STRATEGIC EQUITY PACKAGING",
+                  "text": "I believe in this company's valuation upside: let's cap base at $115k and bridge the gap with an additional grant of stock options on a 4-year schedule with a 1-year cliff, plus a performance bonus tied to shipping our next-gen platform architecture by Q3.",
+                  "isCorrect": true,
+                  "bossDamage": 40,
+                  "playerDamage": 0,
+                  "bossReaction": "Long-term alignment through equity. You are thinking like an owner and engineering co-founder.",
+                  "feedback": "Equity packages align technical leaders with long-term enterprise valuation."
+                },
+                {
+                  "badge": "HOSTILE ULTIMATUM",
+                  "text": "Equity is fake monopoly money. Cash is all that matters. Give me cash or I'm signing with a competitor.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 40,
+                  "bossReaction": "Hostile ultimatums demonstrate lack of belief in the company's future.",
+                  "feedback": "Dismissing equity entirely signals you have no faith in the company's growth."
+                },
+                {
+                  "badge": "CONFUSED INDIFFERENCE",
+                  "text": "I don't know what stock options or vesting schedules are, so whatever you want to give me is fine.",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 30,
+                  "bossReaction": "A Tech Lead should understand corporate equity and cap tables.",
+                  "feedback": "Senior tech leaders must understand equity compensation and vesting schedules."
+                }
+              ]
+            },
+            {
+              "id": "tech_p3_q3",
+              "roundNumber": 9,
+              "bossPrompt": "Julian closes his notebook. 'Show me you're ready to lead our technical direction: What is your ultimate question for me as VP of Engineering?'",
+              "context": "Focus: Architectural Direction & Technical Debt Sovereignty",
+              "options": [
+                {
+                  "badge": "ARCHITECTURAL SOVEREIGNTY",
+                  "text": "'Julian, what is the executive committee's commitment to allocating engineering capacity for proactive technical debt refactoring versus rapid feature shipping — do we have a formal 20-30% capacity budget for system resilience?'",
+                  "isCorrect": true,
+                  "bossDamage": 50,
+                  "playerDamage": 0,
+                  "bossReaction": "The question of an experienced veteran who has lived through code debt nightmares. You have my full backing — welcome aboard!",
+                  "feedback": "Asking about technical debt budgets demonstrates that you build sustainable, long-lived enterprise software."
+                },
+                {
+                  "badge": "TRIVIAL HARDWARE",
+                  "text": "Do I get a MacBook Pro with M3 Max or do I have to use a Windows PC?",
+                  "isCorrect": false,
+                  "bossDamage": 0,
+                  "playerDamage": 30,
+                  "bossReaction": "Hardware preferences are administrative details, not architectural leadership inquiries.",
+                  "feedback": "Elevate your closing questions to architectural strategy, leadership culture, and technical governance."
+                },
+                {
+                  "badge": "ZERO CURIOSITY",
+                  "text": "I'm good, no questions from me.",
+                  "isCorrect": false,
+                  "bossDamage": 5,
+                  "playerDamage": 25,
+                  "bossReaction": "No questions signals lack of passion for our engineering roadmap.",
+                  "feedback": "Never skip the final question opportunity."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

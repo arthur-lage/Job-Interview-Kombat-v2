@@ -856,3 +856,41 @@ footer span {
         font-size: 1.4rem;
     }
 }
+
+/* ==========================================================================
+   FINAL BOSS NODE (WORLD MAP HIGHLIGHT)
+   ========================================================================== */
+.map-mode-node.final-boss-node .node-icon-wrapper {
+    background: radial-gradient(circle, #2a0820 0%, #110214 100%);
+    border: 3px solid #ff1e56;
+    box-shadow: 0 0 25px rgba(255, 30, 86, 0.6), 0 0 10px #ffc837;
+    animation: bossNodeGlow 2s infinite alternate;
+}
+
+.map-mode-node.final-boss-node .node-icon-wrapper i {
+    color: #ffc837;
+    filter: drop-shadow(0 0 8px rgba(255, 200, 55, 0.8));
+}
+
+.map-mode-node.final-boss-node .node-title {
+    color: #ffc837;
+    text-shadow: 0 0 10px rgba(255, 200, 55, 0.5), 2px 2px 0px #ff1e56;
+}
+
+.node-badge.boss-badge {
+    background: linear-gradient(135deg, #ff1e56, #ff8008);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 30, 86, 0.8);
+    border: 1px solid #ffc837;
+}
+
+@keyframes bossNodeGlow {
+    from {
+        box-shadow: 0 0 15px rgba(255, 30, 86, 0.5), 0 0 5px #ffc837;
+        transform: scale(1);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(255, 30, 86, 0.9), 0 0 15px #ffc837;
+        transform: scale(1.06);
+    }
+}
