@@ -133,17 +133,79 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 20px 28px;
+    padding: 16px 24px;
     border-bottom: 1px solid rgba(155, 69, 232, 0.25);
     background: rgba(255, 255, 255, 0.03);
     flex-shrink: 0;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .resume-header-title {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.resume-header-sub {
+    display: block;
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 2px;
+}
+
+.resume-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.resume-action-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(155, 69, 232, 0.4);
+    color: #e2d9f3;
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.resume-action-btn:hover {
+    background: rgba(155, 69, 232, 0.25);
+    border-color: #c864ff;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(155, 69, 232, 0.3);
+}
+
+.resume-action-btn.primary {
+    background: linear-gradient(135deg, #fdd201, #ff9100);
+    color: #12022b;
+    border: none;
+    font-weight: 800;
+    box-shadow: 0 2px 10px rgba(253, 210, 1, 0.3);
+}
+
+.resume-action-btn.primary:hover {
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: 0 4px 14px rgba(253, 210, 1, 0.5);
+}
+
+.resume-action-btn.danger {
+    background: rgba(255, 77, 109, 0.12);
+    border-color: rgba(255, 77, 109, 0.35);
+    color: #ff6b8b;
+}
+
+.resume-action-btn.danger:hover {
+    background: rgba(255, 77, 109, 0.25);
+    color: #ffffff;
 }
 
 .resume-icon-doc {
@@ -153,7 +215,7 @@
 
 .resume-modal-header h2 {
     font-family: 'MortalKombat1Font', monospace;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #fdd201;
     text-shadow: 2px 2px 0px #c93ed8;
     letter-spacing: 0.08em;
@@ -165,8 +227,8 @@
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: rgba(255, 255, 255, 0.7);
     border-radius: 8px;
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     font-size: 1.1rem;
     cursor: pointer;
     display: flex;
@@ -321,10 +383,15 @@
     justify-content: space-between;
     padding: 12px 18px;
     background: rgba(255, 255, 255, 0.04);
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
-.resume-section-header.locked-header {
-    background: rgba(0, 0, 0, 0.2);
+.resume-section-title-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .resume-section-title {
@@ -332,6 +399,28 @@
     font-size: 1.1rem;
     color: white;
     letter-spacing: 0.04em;
+}
+
+.resume-suggest-btn {
+    background: rgba(253, 210, 1, 0.12);
+    border: 1px solid rgba(253, 210, 1, 0.4);
+    color: #fdd201;
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 0.78rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.resume-suggest-btn:hover {
+    background: rgba(253, 210, 1, 0.25);
+    border-color: #fdd201;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(253, 210, 1, 0.3);
 }
 
 .resume-unlocked-badge {
@@ -348,12 +437,27 @@
 .resume-lock-badge {
     font-family: 'PixelOperatorFont', monospace;
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.4);
     letter-spacing: 0.04em;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 999px;
     padding: 2px 10px;
+}
+
+.resume-lock-badge.in-progress {
+    background: rgba(155, 69, 232, 0.15);
+    border-color: rgba(155, 69, 232, 0.35);
+    color: #d1c4e9;
+}
+
+.resume-auto-save-tag {
+    font-size: 0.75rem;
+    color: #41d57c;
+    background: rgba(65, 213, 124, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(65, 213, 124, 0.25);
 }
 
 /* Locked hint */
@@ -618,6 +722,26 @@
     word-break: break-word;
 }
 
+/* --- Interactive Editable Fields in Preview --- */
+
+.rdoc-field {
+    cursor: text;
+    border-radius: 3px;
+    padding: 1px 3px;
+    transition: outline 0.15s ease, background 0.15s ease;
+    display: inline;
+}
+
+.rdoc-field:hover {
+    outline: 1px dashed rgba(155, 69, 232, 0.6);
+    background: rgba(155, 69, 232, 0.05);
+}
+
+.rdoc-field:focus {
+    outline: 2px solid #9b45e8;
+    background: rgba(155, 69, 232, 0.12);
+}
+
 /* --- Placeholder: empty (unlocked but not filled) --- */
 
 .rdoc-ph {
@@ -626,7 +750,7 @@
     font-size: 0.75rem;
     font-style: italic;
     border-radius: 3px;
-    padding: 0 4px;
+    padding: 1px 4px;
     white-space: normal;
     word-break: break-word;
 }
@@ -635,19 +759,6 @@
     color: #9b45e8;
     background: rgba(155, 69, 232, 0.08);
     border: 1px dashed rgba(155, 69, 232, 0.4);
-}
-
-/* --- Placeholder: locked (topic not unlocked) --- */
-
-.rdoc-ph--locked {
-    color: rgba(28, 28, 46, 0.3);
-    background: repeating-linear-gradient(45deg,
-            rgba(28, 28, 46, 0.04),
-            rgba(28, 28, 46, 0.04) 3px,
-            rgba(28, 28, 46, 0.08) 3px,
-            rgba(28, 28, 46, 0.08) 6px);
-    border: 1px solid rgba(28, 28, 46, 0.15);
-    cursor: default;
 }
 
 @media (max-width: 768px) {
@@ -714,5 +825,153 @@
 
     .resume-modal-header h2 {
         font-size: 1.25rem;
+    }
+}
+
+/* ============================================================
+   TOAST NOTIFICATION
+   ============================================================ */
+
+.resume-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #2a104e;
+    color: #fdd201;
+    border: 2px solid #9b45e8;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'PixelOperatorFont', monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    z-index: 1000000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.resume-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================================
+   PRINT / PDF EXPORT STYLES (Direct & Ctrl+P Fallback)
+   ============================================================ */
+
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 12mm 15mm;
+    }
+
+    html,
+    body {
+        background: #ffffff !important;
+        color: #111827 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        display: block !important;
+    }
+
+    /* Hide everything on the page EXCEPT the resume overlay */
+    body > *:not(#resume-overlay) {
+        display: none !important;
+    }
+
+    #resume-overlay {
+        display: block !important;
+        position: static !important;
+        inset: auto !important;
+        background: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+    }
+
+    .resume-modal {
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+    }
+
+    .resume-modal-header,
+    .resume-progress-wrap,
+    .resume-form-panel,
+    .resume-modal-footer,
+    .resume-preview-label,
+    .resume-fab,
+    .resume-toast,
+    .bg-triangle-left,
+    .bg-triangle-right {
+        display: none !important;
+    }
+
+    .resume-modal-body {
+        display: block !important;
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .resume-preview-panel {
+        background: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        flex: none !important;
+        width: 100% !important;
+    }
+
+    .rdoc {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #ffffff !important;
+        color: #111827 !important;
+        font-size: 10pt !important;
+        line-height: 1.5 !important;
+        width: 100% !important;
+    }
+
+    .rdoc-section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin-bottom: 12px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .rdoc-ph,
+    .rdoc-ph--empty {
+        display: none !important;
+    }
+
+    .rdoc-field {
+        outline: none !important;
+        background: none !important;
+        color: inherit !important;
+        font-weight: inherit !important;
     }
 }
