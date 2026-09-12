@@ -118,3 +118,81 @@
     font-weight: 700;
     font-size: 1.8rem;
 }
+
+/* Actions Row (Confirm, Next, Feedback) */
+.fill-actions-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   RESPONSIVE FILL IN THE BLANKS
+   ========================================================================== */
+@media (max-width: 600px) {
+    .fill-in-text {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        padding: 1rem 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .blank-slot {
+        min-width: 85px;
+        height: 32px;
+        line-height: 32px;
+        margin: 0 0.3rem;
+        font-size: 1.1rem;
+    }
+
+    .word-bank {
+        gap: 0.6rem;
+        padding: 1rem;
+        min-height: 60px;
+    }
+
+    .word-chip {
+        font-size: 1.15rem;
+        padding: 0.5rem 0.9rem;
+    }
+
+    #question-title {
+        font-size: 1.4rem;
+    }
+
+    .fill-actions-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+
+    .fill-actions-row .lesson-done-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem 1.2rem;
+    }
+
+    #feedback-msg {
+        text-align: center;
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .blank-slot {
+        min-width: 68px;
+        font-size: 0.95rem;
+    }
+
+    .fill-in-text {
+        font-size: 1.05rem;
+        padding: 0.8rem;
+    }
+
+    .word-chip {
+        font-size: 1rem;
+        padding: 0.4rem 0.7rem;
+    }
+}

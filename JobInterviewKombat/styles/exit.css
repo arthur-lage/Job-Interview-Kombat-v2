@@ -271,3 +271,70 @@
     transform: translate(-50%, -50%); 
     z-index: 5;
 }
+
+/* ==========================================================================
+   RESPONSIVE EXIT OVERLAY
+   ========================================================================== */
+@media (max-width: 900px) {
+    .exit-overlay .bg-fundo,
+    .exit-overlay .bg-frente,
+    .exit .bg-frente,
+    .exit .bg-fundo,
+    .exit-overlay .bg-pixel {
+        width: 92vw;
+        max-width: 92vw;
+        height: 380px;
+    }
+
+    .txt-exit {
+        width: 90vw;
+        font-size: clamp(1.8rem, 5vw, 3rem);
+    }
+
+    .exit-overlay .q1,
+    .exit-overlay .q2 {
+        display: none;
+    }
+
+    .exit-overlay .faixa,
+    .exit .faixa {
+        width: min(350px, 80vw);
+        height: 80px;
+        top: 24%;
+    }
+
+    .faixa-texto {
+        font-size: 1.4rem;
+    }
+
+    .exit-btn {
+        width: 140px;
+        height: 55px;
+        bottom: 30px;
+    }
+
+    .nice-emoji,
+    .sad-emoji {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .exit-overlay .bg-fundo,
+    .exit-overlay .bg-frente,
+    .exit .bg-frente,
+    .exit .bg-fundo,
+    .exit-overlay .bg-pixel {
+        height: 320px;
+    }
+
+    .txt-exit {
+        font-size: 1.6rem;
+    }
+
+    .exit-btn {
+        width: 110px;
+        height: 46px;
+        bottom: 25px;
+    }
+}

@@ -152,7 +152,7 @@
   right: 0;
   width: 50vw;
   max-width: 900px;
-  min-width: 480px;
+  min-width: min(480px, 95vw);
   height: 100vh;
   z-index: 900;
   display: flex;
@@ -986,7 +986,8 @@ footer span {
   align-items: center;
   border-radius: 1.5rem;
   max-width: 950px;
-  min-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .credits .dialog-section-title {
@@ -996,7 +997,7 @@ footer span {
   background: url('../assets/images/options/background.png') center center no-repeat;
   background-size: contain;
   min-height: 60px;
-  width: 450px;
+  width: min(450px, 90vw);
   max-width: 100%;
   padding: 0.5rem 0;
   z-index: 1;
@@ -1029,6 +1030,7 @@ footer span {
   justify-content: center;
   align-items: flex-end;
   margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .credits-devs-list .dev {
@@ -1102,7 +1104,7 @@ footer span {
   background: url('../assets/images/options/background.png') center center no-repeat;
   background-size: contain;
   min-height: 60px;
-  min-width: 450px;
+  width: min(450px, 90vw);
   padding: 0.5rem 2.5rem;
   z-index: 1;
   border-radius: 0.7rem;
@@ -1126,11 +1128,9 @@ footer span {
   gap: 1.2rem;
   align-items: center;
   border-radius: 1.5rem;
-  /* box-shadow: 0 0 1.5rem #b14dd0; */
   max-width: 950px;
-  min-width: 800px;
-  /* margin: 1.5rem auto 0 auto; */
-  /* border: 3px solid #b14dd0; */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .options-music,
@@ -1382,6 +1382,29 @@ footer span {
 }
 
 
+@media (max-width: 900px) {
+  .choose-job-row-top .choose-job-card:empty {
+    display: none;
+  }
+
+  .choose-job-row-top,
+  .choose-job-row-bottom {
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    gap: 1.5rem;
+  }
+
+  .choose-job-row-top .choose-job-card,
+  .choose-job-row-bottom .choose-job-card {
+    width: 140px;
+    height: 180px;
+  }
+
+  .choose-job-title {
+    font-size: 2.3rem;
+  }
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 3rem;
@@ -1401,36 +1424,172 @@ footer span {
     bottom: .5rem;
     width: 100px;
   }
+
+  /* Modals & Dialogs on Tablet */
+  .dialog-box {
+    padding: 1.5rem 1.5rem;
+    width: 94vw;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .quadradinhos-1,
+  .quadradinhos-2,
+  .gatinho {
+    display: none;
+  }
+
+  .credits-devs-list {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .choose-job-screen {
+    overflow-y: auto;
+    justify-content: flex-start;
+    padding: 1rem 0 3rem 0;
+  }
+
+  .choose-job-content {
+    min-height: auto;
+    width: 100vw;
+    padding-bottom: 2rem;
+  }
+
+  .choose-job-title {
+    font-size: 1.7rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .choose-job-row-top,
+  .choose-job-row-bottom {
+    grid-template-columns: repeat(2, 1fr);
+    width: 95%;
+    gap: 1rem;
+  }
+
+  .choose-job-row-top .choose-job-card,
+  .choose-job-row-bottom .choose-job-card {
+    width: 130px;
+    height: 160px;
+    border-radius: 16px;
+  }
+
+  .choose-job-card .choose-job-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .choose-job-name {
+    font-size: 1.1rem;
+  }
+
+  .choose-job-bg-copas,
+  .choose-job-bg-espadas,
+  .choose-job-bg-ouros,
+  .choose-job-bg-paus {
+    display: none;
+  }
+
+  .choose-job-bg-triangle-left,
+  .choose-job-bg-triangle-right {
+    opacity: 0.15;
+    width: 100px;
+  }
+
+  /* Job Sidebar Fullscreen on Mobile */
+  .job-modal-sidebar {
+    width: 100vw;
+    min-width: 100vw;
+  }
+
+  .job-modal-content {
+    width: 100%;
+    padding: 1.2rem;
+    box-sizing: border-box;
+  }
+
+  .job-modal-header {
+    margin-top: 1rem;
+  }
+
+  .job-modal-title {
+    font-size: 2rem;
+  }
+
+  .dialog-box {
+    padding: 1.2rem 1rem;
+    width: 96vw;
+  }
+
+  .dialog-close {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .credits-devs-list {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  .credits .dialog-section-title,
+  .options .dialog-section-title {
+    font-size: 1.8rem;
+    width: 100%;
+    padding: 0.4rem 0;
+  }
+
+  .options-music-controls,
+  .options-fullscreen-controls {
+    gap: 1.2rem;
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 500px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .logo {
-    width: 8rem;
+    width: 7.5rem;
   }
 
   .menu-options {
     gap: 0.75rem;
-    margin-top: 2.5rem;
-    width: 320px;
+    margin-top: 2rem;
+    width: 90vw;
+    max-width: 320px;
   }
 
   .menu-options .option {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .tutorial {
     left: .5rem;
     bottom: .5rem;
-    width: 100px;
+    width: 80px;
   }
 }
 
 @media (max-width: 360px) {
   .title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .menu-options .option {
+    font-size: 1.4rem;
+  }
+
+  .choose-job-row-top .choose-job-card,
+  .choose-job-row-bottom .choose-job-card {
+    width: 115px;
+    height: 145px;
   }
 }

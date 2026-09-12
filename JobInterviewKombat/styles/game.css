@@ -1406,16 +1406,17 @@ body {
 
 #questions-container p {
   display: inline-flex;
-  padding: 30px 50px;
-  min-width: 400px;
+  padding: 24px 35px;
+  width: min(94vw, 750px);
+  min-width: unset;
   max-width: 90vw;
   font-family: MortalKombat1Font;
   text-transform: uppercase;
-  min-height: 150px;
+  min-height: 120px;
   max-height: 300px;
   overflow: hidden;
   /* evita texto estourar */
-  font-size: clamp(1.4rem, 2vw, 2.6rem);
+  font-size: clamp(1.2rem, 2.2vw, 2.6rem);
   line-height: 1.4;
   text-align: center;
   background: url('../assets/images/game/small_question.png') center center no-repeat;
@@ -1423,7 +1424,7 @@ body {
   color: #2a1747;
   text-shadow: 2px 2px 0 #ca2bff89;
   image-rendering: pixelated;
-  margin: 40px auto;
+  margin: 30px auto;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
@@ -1850,4 +1851,116 @@ body {
 .tutorial-overlay.active {
   opacity: 1;
   pointer-events: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE GAMEPLAY & TUTORIAL (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 768px) {
+  body {
+    padding: 16px 12px;
+  }
+
+  .teams {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .team {
+    width: 42%;
+    max-width: 160px;
+  }
+
+  .team-label {
+    font-size: 11px;
+    padding: 6px;
+  }
+
+  .health-bar {
+    height: 18px;
+  }
+
+  .vs {
+    font-size: 20px;
+  }
+
+  #questions-container p {
+    padding: 18px 24px;
+    font-size: clamp(1rem, 3.5vw, 1.8rem);
+    min-height: 100px;
+    margin: 20px auto;
+  }
+
+  .announcement {
+    font-size: 20px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+  }
+
+  .timer-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 18px;
+    margin: 15px auto;
+  }
+
+  .timer-circle span {
+    font-size: 18px;
+  }
+
+  .choose-job-bg-copas,
+  .choose-job-bg-espadas,
+  .choose-job-bg-ouros,
+  .choose-job-bg-paus {
+    width: 70px;
+    height: 70px;
+    opacity: 0.35;
+  }
+
+  /* Tutorial Bubbles Mobile Adaptation */
+  .tutorial-frase-1,
+  .tutorial-frase-2,
+  .tutorial-frase-3,
+  .tutorial-frase-4,
+  .tutorial-frase-5,
+  .tutorial-frase-6,
+  .tutorial-frase-7,
+  .tutorial-frase-8 {
+    width: min(90vw, 420px) !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    top: 15vh !important;
+    bottom: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px 8px;
+  }
+
+  #job-title {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .team-score {
+    width: 48%;
+  }
+
+  .team-name {
+    font-size: 13px;
+  }
+
+  #skip-thinking-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .winner {
+    font-size: 18px;
+  }
 }

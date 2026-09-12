@@ -311,3 +311,110 @@
     display: block;
     margin: 0 auto;
 }
+
+/* ==========================================================================
+   RESPONSIVE VICTORY OVERLAY
+   ========================================================================== */
+@media (max-width: 768px) {
+    .faixa {
+        width: min(90vw, 500px);
+        height: 120px;
+        bottom: 12%;
+    }
+
+    .elements .coroa {
+        width: min(85vw, 420px);
+        height: 220px;
+        bottom: 18%;
+    }
+
+    .logo-opaca {
+        width: 90vw;
+        height: auto;
+        max-width: 400px;
+    }
+
+    .estrelas {
+        gap: 120px;
+        bottom: 22%;
+    }
+
+    .estrela-direita,
+    .estrela-esquerda {
+        width: 140px;
+        height: 140px;
+    }
+
+    .naipes {
+        column-gap: 45vw;
+        row-gap: 30vw;
+    }
+
+    .copasGolden,
+    .espadasGolden,
+    .ourosGolden,
+    .pausGolden {
+        width: 90px;
+        height: 90px;
+    }
+
+    .flying-text {
+        width: 220px;
+        height: 60px;
+        right: 5%;
+        bottom: 25%;
+    }
+
+    .restart-btn {
+        width: 220px;
+        height: 100px;
+        bottom: 2%;
+    }
+
+    .winTeam {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .faixa {
+        width: 92vw;
+        height: 90px;
+        bottom: 14%;
+    }
+
+    .elements .coroa {
+        width: 80vw;
+        height: 160px;
+        bottom: 20%;
+    }
+
+    .estrelas {
+        gap: 60px;
+        bottom: 24%;
+    }
+
+    .estrela-direita,
+    .estrela-esquerda {
+        width: 90px;
+        height: 90px;
+    }
+
+    .copasGolden,
+    .espadasGolden,
+    .ourosGolden,
+    .pausGolden {
+        width: 60px;
+        height: 60px;
+    }
+
+    .restart-btn {
+        width: 170px;
+        height: 80px;
+    }
+
+    .flying-text {
+        width: 160px;
+        height: 45px;
+    }
+}

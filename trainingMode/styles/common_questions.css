@@ -258,16 +258,54 @@ span:has(> #how-to-answer) {
 /* -------------------------------------------------- */
 
 @media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
     .card-viewer {
         padding: 1.8rem 1.4rem;
         width: 95%;
     }
 
     #common-question {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .mini-quiz h4 {
         font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1rem 0.8rem;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+        margin-left: 20px;
+    }
+
+    .page-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .card-viewer {
+        padding: 1.4rem 1rem;
+    }
+
+    #common-question {
+        font-size: 1.4rem;
+    }
+
+    .mini-quiz-option {
+        font-size: 1.1rem;
+        padding: 0.8rem 2.2rem 0.8rem 0.8rem;
+    }
+
+    .lesson-done-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem 1.2rem;
     }
 }

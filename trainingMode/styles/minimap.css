@@ -847,13 +847,26 @@ footer span {
 }
 
 @media (max-width: 600px) {
+    header {
+        padding: 1rem 1rem 0.4rem;
+    }
+
     header h1 {
         font-size: 1.8rem;
     }
 
     header #back-btn {
-        left: 1rem;
-        top: 1.2rem;
+        left: 0.8rem;
+        top: 1rem;
+    }
+
+    header #back-btn img {
+        width: 36px;
+    }
+
+    .bg-triangle-left,
+    .bg-triangle-right {
+        display: none;
     }
 
     .overall-progress-bar-container {
@@ -879,6 +892,8 @@ footer span {
 
     .zone-modal-card {
         padding: 1.2rem;
+        width: 94vw;
+        max-width: 94vw;
     }
 
     .zone-title {
@@ -887,6 +902,10 @@ footer span {
 }
 
 @media (max-width: 360px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
     .zone-title {
         font-size: 1.1rem;
     }

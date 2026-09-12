@@ -9,10 +9,11 @@
 }
 
 html, body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: var(--war-bg);
     font-family: var(--war-font);
     user-select: none;
@@ -43,9 +44,10 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     padding: 1rem 1.5rem;
+    gap: 0.75rem;
     box-sizing: border-box;
     position: relative;
     z-index: 1;
@@ -454,4 +456,162 @@ html, body {
 }
 .defeat-card .war-modal-title {
     color: #ff1a40;
+}
+
+/* ==========================================================================
+   RESPONSIVE WAR ROOM (TABLET & MOBILE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .war-room-container {
+        padding: 0.75rem 1rem;
+        gap: 0.6rem;
+    }
+
+    .war-header {
+        gap: 0.6rem;
+    }
+
+    .war-title-badge {
+        padding: 5px 12px;
+        font-size: clamp(0.75rem, 3.5vw, 1rem);
+        letter-spacing: 0.5px;
+    }
+
+    .timer-box {
+        padding: 5px 10px;
+        font-size: 1rem;
+    }
+
+    .chaos-section {
+        padding: 8px 12px;
+    }
+
+    .chaos-info {
+        font-size: 0.95rem;
+    }
+
+    .scenario-card {
+        padding: 0.8rem 1rem;
+        gap: 0.6rem;
+    }
+
+    .phase-tag {
+        font-size: 0.8rem;
+        padding: 2px 7px;
+    }
+
+    .speaker-tag {
+        font-size: 0.95rem;
+    }
+
+    .scenario-prompt {
+        font-size: clamp(0.95rem, 3.8vw, 1.25rem);
+    }
+
+    .war-option-btn {
+        padding: 10px 14px;
+        font-size: clamp(0.85rem, 3.2vw, 1.05rem);
+        gap: 8px;
+    }
+
+    .opt-prefix {
+        font-size: 0.85rem;
+        padding: 2px 6px;
+    }
+
+    .war-footer {
+        font-size: 0.85rem;
+        padding: 4px 0;
+    }
+
+    .war-modal-card {
+        padding: 1.4rem;
+        width: 95%;
+    }
+
+    .level-card {
+        padding: 10px 14px;
+    }
+
+    .level-icon {
+        font-size: 1.8rem;
+    }
+
+    .level-info-title {
+        font-size: 1.1rem;
+    }
+
+    .level-info-desc {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .war-room-container {
+        padding: 0.5rem 0.6rem;
+        gap: 0.5rem;
+    }
+
+    .back-btn-link img {
+        height: 28px;
+    }
+
+    .war-title-badge {
+        padding: 4px 8px;
+        font-size: 0.72rem;
+        border-width: 2px;
+    }
+
+    .timer-box {
+        padding: 4px 8px;
+        font-size: 0.85rem;
+        border-width: 1px;
+    }
+
+    .chaos-bar-outer {
+        height: 16px;
+    }
+
+    .scenario-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .war-option-btn {
+        padding: 8px 10px;
+        line-height: 1.25;
+    }
+
+    .war-footer {
+        flex-direction: column;
+        gap: 3px;
+        text-align: center;
+        font-size: 0.75rem;
+    }
+
+    .level-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .level-card-left {
+        width: 100%;
+    }
+
+    .level-badge {
+        align-self: flex-start;
+    }
+
+    .modal-btn-row {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .war-modal-btn {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
 }

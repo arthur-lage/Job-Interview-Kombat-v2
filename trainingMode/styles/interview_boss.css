@@ -1045,7 +1045,28 @@ body.shake-screen {
 
 @media (max-width: 600px) {
     .boss-hud {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
         padding: 0.5rem 0.75rem;
+        gap: 0.6rem;
+    }
+
+    .hud-left-actions {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hud-switch-boss-btn {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.6rem;
+    }
+
+    .hud-center-emblem {
+        grid-column: 1 / -1;
+        margin-bottom: 0.2rem;
     }
 
     .fighter-name {
@@ -1053,15 +1074,15 @@ body.shake-screen {
     }
 
     .hp-numeric {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
 
     .boss-arena-stage {
-        padding: 0 0.75rem;
+        padding: 0 0.6rem;
     }
 
     .tactical-deck-section {
-        padding: 1rem;
+        padding: 0.8rem;
     }
 
     .deck-header {
@@ -1073,6 +1094,61 @@ body.shake-screen {
     .power-move-btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .boss-avatar-frame {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .boss-hud {
+        padding: 0.4rem 0.5rem;
+        gap: 0.4rem;
+    }
+
+    .hud-back-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .fighter-name {
+        font-size: 0.82rem;
+        letter-spacing: 0.5px;
+    }
+
+    .fighter-status {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.3rem;
+    }
+
+    .hp-numeric {
+        font-size: 0.9rem;
+    }
+
+    .boss-subtext,
+    .momentum-container {
+        display: none;
+    }
+
+    .fight-logo-badge .badge-title {
+        font-size: 1.2rem;
+    }
+
+    .boss-quote-text {
+        font-size: 0.95rem;
+        line-height: 1.35;
+    }
+
+    .dialogue-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .tactical-deck-section h2 {
+        font-size: 0.9rem;
     }
 }
 
@@ -1291,6 +1367,10 @@ body.shake-screen {
 }
 
 @media (max-width: 850px) {
+    .boss-select-card {
+        padding: 1.8rem 1.5rem;
+    }
+
     .boss-roster-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -1314,6 +1394,42 @@ body.shake-screen {
 
     .roster-desc {
         min-height: unset;
+    }
+}
+
+@media (max-width: 520px) {
+    .boss-select-card {
+        padding: 1.2rem 0.8rem;
+        width: 96vw;
+    }
+
+    .select-title {
+        font-size: 1.6rem;
+    }
+
+    .boss-roster-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .roster-avatar-box {
+        width: 85px;
+        height: 85px;
+    }
+
+    .roster-info {
+        align-items: center;
+    }
+
+    .roster-desc {
+        font-size: 0.8rem;
+    }
+
+    .roster-select-btn {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.8rem;
     }
 }
 
