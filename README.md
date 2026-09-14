@@ -9,7 +9,7 @@
 
 O site pode ser acessado através do link abaixo:
 
-[Job Interview Kombat](https://pedroaugusto08.github.io/Job-Interview-Kombat/)
+[Job Interview Kombat](https://arthur-lage.github.io/Job-Interview-Kombat-v2/)
 
 ## Sobre o Projeto
 
