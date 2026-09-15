@@ -2,7 +2,7 @@
 
 **Job Interview Kombat** é um Role-Playing Game (RPG) interativo criado para treinar entrevistas de emprego em inglês de forma lúdica e envolvente.
 <p align="center">
-<img src="imgs/mainG.gif"></img>
+<img src="JobInterviewKombat/imgs/mainG.gif"></img>
 </p>
 
 ## Link Para Acesso
@@ -19,18 +19,18 @@ O domínio da língua inglesa é uma habilidade essencial para estudantes da ár
 
 ## Overview
 
-[<img src="imgs/main.png" width="200" alt="Tela 1">](imgs/main.png)
-[<img src="imgs/loading.png" width="200" alt="Tela 2">](imgs/loading.png)
-[<img src="imgs/credits.png" width="200" alt="Tela 1">](imgs/credits.png)
-[<img src="imgs/rules.png" width="200" alt="Tela 1">](imgs/credits.png)
-[<img src="imgs/options.png" width="200" alt="Tela 3">](imgs/options.png)
-[<img src="imgs/jobs.png" width="200" alt="Tela 2">](imgs/jobs.png)
-[<img src="imgs/prelude.png" width="200" alt="Tela 1">](imgs/prelude.png)
-[<img src="imgs/strike.png" width="200" alt="Tela 3">](imgs/strike.png)
-[<img src="imgs/question.png" width="200" alt="Tela 2">](imgs/question.png)
-[<img src="imgs/versus.png" width="200" alt="Tela 3">](imgs/versus.png)
-[<img src="imgs/exit.png" width="200" alt="Tela 1">](imgs/credits.png)
-[<img src="imgs/winner.png" width="200" alt="Tela 3">](imgs/winner.png)
+[<img src="/JobInterviewKombat/imgs/main.png" width="200" alt="Tela 1">](/JobInterviewKombat/imgs/main.png)
+[<img src="/JobInterviewKombat/imgs/loading.png" width="200" alt="Tela 2">](/JobInterviewKombat/imgs/loading.png)
+[<img src="/JobInterviewKombat/imgs/credits.png" width="200" alt="Tela 1">](/JobInterviewKombat/imgs/credits.png)
+[<img src="/JobInterviewKombat/imgs/rules.png" width="200" alt="Tela 1">](/JobInterviewKombat/imgs/credits.png)
+[<img src="/JobInterviewKombat/imgs/options.png" width="200" alt="Tela 3">](/JobInterviewKombat/imgs/options.png)
+[<img src="/JobInterviewKombat/imgs/jobs.png" width="200" alt="Tela 2">](/JobInterviewKombat/imgs/jobs.png)
+[<img src="/JobInterviewKombat/imgs/prelude.png" width="200" alt="Tela 1">](/JobInterviewKombat/imgs/prelude.png)
+[<img src="/JobInterviewKombat/imgs/strike.png" width="200" alt="Tela 3">](/JobInterviewKombat/imgs/strike.png)
+[<img src="/JobInterviewKombat/imgs/question.png" width="200" alt="Tela 2">](/JobInterviewKombat/imgs/question.png)
+[<img src="/JobInterviewKombat/imgs/versus.png" width="200" alt="Tela 3">](/JobInterviewKombat/imgs/versus.png)
+[<img src="/JobInterviewKombat/imgs/exit.png" width="200" alt="Tela 1">](/JobInterviewKombat/imgs/credits.png)
+[<img src="/JobInterviewKombat/imgs/winner.png" width="200" alt="Tela 3">](/JobInterviewKombat/imgs/winner.png)
 ## Funcionamento
 
 Inspirado na estrutura clássica de combate do jogo *Mortal Kombat*, este RPG transforma entrevistas de emprego em verdadeiras batalhas verbais. Dois candidatos se enfrentam respondendo perguntas técnicas e comportamentais em inglês. Cada rodada é avaliada por três juízes com base nos seguintes critérios:
