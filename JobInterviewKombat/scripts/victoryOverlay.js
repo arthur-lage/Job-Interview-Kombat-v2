@@ -1,10 +1,10 @@
 export function createVictoryOverlay() {
     // Verificar se já existe uma overlay de vitória
     if (document.querySelector('.victoryOverlay')) return;
-    
+
     const victoryOverlay = document.createElement('div');
     victoryOverlay.className = 'victory';
-    
+
     victoryOverlay.innerHTML = `
         <div class="bgs-victory">
             <div class="bg-default"></div>
@@ -48,14 +48,14 @@ export function createVictoryOverlay() {
     document.body.appendChild(victoryOverlay);
 
     loadVictoryStyles();
-    
+
     setupVictoryOverlayEvents();
 }
 
 function loadVictoryStyles() {
     // Verificar se os estilos já foram carregados
     if (document.getElementById('victory-styles')) return;
-    
+
     const link = document.createElement('link');
     link.id = 'victory-styles';
     link.rel = 'stylesheet';
@@ -67,11 +67,11 @@ function setupVictoryOverlayEvents() {
     const victoryOverlay = document.querySelector('.victory');
     const restartBtn = victoryOverlay.querySelector('.restart-btn');
 
-    
+
     // Função para mostrar/ocultar a overlay
     const toggleOverlay = (show) => {
         if (!victoryOverlay) return;
-        
+
         if (show) {
             victoryOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -86,7 +86,7 @@ function setupVictoryOverlayEvents() {
     if (restartBtn) {
         restartBtn.addEventListener('click', () => {
             // Redirecionar para start.html
-            window.location.href = '/Job-Interview-Kombat';
+            window.location.href = '../../../aaaaaaaaaaaaaindex.html';
         });
     }
 

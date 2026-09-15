@@ -205,13 +205,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 
-        // Re-order nodes for serpentine winding layout:
-        // Row 1: [0, 1, 2] (Left -> Right)
-        // Row 2: [5, 4, 3] (Left <- Right, so order in container is 3 at col 3, 4 at col 2, 5 at col 1)
-        // Row 3: [6, 7, 8] (Left -> Right)
-        const serpentineIndices = [0, 1, 2, 5, 4, 3, 6, 7, 8];
-
-        // Map gameModes into serpentine grid slots
+        // Render nodes in natural ascending order (1 to 10), 2 per row
         gameModes.forEach((mode, idx) => {
             const unlocked = isGameModeUnlocked(idx);
             const subModeIds = mode.subModes.map(s => s.id);
@@ -232,29 +226,32 @@ document.addEventListener('DOMContentLoaded', async () => {
             node.id = `node-${mode.id}`;
             node.setAttribute('data-index', idx);
 
-            // Set dynamic order values for different responsive layouts using CSS variables
-            // 3-column serpentine layout order
-            let order3Col = idx + 1;
-            if (idx === 3) order3Col = 6;
-            if (idx === 4) order3Col = 5;
-            if (idx === 5) order3Col = 4;
-            if (idx === 9) order3Col = 11; // Centered in Row 4
+            // Mario-style organic messy layout coordinates (percentages)
+            // Sequence: 1 to 10
+            const POSITIONS = [
+                { left: 15, top: 10 },  // 1. top-left
+                { left: 45, top: 15 },  // 2. move right
+                { left: 75, top: 5 },   // 3. further right, up a bit
+                { left: 85, top: 30 },  // 4. down, far right
+                { left: 60, top: 40 },  // 5. back left
+                { left: 35, top: 35 },  // 6. further left, slightly up
+                { left: 15, top: 55 },  // 7. down, far left
+                { left: 40, top: 70 },  // 8. right, down
+                { left: 75, top: 65 },  // 9. further right
+                { left: 85, top: 90 }   // 10. bottom right (Boss)
+            ];
+            
+            const pos = POSITIONS[idx] || { left: 50, top: 50 };
+            node.style.left = `${pos.left}%`;
+            node.style.top = `${pos.top}%`;
 
-            // 2-column serpentine layout order
-            let order2Col = idx + 1;
-            if (idx === 2) order2Col = 4;
-            if (idx === 3) order2Col = 3;
-            if (idx === 6) order2Col = 8;
-            if (idx === 7) order2Col = 7;
-            if (idx === 8) order2Col = 10;
-            if (idx === 9) order2Col = 9;
-
-            // 1-column / horizontal layout order (linear)
-            let order1Col = idx + 1;
-
-            node.style.setProperty('--order-3col', order3Col);
-            node.style.setProperty('--order-2col', order2Col);
-            node.style.setProperty('--order-1col', order1Col);
+            // Grid Layout Order (for mobile fallback <= 950px)
+            const ORDER_MAP = {
+                0: 1,  1: 2,  2: 4,  3: 3,  4: 5,
+                5: 6,  6: 8,  7: 7,  8: 9,  9: 10
+            };
+            node.style.setProperty('--order-2col', ORDER_MAP[idx] || (idx + 1));
+            node.style.setProperty('--order-1col', idx + 1);
 
             if (mode.id === 'final_interview') {
                 node.classList.add('final-boss-node');
@@ -281,12 +278,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             } else if (mode.optional) {
                 badgeHtml = `<span class="node-badge optional">TUTORIAL</span>`;
             } else if (isFullyComplete) {
-                badgeHtml = `<span class="node-badge complete"><i class="hn hn-badge-check-solid"></i> 100%</span>`;
+                badgeHtml = `<span class="node-badge complete icon-only"><i class="hn hn-badge-check-solid"></i></span>`;
             }
 
             node.innerHTML = `
-                ${badgeHtml}
                 <div class="node-icon-wrapper">
+                    ${badgeHtml}
                     ${unlocked ? `<i class="${modeIconClass}"></i>` : `<i class="hn hn-lock"></i>`}
                     ${unlocked ? `<span class="node-index">${idx + 1}</span>` : ''}
                 </div>
@@ -347,14 +344,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             const from = centers[i];
             const to = centers[i + 1];
 
-            // Control points for smooth organic curves
-            const deltaX = to.x - from.x;
-            const deltaY = to.y - from.y;
-            const midX = (from.x + to.x) / 2 + (deltaY * 0.15);
-            const midY = (from.y + to.y) / 2 - (deltaX * 0.15);
-
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            path.setAttribute('d', `M ${from.x} ${from.y} Q ${midX} ${midY}, ${to.x} ${to.y}`);
+            path.setAttribute('d', `M ${from.x} ${from.y} L ${to.x} ${to.y}`);
 
             const isPathUnlocked = from.unlocked && to.unlocked;
             path.setAttribute('class', isPathUnlocked ? 'map-path-line' : 'map-path-line locked');

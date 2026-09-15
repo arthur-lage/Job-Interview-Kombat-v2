@@ -589,6 +589,10 @@ class Game {
       this.updateScoreboard();
     }
 
+    // Força a checagem do fim de jogo imediatamente para evitar atraso de 100ms
+    this.gameOverHandler.checkGameOver();
+    if (this.isGameOver) return;
+
     // Avança para a próxima pergunta
     await this.nextQuestion();
   }
@@ -803,7 +807,7 @@ class Game {
     this.visualTimer = new VisualTimer('visual-timer', global.options.think); // Criar aqui
     this.teamScores = { team1: 0, team2: 0 };
     this.maxPoints = 10;
-    this.maxLives = 5;
+    this.maxLives = 1;
     this.teamLives = { team1: this.maxLives, team2: this.maxLives };
     this.isGameOver = false;
     this.gameOverHandler = new GameOverHandler(this);
@@ -1208,16 +1212,21 @@ class GameOverHandler {
   }
 
   checkGameOver() {
+    if (this.game.isGameOver) return;
+
     const currentRound = this.game.currentQuestion;
     const maxRounds = global.options.rounds; // Obtém o máximo de rounds das opções
 
     if (this.game.teamLives.team2 <= 0) {
+      this.game.isGameOver = true;
       this.handleGameOver('team1');
     } else if (this.game.teamLives.team1 <= 0) {
+      this.game.isGameOver = true;
       this.handleGameOver('team2');
     }
     // Verifica se o número máximo de rounds foi atingido
     else if (currentRound >= maxRounds) {
+      this.game.isGameOver = true;
       // Determina o vencedor com base nas vidas restantes
       if (this.game.teamLives.team1 > this.game.teamLives.team2) {
         this.handleGameOver('team1');
@@ -1230,6 +1239,7 @@ class GameOverHandler {
     }
     // Verifica se é o último round e as vidas estão empatadas
     else if (currentRound === maxRounds && this.game.teamLives.team1 === this.game.teamLives.team2) {
+      this.game.isGameOver = true;
       this.handleGameOver('draw');
     }
   }
@@ -1421,7 +1431,7 @@ class GameOverHandler {
         restartBtn.style.cursor = 'default';
 
         restartBtn.addEventListener('click', () => {
-          window.location.href = '../index.html';
+          window.location.href = '../../index.html';
         });
       }
 

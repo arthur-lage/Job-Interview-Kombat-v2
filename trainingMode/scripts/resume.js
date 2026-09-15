@@ -16,14 +16,11 @@
 // MAPA: topicId → subModeIds que precisam ser vencidos
 // ---------------------------------------------------------------------------
 const TOPIC_SUBMODES = {
-    tutorial_grammar: ['tutorial_lessons', 'tutorial_quiz'],
-    profile: ['profile_tips', 'profile_quiz'],
     introduction: ['intro_lesson', 'intro_quiz'],
+    profile: ['profile_tips', 'profile_quiz'],
+    hard_skills: ['hard_lesson', 'hard_vocab', 'hard_quiz'],
     experience: ['exp_lesson', 'exp_quiz'],
-    meetings: ['meetings_tutorial', 'meetings_war_room'],
-    classic_questions: ['common_questions', 'fill_in_blanks'],
-    soft_skills: ['soft_lesson', 'soft_vocab', 'soft_quiz'],
-    salary_negotiation: ['salary_tips', 'salary_examples'],
+    tutorial_grammar: ['tutorial_lessons', 'tutorial_quiz'],
 };
 
 // ---------------------------------------------------------------------------
@@ -33,89 +30,62 @@ const RESUME_SECTIONS = [
     {
         id: 'personal_info',
         title: '👤 Personal Information',
-        topic: 'tutorial_grammar',
-        topicName: 'Grammar & Basics',
+        topic: 'introduction',
+        topicName: 'Profile & Contact',
         fields: [
             { id: 'full_name', label: 'Full Name', placeholder: 'e.g. Alex Rivera', type: 'text' },
+            { id: 'professional_title', label: 'Professional Title', placeholder: 'e.g. Senior Full-Stack Engineer', type: 'text' },
             { id: 'email', label: 'Email', placeholder: 'e.g. alex.rivera.dev@gmail.com', type: 'text' },
-            { id: 'linkedin', label: 'LinkedIn', placeholder: 'e.g. linkedin.com/in/alexrivera-tech', type: 'text' },
             { id: 'phone', label: 'Phone', placeholder: 'e.g. +55 (31) 98765-4321', type: 'text' },
+            { id: 'linkedin', label: 'LinkedIn / Portfolio', placeholder: 'e.g. linkedin.com/in/alexrivera-tech', type: 'text' },
+            { id: 'location', label: 'Location / Work Model', placeholder: 'e.g. Belo Horizonte, Brazil (Remote)', type: 'text' },
         ]
     },
     {
         id: 'professional_summary',
         title: '🎯 Professional Summary',
         topic: 'profile',
-        topicName: 'Profile & Pitch',
+        topicName: 'Summary & Pitch',
         fields: [
-            { id: 'summary_kw1', label: 'Keyword 1', placeholder: 'e.g. results-driven', type: 'text' },
-            { id: 'summary_kw2', label: 'Keyword 2', placeholder: 'e.g. collaborative', type: 'text' },
-            { id: 'summary_kw3', label: 'Keyword 3', placeholder: 'e.g. solutions-oriented', type: 'text' },
-            { id: 'summary_text', label: 'Summary Sentence', placeholder: 'e.g. Results-driven and collaborative Software Engineer with 4+ years of experience delivering scalable web systems.', type: 'textarea' },
+            { id: 'summary_text', label: 'Professional Summary', placeholder: 'e.g. Results-driven Full-Stack Software Engineer with 5+ years of experience designing, developing, and scaling high-performance web applications and distributed cloud systems...', type: 'textarea' },
+            { id: 'core_competencies', label: 'Core Competencies / Keywords', placeholder: 'e.g. Distributed Systems · Cloud Architecture · Microservices · CI/CD Pipelines · Agile Leadership', type: 'text' },
         ]
     },
     {
-        id: 'self_introduction',
-        title: '🗣️ Self-Introduction',
-        topic: 'introduction',
-        topicName: 'Introduction & Elevator Pitch',
+        id: 'technical_knowledge',
+        title: '💻 Technical Knowledge',
+        topic: 'hard_skills',
+        topicName: 'Hard Skills & Tech',
         fields: [
-            { id: 'intro_paragraph', label: 'Introduction Paragraph', placeholder: 'Write a brief self-introduction in English (2–3 sentences). e.g. "Hi, I am Alex Rivera. Over the past 4 years, I have engineered full-stack web platforms..."', type: 'textarea' },
+            { id: 'tech_languages', label: 'Programming Languages', placeholder: 'e.g. JavaScript (ES6+), TypeScript, Python, SQL, HTML5/CSS3', type: 'text' },
+            { id: 'tech_frameworks', label: 'Frameworks & Libraries', placeholder: 'e.g. React, Node.js, Express, Next.js, Django, TailwindCSS', type: 'text' },
+            { id: 'tech_databases_cloud', label: 'Databases & Cloud', placeholder: 'e.g. PostgreSQL, MongoDB, Redis, AWS (S3, EC2, Lambda), Docker', type: 'text' },
+            { id: 'tech_tools_methods', label: 'Tools & Methodologies', placeholder: 'e.g. Git, GitHub Actions, RESTful APIs, GraphQL, TDD/Jest, Agile/Scrum', type: 'text' },
         ]
     },
     {
         id: 'work_experience',
         title: '💼 Work Experience',
         topic: 'experience',
-        topicName: 'STAR Method & Experience',
+        topicName: 'STAR Method & Exp',
         fields: [
-            { id: 'job_title', label: 'Job Title', placeholder: 'e.g. Full-Stack Software Engineer', type: 'text' },
-            { id: 'company', label: 'Company', placeholder: 'e.g. Global Tech Innovations', type: 'text' },
-            { id: 'exp_period', label: 'Period', placeholder: 'e.g. 2022 – Present', type: 'text' },
-            { id: 'achievement', label: 'Key Achievement (STAR method)', placeholder: 'e.g. Spearheaded microservices migration, reducing API latency by 38% and supporting 500k monthly active users.', type: 'textarea' },
+            { id: 'job_title', label: 'Job Title', placeholder: 'e.g. Senior Full-Stack Engineer', type: 'text' },
+            { id: 'company', label: 'Company Name', placeholder: 'e.g. Global Tech Innovations', type: 'text' },
+            { id: 'exp_period', label: 'Period / Dates', placeholder: 'e.g. 2022 – Present', type: 'text' },
+            { id: 'exp_location', label: 'Location / Work Model', placeholder: 'e.g. Remote', type: 'text' },
+            { id: 'achievement', label: 'Key Achievements & Impact (STAR method)', placeholder: 'e.g. • Spearheaded the migration from monolithic architecture to microservices using Node.js and Docker, reducing API response latency by 38% for 500k+ active users.\n• Designed and automated end-to-end CI/CD pipelines via GitHub Actions, decreasing deployment failure rate by 45%.\n• Mentored 4 mid/junior engineers on clean architecture, unit testing, and collaborative code reviews.', type: 'textarea' },
         ]
     },
     {
-        id: 'communication',
-        title: '🤝 Meetings & Communication',
-        topic: 'meetings',
-        topicName: 'Meetings & War Room',
+        id: 'education_languages',
+        title: '🎓 Education and Languages',
+        topic: 'tutorial_grammar',
+        topicName: 'Education & Languages',
         fields: [
-            { id: 'comm_skill1', label: 'Communication Skill 1', placeholder: 'e.g. Active Listening & Stakeholder Alignment', type: 'text' },
-            { id: 'comm_skill2', label: 'Communication Skill 2', placeholder: 'e.g. Crisis De-escalation in War Rooms', type: 'text' },
-            { id: 'meeting_phrase', label: 'Favourite Meeting Phrase', placeholder: 'e.g. "Let\'s align on action items and prioritize by immediate business impact."', type: 'text' },
-        ]
-    },
-    {
-        id: 'classic_answers',
-        title: '❓ Classic Interview Answers',
-        topic: 'classic_questions',
-        topicName: 'Common Questions',
-        fields: [
-            { id: 'why_hire', label: '"Why should we hire you?"', placeholder: 'e.g. Because I bring a proven blend of technical rigor and cross-functional empathy, consistently delivering production features on time.', type: 'textarea' },
-            { id: 'strength', label: '"What is your greatest strength?"', placeholder: 'e.g. My ability to break down ambiguous engineering problems and communicate clear roadmaps.', type: 'textarea' },
-            { id: 'weakness', label: '"What is your weakness?"', placeholder: 'e.g. I used to take on too many tasks at once, but I now strictly enforce priority triage and async delegation.', type: 'textarea' },
-        ]
-    },
-    {
-        id: 'soft_skills_section',
-        title: '⭐ Soft Skills',
-        topic: 'soft_skills',
-        topicName: 'Soft Skills',
-        fields: [
-            { id: 'soft1', label: 'Top Soft Skill 1', placeholder: 'e.g. Cross-Functional Leadership', type: 'text' },
-            { id: 'soft2', label: 'Top Soft Skill 2', placeholder: 'e.g. Constructive Code Review', type: 'text' },
-            { id: 'soft3', label: 'Top Soft Skill 3', placeholder: 'e.g. Crisis De-escalation', type: 'text' },
-        ]
-    },
-    {
-        id: 'salary',
-        title: '💰 Salary Expectation',
-        topic: 'salary_negotiation',
-        topicName: 'Salary Negotiation',
-        fields: [
-            { id: 'salary_range', label: 'Expected Salary Range', placeholder: 'e.g. R$ 8.500 – R$ 11.000 / month (or $85,000 - $95,000 / yr)', type: 'text' },
-            { id: 'salary_justify', label: 'Justification', placeholder: 'e.g. Based on market benchmarks for software engineers and my demonstrated track record of scaling high-availability systems.', type: 'textarea' },
+            { id: 'education_degree', label: 'Degree & Field of Study', placeholder: 'e.g. B.S. in Computer Science', type: 'text' },
+            { id: 'education_school', label: 'Institution & Graduation Year', placeholder: 'e.g. Federal University of Minas Gerais (UFMG) · 2018 – 2022', type: 'text' },
+            { id: 'languages', label: 'Languages & Proficiency', placeholder: 'e.g. English (Fluent / Full Professional), Portuguese (Native), Spanish (Intermediate)', type: 'text' },
+            { id: 'certifications', label: 'Certifications & Honors', placeholder: 'e.g. AWS Certified Solutions Architect – Associate (2023), Scrum Master PSM I', type: 'text' },
         ]
     },
 ];
@@ -125,29 +95,30 @@ const RESUME_SECTIONS = [
 // ---------------------------------------------------------------------------
 const SAMPLE_DATA = {
     full_name: 'Alex Rivera',
+    professional_title: 'Senior Full-Stack Engineer',
     email: 'alex.rivera.dev@gmail.com',
     phone: '+55 (31) 98765-4321',
     linkedin: 'linkedin.com/in/alexrivera-tech',
-    summary_kw1: 'results-driven',
-    summary_kw2: 'collaborative',
-    summary_kw3: 'solutions-oriented',
-    summary_text: 'Results-driven and collaborative Software Engineer with 4+ years of experience delivering scalable web applications and distributed cloud systems.',
-    intro_paragraph: 'Hi, I am Alex Rivera. Over the past 4 years, I have engineered full-stack web platforms with high test coverage and low latency. I excel at translating complex business requirements into resilient technical solutions.',
-    job_title: 'Full-Stack Software Engineer',
+    location: 'Belo Horizonte, Brazil (Remote)',
+
+    summary_text: 'Results-driven Full-Stack Software Engineer with 5+ years of experience designing, developing, and scaling high-performance web applications and distributed cloud systems. Proven track record in migrating monolithic architectures to microservices, optimizing low-latency backend systems, and driving agile best practices across cross-functional engineering teams.',
+    core_competencies: 'Distributed Systems · Cloud Architecture · Microservices · CI/CD Automation · Agile Leadership',
+
+    tech_languages: 'JavaScript (ES6+), TypeScript, Python, SQL, HTML5/CSS3',
+    tech_frameworks: 'React, Node.js, Express, Next.js, Django, TailwindCSS',
+    tech_databases_cloud: 'PostgreSQL, MongoDB, Redis, AWS (S3, EC2, Lambda), Docker',
+    tech_tools_methods: 'Git, GitHub Actions, RESTful APIs, GraphQL, TDD/Jest, Agile/Scrum',
+
+    job_title: 'Senior Full-Stack Engineer',
     company: 'Global Tech Innovations',
     exp_period: '2022 – Present',
-    achievement: 'Spearheaded the migration of monolithic services to microservices, reducing API response times by 38% and supporting over 500k monthly active users.',
-    comm_skill1: 'Active Listening & Stakeholder Alignment',
-    comm_skill2: 'Incident Leadership & Crisis Triage',
-    meeting_phrase: "Let's align on action items and prioritize by immediate business impact.",
-    why_hire: 'Because I bring a proven blend of technical rigor and cross-functional empathy, consistently delivering resilient production features on time.',
-    strength: 'My ability to break down ambiguous engineering problems and communicate clear, phased roadmaps to both engineers and executives.',
-    weakness: 'I used to take on too many tasks at once, but I now strictly enforce priority triage and asynchronous delegation.',
-    soft1: 'Cross-Functional Leadership',
-    soft2: 'Constructive Code Review',
-    soft3: 'Crisis De-escalation',
-    salary_range: 'R$ 8.500 – R$ 11.000 / month',
-    salary_justify: 'Based on market benchmarks for mid-to-senior software engineers in Brazil and my demonstrated track record of scaling high-availability systems.',
+    exp_location: 'Remote',
+    achievement: '• Spearheaded the migration from monolithic architecture to microservices using Node.js and Docker, reducing API response latency by 38% for 500k+ active users.\n• Designed and automated end-to-end CI/CD pipelines via GitHub Actions, decreasing deployment failure rate by 45%.\n• Mentored 4 mid/junior engineers on clean architecture, unit testing, and collaborative code reviews.',
+
+    education_degree: 'B.S. in Computer Science',
+    education_school: 'Federal University of Minas Gerais (UFMG) · 2018 – 2022',
+    languages: 'English (Fluent / Full Professional), Portuguese (Native), Spanish (Intermediate)',
+    certifications: 'AWS Certified Solutions Architect – Associate (2023), Scrum Master PSM I',
 };
 
 // ---------------------------------------------------------------------------
@@ -221,91 +192,67 @@ function buildResumePreviewHTML() {
         <!-- Personal Header -->
         <div class="rdoc-personal-header">
             <div class="rdoc-name">${f('full_name', 'YOUR FULL NAME')}</div>
+            <div class="rdoc-role">${f('professional_title', 'PROFESSIONAL TITLE / TARGET ROLE')}</div>
             <div class="rdoc-contact">
-                ${f('email', 'your@email.com')}
+                ${f('email', 'your.email@example.com')}
                 <span class="rdoc-sep">·</span>
                 ${f('phone', '+55 (31) 90000-0000')}
                 <span class="rdoc-sep">·</span>
                 ${f('linkedin', 'linkedin.com/in/yourprofile')}
+                <span class="rdoc-sep">·</span>
+                ${f('location', 'Location / Remote')}
             </div>
         </div>
 
-        <!-- Professional Summary -->
+        <!-- 1. Professional Summary -->
         <div class="rdoc-section">
             <div class="rdoc-section-title">PROFESSIONAL SUMMARY</div>
-            <p class="rdoc-text">
-                I am a ${f('summary_kw1', '[keyword 1]')},
-                ${f('summary_kw2', '[keyword 2]')} and
-                ${f('summary_kw3', '[keyword 3]')} professional.
-            </p>
-            <p class="rdoc-text rdoc-mt">${f('summary_text', '[Write your professional summary sentence here...]')}</p>
+            <p class="rdoc-text">${f('summary_text', '[Write your professional summary highlighting your key background, years of experience, and main achievements...]')}</p>
+            <p class="rdoc-text rdoc-mt"><strong class="rdoc-tech-cat">Core Competencies:</strong> ${f('core_competencies', '[e.g. Distributed Systems · Cloud Architecture · Microservices · CI/CD · Agile Leadership]')}</p>
         </div>
 
-        <!-- Self-Introduction -->
+        <!-- 2. Technical Knowledge -->
         <div class="rdoc-section">
-            <div class="rdoc-section-title">SELF-INTRODUCTION</div>
-            <p class="rdoc-text">${f('intro_paragraph', '[Write a brief self-introduction in English (2–3 sentences)...]')}</p>
+            <div class="rdoc-section-title">TECHNICAL KNOWLEDGE</div>
+            <div class="rdoc-tech-row">
+                <span class="rdoc-tech-cat">Programming Languages:</span> ${f('tech_languages', '[e.g. JavaScript (ES6+), TypeScript, Python, SQL, HTML5/CSS3]')}
+            </div>
+            <div class="rdoc-tech-row">
+                <span class="rdoc-tech-cat">Frameworks & Libraries:</span> ${f('tech_frameworks', '[e.g. React, Node.js, Express, Next.js, Django, TailwindCSS]')}
+            </div>
+            <div class="rdoc-tech-row">
+                <span class="rdoc-tech-cat">Databases & Cloud:</span> ${f('tech_databases_cloud', '[e.g. PostgreSQL, MongoDB, Redis, AWS (S3, EC2, Lambda), Docker]')}
+            </div>
+            <div class="rdoc-tech-row">
+                <span class="rdoc-tech-cat">Tools & Methodologies:</span> ${f('tech_tools_methods', '[e.g. Git, GitHub Actions, RESTful APIs, GraphQL, TDD/Jest, Agile/Scrum]')}
+            </div>
         </div>
 
-        <!-- Work Experience -->
+        <!-- 3. Work Experience -->
         <div class="rdoc-section">
             <div class="rdoc-section-title">WORK EXPERIENCE</div>
             <div class="rdoc-exp-header">
                 <span class="rdoc-exp-title">${f('job_title', '[Job Title]')}</span>
                 <span class="rdoc-sep">—</span>
-                ${f('company', '[Company Name]')}
+                <span class="rdoc-exp-company">${f('company', '[Company Name]')}</span>
+                <span class="rdoc-exp-loc">(${f('exp_location', 'Remote')})</span>
                 <span class="rdoc-exp-period">${f('exp_period', '[Period]')}</span>
             </div>
-            <p class="rdoc-text rdoc-mt">${f('achievement', '[Describe your key achievement in this role using STAR method...]')}</p>
+            <div class="rdoc-text rdoc-mt rdoc-pre-line">${f('achievement', '[Describe your key achievement using STAR method (Situation, Task, Action, Result)...]')}</div>
         </div>
 
-        <!-- Communication -->
+        <!-- 4. Education and Languages -->
         <div class="rdoc-section">
-            <div class="rdoc-section-title">COMMUNICATION & MEETINGS</div>
-            <div class="rdoc-skills-row">
-                ${f('comm_skill1', '[Communication Skill 1]')}
-                <span class="rdoc-sep">·</span>
-                ${f('comm_skill2', '[Communication Skill 2]')}
+            <div class="rdoc-section-title">EDUCATION AND LANGUAGES</div>
+            <div class="rdoc-edu-row">
+                <span class="rdoc-tech-cat">Education:</span> ${f('education_degree', '[Degree & Major]')} — ${f('education_school', '[Institution & Year]')}
             </div>
-            <p class="rdoc-text rdoc-quote">"${f('meeting_phrase', '[Your favourite meeting phrase...]')}"</p>
-        </div>
-
-        <!-- Interview Prep -->
-        <div class="rdoc-section">
-            <div class="rdoc-section-title">INTERVIEW PREPARATION</div>
-            <div class="rdoc-qa-block">
-                <span class="rdoc-q">Why should we hire you?</span>
-                <p class="rdoc-text">${f('why_hire', '[Your answer here...]')}</p>
+            <div class="rdoc-edu-row">
+                <span class="rdoc-tech-cat">Languages:</span> ${f('languages', '[e.g. English (Fluent / Full Professional), Portuguese (Native), Spanish (Intermediate)]')}
             </div>
-            <div class="rdoc-qa-block">
-                <span class="rdoc-q">Greatest strength?</span>
-                <p class="rdoc-text">${f('strength', '[Your answer here...]')}</p>
+            <div class="rdoc-edu-row">
+                <span class="rdoc-tech-cat">Certifications:</span> ${f('certifications', '[e.g. AWS Certified Solutions Architect, Scrum Master PSM I]')}
             </div>
-            <div class="rdoc-qa-block">
-                <span class="rdoc-q">Main weakness?</span>
-                <p class="rdoc-text">${f('weakness', '[Your answer here...]')}</p>
-            </div>
-        </div>
-
-        <!-- Soft Skills -->
-        <div class="rdoc-section">
-            <div class="rdoc-section-title">SOFT SKILLS</div>
-            <div class="rdoc-skills-row rdoc-skills-pills">
-                ${f('soft1', '[Skill 1]')}
-                <span class="rdoc-sep">·</span>
-                ${f('soft2', '[Skill 2]')}
-                <span class="rdoc-sep">·</span>
-                ${f('soft3', '[Skill 3]')}
-            </div>
-        </div>
-
-        <!-- Salary -->
-        <div class="rdoc-section">
-            <div class="rdoc-section-title">SALARY EXPECTATION</div>
-            <p class="rdoc-text">
-                <span class="rdoc-salary-range">${f('salary_range', '[Expected Salary Range]')}</span>
-            </p>
-            <p class="rdoc-text rdoc-mt">${f('salary_justify', '[Justification for your salary expectation...]')}</p>
         </div>
     `;
 }
@@ -327,68 +274,48 @@ function getResumePlainText() {
 
     const name = g('full_name') || 'YOUR FULL NAME';
     text += `${name.toUpperCase()}\n`;
-    const contact = [g('email'), g('phone'), g('linkedin')].filter(Boolean).join(' | ');
+    if (g('professional_title')) {
+        text += `${g('professional_title')}\n`;
+    }
+    const contact = [g('email'), g('phone'), g('linkedin'), g('location')].filter(Boolean).join(' | ');
     if (contact) text += `${contact}\n`;
     text += `\n============================================================\n\n`;
 
-    // Professional Summary
+    // 1. Professional Summary
     text += `PROFESSIONAL SUMMARY\n`;
     text += `--------------------\n`;
-    const kws = [g('summary_kw1'), g('summary_kw2'), g('summary_kw3')].filter(Boolean);
-    if (kws.length) text += `Core Qualities: ${kws.join(', ')}\n`;
     if (g('summary_text')) text += `${g('summary_text')}\n`;
+    if (g('core_competencies')) text += `Core Competencies: ${g('core_competencies')}\n`;
     text += `\n`;
 
-    // Self-Introduction
-    if (g('intro_paragraph')) {
-        text += `SELF-INTRODUCTION\n`;
-        text += `-----------------\n`;
-        text += `${g('intro_paragraph')}\n\n`;
-    }
+    // 2. Technical Knowledge
+    text += `TECHNICAL KNOWLEDGE\n`;
+    text += `-------------------\n`;
+    if (g('tech_languages')) text += `• Languages: ${g('tech_languages')}\n`;
+    if (g('tech_frameworks')) text += `• Frameworks & Libraries: ${g('tech_frameworks')}\n`;
+    if (g('tech_databases_cloud')) text += `• Databases & Cloud: ${g('tech_databases_cloud')}\n`;
+    if (g('tech_tools_methods')) text += `• Tools & Methodologies: ${g('tech_tools_methods')}\n`;
+    text += `\n`;
 
-    // Work Experience
+    // 3. Work Experience
     if (g('job_title') || g('company') || g('achievement')) {
         text += `WORK EXPERIENCE\n`;
         text += `---------------\n`;
-        text += `${g('job_title') || 'Role'} — ${g('company') || 'Company'} (${g('exp_period') || 'Period'})\n`;
+        const companyStr = [g('company'), g('exp_location')].filter(Boolean).join(', ');
+        text += `${g('job_title') || 'Role'} — ${companyStr || 'Company'} (${g('exp_period') || 'Period'})\n`;
         if (g('achievement')) text += `${g('achievement')}\n`;
         text += `\n`;
     }
 
-    // Communication & Meetings
-    if (g('comm_skill1') || g('comm_skill2') || g('meeting_phrase')) {
-        text += `COMMUNICATION & MEETINGS\n`;
-        text += `------------------------\n`;
-        const comm = [g('comm_skill1'), g('comm_skill2')].filter(Boolean);
-        if (comm.length) text += `Key Skills: ${comm.join(' · ')}\n`;
-        if (g('meeting_phrase')) text += `Key Phrase: "${g('meeting_phrase')}"\n`;
-        text += `\n`;
+    // 4. Education and Languages
+    text += `EDUCATION AND LANGUAGES\n`;
+    text += `-----------------------\n`;
+    if (g('education_degree') || g('education_school')) {
+        const edu = [g('education_degree'), g('education_school')].filter(Boolean).join(' — ');
+        text += `• Education: ${edu}\n`;
     }
-
-    // Classic Questions
-    if (g('why_hire') || g('strength') || g('weakness')) {
-        text += `INTERVIEW PREPARATION\n`;
-        text += `---------------------\n`;
-        if (g('why_hire')) text += `Q: Why should we hire you?\nA: ${g('why_hire')}\n\n`;
-        if (g('strength')) text += `Q: What is your greatest strength?\nA: ${g('strength')}\n\n`;
-        if (g('weakness')) text += `Q: What is your weakness?\nA: ${g('weakness')}\n\n`;
-    }
-
-    // Soft Skills
-    const soft = [g('soft1'), g('soft2'), g('soft3')].filter(Boolean);
-    if (soft.length) {
-        text += `SOFT SKILLS\n`;
-        text += `-----------\n`;
-        text += `${soft.join(' · ')}\n\n`;
-    }
-
-    // Salary
-    if (g('salary_range') || g('salary_justify')) {
-        text += `SALARY EXPECTATION\n`;
-        text += `------------------\n`;
-        if (g('salary_range')) text += `Target: ${g('salary_range')}\n`;
-        if (g('salary_justify')) text += `Justification: ${g('salary_justify')}\n`;
-    }
+    if (g('languages')) text += `• Languages: ${g('languages')}\n`;
+    if (g('certifications')) text += `• Certifications: ${g('certifications')}\n`;
 
     return text.trim();
 }
@@ -491,8 +418,8 @@ function buildResumeModal() {
         sectionEl.id = 'resume-section-' + section.id;
 
         const badgeHTML = mastered
-            ? `<span class="resume-unlocked-badge"><i class="hn hn-badge-check-solid"></i> 🎓 ${section.topicName} Mastered</span>`
-            : `<span class="resume-lock-badge in-progress"><i class="hn hn-book-open"></i> 📚 ${section.topicName}</span>`;
+            ? `<span class="resume-unlocked-badge" title="Mastered in Training Mode">🎓 ${section.topicName} Mastered</span>`
+            : `<span class="resume-lock-badge in-progress" title="Module in Progress">📚 ${section.topicName}</span>`;
 
         const fieldsHTML = section.fields.map(field => {
             const value = data[field.id] || '';
@@ -662,7 +589,12 @@ function buildResumeModal() {
             if (SAMPLE_DATA[f.id]) {
                 resumeData[f.id] = SAMPLE_DATA[f.id];
                 const input = document.getElementById('rf-' + f.id);
-                if (input) input.value = SAMPLE_DATA[f.id];
+                if (input) {
+                    input.value = SAMPLE_DATA[f.id];
+                    input.classList.remove('just-suggested');
+                    void input.offsetWidth;
+                    input.classList.add('just-suggested');
+                }
             }
         });
         saveResumeData(resumeData);
@@ -677,7 +609,12 @@ function buildResumeModal() {
         RESUME_SECTIONS.forEach(sec => {
             sec.fields.forEach(f => {
                 const input = document.getElementById('rf-' + f.id);
-                if (input && SAMPLE_DATA[f.id]) input.value = SAMPLE_DATA[f.id];
+                if (input && SAMPLE_DATA[f.id]) {
+                    input.value = SAMPLE_DATA[f.id];
+                    input.classList.remove('just-suggested');
+                    void input.offsetWidth;
+                    input.classList.add('just-suggested');
+                }
             });
         });
         updateResumePreview();
@@ -704,113 +641,85 @@ function buildResumeModal() {
         const g = (k) => (data[k] || '').trim();
 
         const fullName = g('full_name') || 'CANDIDATE NAME';
+        const professionalTitle = g('professional_title');
         const email = g('email');
         const phone = g('phone');
         const linkedin = g('linkedin');
-        const contactItems = [email, phone, linkedin].filter(Boolean);
+        const location = g('location');
+        const contactItems = [email, phone, linkedin, location].filter(Boolean);
 
         // Build sections
         let sectionsHTML = '';
 
         // 1. Professional Summary
-        const kw = [g('summary_kw1'), g('summary_kw2'), g('summary_kw3')].filter(Boolean);
         const summaryText = g('summary_text');
-        if (kw.length || summaryText) {
-            let text = '';
-            if (kw.length) {
-                text += `Results-oriented professional recognized for being ${kw.join(', ')}. `;
-            }
-            if (summaryText) text += summaryText;
+        const competencies = g('core_competencies');
+        if (summaryText || competencies) {
             sectionsHTML += `
                 <div class="print-section">
                     <div class="print-section-title">Professional Summary</div>
-                    <p class="print-text">${escapeHtml(text)}</p>
+                    ${summaryText ? `<p class="print-text">${escapeHtml(summaryText)}</p>` : ''}
+                    ${competencies ? `<p class="print-text print-mt"><strong class="print-tech-cat">Core Competencies:</strong> ${escapeHtml(competencies)}</p>` : ''}
                 </div>
             `;
         }
 
-        // 2. Self-Introduction
-        if (g('intro_paragraph')) {
+        // 2. Technical Knowledge
+        const techLang = g('tech_languages');
+        const techFw = g('tech_frameworks');
+        const techDbCloud = g('tech_databases_cloud');
+        const techTools = g('tech_tools_methods');
+        if (techLang || techFw || techDbCloud || techTools) {
             sectionsHTML += `
                 <div class="print-section">
-                    <div class="print-section-title">Self-Introduction</div>
-                    <p class="print-text">${escapeHtml(g('intro_paragraph'))}</p>
+                    <div class="print-section-title">Technical Knowledge</div>
+                    ${techLang ? `<div class="print-tech-row"><strong class="print-tech-cat">Programming Languages:</strong> ${escapeHtml(techLang)}</div>` : ''}
+                    ${techFw ? `<div class="print-tech-row"><strong class="print-tech-cat">Frameworks & Libraries:</strong> ${escapeHtml(techFw)}</div>` : ''}
+                    ${techDbCloud ? `<div class="print-tech-row"><strong class="print-tech-cat">Databases & Cloud:</strong> ${escapeHtml(techDbCloud)}</div>` : ''}
+                    ${techTools ? `<div class="print-tech-row"><strong class="print-tech-cat">Tools & Methodologies:</strong> ${escapeHtml(techTools)}</div>` : ''}
                 </div>
             `;
         }
 
         // 3. Work Experience
         if (g('job_title') || g('company') || g('achievement')) {
+            const companyLocation = [g('company'), g('exp_location')].filter(Boolean).join(' · ');
             sectionsHTML += `
                 <div class="print-section">
                     <div class="print-section-title">Work Experience</div>
                     <div class="print-exp-header">
-                        <span><strong>${escapeHtml(g('job_title') || 'Role')}</strong> — <span class="print-exp-company">${escapeHtml(g('company') || 'Company')}</span></span>
+                        <span><strong>${escapeHtml(g('job_title') || 'Role')}</strong> — <span class="print-exp-company">${escapeHtml(companyLocation || 'Company')}</span></span>
                         <span class="print-exp-period">${escapeHtml(g('exp_period') || '')}</span>
                     </div>
-                    ${g('achievement') ? `<p class="print-text print-achievement">${escapeHtml(g('achievement'))}</p>` : ''}
+                    ${g('achievement') ? `<div class="print-text print-achievement print-pre-line">${escapeHtml(g('achievement'))}</div>` : ''}
                 </div>
             `;
         }
 
-        // 4. Communication & Leadership
-        const commSkills = [g('comm_skill1'), g('comm_skill2')].filter(Boolean);
-        const meetingPhrase = g('meeting_phrase');
-        if (commSkills.length || meetingPhrase) {
+        // 4. Education and Languages
+        const eduDegree = g('education_degree');
+        const eduSchool = g('education_school');
+        const langs = g('languages');
+        const certs = g('certifications');
+        if (eduDegree || eduSchool || langs || certs) {
             sectionsHTML += `
                 <div class="print-section">
-                    <div class="print-section-title">Communication & Leadership</div>
-                    ${commSkills.length ? `<p class="print-text"><strong>Core Strengths:</strong> ${escapeHtml(commSkills.join(' · '))}</p>` : ''}
-                    ${meetingPhrase ? `<p class="print-quote">"${escapeHtml(meetingPhrase)}"</p>` : ''}
-                </div>
-            `;
-        }
-
-        // 5. Classic Interview Answers
-        if (g('why_hire') || g('strength') || g('weakness')) {
-            sectionsHTML += `
-                <div class="print-section">
-                    <div class="print-section-title">Key Interview Responses</div>
-                    ${g('why_hire') ? `
-                        <div class="print-qa">
-                            <div class="print-q">Why should we hire you?</div>
-                            <div class="print-a">${escapeHtml(g('why_hire'))}</div>
+                    <div class="print-section-title">Education and Languages</div>
+                    ${(eduDegree || eduSchool) ? `
+                        <div class="print-edu-row">
+                            <strong class="print-tech-cat">Education:</strong> ${escapeHtml([eduDegree, eduSchool].filter(Boolean).join(' — '))}
                         </div>
                     ` : ''}
-                    ${g('strength') ? `
-                        <div class="print-qa">
-                            <div class="print-q">Greatest Professional Strength</div>
-                            <div class="print-a">${escapeHtml(g('strength'))}</div>
+                    ${langs ? `
+                        <div class="print-edu-row">
+                            <strong class="print-tech-cat">Languages:</strong> ${escapeHtml(langs)}
                         </div>
                     ` : ''}
-                    ${g('weakness') ? `
-                        <div class="print-qa">
-                            <div class="print-q">Area of Growth / Working Weakness</div>
-                            <div class="print-a">${escapeHtml(g('weakness'))}</div>
+                    ${certs ? `
+                        <div class="print-edu-row">
+                            <strong class="print-tech-cat">Certifications:</strong> ${escapeHtml(certs)}
                         </div>
                     ` : ''}
-                </div>
-            `;
-        }
-
-        // 6. Soft Skills
-        const softSkills = [g('soft1'), g('soft2'), g('soft3')].filter(Boolean);
-        if (softSkills.length) {
-            sectionsHTML += `
-                <div class="print-section">
-                    <div class="print-section-title">Soft Skills & Competencies</div>
-                    <p class="print-text">${escapeHtml(softSkills.join('   •   '))}</p>
-                </div>
-            `;
-        }
-
-        // 7. Salary Expectation
-        if (g('salary_range') || g('salary_justify')) {
-            sectionsHTML += `
-                <div class="print-section">
-                    <div class="print-section-title">Salary Expectation</div>
-                    ${g('salary_range') ? `<p class="print-text"><strong>Target:</strong> ${escapeHtml(g('salary_range'))}</p>` : ''}
-                    ${g('salary_justify') ? `<p class="print-text print-mt">${escapeHtml(g('salary_justify'))}</p>` : ''}
                 </div>
             `;
         }
@@ -865,7 +774,16 @@ function buildResumeModal() {
             letter-spacing: 0.04em;
             text-transform: uppercase;
             color: #09090b;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
+        }
+        .print-role {
+            font-family: 'Arial', 'Helvetica Neue', sans-serif;
+            font-size: 10pt;
+            font-weight: 600;
+            color: #581c87;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 5px;
         }
         .print-contacts {
             font-size: 9pt;
@@ -921,31 +839,24 @@ function buildResumeModal() {
         .print-achievement {
             margin-top: 3px;
         }
-        .print-quote {
-            font-style: italic;
-            color: #374151;
-            border-left: 2px solid #a855f7;
-            padding-left: 8px;
-            margin-top: 4px;
+        .print-tech-row {
             font-size: 9.5pt;
+            line-height: 1.5;
+            color: #1f2937;
+            margin-bottom: 3px;
         }
-        .print-qa {
-            margin-bottom: 8px;
-        }
-        .print-qa:last-child {
-            margin-bottom: 0;
-        }
-        .print-q {
-            font-family: 'Arial', 'Helvetica Neue', sans-serif;
-            font-size: 8.5pt;
+        .print-tech-cat {
             font-weight: bold;
             color: #111827;
-            margin-bottom: 1px;
         }
-        .print-a {
+        .print-edu-row {
             font-size: 9.5pt;
-            color: #1f2937;
             line-height: 1.5;
+            color: #1f2937;
+            margin-bottom: 3px;
+        }
+        .print-pre-line {
+            white-space: pre-line;
         }
     </style>
 </head>
@@ -953,6 +864,7 @@ function buildResumeModal() {
     <div class="print-doc">
         <header class="print-header">
             <h1 class="print-name">${escapeHtml(fullName)}</h1>
+            ${professionalTitle ? `<div class="print-role">${escapeHtml(professionalTitle)}</div>` : ''}
             ${contactItems.length ? `
                 <div class="print-contacts">
                     ${contactItems.map(item => `<span>${escapeHtml(item)}</span>`).join('<span class="print-sep">·</span>')}
@@ -1076,26 +988,9 @@ function closeResumeModal() {
 // ---------------------------------------------------------------------------
 
 function initResumeButton() {
-    let btn = document.getElementById('resume-fab');
-    if (!btn) {
-        // Auto-inject FAB if on training pages
-        const isTrainingPage = window.location.pathname.includes('trainingMode') ||
-            document.querySelector('.world-map-main') ||
-            document.getElementById('menu-container');
-
-        if (isTrainingPage) {
-            btn = document.createElement('button');
-            btn.className = 'resume-fab';
-            btn.id = 'resume-fab';
-            btn.title = 'Open My Resume';
-            btn.innerHTML = `
-                <span class="resume-fab-icon">📄</span>
-                <span class="resume-fab-label">Resume</span>
-                <span class="resume-fab-badge">0/8</span>
-            `;
-            document.body.appendChild(btn);
-        }
-    }
+    // Only attach to pages that already have the FAB button in their HTML
+    // (trainingMode.html and minimap.html)
+    const btn = document.getElementById('resume-fab');
     if (!btn) return;
 
     const updateBadge = () => {

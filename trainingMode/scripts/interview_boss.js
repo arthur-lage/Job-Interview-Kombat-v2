@@ -328,8 +328,8 @@ document.addEventListener("DOMContentLoaded", () => {
             playCombatTone("critical");
             flashLightning();
 
-            // Boss takes damage
-            bossHp = Math.max(0, bossHp - (opt.bossDamage || 34));
+            // Boss takes damage (Ignoring JSON bossDamage which is too high)
+            bossHp = Math.max(0, bossHp - 12);
             score += 150;
 
             // Momentum build up
