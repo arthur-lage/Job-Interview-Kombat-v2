@@ -989,7 +989,7 @@ function closeResumeModal() {
 
 function initResumeButton() {
     // Only attach to pages that already have the FAB button in their HTML
-    // (trainingMode.html and minimap.html)
+    // (trainingMode.html and trainingMode.html)
     const btn = document.getElementById('resume-fab');
     if (!btn) return;
 

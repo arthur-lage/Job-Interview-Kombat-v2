@@ -208,7 +208,7 @@ main a {
 }
 
 .menu-item::before {
-    background-image: url('../../JobInterviewKombat/assets/images/star-hover.png');
+    background-image: url('../assets/images/star-hover.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

@@ -7,10 +7,10 @@
     <title>THE INTERVIEW - Final Boss Showdown | Job Interview Kombat</title>
     <meta name="description"
         content="Face Mr. Sterling, Managing Partner, in the ultimate Final Boss Job Interview. Test all your skills from every module in high-stakes combat.">
-    <link rel="stylesheet" href="../../JobInterviewKombat/styles/global.css">
-    <link rel="stylesheet" href="../../JobInterviewKombat/styles/fonts.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/fonts.css">
     <link rel="stylesheet" href="../styles/interview_boss.css">
-    <link rel="icon" type="image/x-icon" href="../../JobInterviewKombat/assets/favicon/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackernoon/pixel-icon-library/fonts/iconfont.css">
     <script defer src="../scripts/progress.js"></script>
     <script defer src="../scripts/interview_boss.js"></script>
@@ -28,8 +28,8 @@
     <header class="boss-hud">
         <div class="hud-left-actions">
             <!-- Back Button -->
-            <a href="minimap.html" class="hud-back-btn" id="hud-back-btn" title="Exit to Map">
-                <img src="../../JobInterviewKombat/assets/images/arrow-back.png" alt="Back">
+            <a href="trainingMode.html" class="hud-back-btn" id="hud-back-btn" title="Exit to Map">
+                <img src="../assets/images/arrow-back.png" alt="Back">
             </a>
             <!-- Switch Boss Button -->
             <button type="button" class="hud-switch-boss-btn" id="hud-change-boss-btn" title="Choose Another Boss">
@@ -97,7 +97,7 @@
             <div class="boss-avatar-wrapper">
                 <div class="boss-avatar-frame" id="boss-avatar-frame">
                     <div class="boss-glow-aura" id="boss-glow-aura"></div>
-                    <img src="../../JobInterviewKombat/assets/images/jobs/pm-icon.png"
+                    <img src="../assets/images/jobs/pm-icon.png"
                         alt="Mr. Sterling - The Executive Boss" class="boss-sprite-img" id="boss-sprite-img">
                     <div class="boss-floating-tag">
                         <span class="boss-tag-title" id="boss-tag-name">MARCUS VANCE</span>
@@ -162,7 +162,7 @@
                 <!-- PM BOSS CARD -->
                 <div class="boss-roster-card" data-boss="pm">
                     <div class="roster-avatar-box">
-                        <img src="../../JobInterviewKombat/assets/images/jobs/pm-icon.png" alt="Marcus Vance" class="roster-avatar-img">
+                        <img src="../assets/images/jobs/pm-icon.png" alt="Marcus Vance" class="roster-avatar-img">
                     </div>
                     <div class="roster-info">
                         <span class="roster-badge pm-badge">👔 PRODUCT & BUSINESS</span>
@@ -176,7 +176,7 @@
                 <!-- QA BOSS CARD -->
                 <div class="boss-roster-card" data-boss="qa">
                     <div class="roster-avatar-box">
-                        <img src="../../JobInterviewKombat/assets/images/jobs/qa-icon.png" alt="Valerie Stone" class="roster-avatar-img">
+                        <img src="../assets/images/jobs/qa-icon.png" alt="Valerie Stone" class="roster-avatar-img">
                     </div>
                     <div class="roster-info">
                         <span class="roster-badge qa-badge">📋 QA & COMPLIANCE</span>
@@ -190,7 +190,7 @@
                 <!-- TECH LEAD BOSS CARD -->
                 <div class="boss-roster-card" data-boss="tech_lead">
                     <div class="roster-avatar-box">
-                        <img src="../../JobInterviewKombat/assets/images/jobs/dev-icon.png" alt="Julian Thorne" class="roster-avatar-img">
+                        <img src="../assets/images/jobs/dev-icon.png" alt="Julian Thorne" class="roster-avatar-img">
                     </div>
                     <div class="roster-info">
                         <span class="roster-badge tech-badge">💻 TECH LEAD & ARCHITECT</span>
@@ -203,7 +203,7 @@
             </div>
 
             <div class="select-footer">
-                <a href="minimap.html" class="boss-action-btn secondary">BACK TO WORLD MAP 🗺️</a>
+                <a href="trainingMode.html" class="boss-action-btn secondary">BACK TO WORLD MAP 🗺️</a>
             </div>
         </div>
     </div>
@@ -280,7 +280,7 @@
             </div>
 
             <div class="modal-buttons-row">
-                <button class="boss-action-btn primary" onclick="window.location.href='minimap.html'">
+                <button class="boss-action-btn primary" onclick="window.location.href='trainingMode.html'">
                     RETURN TO MAP 🗺️
                 </button>
                 <button class="boss-action-btn secondary" id="victory-replay-btn">
@@ -309,7 +309,7 @@
                 <button class="boss-action-btn primary" id="retry-boss-btn">
                     TRY AGAIN 🔄
                 </button>
-                <button class="boss-action-btn secondary" onclick="window.location.href='minimap.html'">
+                <button class="boss-action-btn secondary" onclick="window.location.href='trainingMode.html'">
                     TRAIN IN MAP 🗺️
                 </button>
             </div>

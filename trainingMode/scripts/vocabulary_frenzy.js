@@ -20,7 +20,7 @@ const descriptionMenuTheme = document.querySelector("#description-theme")
 
 if (descriptionBackButton) {
     descriptionBackButton.addEventListener("click", () => {
-        document.location.href = "../pages/minimap.html"
+        document.location.href = "../pages/trainingMode.html"
     })
 }
 
@@ -236,7 +236,7 @@ const setupResultScreen = (correctWords, wrongWords) => {
     }
 
     document.querySelector(".finish-button").addEventListener("click", () => {
-        document.location.href = "../pages/minimap.html"
+        document.location.href = "../pages/trainingMode.html"
     })
 }
 

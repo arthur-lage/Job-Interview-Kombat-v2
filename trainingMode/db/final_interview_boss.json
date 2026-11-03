@@ -5,7 +5,7 @@
       "name": "Marcus Vance",
       "title": "Head of Product & Hiring Partner",
       "company": "Apex Global Solutions",
-      "sprite": "../../JobInterviewKombat/assets/images/jobs/pm-icon.png",
+      "sprite": "../assets/images/jobs/pm-icon.png",
       "badge": "👔 PRODUCT & BUSINESS",
       "focus": "Product Vision, Metrics, Prioritization & Stakeholders",
       "phases": [
@@ -358,7 +358,7 @@
       "name": "Valerie Stone",
       "title": "Director of Quality & Compliance",
       "company": "Apex Global Solutions",
-      "sprite": "../../JobInterviewKombat/assets/images/jobs/qa-icon.png",
+      "sprite": "../assets/images/jobs/qa-icon.png",
       "badge": "📋 QA & COMPLIANCE",
       "focus": "Test Automation, Zero-Defects, CI/CD & Incident RCA",
       "phases": [
@@ -711,7 +711,7 @@
       "name": "Julian Thorne",
       "title": "VP of Engineering & Principal Architect",
       "company": "Apex Global Solutions",
-      "sprite": "../../JobInterviewKombat/assets/images/jobs/dev-icon.png",
+      "sprite": "../assets/images/jobs/dev-icon.png",
       "badge": "💻 TECH LEAD & ARCHITECT",
       "focus": "System Architecture, Scalability, Concurrency & Trade-offs",
       "phases": [

@@ -47,7 +47,7 @@ body.boss-fight-body {
     width: 100vw;
     height: 100vh;
     z-index: -2;
-    background: url('../assets/images/boss_boardroom.jpg') center/cover no-repeat, url('../assets/images/background.png') center/cover no-repeat;
+    background: url('../assets/images/background.png') center/cover no-repeat;
     background-color: #0b0f19;
 }
 
