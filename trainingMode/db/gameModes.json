@@ -4,7 +4,6 @@
             "id": "tutorial_grammar",
             "name": "GRAMMAR",
             "icon_class": "hn hn-graduation-cap-solid",
-            "icon_emoji": "🎓",
             "optional": true,
             "subModes": [
                 {
@@ -25,7 +24,6 @@
             "id": "introduction",
             "name": "INTRODUCTION",
             "icon_class": "hn hn-comment-dots-solid",
-            "icon_emoji": "👋",
             "unlocked": true,
             "subModes": [
                 {
@@ -46,7 +44,6 @@
             "id": "experience",
             "name": "EXPERIENCE",
             "icon_class": "hn hn-minds",
-            "icon_emoji": "💼",
             "unlocked": true,
             "subModes": [
                 {
@@ -64,31 +61,9 @@
             ]
         },
         {
-            "id": "meetings",
-            "name": "MEETINGS",
-            "icon_class": "hn hn-fire-solid",
-            "icon_emoji": "🚨",
-            "unlocked": true,
-            "subModes": [
-                {
-                    "id": "meetings_tutorial",
-                    "name": "TUTORIAL & BASICS",
-                    "link": "lesson.html?topic=meetings&submode=meetings_tutorial",
-                    "icon_class": "hn hn-graduation-cap-solid"
-                },
-                {
-                    "id": "meetings_war_room",
-                    "name": "WAR ROOM CRISIS",
-                    "link": "war_room.html?topic=meetings&submode=meetings_war_room",
-                    "icon_class": "hn hn-fire-solid"
-                }
-            ]
-        },
-        {
             "id": "classic_questions",
             "name": "CLASSIC QUESTIONS",
             "icon_class": "hn hn-question-circle-solid",
-            "icon_emoji": "❓",
             "unlocked": true,
             "subModes": [
                 {
@@ -109,7 +84,6 @@
             "id": "soft_skills",
             "name": "SOFT SKILLS",
             "icon_class": "hn hn-book-heart-solid",
-            "icon_emoji": "💖",
             "unlocked": true,
             "subModes": [
                 {
@@ -143,7 +117,6 @@
             "id": "hard_skills",
             "name": "HARD SKILLS",
             "icon_class": "hn hn-edit",
-            "icon_emoji": "💻",
             "unlocked": true,
             "subModes": [
                 {
@@ -174,10 +147,29 @@
             ]
         },
         {
+            "id": "questions_for_company",
+            "name": "QUESTIONS FOR THE COMPANY",
+            "icon_class": "hn hn-info-circle-solid",
+            "unlocked": true,
+            "subModes": [
+                {
+                    "id": "why_tutorial",
+                    "name": "WHY ASK QUESTIONS?",
+                    "link": "why_ask_questions.html",
+                    "icon_class": "hn hn-graduation-cap-solid"
+                },
+                {
+                    "id": "what_to_ask",
+                    "name": "WHAT TO ASK?",
+                    "link": "what_to_ask.html",
+                    "icon_class": "hn hn-fire-solid"
+                }
+            ]
+        },
+        {
             "id": "salary_negotiation",
             "name": "SALARY NEGOTIATION",
             "icon_class": "hn hn-copy-solid",
-            "icon_emoji": "💰",
             "unlocked": true,
             "subModes": [
                 {
@@ -195,10 +187,29 @@
             ]
         },
         {
+            "id": "meetings",
+            "name": "MEETINGS",
+            "icon_class": "hn hn-fire-solid",
+            "unlocked": true,
+            "subModes": [
+                {
+                    "id": "meetings_tutorial",
+                    "name": "TUTORIAL & BASICS",
+                    "link": "lesson.html?topic=meetings&submode=meetings_tutorial",
+                    "icon_class": "hn hn-graduation-cap-solid"
+                },
+                {
+                    "id": "meetings_war_room",
+                    "name": "WAR ROOM CRISIS",
+                    "link": "war_room.html?topic=meetings&submode=meetings_war_room",
+                    "icon_class": "hn hn-fire-solid"
+                }
+            ]
+        },
+        {
             "id": "profile",
             "name": "PROFILE",
             "icon_class": "hn hn-headphones-solid",
-            "icon_emoji": "👤",
             "unlocked": true,
             "subModes": [
                 {
@@ -219,7 +230,6 @@
             "id": "final_interview",
             "name": "THE INTERVIEW (BOSS)",
             "icon_class": "hn hn-trophy-solid",
-            "icon_emoji": "👑",
             "unlocked": true,
             "description": "Face Mr. Sterling in the executive boardroom showdown. Synthesize every concept learned across all modules!",
             "subModes": [

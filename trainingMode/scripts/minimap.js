@@ -5,19 +5,6 @@
  * Clicking a node opens a Zone Detail modal to select and launch submodes (phases).
  */
 
-const ICONS = {
-    tutorial_grammar: 'hn hn-question-solid',
-    introduction: 'hn hn-face-grin-solid',
-    experience: 'hn hn-product-management',
-    meetings: 'hn hn-management',
-    classic_questions: 'hn hn-business',
-    soft_skills: 'hn hn-handshake-solid',
-    hard_skills: 'hn hn-programming',
-    salary_negotiation: 'hn hn-dollar',
-    profile: 'hn hn-users-solid',
-    final_interview: 'hn hn-trophy-solid'
-};
-
 document.addEventListener('DOMContentLoaded', async () => {
     // --- DOM References ---
     const overallProgressLabel = document.getElementById('overall-progress-label');
@@ -219,7 +206,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             const isFullyComplete = completedCount === totalCount && totalCount > 0;
             const isInProgress = completedCount > 0 && !isFullyComplete;
-            const modeIconClass = ICONS[mode.id] || 'hn hn-gamepad-solid';
+            const modeIconClass = mode.icon_class || 'hn hn-gamepad-solid';
 
             const node = document.createElement('div');
             node.className = `map-mode-node mode-${mode.id}`;
@@ -227,7 +214,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             node.setAttribute('data-index', idx);
 
             // Mario-style organic messy layout coordinates (percentages)
-            // Sequence: 1 to 10
+            // Sequence: 1 to 11
             const POSITIONS = [
                 { left: 15, top: 10 },  // 1. top-left
                 { left: 45, top: 15 },  // 2. move right
@@ -238,7 +225,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 { left: 15, top: 55 },  // 7. down, far left
                 { left: 40, top: 70 },  // 8. right, down
                 { left: 75, top: 65 },  // 9. further right
-                { left: 85, top: 90 }   // 10. bottom right (Boss)
+                { left: 55, top: 88 },  // 10. bottom left-center
+                { left: 85, top: 90 }   // 11. bottom right (Boss)
             ];
             
             const pos = POSITIONS[idx] || { left: 50, top: 50 };
@@ -248,7 +236,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Grid Layout Order (for mobile fallback <= 950px)
             const ORDER_MAP = {
                 0: 1,  1: 2,  2: 4,  3: 3,  4: 5,
-                5: 6,  6: 8,  7: 7,  8: 9,  9: 10
+                5: 6,  6: 8,  7: 7,  8: 9,  9: 10,
+                10: 11
             };
             node.style.setProperty('--order-2col', ORDER_MAP[idx] || (idx + 1));
             node.style.setProperty('--order-1col', idx + 1);
@@ -361,7 +350,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 
-        const modalIconClass = ICONS[mode.id] || 'hn hn-gamepad-solid';
+        const modalIconClass = mode.icon_class || 'hn hn-gamepad-solid';
         zoneModalIcon.innerHTML = `<i class="${modalIconClass}"></i>`;
         zoneModalCategory.textContent = mode.optional ? 'OPTIONAL TUTORIAL' : `CAMPAIGN ZONE ${modeIndex + 1}`;
         zoneModalTitle.textContent = mode.name;

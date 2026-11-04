@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What are the company's greatest qualities?",
+        "description": "This question invites the interviewer to talk about what the company is most proud of, which reveals its values, strengths, and what makes it different from competitors. It also shows that you care about the company's reputation and want to understand whether you would be a good fit.\n\nListen for whether the answer is specific and genuine. If the interviewer struggles to name real qualities, that may be a sign that the company's identity or culture is not clearly defined."
+    },
+    {
+        "question": "Is the company under any deep restructuring?",
+        "description": "This question helps you understand the company's stability, direction, and recent internal changes. Restructurings can affect team structure, reporting lines, budgets, and even job security, so it is important to know what you might be stepping into.\n\nBecause the topic can be sensitive, ask it politely and follow up with how the changes might affect the role or the team. A transparent answer is a good sign; defensiveness or vagueness is worth noting."
+    },
+    {
+        "question": "What are the criteria used to promote employees?",
+        "description": "This question reveals how career growth works at the company and whether promotions are based on clear, fair criteria. It shows that you are ambitious and thinking long-term, not just about the immediate role.\n\nListen for concrete factors such as performance goals, time in the role, leadership experience, or formal review cycles. If the answer is vague, you can ask for an example of someone who was recently promoted and what made them stand out."
+    },
+    {
+        "question": "Does the company invest in training?",
+        "description": "This question helps you understand whether the company supports continuous learning through onboarding, mentorship, courses, certifications, or conferences. It shows that you value professional development and want to keep growing in the role.\n\nA strong answer will include specific programs or budgets rather than a general promise of \"learning on the job.\" This is especially useful if you want to develop new skills or take on more responsibility over time."
+    },
+    {
+        "question": "How do you describe the company's work culture?",
+        "description": "This question gives the interviewer a chance to describe how people collaborate, communicate, and make decisions. It reveals whether the environment is fast-paced or structured, collaborative or independent, and how leadership supports the team.\n\nAsk for examples to get beyond buzzwords. Compare what you hear with the kind of environment where you do your best work, and pay attention to whether the interviewer seems enthusiastic about the culture."
+    },
+    {
+        "question": "Does the company work with national clients only or international clients as well?",
+        "description": "This question helps you understand the company's market reach, growth ambitions, and the kind of communication the role may require. Working with international clients can mean different time zones, language expectations, travel, and cross-cultural collaboration.\n\nIt also shows that you are thinking about the broader business context. The answer can help you judge whether the role offers global exposure and whether you are comfortable with the pace and flexibility it may demand."
+    },
+    {
+        "question": "What does the company expect from its employees?",
+        "description": "This question clarifies what success looks like in terms of behavior, performance, availability, and collaboration. It helps you understand the company's standards and avoid surprises about workload, autonomy, or reporting expectations.\n\nListen for specific and realistic expectations rather than vague phrases like \"hard work\" or \"dedication.\" A clear answer shows that the company knows what it needs and communicates it openly."
+    },
+    {
+        "question": "What is a challenge the company has been dealing with recently, and how is the team working to improve it?",
+        "description": "This question reveals how honest the company is about its current struggles and how it approaches problem-solving. It also shows that you are thinking strategically about where you could contribute and what kind of support the team may need.\n\nA good answer will describe a real challenge and concrete steps being taken to address it. Be cautious if the interviewer avoids the question entirely or blames others instead of explaining what the company is doing to improve."
+    }
+]

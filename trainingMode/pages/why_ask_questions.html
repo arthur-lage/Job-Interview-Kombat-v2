@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Ask Questions? — Training Mode</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/trainingMode.css">
+    <link rel="stylesheet" href="../styles/fonts.css">
+    <link rel="stylesheet" href="../styles/why_ask_questions.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+</head>
+
+<body>
+    <div class="training-mode-background"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="../pages/trainingMode.html" id="back-btn" aria-label="Back to minimap">
+            <img src="../assets/images/arrow-back.png" alt="Back" width="40">
+        </a>
+        <h1 id="lesson-module-title">Why Ask Questions?</h1>
+    </header>
+
+    <!-- Page Intro -->
+    <div class="page-intro">
+        <p class="page-subtitle">Understand why asking the interviewer questions can make or break your interview.</p>
+    </div>
+
+    <div class="card-viewer">
+        <div class="question-progress" id="tip-progress"></div>
+        <h3 id="tip-title"></h3>
+        <p id="tip-content" class="tip-content"></p>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; align-items: center;">
+            <button id="prev-btn" class="lesson-done-btn" style="display: none;">Previous Tip</button>
+            <button id="next-btn" class="lesson-done-btn">Next Tip</button>
+            <span id="feedback-msg"
+                style="font-family: 'PixelOperatorFont', monospace; font-size: 1.4rem; font-weight: bold;"></span>
+        </div>
+    </div>
+
+    <script src="../scripts/progress.js"></script>
+    <script src="../scripts/resume.js"></script>
+    <script src="../scripts/why_ask_questions.js"></script>
+</body>
+
+</html>
